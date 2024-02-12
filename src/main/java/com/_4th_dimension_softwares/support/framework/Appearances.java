@@ -22,7 +22,7 @@ public final class Appearances {
 	 * @param appearances The <code>HashMap</code> provided by the <code>ColorThemeProcessor</code>
 	 */
 	public static void init(HashMap<String, Appearance> appearances) {
-		if (!initialized) {
+		if (!initialized && !appearances.isEmpty()) {
 			Appearances.appearances = appearances;
 			initialized = true;
 		}
@@ -34,8 +34,13 @@ public final class Appearances {
 	 *
 	 * @param componentName The name of the component the <code>Appearance</code> is related for
 	 * @return The <code>Appearance</code> that is related to the specified component
+	 * @throws RuntimeException If the <code>Appearance</code>s haven't been initialized before
+	 *                          calling this method
 	 */
 	public static Appearance get(String componentName) {
+		if (!initialized)
+			throw new RuntimeException("Appearances haven't been initialized");
+
 		return appearances.get(componentName);
 	}
 }
