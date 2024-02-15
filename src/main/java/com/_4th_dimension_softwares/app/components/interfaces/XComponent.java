@@ -8,6 +8,8 @@ import com._4th_dimension_softwares.support.framework.Appearance;
  * that every component used in the application must implement.
  * Basically, every component inside the application is an
  * <code>XComponent</code>.
+ *
+ * @author szd
  */
 public interface XComponent {
 	/**

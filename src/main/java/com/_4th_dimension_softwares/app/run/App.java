@@ -1,6 +1,7 @@
 package com._4th_dimension_softwares.app.run;
 
 import com._4th_dimension_softwares.app.frame.XFrame;
+import com._4th_dimension_softwares.support.framework.Appearances;
 import com._4th_dimension_softwares.support.framework.interpreter.ColorThemeInterpreter;
 import com._4th_dimension_softwares.support.util.Resources;
 
@@ -15,7 +16,8 @@ public final class App {
 	 * This is the entry point of the application.
 	 */
 	public App() {
+		// Interpret the specified color theme and open the application window
 		ColorThemeInterpreter.interpretColorTheme(Resources.get("/themes/DarkTheme.xml"));
-		new XFrame(null, "CompetitionManager 0.5-WORK-IN-PROGRESS");
+		new XFrame("CompetitionManager 0.5-WORK-IN-PROGRESS", Appearances.get("window"));
 	}
 }

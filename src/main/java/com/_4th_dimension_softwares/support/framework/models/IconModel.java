@@ -22,7 +22,9 @@ public final class IconModel extends AbstractIconModel {
 	 * Constructs a model of an icon based on the
 	 * passed in parameters. Every parameter is validated
 	 * individually inside the constructor to make later
-	 * tasks easier.
+	 * tasks easier. The model will try to load the desired
+	 * image into an <code>ImageIcon</code> from the resources
+	 * folder by default.
 	 *
 	 * @param source           The source of the icon
 	 * @param widthPercentage  The amount of percentage the icon should be scaled on the X axis
@@ -36,7 +38,9 @@ public final class IconModel extends AbstractIconModel {
 	 * Constructs a model of an icon based on the
 	 * passed in parameters. Every parameter is validated
 	 * individually inside the constructor to make later
-	 * tasks easier.
+	 * tasks easier. The model will try to load the desired
+	 * image into an <code>ImageIcon</code> from the resources
+	 * folder by default.
 	 *
 	 * @param source The source of the icon
 	 */

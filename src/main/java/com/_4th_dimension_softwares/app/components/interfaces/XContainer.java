@@ -9,6 +9,8 @@ import com._4th_dimension_softwares.support.consts.PositionConstants;
  * component a functional container. This interface
  * provides methods for the class that implements it
  * which handle adding and removing components from.
+ *
+ * @author szd
  */
 public interface XContainer {
 	/**

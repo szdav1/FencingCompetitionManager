@@ -34,8 +34,6 @@ public class XPanel extends AbstractXPanel {
 	 * @param layoutManager The LayoutManager of the panel
 	 * @param frame         The main frame of the Application
 	 * @param appearance    The Appearance that's values should be
-	 * @param layoutManager The LayoutManager of the panel
-	 *                      implemented on this panel
 	 */
 	public XPanel(Dimension dimension, LayoutManager layoutManager, XFrame frame, Appearance appearance) {
 		super(dimension, layoutManager, frame, appearance);

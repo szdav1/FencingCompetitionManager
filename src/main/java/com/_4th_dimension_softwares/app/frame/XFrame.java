@@ -7,6 +7,7 @@ import javax.swing.JComponent;
 
 import com._4th_dimension_softwares.app.components.base.panel.XPanel;
 import com._4th_dimension_softwares.support.consts.PositionConstants;
+import com._4th_dimension_softwares.support.framework.Appearance;
 import com._4th_dimension_softwares.support.framework.Appearances;
 
 /**
@@ -28,14 +29,15 @@ public class XFrame extends AbstractXFrame {
 	 * Constructs an <code>XFrame</code> object. This object is
 	 * the conductor of the actions in the application.
 	 *
-	 * @param iconImage The icon of the application window
-	 * @param title     The title of the application window
+	 * @param title      The title of the application window
+	 * @param appearance The <code>Appearance</code> that is going to
+	 *                   be used to stylize the window
 	 */
-	public XFrame(Image iconImage, String title) {
+	public XFrame(String title, Appearance appearance) {
 		// Basic setup for the window
-		super(iconImage, title);
+		super(title, appearance);
 
-		this.contentPanel = new XPanel(0, 0, this.getWidth(), this.getHeight(), new BorderLayout(), this, Appearances.get("window"));
+		this.contentPanel = new XPanel(0, 0, this.getWidth(), this.getHeight(), new BorderLayout(), this, appearance);
 		this.setContentPane(this.contentPanel);
 	}
 
