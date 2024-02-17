@@ -18,6 +18,6 @@ public final class App {
 	public App() {
 		// Interpret the specified color theme and open the application window
 		ColorThemeInterpreter.interpretColorTheme(Resources.get("/themes/DarkTheme.xml"));
-		new XFrame("CompetitionManager 0.5-WORK-IN-PROGRESS", Appearances.get("window"));
+		XFrame frame = new XFrame("CompetitionManager 0.5-WORK-IN-PROGRESS", Appearances.get("window"));
 	}
 }

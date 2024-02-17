@@ -13,7 +13,7 @@ import com._4th_dimension_softwares.support.framework.Appearance;
 /**
  * The XPanel class is an extended representation
  * of Swing's <code>JPanel</code> class. It works similarly to
- * JPanel. It acts as a container, it can have different
+ * <code>JPanel</code>. It acts as a container, it can have different
  * <code>LayoutManager</code>s.
  * <p/>
  * The extended means that just by passing in an Appearance
@@ -21,6 +21,32 @@ import com._4th_dimension_softwares.support.framework.Appearance;
  * according to that Appearance. This saves the work with
  * Graphics and Graphics2D and makes creating beautiful
  * container panels easy and fast.
+ * <p/>
+ * The <code>paintComponent()</code> method is fully overridden
+ * from the super class. Only the displaying of added components
+ * is what kept, but background painting and border painting
+ * is fully customized to work based on the Appearance object passed
+ * into the constructor of the class.
+ * <p/>
+ * The first is the background that gets painted. The painting procedure
+ * depends on the number of colors in the Appearance object. If the number
+ * is less than 2, the color that was specified in the backgrounds field of
+ * the color theme will be painted all over the component. If multiple colors
+ * were defined, then a <code>LinearGradientPant</code> will be used to paint
+ * every specified color on the component dividing the available space for painting
+ * equally.
+ * <p/>
+ * The next that is painted is the border. If the thickness of the border
+ * is greater than 0, than the border is painted. The coloring of the
+ * border happens the same way as coloring the background. The number of colors
+ * determines the process. If less than 2, the simple color will be used, if more or
+ * 2, then <code>LinearGradientPaint</code> will be used.
+ * <p/>
+ * Important
+ * <p/>
+ * For painting the background: <code>VALUE_RENDER_QUALITY</code>
+ * <p/>
+ * For painting the border: <code>VALUE_ANTIALIAS_ON</code>
  *
  * @author szd
  */
@@ -34,6 +60,7 @@ public class XPanel extends AbstractXPanel {
 	 * @param layoutManager The LayoutManager of the panel
 	 * @param frame         The main frame of the Application
 	 * @param appearance    The Appearance that's values should be
+	 *                      implemented on this panel
 	 */
 	public XPanel(Dimension dimension, LayoutManager layoutManager, XFrame frame, Appearance appearance) {
 		super(dimension, layoutManager, frame, appearance);

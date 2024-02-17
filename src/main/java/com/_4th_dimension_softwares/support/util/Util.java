@@ -178,4 +178,25 @@ public final class Util {
 			c1.getBlue() == c2.getBlue() &&
 			c1.getAlpha() == c2.getAlpha();
 	}
+
+	/**
+	 * Calculates equal size fractions for <code>Colors</code>
+	 * in a <code>LinearGradientPaint</code>. Every fraction size
+	 * must be between 1 and zero and must be a <code>float</code>.
+	 * The fraction values must follow each other in ascending order too.
+	 * The fraction values are returned in a <code>float array</code>.
+	 *
+	 * @param numberOfFracts The desired number of fractions
+	 * @return A <code>float array</code> filled with ascending fraction values
+	 */
+	public static float[] calcEqualFracts(int numberOfFracts) {
+		float[] fracts = new float[numberOfFracts];
+		fracts[0] = 1.0f/fracts.length;
+
+		for (int i = 1; i < fracts.length; i++) {
+			fracts[i] = fracts[0]+fracts[i-1];
+		}
+
+		return fracts;
+	}
 }

@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import com._4th_dimension_softwares.support.appdata.SizeData;
 import com._4th_dimension_softwares.support.framework.models.BorderModel;
 import com._4th_dimension_softwares.support.framework.models.ColorThemeModel;
+import com._4th_dimension_softwares.support.util.Resources;
 
 public abstract class AbstractAppearance {
 	protected List<Color> backgrounds;
@@ -33,7 +34,7 @@ public abstract class AbstractAppearance {
 			// Custom font
 			else if (!colorThemeModel.getFontModel().getSource().isBlank()) {
 				try {
-					this.font = Font.createFont(Font.TRUETYPE_FONT, new File(colorThemeModel.getFontModel().getSource()))
+					this.font = Font.createFont(Font.TRUETYPE_FONT, new File(Resources.get(colorThemeModel.getFontModel().getSource())))
 						.deriveFont(colorThemeModel.getFontModel().getLigature(), (float) colorThemeModel.getFontModel().getSize());
 				}
 				catch (Exception exc) {
