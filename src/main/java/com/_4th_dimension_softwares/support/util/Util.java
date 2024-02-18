@@ -180,7 +180,7 @@ public final class Util {
 	}
 
 	/**
-	 * Calculates equal size fractions for <code>Colors</code>
+	 * Calculates equal size fractions for <code>Color</code>s
 	 * in a <code>LinearGradientPaint</code>. Every fraction size
 	 * must be between 1 and zero and must be a <code>float</code>.
 	 * The fraction values must follow each other in ascending order too.

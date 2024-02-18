@@ -43,12 +43,12 @@ public abstract class AbstractXLabel extends JLabel implements XComponent {
 		g2D.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
 
 		// Start and end coordinates for painting
-		int x = 0;
-		int y = 0;
-		int w = this.getWidth();
-		int h = this.getHeight();
+		final int x = 0;
+		final int y = 0;
+		final int w = this.getWidth();
+		final int h = this.getHeight();
 		// Roundness
-		int r = this.appearance.getBorderModel().getRoundness();
+		final int r = this.appearance.getBorderModel().getRoundness();
 		// Linear Gradient Paint
 		LinearGradientPaint lgp;
 
