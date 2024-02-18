@@ -14,13 +14,14 @@ public abstract class AbstractIconModel {
 
 	protected AbstractIconModel(String source, String widthPercentage, String heightPercentage) {
 		if (!source.isBlank())
-			this.icon = Util.loadImageIcon(Resources.get(source), Util.toInt(widthPercentage, 100, (i) -> i > 0), Util.toInt(heightPercentage, 100, (i) -> i > 0));
+			this.icon = Util.loadImageIcon(Resources.get(source), Util.toInt(widthPercentage, 100, (i) -> i > 0),
+				Util.toInt(heightPercentage, 100, (i) -> i > 0));
 		else
 			this.icon = null;
 	}
 
 	protected AbstractIconModel(String source) {
-		this.icon = Util.loadImageIcon(source);
+		this.icon = Util.loadImageIcon(Resources.get(source));
 	}
 
 	public ImageIcon getIcon() {

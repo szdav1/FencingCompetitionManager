@@ -23,7 +23,9 @@ public final class Resources {
 	 * the "/" is missing from the beginning, the method will try to
 	 * query the resources with appending a backslash at the beginning.
 	 * However, if this fails too, the method will fail with a
-	 * <code>NullPointerException</code>.
+	 * <code>NullPointerException</code>. However, this exception does not
+	 * interrupt the running of the application. An empty <code>String</code>
+	 * is returned if the resource can not be found.
 	 *
 	 * @param filePath The path of the desired file starting from resources
 	 * @return The full path of the desired file
@@ -31,8 +33,14 @@ public final class Resources {
 	public static String get(String filePath) {
 		URL fileURL = Resources.class.getResource(filePath);
 
-		return fileURL == null ?
-			Objects.requireNonNull(Resources.class.getResource("/".concat(filePath)).getFile()) :
-			fileURL.getFile();
+		if (fileURL != null)
+			return fileURL.getFile();
+
+		try {
+			return Objects.requireNonNull(Resources.class.getResource("/"+filePath)).getFile();
+		}
+		catch (Exception exc) {
+			return "";
+		}
 	}
 }

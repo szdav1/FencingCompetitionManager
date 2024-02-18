@@ -7,6 +7,7 @@ import com._4th_dimension_softwares.support.framework.models.ColorModel;
 import com._4th_dimension_softwares.support.framework.models.ColorThemeModel;
 import com._4th_dimension_softwares.support.framework.models.FontModel;
 import com._4th_dimension_softwares.support.framework.models.IconModel;
+import com._4th_dimension_softwares.support.util.Resources;
 import com._4th_dimension_softwares.support.util.Util;
 import org.junit.jupiter.api.*;
 
@@ -63,8 +64,9 @@ class AppearanceTest {
 		@Test
 		@DisplayName("The family (name) of the font should be the specified custom font: Halimun")
 		void theFamilyOfTheFontShouldBeTheSpecifiedCustomFont() {
-			ctm.setFontModel(new FontModel("src/test/resources/fonts/Halimun-W7jn.ttf", "", "Plain", "25"));
+			ctm.setFontModel(new FontModel("fonts/Halimun-W7jn.ttf", "", "Plain", "25"));
 			Appearance a = new Appearance(ctm);
+			System.out.println(ctm.getFontModel().getFamily());
 
 			Assertions.assertEquals("Halimun", a.getFont().getFontName());
 		}
@@ -85,7 +87,7 @@ class AppearanceTest {
 		@Test
 		@DisplayName("The icon of the Appearance should not be null")
 		void theIconShouldNotBeNull() {
-			ctm.setIconModel1(new IconModel("src/test/resources/testIcon.png"));
+			ctm.setIconModel1(new IconModel("testIcon.png"));
 			Appearance a = new Appearance(ctm);
 
 			Assertions.assertNotNull(a.getIcon1());
@@ -103,7 +105,7 @@ class AppearanceTest {
 		@Test
 		@DisplayName("The size of the icon should be 256x256")
 		void theSizeOfTheIconShouldBe256x256() {
-			ctm.setIconModel1(new IconModel("src/test/resources/testIcon.png", "50", "50"));
+			ctm.setIconModel1(new IconModel("testIcon.png", "50", "50"));
 			Appearance a = new Appearance(ctm);
 
 			Assertions.assertAll(
