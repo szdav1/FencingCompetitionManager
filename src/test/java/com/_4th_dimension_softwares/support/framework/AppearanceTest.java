@@ -7,7 +7,6 @@ import com._4th_dimension_softwares.support.framework.models.ColorModel;
 import com._4th_dimension_softwares.support.framework.models.ColorThemeModel;
 import com._4th_dimension_softwares.support.framework.models.FontModel;
 import com._4th_dimension_softwares.support.framework.models.IconModel;
-import com._4th_dimension_softwares.support.util.Resources;
 import com._4th_dimension_softwares.support.util.Util;
 import org.junit.jupiter.api.*;
 
