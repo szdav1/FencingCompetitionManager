@@ -42,8 +42,7 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
 
 	@Override
 	protected void paintComponent(Graphics g) {
-		// Paint added components
-		super.paintComponent(g);
+
 
 		// Cast Graphics to Graphics2D
 		Graphics2D g2D = (Graphics2D) g;
@@ -91,5 +90,8 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
 			// Draw border
 			g2D.drawRoundRect(x, y, w, h, r, r);
 		}
+
+		// Paint added components
+		super.paintComponent(g);
 	}
 }

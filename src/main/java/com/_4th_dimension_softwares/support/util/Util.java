@@ -199,4 +199,30 @@ public final class Util {
 
 		return fracts;
 	}
+
+	/**
+	 * Separates the <code>Color</code>s in the specified <code>List</code>
+	 * into two halves. The results of the process are returned in a <code>List</code>
+	 * object, which contains the two <code>array</code>s that are filled with the
+	 * colors from the specified <code>List</code>.
+	 *
+	 * @param colors The <code>List</code> that's content should be separated
+	 * @return A <code>List</code> containing the two halves of the specified <code>List</code>
+	 */
+	public static List<Color[]> halveColors(List<Color> colors) {
+		Color[] cs1 = new Color[colors.size()/2];
+		Color[] cs2 = new Color[colors.size()%2 != 0 ? colors.size()/2+1 : colors.size()/2];
+		int j = 0;
+
+		for (int i = 0; i < colors.size()/2; i++) {
+			cs1[i] = colors.get(i);
+		}
+
+		for (int i = colors.size()/2; i < colors.size(); i++) {
+			cs2[j] = colors.get(i);
+			j++;
+		}
+
+		return List.of(cs1, cs2);
+	}
 }

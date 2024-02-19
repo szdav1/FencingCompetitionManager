@@ -97,8 +97,8 @@ public final class ColorThemeReader {
 							else if (tagName.equalsIgnoreCase("icon1")) {
 								IconModel im = new IconModel(
 									childElement.getAttribute("source"),
-									childElement.getAttribute("widthPercentage"),
-									childElement.getAttribute("heightPercentage")
+									childElement.getAttribute("width"),
+									childElement.getAttribute("height")
 								);
 								ctm.setIconModel1(im);
 							}
