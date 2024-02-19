@@ -10,7 +10,7 @@ import com._4th_dimension_softwares.support.framework.models.ColorThemeModel;
  * This is the last stage of the color theme interpretation.
  * Every data is received from a <code>ColorThemeModel</code>, and stored
  * in the corresponding way.
- * <p/>
+ * <p></p>
  * Custom components will be stylized based on the
  * data stored by this class's fields. This class also
  * has methods that help working with <code>Graphics</code>, as some
