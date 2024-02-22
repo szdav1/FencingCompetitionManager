@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="FencingCompetitionManager [run]" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com._4th_dimension_softwares.app.run.Main" />
+    <module name="FencingCompetitionManager.main" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

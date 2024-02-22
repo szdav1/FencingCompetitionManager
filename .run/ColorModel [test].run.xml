@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ColorModel [test]" type="JUnit" factoryName="JUnit">
+    <module name="FencingCompetitionManager.test" />
+    <option name="PACKAGE_NAME" value="com._4th_dimension_softwares.support.framework.models" />
+    <option name="MAIN_CLASS_NAME" value="com._4th_dimension_softwares.support.framework.models.ColorModelTest" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="class" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
