@@ -4,11 +4,4 @@
         <background colors="[0,0,0,255][255,181,0,255][255,0,0,255]"/>
         <icon1 source=""/>
     </appearance>
-
-    <appearance applyTo="btn">
-        <background colors="[255,0,0,255][0,0,255,255][0,0,0,255][128, 128, 128,255][255,0,0,255]"/>
-        <foreground colors="[255,255,255,255]"/>
-        <border roundness="0"/>
-        <font source="fonts/Halimun-W7jn.ttf" ligature="normal" size="8"/>
-    </appearance>
 </DarkTheme>

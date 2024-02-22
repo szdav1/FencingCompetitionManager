@@ -17,7 +17,7 @@ public final class SizeData {
 	public static final int SCREEN_HEIGHT = SCREEN_SIZE.height;
 
 	// Font size
-	public static final int FONT_SIZE = SCREEN_WIDTH/100;
+	public static final int FONT_SIZE = SCREEN_WIDTH/130;
 	public static final int BORDER_SIZE = 2;
 
 	// Not instantiatable

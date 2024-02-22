@@ -1,7 +1,5 @@
 package com._4th_dimension_softwares.app.run;
 
-import com._4th_dimension_softwares.app.components.base.button.ButtonType;
-import com._4th_dimension_softwares.app.components.base.button.XButton;
 import com._4th_dimension_softwares.app.frame.XFrame;
 import com._4th_dimension_softwares.support.framework.Appearances;
 import com._4th_dimension_softwares.support.framework.interpreter.ColorThemeInterpreter;
@@ -21,11 +19,5 @@ public final class App {
 		// Interpret the specified color theme and open the application window
 		ColorThemeInterpreter.interpretColorTheme(Resources.get("/themes/DarkTheme.xml"));
 		XFrame frame = new XFrame("CompetitionManager 0.5-WORK-IN-PROGRESS", Appearances.get("window"));
-		frame.setLayout(null);
-
-		XButton b = new XButton(500, 500, 200, 100, "Hello, World", frame, ButtonType.BACKGROUND_CHANGER, Appearances.get("btn"));
-
-		frame.addComponent(b);
-		frame.repaint();
 	}
 }

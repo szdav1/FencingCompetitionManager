@@ -65,7 +65,7 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 
 	/**
 	 * Retrieves the main icon from the <code>Appearance</code>
-	 * of the button object.
+	 * of the button object wrapped into an Optional.
 	 *
 	 * @return The main icon of the button stored in the <code>Appearance</code>
 	 * of the button
@@ -76,7 +76,7 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 
 	/**
 	 * Retrieves the secondary icon from the <code>Appearance</code>
-	 * of the button object.
+	 * of the button object wrapped into an Optional.
 	 *
 	 * @return The secondary icon of the button stored in the <code>Appearance</code>
 	 * of the button
@@ -101,6 +101,18 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 		// Linear Gradient Paint
 		LinearGradientPaint lgp;
 
+		// Fill the background - Used for Foreground and Icon mainly
+		if (this.appearance.getBackgrounds().size() >= 2) {
+			lgp = new LinearGradientPaint(x, y, w, h, Util.calcEqualFracts(this.appearance.getBackgrounds().size()),
+				this.appearance.getBackgroundsAsArray());
+
+			g2D.setPaint(lgp);
+		}
+		else
+			g2D.setColor(this.appearance.getBackgrounds().get(0));
+
+		g2D.fillRoundRect(x, y, w, h, r, r);
+
 		// Background
 		if (this.type == ButtonType.BACKGROUND_CHANGER) {
 			// If there's only one color defined in the color theme
@@ -110,18 +122,12 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 			// If there are two colors defined in the color theme
 			else if (this.appearance.getBackgrounds().size() == 2) {
 				// If the button is entered by the mouse, the second color is painted
-				if (this.entered)
-					g2D.setColor(this.appearance.getBackgrounds().get(1));
-					// If not, the (default) first color is painted
-				else
-					g2D.setColor(this.appearance.getBackgrounds().get(0));
+				// If not, the (default) first color is painted
+				g2D.setPaint(this.entered ? this.appearance.getBackgrounds().get(1) : this.appearance.getBackgrounds().get(0));
 
 				// If the button is pressed, the (default) first color is painted
-				if (this.pressed)
-					g2D.setColor(this.appearance.getBackgrounds().get(0));
-					// If not, the second color is painted
-				else
-					g2D.setColor(this.appearance.getBackgrounds().get(1));
+				// If not, the second color is painted
+				g2D.setPaint(this.pressed ? this.appearance.getBackgrounds().get(0) : this.appearance.getBackgrounds().get(1));
 
 				// If the state of the button is normal, the (default) first color is painted
 				if (!this.entered && !this.pressed)
@@ -136,18 +142,12 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 				lgp = new LinearGradientPaint(x, y, w, h, Util.calcEqualFracts(secondaryColors.length), secondaryColors);
 
 				// If the button is entered by the mouse, the background is painted gradient
-				if (this.entered)
-					g2D.setPaint(lgp);
-					// If not, the (default) first color is painted
-				else
-					g2D.setColor(mainColor);
+				g2D.setPaint(this.entered ? lgp : mainColor);
+				// If not, the (default) first color is painted
 
 				// If the button is pressed, the (default) first color is painted
-				if (this.pressed)
-					g2D.setColor(mainColor);
 					// If not, the background is painted gradient
-				else
-					g2D.setPaint(lgp);
+				g2D.setPaint(this.pressed ? mainColor : lgp);
 
 				// If the state of the button is normal, the (default) first color is painted
 				if (!this.entered && !this.pressed)
@@ -161,19 +161,13 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 
 				// If the button is entered by the mouse, the first half of the specified colors
 				// Are painted in a linear gradient configuration
-				if (this.entered)
-					g2D.setPaint(lgp2);
-					// If not, the second half of the specified colors are painted in the same configuration
-				else
-					g2D.setPaint(lgp);
+				// If not, the second half of the specified colors are painted in the same configuration
+				g2D.setPaint(this.entered ? lgp2 : lgp);
 
 				// If the button is entered by the mouse, the first half of the specified colors
 				// Are painted in a linear gradient configuration
-				if (this.pressed)
-					g2D.setPaint(lgp);
-					// If not, the second half of the specified colors are painted in the same configuration
-				else
-					g2D.setPaint(lgp2);
+				g2D.setPaint(this.pressed ? lgp : lgp2);
+				// If not, the second half of the specified colors are painted in the same configuration
 
 				// If the state of the button is normal, the (default) first color is painted
 				if (!this.entered && !this.pressed)
@@ -184,9 +178,39 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 			g2D.fillRoundRect(x, y, w, h, r, r);
 		}
 		// Foreground
-		if (this.type == ButtonType.FOREGROUND_CHANGER) {
+		else if (this.type == ButtonType.FOREGROUND_CHANGER) {
 			if (this.appearance.getForegrounds().size() >= 2) {
-				// TODO: Implement the foreground and icon changing effect and write docstrings for the XButton
+				// If the button is entered by the mouse, the second color specified in the
+				// Appearance will be set as the foreground
+				// If not, the first color specified in the Appearance will be set as the foreground
+				this.setForeground(this.entered ? this.appearance.getForegrounds().get(1) : this.appearance.getForegrounds().get(0));
+
+				// If the button is pressed, the first color specified in the
+				// Appearance will be set as the foreground
+				// If not, the second color specified in the Appearance will be set as the foreground
+				this.setForeground(this.pressed ? this.appearance.getForegrounds().get(0) : this.appearance.getForegrounds().get(1));
+
+				// If the state of the button is normal, the (default) first color is used
+				if (!this.entered && !this.pressed)
+					this.setForeground(this.appearance.getForegrounds().get(0));
+			}
+		}
+		// Icon
+		else if (this.type == ButtonType.ICON_CHANGER) {
+			if (this.appearance.getIcon1() != null && this.appearance.getIcon2() != null) {
+				// If the button is entered by the mouse, the secondary icon
+				// Defined in the Appearance will be set as the icon of the button
+				// If not, than the main icon specified in the Appearance will be set
+				this.setIcon(this.entered ? this.appearance.getIcon2() : this.appearance.getIcon1());
+
+				// If the button is pressed, the main icon
+				// Defined in the Appearance will be set as the icon of the button
+				// If not, than the secondary icon specified in the Appearance will be set
+				this.setIcon(this.pressed ? this.appearance.getIcon1() : this.appearance.getIcon2());
+
+				// If the state of the button is normal, the (default) first icon is used
+				if (!this.entered && !this.pressed)
+					this.setIcon(this.appearance.getIcon1());
 			}
 		}
 

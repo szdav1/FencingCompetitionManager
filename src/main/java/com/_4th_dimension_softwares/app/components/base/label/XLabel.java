@@ -71,8 +71,8 @@ public class XLabel extends AbstractXLabel {
 	 * similar to a <code>JLabel</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param x          The X coordinate of the label
-	 * @param y          The Y coordinate of the label
+	 * @param x          The X coordinate of the label in no-layout manager space
+	 * @param y          The Y coordinate of the label in no-layout manager space
 	 * @param width      The width of the label
 	 * @param height     The height of the label
 	 * @param text       The text of the label
