@@ -4,4 +4,8 @@
         <background colors="[0,0,0,255][255,181,0,255][255,0,0,255]"/>
         <icon1 source=""/>
     </appearance>
+
+    <appearance applyTo="textfield">
+
+    </appearance>
 </DarkTheme>

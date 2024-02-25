@@ -2,6 +2,8 @@ package com._4th_dimension_softwares.app.components.base.label;
 
 import java.awt.Dimension;
 
+import javax.swing.SwingConstants;
+
 import com._4th_dimension_softwares.app.frame.XFrame;
 import com._4th_dimension_softwares.support.framework.Appearance;
 
@@ -82,6 +84,11 @@ public class XLabel extends AbstractXLabel {
 	 */
 	public XLabel(int x, int y, int width, int height, String text, XFrame frame, Appearance appearance) {
 		super(x, y, width, height, text, frame, appearance);
+	}
+
+	public void centerContent() {
+		this.setHorizontalAlignment(SwingConstants.CENTER);
+		this.setVerticalAlignment(SwingConstants.CENTER);
 	}
 
 	@Override

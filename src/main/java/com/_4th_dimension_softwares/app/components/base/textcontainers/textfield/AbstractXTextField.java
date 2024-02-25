@@ -1,39 +1,52 @@
-package com._4th_dimension_softwares.app.components.base.label;
+package com._4th_dimension_softwares.app.components.base.textcontainers.textfield;
 
 import java.awt.*;
 
-import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 import com._4th_dimension_softwares.app.components.interfaces.XComponent;
 import com._4th_dimension_softwares.app.frame.XFrame;
 import com._4th_dimension_softwares.support.framework.Appearance;
 import com._4th_dimension_softwares.support.util.Util;
 
-public abstract class AbstractXLabel extends JLabel implements XComponent {
+public abstract class AbstractXTextField extends JTextField implements XComponent {
 	protected Appearance appearance;
 	protected final XFrame frame;
 
-	protected AbstractXLabel(Dimension dimension, String text, XFrame frame, Appearance appearance) {
+	protected AbstractXTextField(Dimension dimension, String text, XFrame frame, Appearance appearance) {
 		this.appearance = appearance;
 		this.frame = frame;
 
-		this.setIcon(appearance.getIcon1() == null ? appearance.getIcon2() : appearance.getIcon1());
 		this.setText(text);
 		this.setFont(appearance.getFont());
 		this.setForeground(appearance.getForegrounds().get(0));
-		this.setPreferredSize(dimension);
+		this.setCaretColor(this.getForeground());
+		this.setOpaque(false);
+		this.setBorder(null);
 		this.setBounds(new Rectangle(0, 0, dimension.width, dimension.height));
+		this.setPreferredSize(dimension);
 	}
 
-	protected AbstractXLabel(int x, int y, int width, int height, String text, XFrame frame, Appearance appearance) {
+	protected AbstractXTextField(Dimension dimension, XFrame frame, Appearance appearance) {
+		this(dimension, "", frame, appearance);
+	}
+
+	protected AbstractXTextField(int x, int y, int width, int height, String text, XFrame frame, Appearance appearance) {
 		this.appearance = appearance;
 		this.frame = frame;
 
-		this.setIcon(appearance.getIcon1() == null ? appearance.getIcon2() : appearance.getIcon1());
 		this.setText(text);
 		this.setFont(appearance.getFont());
 		this.setForeground(appearance.getForegrounds().get(0));
+		this.setCaretColor(this.getForeground());
+		this.setOpaque(false);
+		this.setBorder(null);
+		this.setPreferredSize(new Dimension(width, height));
 		this.setBounds(new Rectangle(x, y, width, height));
+	}
+
+	protected AbstractXTextField(int x, int y, int width, int height, XFrame frame, Appearance appearance) {
+		this(x, y, width, height, "", frame, appearance);
 	}
 
 	@Override
@@ -85,7 +98,7 @@ public abstract class AbstractXLabel extends JLabel implements XComponent {
 			g2D.drawRoundRect(x, y, w, h, r, r);
 		}
 
-		// Paint Icon and Text
+		// Paint text
 		super.paintComponent(g);
 
 		// Destroy the Graphics2D object as it is no longer needed

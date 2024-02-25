@@ -44,16 +44,19 @@ public class XFrame extends AbstractXFrame {
 	@Override
 	public void addComponent(JComponent component, PositionConstants positionConstants) {
 		this.contentPanel.addComponent(component, positionConstants);
+		this.repaint();
 	}
 
 	@Override
 	public void addComponent(JComponent component) {
 		this.contentPanel.addComponent(component);
+		this.repaint();
 	}
 
 	@Override
 	public JComponent removeComponent(JComponent component) {
 		this.contentPanel.removeComponent(component);
+		this.repaint();
 
 		return component;
 	}

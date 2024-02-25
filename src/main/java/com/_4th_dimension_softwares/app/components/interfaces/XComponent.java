@@ -25,7 +25,7 @@ public interface XComponent {
 	void repaintFrame();
 
 	/**
-	 * Returns tha Appearance of the component.
+	 * Returns the Appearance of the component.
 	 *
 	 * @return The Appearance of the component
 	 */
