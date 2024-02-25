@@ -1,49 +1,56 @@
-package com._4th_dimension_softwares.app.components.base.panel;
+package com._4th_dimension_softwares.app.components.base.text.area;
 
 import java.awt.*;
 
-import javax.swing.JLayeredPane;
+import javax.swing.JTextArea;
 
 import com._4th_dimension_softwares.app.components.interfaces.XComponent;
-import com._4th_dimension_softwares.app.components.interfaces.XContainer;
 import com._4th_dimension_softwares.app.frame.XFrame;
 import com._4th_dimension_softwares.support.framework.Appearance;
 import com._4th_dimension_softwares.support.util.Util;
 
-public abstract class AbstractXPanel extends JLayeredPane implements XComponent, XContainer {
+public abstract class AbstractXTextArea extends JTextArea implements XComponent {
 	protected Appearance appearance;
 	protected final XFrame frame;
 
-	protected AbstractXPanel(Dimension dimension, LayoutManager layoutManager, XFrame frame, Appearance appearance) {
+	protected AbstractXTextArea(Dimension dimension, String text, XFrame frame, Appearance appearance) {
 		this.appearance = appearance;
 		this.frame = frame;
 
-		this.setLayout(layoutManager);
-		this.setPreferredSize(dimension);
+		this.setText(text);
+		this.setFont(appearance.getFont());
+		this.setForeground(appearance.getForegrounds().get(0));
+		this.setCaretColor(this.getForeground());
+		this.setOpaque(false);
+		this.setBorder(null);
 		this.setBounds(new Rectangle(0, 0, dimension.width, dimension.height));
+		this.setPreferredSize(dimension);
 	}
 
-	protected AbstractXPanel(Dimension dimension, XFrame frame, Appearance appearance) {
-		this(dimension, new FlowLayout(FlowLayout.CENTER, 0, 0), frame, appearance);
+	protected AbstractXTextArea(Dimension dimension, XFrame frame, Appearance appearance) {
+		this(dimension, "", frame, appearance);
 	}
 
-	protected AbstractXPanel(int x, int y, int width, int height, LayoutManager layoutManager, XFrame frame, Appearance appearance) {
+	protected AbstractXTextArea(int x, int y, int width, int height, String text, XFrame frame, Appearance appearance) {
 		this.appearance = appearance;
 		this.frame = frame;
 
-		this.setLayout(layoutManager);
-		this.setBounds(new Rectangle(x, y, width, height));
+		this.setText(text);
+		this.setFont(appearance.getFont());
+		this.setForeground(appearance.getForegrounds().get(0));
+		this.setCaretColor(this.getForeground());
+		this.setOpaque(false);
+		this.setBorder(null);
 		this.setPreferredSize(new Dimension(width, height));
+		this.setBounds(new Rectangle(x, y, width, height));
 	}
 
-	protected AbstractXPanel(int x, int y, int width, int height, XFrame frame, Appearance appearance) {
-		this(x, y, width, height, new FlowLayout(FlowLayout.CENTER, 0, 0), frame, appearance);
+	protected AbstractXTextArea(int x, int y, int width, int height, XFrame frame, Appearance appearance) {
+		this(x, y, width, height, "", frame, appearance);
 	}
 
 	@Override
 	protected void paintComponent(Graphics g) {
-
-
 		// Cast Graphics to Graphics2D
 		Graphics2D g2D = (Graphics2D) g;
 		g2D.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
@@ -91,7 +98,10 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
 			g2D.drawRoundRect(x, y, w, h, r, r);
 		}
 
-		// Paint added components
+		// Paint text
 		super.paintComponent(g);
+
+		// Destroy the Graphics2D object as it is no longer needed
+		g2D.dispose();
 	}
 }

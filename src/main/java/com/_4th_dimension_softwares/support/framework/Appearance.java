@@ -11,7 +11,7 @@ import com._4th_dimension_softwares.support.framework.models.ColorThemeModel;
  * Every data is received from a <code>ColorThemeModel</code>, and stored
  * in the corresponding way.
  * <p></p>
- * Custom components will be stylized based on the
+ * Custom components are stylized based on the
  * data stored by this class's fields. This class also
  * has methods that help working with <code>Graphics</code>, as some
  * fields do not have the corresponding type, but can be easily
@@ -20,6 +20,17 @@ import com._4th_dimension_softwares.support.framework.models.ColorThemeModel;
  * @author szd
  */
 public final class Appearance extends AbstractAppearance {
+	/**
+	 * Constructs an <code>Appearance</code> object. This object
+	 * stores information for component styling,
+	 * and every field of the class represents a style
+	 * element that can be implemented on the desired
+	 * component. The fields are already validated when
+	 * they get into this class.
+	 */
+	public Appearance() {
+	}
+
 	/**
 	 * Constructs an <code>Appearance</code> object. This object
 	 * stores information for component styling,

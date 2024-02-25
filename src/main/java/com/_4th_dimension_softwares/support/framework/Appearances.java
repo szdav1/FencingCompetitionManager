@@ -41,6 +41,8 @@ public final class Appearances {
 		if (!initialized)
 			throw new RuntimeException("Appearances haven't been initialized");
 
-		return appearances.get(componentName);
+		Appearance a = appearances.get(componentName);
+
+		return a == null ? new Appearance() : a;
 	}
 }

@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'com._4th_dimension_softwares'
+group 'com._4th_dimension_software'
 version '0.5-WORK-IN-PROGRESS'
 
 repositories {

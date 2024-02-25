@@ -5,13 +5,6 @@ import com._4th_dimension_softwares.support.framework.Appearances;
 import com._4th_dimension_softwares.support.framework.interpreter.ColorThemeInterpreter;
 import com._4th_dimension_softwares.support.util.Resources;
 
-/*
-* TODO: Make the Appearances class's get() method return a
-*  default Appearance if the specified key is incorrect
-*
-* TODO: Create the XTextArea class and the XScrollPanel class
-* */
-
 /**
  * Entry point of the application
  *

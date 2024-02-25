@@ -8,7 +8,7 @@ In this markdown, the build and settings configuration for Gradle are put as a b
 >     id 'java'  
 > }  
 > 
-> group 'com._4th_dimension_softwares'  
+> group 'com._4th_dimension_software'  
 > version '0.5-WORK-IN-PROGRESS'  
 > 
 > repositories {  

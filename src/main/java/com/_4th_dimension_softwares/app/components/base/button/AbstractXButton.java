@@ -225,11 +225,11 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 					.size()), this.appearance.getBorderColorsAsArray());
 
 				g2D.setPaint(lgp);
-				g2D.setStroke(new BasicStroke(2, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER));
 			}
 			else
 				g2D.setColor(this.appearance.getBorderModel().getColorModel().getColors().get(0));
 
+			g2D.setStroke(new BasicStroke(this.appearance.getBorderModel().getThickness(), BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER));
 			// Draw border
 			g2D.drawRoundRect(x, y, w, h, r, r);
 		}

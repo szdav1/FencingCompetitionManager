@@ -1,4 +1,4 @@
-package com._4th_dimension_softwares.app.components.base.textcontainers.textfield;
+package com._4th_dimension_softwares.app.components.base.text.field;
 
 import java.awt.*;
 
@@ -89,11 +89,11 @@ public abstract class AbstractXTextField extends JTextField implements XComponen
 					.size()), this.appearance.getBorderColorsAsArray());
 
 				g2D.setPaint(lgp);
-				g2D.setStroke(new BasicStroke(2, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER));
 			}
 			else
 				g2D.setColor(this.appearance.getBorderModel().getColorModel().getColors().get(0));
 
+			g2D.setStroke(new BasicStroke(this.appearance.getBorderModel().getThickness(), BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER));
 			// Draw border
 			g2D.drawRoundRect(x, y, w, h, r, r);
 		}

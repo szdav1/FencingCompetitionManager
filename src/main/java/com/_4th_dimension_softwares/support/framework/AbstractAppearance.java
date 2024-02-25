@@ -20,6 +20,9 @@ public abstract class AbstractAppearance {
 	protected ImageIcon icon1;
 	protected ImageIcon icon2;
 
+	protected AbstractAppearance() {
+	}
+
 	public AbstractAppearance(ColorThemeModel colorThemeModel) {
 		this.backgrounds = colorThemeModel.getBackgroundModel().getColors();
 		this.foregrounds = colorThemeModel.getForegroundModel().getColors();

@@ -1,14 +1,12 @@
 package com._4th_dimension_softwares.app.frame;
 
 import java.awt.BorderLayout;
-import java.awt.Image;
 
 import javax.swing.JComponent;
 
 import com._4th_dimension_softwares.app.components.base.panel.XPanel;
 import com._4th_dimension_softwares.support.consts.PositionConstants;
 import com._4th_dimension_softwares.support.framework.Appearance;
-import com._4th_dimension_softwares.support.framework.Appearances;
 
 /**
  * The <code>XFrame</code> is the main frame of the application. Everything
