@@ -3,6 +3,7 @@ package com._4th_dimension_softwares.support.framework;
 import java.awt.Color;
 import java.awt.Font;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.ImageIcon;
@@ -21,6 +22,12 @@ public abstract class AbstractAppearance {
 	protected ImageIcon icon2;
 
 	protected AbstractAppearance() {
+		this.backgrounds = new ArrayList<>(List.of(Color.black));
+		this.foregrounds = new ArrayList<>(List.of(Color.white));
+		this.borderModel = new BorderModel();
+		this.font = new Font(Font.MONOSPACED, Font.PLAIN, SizeData.FONT_SIZE);
+		this.icon1 = null;
+		this.icon2 = null;
 	}
 
 	public AbstractAppearance(ColorThemeModel colorThemeModel) {

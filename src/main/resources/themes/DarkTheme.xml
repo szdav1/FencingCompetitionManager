@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DarkTheme>
     <appearance applyTo="window">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[0,0,0,255][128,128,128,255]"/>
         <icon1 source=""/>
     </appearance>
 </DarkTheme>
