@@ -86,6 +86,13 @@ public class XLabel extends AbstractXLabel {
 		super(x, y, width, height, text, frame, appearance);
 	}
 
+	/**
+	 * Centers the content of the label horizontally and vertically.
+	 * This method is a shortcut to the default <code>setHorizontalAlignment()</code>
+	 * called with <code>SwingConstants.CENTER</code> passed into it and
+	 * the <code>setVerticalAlignment()</code> called with <code>SwingConstants.CENTER</code>
+	 * passed into it.
+	 */
 	public void centerContent() {
 		this.setHorizontalAlignment(SwingConstants.CENTER);
 		this.setVerticalAlignment(SwingConstants.CENTER);
