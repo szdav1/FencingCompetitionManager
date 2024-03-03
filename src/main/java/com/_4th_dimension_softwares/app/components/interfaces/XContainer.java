@@ -16,7 +16,8 @@ public interface XContainer {
 	/**
 	 * Puts the specified component on the scene.
 	 * The position constant is used to determine the
-	 * Z coordinate of the component.
+	 * Z coordinate of the component or the position of
+	 * the component in a BorderLayout space.
 	 *
 	 * @param component         The component that should be added to the scene
 	 * @param positionConstants The Z position on which the component should be placed
@@ -26,7 +27,9 @@ public interface XContainer {
 	/**
 	 * Puts the specified component on the scene.
 	 * The Z coordinate of the component is going
-	 * to be MID (5) be default.
+	 * to be MID (5) be default, or if the <code>LayoutManager</code>
+	 * used inside the implementing class is a <code>BorderLayout</code> layout manager,
+	 * the <code>CENTER</code> value is used as default.
 	 *
 	 * @param component The component that should be added to the scene
 	 */

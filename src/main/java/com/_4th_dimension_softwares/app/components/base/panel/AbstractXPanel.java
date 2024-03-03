@@ -42,8 +42,6 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
 
 	@Override
 	protected void paintComponent(Graphics g) {
-
-
 		// Cast Graphics to Graphics2D
 		Graphics2D g2D = (Graphics2D) g;
 		g2D.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);

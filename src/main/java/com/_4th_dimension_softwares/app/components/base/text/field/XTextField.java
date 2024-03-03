@@ -9,7 +9,7 @@ import com._4th_dimension_softwares.support.framework.Appearance;
 
 /**
  * The XTextField class is an extended representation
- * of Swing's <code>JPanel</code> class. It works similarly to
+ * of Swing's <code>JTextField</code> class. It works similarly to
  * <code>JTextField</code>. It acts as an input field.
  * <p></p>
  * The extended means that just by passing in an Appearance
@@ -58,7 +58,7 @@ public class XTextField extends AbstractXTextField {
 	 * similar to a <code>JTextField</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param dimension  The dimension of the text field
+	 * @param dimension  The Dimension of the text field
 	 * @param text       The default text of the text field
 	 * @param frame      The main frame of the application
 	 * @param appearance The <code>Appearance</code> that's values
@@ -73,7 +73,7 @@ public class XTextField extends AbstractXTextField {
 	 * similar to a <code>JTextField</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param dimension  The dimension of the text field
+	 * @param dimension  The Dimension of the text field
 	 * @param frame      The main frame of the application
 	 * @param appearance The <code>Appearance</code> that's values
 	 *                   should be implemented on this label

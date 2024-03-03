@@ -59,7 +59,7 @@ public class XButton extends AbstractXButton {
 	 * similar to a <code>XButton</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param dimension  The dimension of the button
+	 * @param dimension  The Dimension of the button
 	 * @param text       The text of the button
 	 * @param frame      The main frame of the application
 	 * @param type       The type of the button (<code>ButtonType.BACKGROUND_CHANGER, FOREGROUND_CHANGER, ICON_CHANGER</code>)
@@ -75,7 +75,7 @@ public class XButton extends AbstractXButton {
 	 * similar to a <code>XButton</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param dimension  The dimension of the button
+	 * @param dimension  The Dimension of the button
 	 * @param frame      The main frame of the application
 	 * @param type       The type of the button (<code>ButtonType.BACKGROUND_CHANGER, FOREGROUND_CHANGER, ICON_CHANGER</code>)
 	 * @param appearance The Appearance that's values should be

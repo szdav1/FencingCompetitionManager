@@ -11,7 +11,7 @@ import com._4th_dimension_softwares.support.consts.PositionConstants;
 import com._4th_dimension_softwares.support.framework.Appearance;
 
 /**
- * The XPanel class is an extended representation
+ * The <code>XPanel</code> class is an extended representation
  * of Swing's <code>JPanel</code> class. It works similarly to
  * <code>JPanel</code>. It acts as a container, it can have different
  * <code>LayoutManager</code>s.

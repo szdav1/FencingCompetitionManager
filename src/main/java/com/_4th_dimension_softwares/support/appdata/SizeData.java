@@ -20,6 +20,15 @@ public final class SizeData {
 	public static final int FONT_SIZE = SCREEN_WIDTH/130;
 	public static final int BORDER_SIZE = 2;
 
+	// Scroll bar size and Dimension
+	public static final int V_SCROLL_BAR_WIDTH = 30;
+	public static final int V_SCROLL_BAR_HEIGHT = 30;
+	public static final Dimension V_SCROLL_BAR_DIMENSION = new Dimension(V_SCROLL_BAR_WIDTH, V_SCROLL_BAR_HEIGHT);
+
+	public static final int H_SCROLL_BAR_WIDTH = 30;
+	public static final int H_SCROLL_BAR_HEIGHT = 30;
+	public static final Dimension H_SCROLL_BAR_DIMENSION = new Dimension(H_SCROLL_BAR_WIDTH, H_SCROLL_BAR_HEIGHT);
+
 	// Not instantiatable
 	private SizeData() {
 	}

@@ -6,8 +6,8 @@ import com._4th_dimension_softwares.app.frame.XFrame;
 import com._4th_dimension_softwares.support.framework.Appearance;
 
 /**
- * The XTextField class is an extended representation
- * of Swing's <code>JPanel</code> class. It works similarly to
+ * The XTextArea class is an extended representation
+ * of Swing's <code>JTextArea</code> class. It works similarly to
  * <code>JTextField</code>. It acts as an input field.
  * <p></p>
  * The extended means that just by passing in an Appearance
@@ -52,11 +52,11 @@ import com._4th_dimension_softwares.support.framework.Appearance;
  */
 public class XTextArea extends AbstractXTextArea {
 	/**
-	 * Constructs an <code>XTextField</code> object. This object is
-	 * similar to a <code>JTextField</code> object, only this is much
+	 * Constructs an <code>XTextArea</code> object. This object is
+	 * similar to a <code>JTextArea</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param dimension  The dimension of the text field
+	 * @param dimension  The Dimension of the text field
 	 * @param text       The default text of the text field
 	 * @param frame      The main frame of the application
 	 * @param appearance The <code>Appearance</code> that's values
@@ -67,11 +67,11 @@ public class XTextArea extends AbstractXTextArea {
 	}
 
 	/**
-	 * Constructs an <code>XTextField</code> object. This object is
-	 * similar to a <code>JTextField</code> object, only this is much
+	 * Constructs an <code>XTextArea</code> object. This object is
+	 * similar to a <code>JTextArea</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param dimension  The dimension of the text field
+	 * @param dimension  The Dimension of the text field
 	 * @param frame      The main frame of the application
 	 * @param appearance The <code>Appearance</code> that's values
 	 *                   should be implemented on this label
@@ -81,8 +81,8 @@ public class XTextArea extends AbstractXTextArea {
 	}
 
 	/**
-	 * Constructs an <code>XTextField</code> object. This object is
-	 * similar to a <code>JTextField</code> object, only this is much
+	 * Constructs an <code>XTextArea</code> object. This object is
+	 * similar to a <code>JTextArea</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
 	 * @param x          The X coordinate of the text field in no-layout manager space
@@ -99,8 +99,8 @@ public class XTextArea extends AbstractXTextArea {
 	}
 
 	/**
-	 * Constructs an <code>XTextField</code> object. This object is
-	 * similar to a <code>JTextField</code> object, only this is much
+	 * Constructs an <code>XTextArea</code> object. This object is
+	 * similar to a <code>JTextArea</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
 	 * @param x          The X coordinate of the text field in no-layout manager space
