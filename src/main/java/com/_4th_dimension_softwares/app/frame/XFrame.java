@@ -5,8 +5,10 @@ import java.awt.BorderLayout;
 import javax.swing.JComponent;
 
 import com._4th_dimension_softwares.app.components.base.panel.XPanel;
+import com._4th_dimension_softwares.app.components.complex.ui.sidebar.Sidebar;
 import com._4th_dimension_softwares.support.consts.PositionConstants;
 import com._4th_dimension_softwares.support.framework.Appearance;
+import com._4th_dimension_softwares.support.framework.Appearances;
 
 /**
  * The <code>XFrame</code> is the main frame of the application. Everything
@@ -21,7 +23,10 @@ import com._4th_dimension_softwares.support.framework.Appearance;
  * @author szd
  */
 public class XFrame extends AbstractXFrame {
+	// Content panel
 	private final XPanel contentPanel;
+	// Frame parts
+	private final Sidebar sidebar;
 
 	/**
 	 * Constructs an <code>XFrame</code> object. This object is
@@ -35,8 +40,15 @@ public class XFrame extends AbstractXFrame {
 		// Basic setup for the window
 		super(title, appearance);
 
+		// Instantiate and set the content panel
 		this.contentPanel = new XPanel(0, 0, this.getWidth(), this.getHeight(), new BorderLayout(), this, appearance);
 		this.setContentPane(this.contentPanel);
+
+		// Instantiate and add the frame part components
+		this.sidebar = new Sidebar(this, Appearances.get("sidebar"));
+
+		// Add frame parts to the frame
+		this.addComponent(this.sidebar, PositionConstants.LEFT_POSITION);
 	}
 
 	@Override

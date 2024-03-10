@@ -54,12 +54,12 @@ public enum PositionConstants {
      * Redefines the WEST value of the
      * BorderLayout layout manager.
      */
-    RIGHT_POSITION(BorderLayout.WEST),
+    RIGHT_POSITION(BorderLayout.EAST),
     /**
      * Redefines the EAST value of the
      * BorderLayout layout manager.
      */
-    LEFT_POSITION(BorderLayout.EAST);
+    LEFT_POSITION(BorderLayout.WEST);
 
     private final Integer layoutLevel;
 

@@ -1,8 +1,5 @@
 package com._4th_dimension_softwares.app.run;
 
-import java.awt.Dimension;
-
-import com._4th_dimension_softwares.app.components.base.scrollpanel.XScrollPanel;
 import com._4th_dimension_softwares.app.frame.XFrame;
 import com._4th_dimension_softwares.support.framework.Appearances;
 import com._4th_dimension_softwares.support.framework.interpreter.ColorThemeInterpreter;
@@ -23,6 +20,5 @@ public final class App {
 		// Interpret the specified color theme and open the application window
 		ColorThemeInterpreter.interpretColorTheme(Resources.get("/themes/DarkTheme.xml"));
 		this.frame = new XFrame("CompetitionManager 0.5-WORK-IN-PROGRESS", Appearances.get("window"));
-		this.frame.setLayout(null);
 	}
 }

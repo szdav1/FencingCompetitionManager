@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DarkTheme>
     <appearance applyTo="window">
-        <background colors="[100,100,100,255][128,128,128,255]"/>
-        <icon1 source=""/>
+        <background colors="[0,0,0,255]"/>
     </appearance>
 
-    <appearance applyTo="ScrollPanel">
-        <background colors="[0,0,0,255][128,128,128,255]"/>
-    </appearance>
-
-    <appearance applyTo="ScrollBar">
-        <background colors="[0,0,0,255][0,0,255,255]"/>
-        <foreground colors="[255,0,0,255]"/>
+    <appearance applyTo="sidebar">
+        <background colors="[0,0,255,255][255,0,0,255]"/>
     </appearance>
 </DarkTheme>

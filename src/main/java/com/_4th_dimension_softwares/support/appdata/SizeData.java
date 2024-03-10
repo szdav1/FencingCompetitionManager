@@ -29,6 +29,11 @@ public final class SizeData {
 	public static final int H_SCROLL_BAR_HEIGHT = 30;
 	public static final Dimension H_SCROLL_BAR_DIMENSION = new Dimension(H_SCROLL_BAR_WIDTH, H_SCROLL_BAR_HEIGHT);
 
+	// Sidebar size and Dimension
+	public static final int SIDEBAR_WIDTH = SCREEN_WIDTH*5/100;
+	public static final int SIDEBAR_HEIGHT = SCREEN_HEIGHT;
+	public static final Dimension SIDEBAR_DIMENSION = new Dimension(SIDEBAR_WIDTH, SIDEBAR_HEIGHT);
+
 	// Not instantiatable
 	private SizeData() {
 	}
