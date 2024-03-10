@@ -7,11 +7,16 @@ import javax.swing.JFrame;
 import com._4th_dimension_softwares.app.components.interfaces.XContainer;
 import com._4th_dimension_softwares.support.appdata.SizeData;
 import com._4th_dimension_softwares.support.framework.Appearance;
+import com._4th_dimension_softwares.support.framework.Appearances;
 
 public abstract class AbstractXFrame extends JFrame implements XContainer {
-	protected AbstractXFrame(String title, Appearance appearance) {
+	protected Appearance appearance;
+
+	protected AbstractXFrame(String title, String appearanceName) {
+		this.appearance = Appearances.get(appearanceName);
+
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setIconImage(appearance.getIcon1() == null ? null : appearance.getIcon1().getImage());
+		this.setIconImage(this.appearance.getIcon1() == null ? null : this.appearance.getIcon1().getImage());
 		this.setTitle(title);
 		this.setUndecorated(true);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);

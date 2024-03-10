@@ -4,7 +4,7 @@ import com._4th_dimension_softwares.app.frame.XFrame;
 import com._4th_dimension_softwares.support.framework.Appearance;
 
 public final class Sidebar extends AbstractSidebar {
-	public Sidebar(XFrame frame, Appearance appearance) {
-		super(frame, appearance);
+	public Sidebar(XFrame frame, String appearanceName) {
+		super(frame, appearanceName);
 	}
 }

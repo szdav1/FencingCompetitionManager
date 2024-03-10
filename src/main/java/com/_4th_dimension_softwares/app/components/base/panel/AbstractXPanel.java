@@ -8,14 +8,15 @@ import com._4th_dimension_softwares.app.components.interfaces.XComponent;
 import com._4th_dimension_softwares.app.components.interfaces.XContainer;
 import com._4th_dimension_softwares.app.frame.XFrame;
 import com._4th_dimension_softwares.support.framework.Appearance;
+import com._4th_dimension_softwares.support.framework.Appearances;
 import com._4th_dimension_softwares.support.util.Util;
 
 public abstract class AbstractXPanel extends JLayeredPane implements XComponent, XContainer {
 	protected Appearance appearance;
 	protected final XFrame frame;
 
-	protected AbstractXPanel(Dimension dimension, LayoutManager layoutManager, XFrame frame, Appearance appearance) {
-		this.appearance = appearance;
+	protected AbstractXPanel(Dimension dimension, LayoutManager layoutManager, XFrame frame, String appearanceName) {
+		this.appearance = Appearances.get(appearanceName);
 		this.frame = frame;
 
 		this.setLayout(layoutManager);
@@ -23,12 +24,12 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
 		this.setBounds(new Rectangle(0, 0, dimension.width, dimension.height));
 	}
 
-	protected AbstractXPanel(Dimension dimension, XFrame frame, Appearance appearance) {
-		this(dimension, new FlowLayout(FlowLayout.CENTER, 0, 0), frame, appearance);
+	protected AbstractXPanel(Dimension dimension, XFrame frame, String appearanceName) {
+		this(dimension, new FlowLayout(FlowLayout.CENTER, 0, 0), frame, appearanceName);
 	}
 
-	protected AbstractXPanel(int x, int y, int width, int height, LayoutManager layoutManager, XFrame frame, Appearance appearance) {
-		this.appearance = appearance;
+	protected AbstractXPanel(int x, int y, int width, int height, LayoutManager layoutManager, XFrame frame, String appearanceName) {
+		this.appearance = Appearances.get(appearanceName);
 		this.frame = frame;
 
 		this.setLayout(layoutManager);
@@ -36,8 +37,8 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
 		this.setPreferredSize(new Dimension(width, height));
 	}
 
-	protected AbstractXPanel(int x, int y, int width, int height, XFrame frame, Appearance appearance) {
-		this(x, y, width, height, new FlowLayout(FlowLayout.CENTER, 0, 0), frame, appearance);
+	protected AbstractXPanel(int x, int y, int width, int height, XFrame frame, String appearanceName) {
+		this(x, y, width, height, new FlowLayout(FlowLayout.CENTER, 0, 0), frame, appearanceName);
 	}
 
 	@Override

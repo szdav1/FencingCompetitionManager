@@ -31,10 +31,10 @@ public class XScrollBarUI extends AbstractXScrollBarUI {
 	 * similar to a <code>BasicScrollBarUI</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param appearance The Appearance that's values should be
-	 *                   implemented on this scroll bar UI
+	 * @param appearanceName The name of the Appearance that's values should be
+	 *                       implemented on this scrollbar UI
 	 */
-	public XScrollBarUI(Appearance appearance) {
-		super(appearance);
+	public XScrollBarUI(String appearanceName) {
+		super(appearanceName);
 	}
 }

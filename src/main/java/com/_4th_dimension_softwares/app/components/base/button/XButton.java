@@ -59,15 +59,15 @@ public class XButton extends AbstractXButton {
 	 * similar to a <code>XButton</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param dimension  The Dimension of the button
-	 * @param text       The text of the button
-	 * @param frame      The main frame of the application
-	 * @param type       The type of the button (<code>ButtonType.BACKGROUND_CHANGER, FOREGROUND_CHANGER, ICON_CHANGER</code>)
-	 * @param appearance The Appearance that's values should be
-	 *                   implemented on this panel
+	 * @param dimension      The Dimension of the button
+	 * @param text           The text of the button
+	 * @param frame          The main frame of the application
+	 * @param type           The type of the button (<code>ButtonType.BACKGROUND_CHANGER, FOREGROUND_CHANGER, ICON_CHANGER</code>)
+	 * @param appearanceName The name of the <code>Appearance</code> that's values
+	 *                       should be implemented on this button
 	 */
-	public XButton(Dimension dimension, String text, XFrame frame, ButtonType type, Appearance appearance) {
-		super(dimension, text, frame, type, appearance);
+	public XButton(Dimension dimension, String text, XFrame frame, ButtonType type, String appearanceName) {
+		super(dimension, text, frame, type, appearanceName);
 	}
 
 	/**
@@ -75,14 +75,14 @@ public class XButton extends AbstractXButton {
 	 * similar to a <code>XButton</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param dimension  The Dimension of the button
-	 * @param frame      The main frame of the application
-	 * @param type       The type of the button (<code>ButtonType.BACKGROUND_CHANGER, FOREGROUND_CHANGER, ICON_CHANGER</code>)
-	 * @param appearance The Appearance that's values should be
-	 *                   implemented on this panel
+	 * @param dimension      The Dimension of the button
+	 * @param frame          The main frame of the application
+	 * @param type           The type of the button (<code>ButtonType.BACKGROUND_CHANGER, FOREGROUND_CHANGER, ICON_CHANGER</code>)
+	 * @param appearanceName The name of the <code>Appearance</code> that's values
+	 *                       should be implemented on this button
 	 */
-	public XButton(Dimension dimension, XFrame frame, ButtonType type, Appearance appearance) {
-		super(dimension, frame, type, appearance);
+	public XButton(Dimension dimension, XFrame frame, ButtonType type, String appearanceName) {
+		super(dimension, frame, type, appearanceName);
 	}
 
 	/**
@@ -90,18 +90,18 @@ public class XButton extends AbstractXButton {
 	 * similar to a <code>XButton</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param x          The X coordinate of the button in no-layout manager space
-	 * @param y          The Y coordinate of the button in no-layout manager space
-	 * @param width      The width of the button
-	 * @param height     The height of the button
-	 * @param text       The text of the button
-	 * @param frame      The main frame of the application
-	 * @param type       The type of the button (<code>ButtonType.BACKGROUND_CHANGER, FOREGROUND_CHANGER, ICON_CHANGER</code>)
-	 * @param appearance The Appearance that's values should be
-	 *                   implemented on this panel
+	 * @param x              The X coordinate of the button in no-layout manager space
+	 * @param y              The Y coordinate of the button in no-layout manager space
+	 * @param width          The width of the button
+	 * @param height         The height of the button
+	 * @param text           The text of the button
+	 * @param frame          The main frame of the application
+	 * @param type           The type of the button (<code>ButtonType.BACKGROUND_CHANGER, FOREGROUND_CHANGER, ICON_CHANGER</code>)
+	 * @param appearanceName The name of the <code>Appearance</code> that's values
+	 *                       should be implemented on this button
 	 */
-	public XButton(int x, int y, int width, int height, String text, XFrame frame, ButtonType type, Appearance appearance) {
-		super(x, y, width, height, text, frame, type, appearance);
+	public XButton(int x, int y, int width, int height, String text, XFrame frame, ButtonType type, String appearanceName) {
+		super(x, y, width, height, text, frame, type, appearanceName);
 	}
 
 	/**
@@ -109,17 +109,17 @@ public class XButton extends AbstractXButton {
 	 * similar to a <code>XButton</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param x          The X coordinate of the button in no-layout manager space
-	 * @param y          The Y coordinate of the button in no-layout manager space
-	 * @param width      The width of the button
-	 * @param height     The height of the button
-	 * @param frame      The main frame of the application
-	 * @param type       The type of the button (<code>ButtonType.BACKGROUND_CHANGER, FOREGROUND_CHANGER, ICON_CHANGER</code>)
-	 * @param appearance The Appearance that's values should be
-	 *                   implemented on this panel
+	 * @param x              The X coordinate of the button in no-layout manager space
+	 * @param y              The Y coordinate of the button in no-layout manager space
+	 * @param width          The width of the button
+	 * @param height         The height of the button
+	 * @param frame          The main frame of the application
+	 * @param type           The type of the button (<code>ButtonType.BACKGROUND_CHANGER, FOREGROUND_CHANGER, ICON_CHANGER</code>)
+	 * @param appearanceName The name of the <code>Appearance</code> that's values
+	 *                       should be implemented on this button
 	 */
-	public XButton(int x, int y, int width, int height, XFrame frame, ButtonType type, Appearance appearance) {
-		super(x, y, width, height, frame, type, appearance);
+	public XButton(int x, int y, int width, int height, XFrame frame, ButtonType type, String appearanceName) {
+		super(x, y, width, height, frame, type, appearanceName);
 	}
 
 	@Override

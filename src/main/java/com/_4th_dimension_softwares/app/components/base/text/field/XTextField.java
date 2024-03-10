@@ -43,9 +43,6 @@ import com._4th_dimension_softwares.support.framework.Appearance;
  * method is invoked at the end of the overridden <code>paintComponent()</code>
  * method to draw the desired text on the component.
  * <p></p>
- * The icon similarly to the text is rendered using the default
- * rendering method defined by swing.
- * <p></p>
  * Important
  * <p>For painting the background: <code>VALUE_RENDER_QUALITY</code></p>
  * <p>For painting the border: <code>VALUE_ANTIALIAS_ON</code></p>
@@ -58,14 +55,14 @@ public class XTextField extends AbstractXTextField {
 	 * similar to a <code>JTextField</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param dimension  The Dimension of the text field
-	 * @param text       The default text of the text field
-	 * @param frame      The main frame of the application
-	 * @param appearance The <code>Appearance</code> that's values
-	 *                   should be implemented on this label
+	 * @param dimension      The Dimension of the text field
+	 * @param text           The default text of the text field
+	 * @param frame          The main frame of the application
+	 * @param appearanceName The name of the <code>Appearance</code> that's values
+	 *                       should be implemented on this text field
 	 */
-	public XTextField(Dimension dimension, String text, XFrame frame, Appearance appearance) {
-		super(dimension, text, frame, appearance);
+	public XTextField(Dimension dimension, String text, XFrame frame, String appearanceName) {
+		super(dimension, text, frame, appearanceName);
 	}
 
 	/**
@@ -73,13 +70,13 @@ public class XTextField extends AbstractXTextField {
 	 * similar to a <code>JTextField</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param dimension  The Dimension of the text field
-	 * @param frame      The main frame of the application
-	 * @param appearance The <code>Appearance</code> that's values
-	 *                   should be implemented on this label
+	 * @param dimension      The Dimension of the text field
+	 * @param frame          The main frame of the application
+	 * @param appearanceName The name of the <code>Appearance</code> that's values
+	 *                       should be implemented on this text field
 	 */
-	public XTextField(Dimension dimension, XFrame frame, Appearance appearance) {
-		super(dimension, frame, appearance);
+	public XTextField(Dimension dimension, XFrame frame, String appearanceName) {
+		super(dimension, frame, appearanceName);
 	}
 
 	/**
@@ -87,17 +84,17 @@ public class XTextField extends AbstractXTextField {
 	 * similar to a <code>JTextField</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param x          The X coordinate of the text field in no-layout manager space
-	 * @param y          The Y coordinate of the text field in no-layout manager space
-	 * @param width      The width of the text field
-	 * @param height     The height of the text field
-	 * @param text       The default text of the text field
-	 * @param frame      The main frame of the application
-	 * @param appearance The <code>Appearance</code> that's values
-	 *                   should be implemented on this label
+	 * @param x              The X coordinate of the text field in no-layout manager space
+	 * @param y              The Y coordinate of the text field in no-layout manager space
+	 * @param width          The width of the text field
+	 * @param height         The height of the text field
+	 * @param text           The default text of the text field
+	 * @param frame          The main frame of the application
+	 * @param appearanceName The name of the <code>Appearance</code> that's values
+	 *                       should be implemented on this text field
 	 */
-	public XTextField(int x, int y, int width, int height, String text, XFrame frame, Appearance appearance) {
-		super(x, y, width, height, text, frame, appearance);
+	public XTextField(int x, int y, int width, int height, String text, XFrame frame, String appearanceName) {
+		super(x, y, width, height, text, frame, appearanceName);
 	}
 
 	/**
@@ -105,16 +102,16 @@ public class XTextField extends AbstractXTextField {
 	 * similar to a <code>JTextField</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param x          The X coordinate of the text field in no-layout manager space
-	 * @param y          The Y coordinate of the text field in no-layout manager space
-	 * @param width      The width of the text field
-	 * @param height     The height of the text field
-	 * @param frame      The main frame of the application
-	 * @param appearance The <code>Appearance</code> that's values
-	 *                   should be implemented on this label
+	 * @param x              The X coordinate of the text field in no-layout manager space
+	 * @param y              The Y coordinate of the text field in no-layout manager space
+	 * @param width          The width of the text field
+	 * @param height         The height of the text field
+	 * @param frame          The main frame of the application
+	 * @param appearanceName The name of the <code>Appearance</code> that's values
+	 *                       should be implemented on this text field
 	 */
-	public XTextField(int x, int y, int width, int height, XFrame frame, Appearance appearance) {
-		super(x, y, width, height, frame, appearance);
+	public XTextField(int x, int y, int width, int height, XFrame frame, String appearanceName) {
+		super(x, y, width, height, frame, appearanceName);
 	}
 
 	/**

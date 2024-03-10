@@ -58,14 +58,14 @@ public class XLabel extends AbstractXLabel {
 	 * similar to a <code>JLabel</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param dimension  The Dimension of the label
-	 * @param text       The text of the label
-	 * @param frame      The main frame of the Application
-	 * @param appearance The <code>Appearance</code> that's values
-	 *                   should be implemented on this label
+	 * @param dimension      The Dimension of the label
+	 * @param text           The text of the label
+	 * @param frame          The main frame of the Application
+	 * @param appearanceName The name of the <code>Appearance</code> that's values
+	 *                       should be implemented on this label
 	 */
-	public XLabel(Dimension dimension, String text, XFrame frame, Appearance appearance) {
-		super(dimension, text, frame, appearance);
+	public XLabel(Dimension dimension, String text, XFrame frame, String appearanceName) {
+		super(dimension, text, frame, appearanceName);
 	}
 
 	/**
@@ -73,17 +73,17 @@ public class XLabel extends AbstractXLabel {
 	 * similar to a <code>JLabel</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param x          The X coordinate of the label in no-layout manager space
-	 * @param y          The Y coordinate of the label in no-layout manager space
-	 * @param width      The width of the label
-	 * @param height     The height of the label
-	 * @param text       The text of the label
-	 * @param frame      The main frame of the Application
-	 * @param appearance The <code>Appearance</code> that's values
-	 *                   should be implemented on this label
+	 * @param x              The X coordinate of the label in no-layout manager space
+	 * @param y              The Y coordinate of the label in no-layout manager space
+	 * @param width          The width of the label
+	 * @param height         The height of the label
+	 * @param text           The text of the label
+	 * @param frame          The main frame of the Application
+	 * @param appearanceName TThe name of the <code>Appearance</code> that's values
+	 *                       should be implemented on this label
 	 */
-	public XLabel(int x, int y, int width, int height, String text, XFrame frame, Appearance appearance) {
-		super(x, y, width, height, text, frame, appearance);
+	public XLabel(int x, int y, int width, int height, String text, XFrame frame, String appearanceName) {
+		super(x, y, width, height, text, frame, appearanceName);
 	}
 
 	/**

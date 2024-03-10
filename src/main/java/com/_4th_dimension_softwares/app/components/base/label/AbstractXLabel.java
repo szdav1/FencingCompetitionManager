@@ -7,14 +7,15 @@ import javax.swing.JLabel;
 import com._4th_dimension_softwares.app.components.interfaces.XComponent;
 import com._4th_dimension_softwares.app.frame.XFrame;
 import com._4th_dimension_softwares.support.framework.Appearance;
+import com._4th_dimension_softwares.support.framework.Appearances;
 import com._4th_dimension_softwares.support.util.Util;
 
 public abstract class AbstractXLabel extends JLabel implements XComponent {
 	protected Appearance appearance;
 	protected final XFrame frame;
 
-	protected AbstractXLabel(Dimension dimension, String text, XFrame frame, Appearance appearance) {
-		this.appearance = appearance;
+	protected AbstractXLabel(Dimension dimension, String text, XFrame frame, String appearanceName) {
+		this.appearance = Appearances.get(appearanceName);
 		this.frame = frame;
 
 		this.setIcon(appearance.getIcon1() == null ? appearance.getIcon2() : appearance.getIcon1());
@@ -25,8 +26,8 @@ public abstract class AbstractXLabel extends JLabel implements XComponent {
 		this.setBounds(new Rectangle(0, 0, dimension.width, dimension.height));
 	}
 
-	protected AbstractXLabel(int x, int y, int width, int height, String text, XFrame frame, Appearance appearance) {
-		this.appearance = appearance;
+	protected AbstractXLabel(int x, int y, int width, int height, String text, XFrame frame, String appearanceName) {
+		this.appearance = Appearances.get(appearanceName);
 		this.frame = frame;
 
 		this.setIcon(appearance.getIcon1() == null ? appearance.getIcon2() : appearance.getIcon1());

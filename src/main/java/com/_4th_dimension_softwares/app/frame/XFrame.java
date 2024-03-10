@@ -32,20 +32,20 @@ public class XFrame extends AbstractXFrame {
 	 * Constructs an <code>XFrame</code> object. This object is
 	 * the conductor of the actions in the application.
 	 *
-	 * @param title      The title of the application window
-	 * @param appearance The <code>Appearance</code> that is going to
-	 *                   be used to stylize the window
+	 * @param title          The title of the application window
+	 * @param appearanceName The name of the <code>Appearance</code> that is going to
+	 *                       be used to stylize the window
 	 */
-	public XFrame(String title, Appearance appearance) {
+	public XFrame(String title, String appearanceName) {
 		// Basic setup for the window
-		super(title, appearance);
+		super(title, appearanceName);
 
 		// Instantiate and set the content panel
-		this.contentPanel = new XPanel(0, 0, this.getWidth(), this.getHeight(), new BorderLayout(), this, appearance);
+		this.contentPanel = new XPanel(0, 0, this.getWidth(), this.getHeight(), new BorderLayout(), this, appearanceName);
 		this.setContentPane(this.contentPanel);
 
 		// Instantiate and add the frame part components
-		this.sidebar = new Sidebar(this, Appearances.get("sidebar"));
+		this.sidebar = new Sidebar(this, "sidebar");
 
 		// Add frame parts to the frame
 		this.addComponent(this.sidebar, PositionConstants.LEFT_POSITION);

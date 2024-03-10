@@ -54,14 +54,14 @@ public class XPanel extends AbstractXPanel {
 	 * similar to a <code>JPanel</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param dimension     The Dimension of the panel
-	 * @param layoutManager The LayoutManager of the panel
-	 * @param frame         The main frame of the Application
-	 * @param appearance    The Appearance that's values should be
-	 *                      implemented on this panel
+	 * @param dimension      The Dimension of the panel
+	 * @param layoutManager  The LayoutManager of the panel
+	 * @param frame          The main frame of the Application
+	 * @param appearanceName The name of the <code>Appearance</code> that's values
+	 *                       should be implemented on this panel
 	 */
-	public XPanel(Dimension dimension, LayoutManager layoutManager, XFrame frame, Appearance appearance) {
-		super(dimension, layoutManager, frame, appearance);
+	public XPanel(Dimension dimension, LayoutManager layoutManager, XFrame frame, String appearanceName) {
+		super(dimension, layoutManager, frame, appearanceName);
 	}
 
 	/**
@@ -69,13 +69,13 @@ public class XPanel extends AbstractXPanel {
 	 * similar to a <code>JPanel</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param dimension  The Dimension of the panel
-	 * @param frame      The main frame of the Application
-	 * @param appearance The Appearance that's values should be
-	 *                   implemented on this panel
+	 * @param dimension      The Dimension of the panel
+	 * @param frame          The main frame of the Application
+	 * @param appearanceName The name of the <code>Appearance</code> that's values
+	 *                       should be implemented on this panel
 	 */
-	public XPanel(Dimension dimension, XFrame frame, Appearance appearance) {
-		super(dimension, frame, appearance);
+	public XPanel(Dimension dimension, XFrame frame, String appearanceName) {
+		super(dimension, frame, appearanceName);
 	}
 
 	/**
@@ -83,17 +83,17 @@ public class XPanel extends AbstractXPanel {
 	 * similar to a <code>JPanel</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param x             The X coordinate of the panel in no-layout manager space
-	 * @param y             The Y coordinate of the panel in no-layout manager space
-	 * @param width         The width of the panel
-	 * @param height        The height of the panel
-	 * @param layoutManager The LayoutManager of the panel
-	 * @param frame         The main frame of the application
-	 * @param appearance    The Appearance that's values should be
-	 *                      implemented on this panel
+	 * @param x              The X coordinate of the panel in no-layout manager space
+	 * @param y              The Y coordinate of the panel in no-layout manager space
+	 * @param width          The width of the panel
+	 * @param height         The height of the panel
+	 * @param layoutManager  The LayoutManager of the panel
+	 * @param frame          The main frame of the application
+	 * @param appearanceName The name of the <code>Appearance</code> that's values
+	 *                       should be implemented on this panel
 	 */
-	public XPanel(int x, int y, int width, int height, LayoutManager layoutManager, XFrame frame, Appearance appearance) {
-		super(x, y, width, height, layoutManager, frame, appearance);
+	public XPanel(int x, int y, int width, int height, LayoutManager layoutManager, XFrame frame, String appearanceName) {
+		super(x, y, width, height, layoutManager, frame, appearanceName);
 	}
 
 	/**
@@ -101,16 +101,16 @@ public class XPanel extends AbstractXPanel {
 	 * similar to a <code>JPanel</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param x          The X coordinate of the panel in no-layout manager space
-	 * @param y          The Y coordinate of the panel in no-layout manager space
-	 * @param width      The width of the panel
-	 * @param height     The height of the panel
-	 * @param frame      The main frame of the application
-	 * @param appearance The Appearance that's values should be
-	 *                   implemented on this panel
+	 * @param x              The X coordinate of the panel in no-layout manager space
+	 * @param y              The Y coordinate of the panel in no-layout manager space
+	 * @param width          The width of the panel
+	 * @param height         The height of the panel
+	 * @param frame          The main frame of the application
+	 * @param appearanceName The name of the <code>Appearance</code> that's values
+	 *                       should be implemented on this panel
 	 */
-	public XPanel(int x, int y, int width, int height, XFrame frame, Appearance appearance) {
-		super(x, y, width, height, frame, appearance);
+	public XPanel(int x, int y, int width, int height, XFrame frame, String appearanceName) {
+		super(x, y, width, height, frame, appearanceName);
 	}
 
 	@Override

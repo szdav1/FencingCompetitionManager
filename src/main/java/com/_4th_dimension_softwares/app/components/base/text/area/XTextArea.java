@@ -56,14 +56,14 @@ public class XTextArea extends AbstractXTextArea {
 	 * similar to a <code>JTextArea</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param dimension  The Dimension of the text field
-	 * @param text       The default text of the text field
-	 * @param frame      The main frame of the application
-	 * @param appearance The <code>Appearance</code> that's values
-	 *                   should be implemented on this label
+	 * @param dimension      The Dimension of the text field
+	 * @param text           The default text of the text field
+	 * @param frame          The main frame of the application
+	 * @param appearanceName The name of the <code>Appearance</code> that's values
+	 *                       should be implemented on this text area
 	 */
-	public XTextArea(Dimension dimension, String text, XFrame frame, Appearance appearance) {
-		super(dimension, text, frame, appearance);
+	public XTextArea(Dimension dimension, String text, XFrame frame, String appearanceName) {
+		super(dimension, text, frame, appearanceName);
 	}
 
 	/**
@@ -71,13 +71,13 @@ public class XTextArea extends AbstractXTextArea {
 	 * similar to a <code>JTextArea</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param dimension  The Dimension of the text field
-	 * @param frame      The main frame of the application
-	 * @param appearance The <code>Appearance</code> that's values
-	 *                   should be implemented on this label
+	 * @param dimension      The Dimension of the text field
+	 * @param frame          The main frame of the application
+	 * @param appearanceName The name of the <code>Appearance</code> that's values
+	 *                       should be implemented on this text area
 	 */
-	public XTextArea(Dimension dimension, XFrame frame, Appearance appearance) {
-		super(dimension, frame, appearance);
+	public XTextArea(Dimension dimension, XFrame frame, String appearanceName) {
+		super(dimension, frame, appearanceName);
 	}
 
 	/**
@@ -85,17 +85,17 @@ public class XTextArea extends AbstractXTextArea {
 	 * similar to a <code>JTextArea</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param x          The X coordinate of the text field in no-layout manager space
-	 * @param y          The Y coordinate of the text field in no-layout manager space
-	 * @param width      The width of the text field
-	 * @param height     The height of the text field
-	 * @param text       The default text of the text field
-	 * @param frame      The main frame of the application
-	 * @param appearance The <code>Appearance</code> that's values
-	 *                   should be implemented on this label
+	 * @param x              The X coordinate of the text field in no-layout manager space
+	 * @param y              The Y coordinate of the text field in no-layout manager space
+	 * @param width          The width of the text field
+	 * @param height         The height of the text field
+	 * @param text           The default text of the text field
+	 * @param frame          The main frame of the application
+	 * @param appearanceName The name of the <code>Appearance</code> that's values
+	 *                       should be implemented on this text area
 	 */
-	public XTextArea(int x, int y, int width, int height, String text, XFrame frame, Appearance appearance) {
-		super(x, y, width, height, text, frame, appearance);
+	public XTextArea(int x, int y, int width, int height, String text, XFrame frame, String appearanceName) {
+		super(x, y, width, height, text, frame, appearanceName);
 	}
 
 	/**
@@ -103,16 +103,16 @@ public class XTextArea extends AbstractXTextArea {
 	 * similar to a <code>JTextArea</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param x          The X coordinate of the text field in no-layout manager space
-	 * @param y          The Y coordinate of the text field in no-layout manager space
-	 * @param width      The width of the text field
-	 * @param height     The height of the text field
-	 * @param frame      The main frame of the application
-	 * @param appearance The <code>Appearance</code> that's values
-	 *                   should be implemented on this label
+	 * @param x              The X coordinate of the text field in no-layout manager space
+	 * @param y              The Y coordinate of the text field in no-layout manager space
+	 * @param width          The width of the text field
+	 * @param height         The height of the text field
+	 * @param frame          The main frame of the application
+	 * @param appearanceName The name of the <code>Appearance</code> that's values
+	 *                       should be implemented on this text area
 	 */
-	public XTextArea(int x, int y, int width, int height, XFrame frame, Appearance appearance) {
-		super(x, y, width, height, frame, appearance);
+	public XTextArea(int x, int y, int width, int height, XFrame frame, String appearanceName) {
+		super(x, y, width, height, frame, appearanceName);
 	}
 
 	@Override

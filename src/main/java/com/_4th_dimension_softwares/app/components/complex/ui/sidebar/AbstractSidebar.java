@@ -6,7 +6,7 @@ import com._4th_dimension_softwares.support.appdata.SizeData;
 import com._4th_dimension_softwares.support.framework.Appearance;
 
 public abstract class AbstractSidebar extends XPanel {
-	protected AbstractSidebar(XFrame frame, Appearance appearance) {
-		super(SizeData.SIDEBAR_DIMENSION, frame, appearance);
+	protected AbstractSidebar(XFrame frame, String appearanceName) {
+		super(SizeData.SIDEBAR_DIMENSION, frame, appearanceName);
 	}
 }

@@ -2,8 +2,6 @@ package com._4th_dimension_softwares.app.components.base.scrollpanel.scrollbar;
 
 import java.awt.Dimension;
 
-import com._4th_dimension_softwares.support.framework.Appearance;
-
 /**
  * The <code>XScrollBar</code> class is an extended representation
  * of Swing's <code>JScrollBar</code> class. It works similarly to
@@ -23,13 +21,13 @@ public class XScrollBar extends AbstractXScrollBar {
 	 * similar to a <code>JScrollBar</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param dimension   The dimension of the scroll bar
-	 * @param orientation the orientation of the scroll bar (<code>JScrollBar.HORIZONTAL</code>, <code>JScrollBar.VERTICAL</code>)
-	 * @param appearance  The Appearance that's values should be
-	 *                    implemented on this panel
+	 * @param dimension      The dimension of the scroll bar
+	 * @param orientation    the orientation of the scroll bar (<code>JScrollBar.HORIZONTAL</code>, <code>JScrollBar.VERTICAL</code>)
+	 * @param appearanceName The name of the Appearance that's values should be
+	 *                       implemented on this scrollbar
 	 */
-	public XScrollBar(Dimension dimension, int orientation, Appearance appearance) {
-		super(dimension, orientation, appearance);
+	public XScrollBar(Dimension dimension, int orientation, String appearanceName) {
+		super(dimension, orientation, appearanceName);
 	}
 
 	/**
@@ -37,11 +35,11 @@ public class XScrollBar extends AbstractXScrollBar {
 	 * similar to a <code>JScrollBar</code> object, only this is much
 	 * easier to customize using an Appearance object.
 	 *
-	 * @param orientation the orientation of the scroll bar (<code>JScrollBar.HORIZONTAL</code>, <code>JScrollBar.VERTICAL</code>)
-	 * @param appearance  The Appearance that's values should be
-	 *                    implemented on this panel
+	 * @param orientation    the orientation of the scroll bar (<code>JScrollBar.HORIZONTAL</code>, <code>JScrollBar.VERTICAL</code>)
+	 * @param appearanceName The name of the Appearance that's values should be
+	 *                       implemented on this scrollbar
 	 */
-	public XScrollBar(int orientation, Appearance appearance) {
-		super(orientation, appearance);
+	public XScrollBar(int orientation, String appearanceName) {
+		super(orientation, appearanceName);
 	}
 }

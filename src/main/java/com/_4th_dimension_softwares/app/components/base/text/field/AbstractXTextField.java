@@ -7,14 +7,15 @@ import javax.swing.JTextField;
 import com._4th_dimension_softwares.app.components.interfaces.XComponent;
 import com._4th_dimension_softwares.app.frame.XFrame;
 import com._4th_dimension_softwares.support.framework.Appearance;
+import com._4th_dimension_softwares.support.framework.Appearances;
 import com._4th_dimension_softwares.support.util.Util;
 
 public abstract class AbstractXTextField extends JTextField implements XComponent {
 	protected Appearance appearance;
 	protected final XFrame frame;
 
-	protected AbstractXTextField(Dimension dimension, String text, XFrame frame, Appearance appearance) {
-		this.appearance = appearance;
+	protected AbstractXTextField(Dimension dimension, String text, XFrame frame, String appearanceName) {
+		this.appearance = Appearances.get(appearanceName);
 		this.frame = frame;
 
 		this.setText(text);
@@ -27,12 +28,12 @@ public abstract class AbstractXTextField extends JTextField implements XComponen
 		this.setPreferredSize(dimension);
 	}
 
-	protected AbstractXTextField(Dimension dimension, XFrame frame, Appearance appearance) {
-		this(dimension, "", frame, appearance);
+	protected AbstractXTextField(Dimension dimension, XFrame frame, String appearanceName) {
+		this(dimension, "", frame, appearanceName);
 	}
 
-	protected AbstractXTextField(int x, int y, int width, int height, String text, XFrame frame, Appearance appearance) {
-		this.appearance = appearance;
+	protected AbstractXTextField(int x, int y, int width, int height, String text, XFrame frame, String appearanceName) {
+		this.appearance = Appearances.get(appearanceName);
 		this.frame = frame;
 
 		this.setText(text);
@@ -45,8 +46,8 @@ public abstract class AbstractXTextField extends JTextField implements XComponen
 		this.setBounds(new Rectangle(x, y, width, height));
 	}
 
-	protected AbstractXTextField(int x, int y, int width, int height, XFrame frame, Appearance appearance) {
-		this(x, y, width, height, "", frame, appearance);
+	protected AbstractXTextField(int x, int y, int width, int height, XFrame frame, String appearanceName) {
+		this(x, y, width, height, "", frame, appearanceName);
 	}
 
 	@Override

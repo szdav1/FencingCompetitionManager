@@ -7,13 +7,14 @@ import javax.swing.JComponent;
 import javax.swing.plaf.basic.BasicScrollBarUI;
 
 import com._4th_dimension_softwares.support.framework.Appearance;
+import com._4th_dimension_softwares.support.framework.Appearances;
 import com._4th_dimension_softwares.support.util.Util;
 
 public abstract class AbstractXScrollBarUI extends BasicScrollBarUI {
 	protected Appearance appearance;
 
-	protected AbstractXScrollBarUI(Appearance appearance) {
-		this.appearance = appearance;
+	protected AbstractXScrollBarUI(String appearanceName) {
+		this.appearance = Appearances.get(appearanceName);
 	}
 
 	/**
@@ -54,7 +55,7 @@ public abstract class AbstractXScrollBarUI extends BasicScrollBarUI {
 
 		if (this.appearance.getBackgrounds().size() == 1)
 			g2D.setColor(this.appearance.getBackgrounds().get(0));
-		// Paint the track with a linear gradient paint
+			// Paint the track with a linear gradient paint
 		else {
 			lgp = new LinearGradientPaint(x, y, w, h, Util.calcEqualFracts(this.appearance.getBackgrounds().size()),
 				this.appearance.getBackgroundsAsArray());
@@ -85,7 +86,7 @@ public abstract class AbstractXScrollBarUI extends BasicScrollBarUI {
 		// Use single color
 		if (this.appearance.getForegrounds().size() == 1)
 			g2D.setColor(this.appearance.getForegrounds().get(0));
-		// Paint the track with a linear gradient paint
+			// Paint the track with a linear gradient paint
 		else {
 			gp = new GradientPaint(x, y, this.appearance.getForegrounds().get(0), w, h, this.appearance.getForegrounds().get(1));
 			g2D.setPaint(gp);

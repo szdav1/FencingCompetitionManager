@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import com._4th_dimension_softwares.app.components.interfaces.XComponent;
 import com._4th_dimension_softwares.app.frame.XFrame;
 import com._4th_dimension_softwares.support.framework.Appearance;
+import com._4th_dimension_softwares.support.framework.Appearances;
 import com._4th_dimension_softwares.support.util.Util;
 
 public abstract class AbstractXButton extends JButton implements MouseListener, XComponent {
@@ -21,8 +22,8 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 	protected final XFrame frame;
 	protected final ButtonType type;
 
-	protected AbstractXButton(Dimension dimension, String text, XFrame frame, ButtonType type, Appearance appearance) {
-		this.appearance = appearance;
+	protected AbstractXButton(Dimension dimension, String text, XFrame frame, ButtonType type, String appearanceName) {
+		this.appearance = Appearances.get(appearanceName);
 		this.frame = frame;
 		this.type = type;
 
@@ -38,12 +39,12 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 		this.addMouseListener(this);
 	}
 
-	protected AbstractXButton(Dimension dimension, XFrame frame, ButtonType type, Appearance appearance) {
-		this(dimension, "", frame, type, appearance);
+	protected AbstractXButton(Dimension dimension, XFrame frame, ButtonType type, String appearanceName) {
+		this(dimension, "", frame, type, appearanceName);
 	}
 
-	protected AbstractXButton(int x, int y, int width, int height, String text, XFrame frame, ButtonType type, Appearance appearance) {
-		this.appearance = appearance;
+	protected AbstractXButton(int x, int y, int width, int height, String text, XFrame frame, ButtonType type, String appearanceName) {
+		this.appearance = Appearances.get(appearanceName);
 		this.frame = frame;
 		this.type = type;
 
@@ -59,8 +60,8 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 		this.addMouseListener(this);
 	}
 
-	protected AbstractXButton(int x, int y, int width, int height, XFrame frame, ButtonType type, Appearance appearance) {
-		this(x, y, width, height, "", frame, type, appearance);
+	protected AbstractXButton(int x, int y, int width, int height, XFrame frame, ButtonType type, String appearanceName) {
+		this(x, y, width, height, "", frame, type, appearanceName);
 	}
 
 	/**
@@ -146,7 +147,7 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 				// If not, the (default) first color is painted
 
 				// If the button is pressed, the (default) first color is painted
-					// If not, the background is painted gradient
+				// If not, the background is painted gradient
 				g2D.setPaint(this.pressed ? mainColor : lgp);
 
 				// If the state of the button is normal, the (default) first color is painted
