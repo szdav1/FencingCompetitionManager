@@ -5,7 +5,7 @@
         <foreground colors="[255,0,0,255] [0,255,0,255] [0,0,255,255]"/>
         <border colors="[255,0,0,255] [0,255,0,255] [0,0,255,255]" thickness="@proportional" roundness="50"/>
         <font source="" family="Arial" ligature="normal" size="@proportional"/>
-        <icon1 source="src/test/resources/testIcon.png" widthPercentage="" heightPercentage=""/>
+        <icon1 source="/testIcon.png" widthPercentage="" heightPercentage=""/>
         <icon2 source="" widthPercentage="" heightPercentage=""/>
     </appearance>
 </darkTheme>

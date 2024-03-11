@@ -104,7 +104,7 @@ class AppearanceTest {
 		@Test
 		@DisplayName("The size of the icon should be 256x256")
 		void theSizeOfTheIconShouldBe256x256() {
-			ctm.setIconModel1(new IconModel("testIcon.png", "50", "50"));
+			ctm.setIconModel1(new IconModel("/testIcon.png", "50", "50"));
 			Appearance a = new Appearance(ctm);
 
 			Assertions.assertAll(

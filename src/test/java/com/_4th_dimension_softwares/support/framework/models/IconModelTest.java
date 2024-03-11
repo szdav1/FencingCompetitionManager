@@ -20,7 +20,7 @@ class IconModelTest {
 	@Test
 	@DisplayName("Should load the icon normally")
 	void shouldLoadTheIconNormally() {
-		im = new IconModel("testIcon.png");
+		im = new IconModel("/testIcon.png");
 
 		Assertions.assertEquals(MediaTracker.COMPLETE, im.getIcon().getImageLoadStatus());
 	}
@@ -28,7 +28,7 @@ class IconModelTest {
 	@Test
 	@DisplayName("The icon should be loaded with its default dimensions: w=512px, h=512px")
 	void theIconShouldHaveItsDefaultDimensions() {
-		im = new IconModel("testIcon.png");
+		im = new IconModel("/testIcon.png");
 
 		Assertions.assertAll(
 			() -> Assertions.assertEquals(512, im.getIcon().getIconWidth()),
@@ -39,7 +39,7 @@ class IconModelTest {
 	@Test
 	@DisplayName("The icon should be loaded with 50% smaller dimensions")
 	void shouldLoadIconWith50percentSmallerDimensions() {
-		im = new IconModel("testIcon.png", "50", "50");
+		im = new IconModel("/testIcon.png", "50", "50");
 		int actual = 512*50/100;
 
 		Assertions.assertAll(
@@ -52,7 +52,7 @@ class IconModelTest {
 	@ValueSource(strings = {"-43", "-78", "0", "jklfgl", "fö9845ö9[]{[}", "\\///=%()+!*"})
 	@DisplayName("Should load the icon with its default dimensions because every passed in data is invalid")
 	void shouldLoadTheIconWithItsDefaultDimensions(String str) {
-		im = new IconModel("testIcon.png", str, str);
+		im = new IconModel("/testIcon.png", str, str);
 
 		Assertions.assertAll(
 			() -> Assertions.assertEquals(512, im.getIcon().getIconWidth()),

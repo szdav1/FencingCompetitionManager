@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DarkTheme>
     <appearance applyTo="window">
-        <background colors="[0,0,0,255][128,128,128,255]"/>
-        <icon1 source=""/>
+        <background colors="[0,0,0,255]"/>
+        <font source="/fonts/Halimun-W7jn.ttf" ligature="normal" size="20"/>
     </appearance>
 </DarkTheme>
