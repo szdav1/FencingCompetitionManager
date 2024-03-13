@@ -1,9 +1,9 @@
 package com._4th_dimension_softwares.app.frame;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 
 import javax.swing.JComponent;
-import javax.swing.SwingUtilities;
 
 import com._4th_dimension_softwares.app.components.base.panel.XPanel;
 import com._4th_dimension_softwares.app.components.complex.ui.sidebar.Sidebar;
@@ -42,8 +42,6 @@ public class XFrame extends AbstractXFrame {
 		// Instantiate and set the content panel
 		this.contentPanel = new XPanel(new Dimension(this.getWidth(), this.getHeight()), new BorderLayout(), this, appearanceName);
 		this.setContentPane(this.contentPanel);
-
-		XPanel x = new XPanel(new Dimension(50, 50), this, "test");
 
 		// Instantiate and add the frame part components
 		// Sidebar

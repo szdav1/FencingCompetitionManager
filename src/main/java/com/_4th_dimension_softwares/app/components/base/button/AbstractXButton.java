@@ -239,7 +239,7 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 		// Paint Icon and Text
 		super.paintComponent(g);
 		// Needed in order for the displaying to work properly
-		this.setBorder(new LineBorder(Color.black, 0));
+		this.setBorder(null);
 
 		// Destroy the Graphics2D object as it is no longer needed
 		g2D.dispose();

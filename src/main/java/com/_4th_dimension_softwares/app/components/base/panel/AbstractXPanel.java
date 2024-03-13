@@ -94,6 +94,6 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
 		// Paint added components
 		super.paintComponent(g);
 		// Needed in order for the displaying to work properly
-		this.setBorder(new LineBorder(Color.black, 0));
+		this.setBorder(null);
 	}
 }
