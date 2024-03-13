@@ -39,27 +39,27 @@ public enum PositionConstants {
      * Redefines the NORTH value of the
      * BorderLayout layout manager.
      */
-    TOP_POSITION(BorderLayout.NORTH),
+    TOP_POSITION("North"),
     /**
      * Redefines the CENTER value of the
      * BorderLayout layout manager.
      */
-    CENTER_POSITION(BorderLayout.CENTER),
+    CENTER_POSITION("Center"),
     /**
      * Redefines the SOUTH value of the
      * BorderLayout layout manager.
      */
-    BOTTOM_POSITION(BorderLayout.SOUTH),
-    /**
-     * Redefines the WEST value of the
-     * BorderLayout layout manager.
-     */
-    RIGHT_POSITION(BorderLayout.EAST),
+    BOTTOM_POSITION("South"),
     /**
      * Redefines the EAST value of the
      * BorderLayout layout manager.
      */
-    LEFT_POSITION(BorderLayout.WEST);
+    RIGHT_POSITION("East"),
+    /**
+     * Redefines the WEST value of the
+     * BorderLayout layout manager.
+     */
+    LEFT_POSITION("West");
 
     private final Integer layoutLevel;
 

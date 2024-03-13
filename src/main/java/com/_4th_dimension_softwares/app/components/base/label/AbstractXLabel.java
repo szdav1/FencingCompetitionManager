@@ -3,6 +3,7 @@ package com._4th_dimension_softwares.app.components.base.label;
 import java.awt.*;
 
 import javax.swing.JLabel;
+import javax.swing.border.LineBorder;
 
 import com._4th_dimension_softwares.app.components.interfaces.XComponent;
 import com._4th_dimension_softwares.app.frame.XFrame;
@@ -88,6 +89,8 @@ public abstract class AbstractXLabel extends JLabel implements XComponent {
 
 		// Paint Icon and Text
 		super.paintComponent(g);
+		// Needed in order for the displaying to work properly
+		this.setBorder(new LineBorder(Color.black, 0));
 
 		// Destroy the Graphics2D object as it is no longer needed
 		g2D.dispose();

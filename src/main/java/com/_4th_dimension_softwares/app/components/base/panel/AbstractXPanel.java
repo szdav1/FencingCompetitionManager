@@ -3,6 +3,7 @@ package com._4th_dimension_softwares.app.components.base.panel;
 import java.awt.*;
 
 import javax.swing.JLayeredPane;
+import javax.swing.border.LineBorder;
 
 import com._4th_dimension_softwares.app.components.interfaces.XComponent;
 import com._4th_dimension_softwares.app.components.interfaces.XContainer;
@@ -92,5 +93,7 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
 
 		// Paint added components
 		super.paintComponent(g);
+		// Needed in order for the displaying to work properly
+		this.setBorder(new LineBorder(Color.black, 0));
 	}
 }

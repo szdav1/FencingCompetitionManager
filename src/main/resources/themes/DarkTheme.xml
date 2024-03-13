@@ -3,4 +3,12 @@
     <appearance applyTo="window">
         <background colors="[0,0,0,255]"/>
     </appearance>
+
+    <appearance applyTo="sidebar">
+        <background colors="[255,0,0,255][0,255,0,255]"/>
+    </appearance>
+
+    <appearance applyTo="test">
+        <background colors="[255,255,255,255]"/>
+    </appearance>
 </DarkTheme>

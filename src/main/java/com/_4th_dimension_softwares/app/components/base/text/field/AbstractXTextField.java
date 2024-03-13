@@ -3,6 +3,7 @@ package com._4th_dimension_softwares.app.components.base.text.field;
 import java.awt.*;
 
 import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
 
 import com._4th_dimension_softwares.app.components.interfaces.XComponent;
 import com._4th_dimension_softwares.app.frame.XFrame;
@@ -101,6 +102,8 @@ public abstract class AbstractXTextField extends JTextField implements XComponen
 
 		// Paint text
 		super.paintComponent(g);
+		// Needed in order for the displaying to work properly
+		this.setBorder(new LineBorder(Color.black, 0));
 
 		// Destroy the Graphics2D object as it is no longer needed
 		g2D.dispose();

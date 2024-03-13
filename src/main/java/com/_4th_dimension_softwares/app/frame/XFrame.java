@@ -1,14 +1,13 @@
 package com._4th_dimension_softwares.app.frame;
 
-import java.awt.BorderLayout;
+import java.awt.*;
 
 import javax.swing.JComponent;
+import javax.swing.SwingUtilities;
 
 import com._4th_dimension_softwares.app.components.base.panel.XPanel;
 import com._4th_dimension_softwares.app.components.complex.ui.sidebar.Sidebar;
 import com._4th_dimension_softwares.support.consts.PositionConstants;
-import com._4th_dimension_softwares.support.framework.Appearance;
-import com._4th_dimension_softwares.support.framework.Appearances;
 
 /**
  * The <code>XFrame</code> is the main frame of the application. Everything
@@ -41,32 +40,29 @@ public class XFrame extends AbstractXFrame {
 		super(title, appearanceName);
 
 		// Instantiate and set the content panel
-		this.contentPanel = new XPanel(0, 0, this.getWidth(), this.getHeight(), new BorderLayout(), this, appearanceName);
+		this.contentPanel = new XPanel(new Dimension(this.getWidth(), this.getHeight()), new BorderLayout(), this, appearanceName);
 		this.setContentPane(this.contentPanel);
 
-		// Instantiate and add the frame part components
-		this.sidebar = new Sidebar(this, "sidebar");
+		XPanel x = new XPanel(new Dimension(50, 50), this, "test");
 
-		// Add frame parts to the frame
-		this.addComponent(this.sidebar, PositionConstants.LEFT_POSITION);
+		// Instantiate and add the frame part components
+		// Sidebar
+		this.sidebar = new Sidebar(this, "sidebar");
 	}
 
 	@Override
 	public void addComponent(JComponent component, PositionConstants positionConstants) {
 		this.contentPanel.addComponent(component, positionConstants);
-		this.repaint();
 	}
 
 	@Override
 	public void addComponent(JComponent component) {
 		this.contentPanel.addComponent(component);
-		this.repaint();
 	}
 
 	@Override
 	public JComponent removeComponent(JComponent component) {
 		this.contentPanel.removeComponent(component);
-		this.repaint();
 
 		return component;
 	}

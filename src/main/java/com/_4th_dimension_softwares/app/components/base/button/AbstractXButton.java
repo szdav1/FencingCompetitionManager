@@ -7,6 +7,7 @@ import java.util.Optional;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.border.LineBorder;
 
 import com._4th_dimension_softwares.app.components.interfaces.XComponent;
 import com._4th_dimension_softwares.app.frame.XFrame;
@@ -237,6 +238,8 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 
 		// Paint Icon and Text
 		super.paintComponent(g);
+		// Needed in order for the displaying to work properly
+		this.setBorder(new LineBorder(Color.black, 0));
 
 		// Destroy the Graphics2D object as it is no longer needed
 		g2D.dispose();

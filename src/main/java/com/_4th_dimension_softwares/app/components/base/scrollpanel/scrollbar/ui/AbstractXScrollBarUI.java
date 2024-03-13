@@ -65,6 +65,9 @@ public abstract class AbstractXScrollBarUI extends BasicScrollBarUI {
 
 		// Paint the track
 		g2D.fillRect(x, y, w, h);
+
+		// Destroy the Graphics2D object as it is no longer needed
+		g2D.dispose();
 	}
 
 	@Override
@@ -94,6 +97,9 @@ public abstract class AbstractXScrollBarUI extends BasicScrollBarUI {
 
 		// Paint the thumb
 		g2D.fillRoundRect(x, y, w, h, rns, rns);
+
+		// Destroy the Graphics2D object as it is no longer needed
+		g2D.dispose();
 	}
 
 	@Override
