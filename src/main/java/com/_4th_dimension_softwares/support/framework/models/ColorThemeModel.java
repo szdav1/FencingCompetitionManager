@@ -39,7 +39,7 @@ public final class ColorThemeModel extends AbstractColorThemeModel {
 	 * @param iconModel1      The model of the main icon
 	 * @param iconModel2      The model of the secondary icon
 	 */
-	public ColorThemeModel(ColorModel backgroundModel, ColorModel foregroundModel, BorderModel borderModel, FontModel fontModel, IconModel iconModel1, IconModel iconModel2) {
+	public ColorThemeModel(final ColorModel backgroundModel, final ColorModel foregroundModel, final BorderModel borderModel, final FontModel fontModel, final IconModel iconModel1, final IconModel iconModel2) {
 		super(backgroundModel, foregroundModel, borderModel, fontModel, iconModel1, iconModel2);
 	}
 

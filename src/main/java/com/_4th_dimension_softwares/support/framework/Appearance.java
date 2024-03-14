@@ -41,7 +41,7 @@ public final class Appearance extends AbstractAppearance {
 	 *
 	 * @param colorThemeModel The ColorThemeModel that should be converted to Appearance
 	 */
-	public Appearance(ColorThemeModel colorThemeModel) {
+	public Appearance(final ColorThemeModel colorThemeModel) {
 		super(colorThemeModel);
 	}
 

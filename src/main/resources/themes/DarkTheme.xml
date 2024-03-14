@@ -7,4 +7,11 @@
     <appearance applyTo="sidebar">
         <background colors="[255,0,0,255][0,255,0,255]"/>
     </appearance>
+
+    <appearance applyTo="test">
+        <background colors="[255,255,255,255][255,255,255,255][255,0,0,255]"/>
+        <foreground colors="[0,0,0,255]"/>
+        <font source="/fonts/Halimun-W7jn.ttf" ligature="normal" size="10"/>
+        <border roundness="50" colors="[255,0,0,255][0,0,255,255]" thickness="@proportional"/>
+    </appearance>
 </DarkTheme>

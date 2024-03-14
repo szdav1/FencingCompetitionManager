@@ -22,7 +22,7 @@ public abstract class AbstractXScrollPanel extends JScrollPane implements XCompo
 	protected final XFrame frame;
 	protected XPanel viewPanel;
 
-	protected AbstractXScrollPanel(Dimension dimension, LayoutManager layoutManager, XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
+	protected AbstractXScrollPanel(Dimension dimension, LayoutManager layoutManager, final XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
 		this.appearance = Appearances.get(panelAppearanceName);
 		this.frame = frame;
 		this.viewPanel = new XPanel(new Dimension(0, 0), layoutManager, frame, panelAppearanceName);
@@ -38,11 +38,11 @@ public abstract class AbstractXScrollPanel extends JScrollPane implements XCompo
 		this.setPreferredSize(dimension);
 	}
 
-	protected AbstractXScrollPanel(Dimension dimension, XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
+	protected AbstractXScrollPanel(Dimension dimension, final XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
 		this(dimension, new FlowLayout(FlowLayout.CENTER, 0, 0), frame, panelAppearanceName, scrollBarAppearanceName);
 	}
 
-	protected AbstractXScrollPanel(int x, int y, int width, int height, LayoutManager layoutManager, XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
+	protected AbstractXScrollPanel(int x, int y, int width, int height, LayoutManager layoutManager, final XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
 		this.appearance = Appearances.get(panelAppearanceName);
 		this.frame = frame;
 		this.viewPanel = new XPanel(new Dimension(0, 0), layoutManager, frame, panelAppearanceName);
@@ -58,7 +58,7 @@ public abstract class AbstractXScrollPanel extends JScrollPane implements XCompo
 		this.setBounds(new Rectangle(x, y, width, height));
 	}
 
-	protected AbstractXScrollPanel(int x, int y, int width, int height, XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
+	protected AbstractXScrollPanel(int x, int y, int width, int height, final XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
 		this(x, y, width, height, new FlowLayout(FlowLayout.CENTER, 0, 0), frame, panelAppearanceName, scrollBarAppearanceName);
 	}
 

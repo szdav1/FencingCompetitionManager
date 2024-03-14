@@ -65,7 +65,7 @@ public class XScrollPanel extends AbstractXScrollPanel {
 	 * @param scrollBarAppearanceName The name of the Appearance that's values should be
 	 *                                implemented on this scrollbar UI
 	 */
-	public XScrollPanel(Dimension dimension, LayoutManager layoutManager, XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
+	public XScrollPanel(Dimension dimension, LayoutManager layoutManager, final XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
 		super(dimension, layoutManager, frame, panelAppearanceName, scrollBarAppearanceName);
 	}
 
@@ -81,7 +81,7 @@ public class XScrollPanel extends AbstractXScrollPanel {
 	 * @param scrollBarAppearanceName The name of the Appearance that's values should be
 	 *                                implemented on the scrollbar
 	 */
-	public XScrollPanel(Dimension dimension, XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
+	public XScrollPanel(Dimension dimension, final XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
 		super(dimension, frame, panelAppearanceName, scrollBarAppearanceName);
 	}
 
@@ -101,7 +101,7 @@ public class XScrollPanel extends AbstractXScrollPanel {
 	 * @param scrollBarAppearanceName The name of the Appearance that's values should be
 	 *                                implemented on the scrollbar
 	 */
-	public XScrollPanel(int x, int y, int width, int height, LayoutManager layoutManager, XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
+	public XScrollPanel(int x, int y, int width, int height, LayoutManager layoutManager, final XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
 		super(x, y, width, height, layoutManager, frame, panelAppearanceName, scrollBarAppearanceName);
 	}
 
@@ -120,7 +120,7 @@ public class XScrollPanel extends AbstractXScrollPanel {
 	 * @param scrollBarAppearanceName The name of the Appearance that's values should be
 	 *                                implemented on the scrollbar
 	 */
-	public XScrollPanel(int x, int y, int width, int height, XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
+	public XScrollPanel(int x, int y, int width, int height, final XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
 		super(x, y, width, height, frame, panelAppearanceName, scrollBarAppearanceName);
 	}
 
@@ -141,7 +141,7 @@ public class XScrollPanel extends AbstractXScrollPanel {
 	}
 
 	@Override
-	public void addComponent(JComponent component, PositionConstants positionConstants) {
+	public void addComponent(final JComponent component, PositionConstants positionConstants) {
 		if (this.viewPanel.getLayout() instanceof BorderLayout)
 			this.viewPanel.addComponent(component, positionConstants);
 		else {
@@ -160,7 +160,7 @@ public class XScrollPanel extends AbstractXScrollPanel {
 	}
 
 	@Override
-	public void addComponent(JComponent component) {
+	public void addComponent(final JComponent component) {
 		if (this.viewPanel.getLayout() instanceof BorderLayout)
 			this.viewPanel.addComponent(component, PositionConstants.CENTER_POSITION);
 		else {
@@ -179,7 +179,7 @@ public class XScrollPanel extends AbstractXScrollPanel {
 	}
 
 	@Override
-	public JComponent removeComponent(JComponent component) {
+	public JComponent removeComponent(final JComponent component) {
 		return this.viewPanel.removeComponent(component);
 	}
 }

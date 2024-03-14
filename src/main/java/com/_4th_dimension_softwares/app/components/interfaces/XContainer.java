@@ -22,7 +22,7 @@ public interface XContainer {
 	 * @param component         The component that should be added to the scene
 	 * @param positionConstants The Z position on which the component should be placed
 	 */
-	void addComponent(JComponent component, PositionConstants positionConstants);
+	void addComponent(final JComponent component, PositionConstants positionConstants);
 
 	/**
 	 * Puts the specified component on the scene.
@@ -33,7 +33,7 @@ public interface XContainer {
 	 *
 	 * @param component The component that should be added to the scene
 	 */
-	void addComponent(JComponent component);
+	void addComponent(final JComponent component);
 
 	/**
 	 * Removes the specified component from the scene
@@ -42,5 +42,5 @@ public interface XContainer {
 	 * @param component The component that should be removed from the scene
 	 * @return The component that was removed from the scene
 	 */
-	JComponent removeComponent(JComponent component);
+	JComponent removeComponent(final JComponent component);
 }

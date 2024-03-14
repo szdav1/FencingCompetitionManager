@@ -21,7 +21,7 @@ public interface IntValidator {
 	 *
 	 * @param i The integer that should be checked
 	 * @return True if the specified integer fulfills
-	 * a condition, false otherwise
+	 * a certain condition, false otherwise
 	 */
-	boolean checkIntCorrectness(int i);
+	boolean checkIntCorrectness(final int i);
 }

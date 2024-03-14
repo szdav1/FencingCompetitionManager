@@ -24,6 +24,66 @@ public final class ColorThemeReader {
 	}
 
 	/**
+	 * Initializes the values of the specified <code>ColorThemeModel</code>
+	 * based on the given tag name and the current element of the iteration.
+	 *
+	 * @param tagName The name of the current tag
+	 * @param element The current child <code>Element</code>
+	 * @param ctm     The <code>ColorThemeModel</code> object that's currently being constructed
+	 */
+	private static void constructColorThemeModel(final String tagName, final Element element, final ColorThemeModel ctm) {
+		switch (tagName.toLowerCase()) {
+			// Border
+			case "border" -> {
+				BorderModel bm = new BorderModel(
+					element.getAttribute("colors"),
+					element.getAttribute("thickness"),
+					element.getAttribute("roundness")
+				);
+				ctm.setBorderModel(bm);
+			}
+			// Font
+			case "font" -> {
+				FontModel fm = new FontModel(
+					element.getAttribute("source"),
+					element.getAttribute("family"),
+					element.getAttribute("ligature"),
+					element.getAttribute("size")
+				);
+				ctm.setFontModel(fm);
+			}
+			// Icon1
+			case "icon1" -> {
+				IconModel im = new IconModel(
+					element.getAttribute("source"),
+					element.getAttribute("width"),
+					element.getAttribute("height")
+				);
+				ctm.setIconModel1(im);
+			}
+			// Icon2
+			case "icon2" -> {
+				IconModel im = new IconModel(
+					element.getAttribute("source"),
+					element.getAttribute("width"),
+					element.getAttribute("height")
+				);
+				ctm.setIconModel2(im);
+			}
+			// Background
+			case "background" -> {
+				ColorModel cm = new ColorModel(element.getAttribute("colors"));
+				ctm.setBackgroundModel(cm);
+			}
+			// Foreground
+			case "foreground" -> {
+				ColorModel cm = new ColorModel(element.getAttribute("colors"));
+				ctm.setForegroundModel(cm);
+			}
+		}
+	}
+
+	/**
 	 * Reads the values from the specified color theme
 	 * file and structures them into a <code>HashMap</code>. Inside the
 	 * <code>HashMap</code>, the <code>ColorThemeModels</code> which are constructed during
@@ -37,7 +97,7 @@ public final class ColorThemeReader {
 	 * @return A <code>HashMap</code> that contains the component's name as key, and the
 	 * constructed <code>ColorThemeModel</code>s as values
 	 */
-	public static HashMap<String, ColorThemeModel> readColorThemeFromXML(final String filePath) {
+	public static HashMap<String, ColorThemeModel> readColorThemeFromXML(String filePath) {
 		HashMap<String, ColorThemeModel> colorThemeModels = new HashMap<>();
 
 		try {
@@ -64,65 +124,7 @@ public final class ColorThemeReader {
 						if (childNode.getNodeType() == Node.ELEMENT_NODE) {
 							Element childElement = (Element) childNode;
 							String tagName = childElement.getTagName().toLowerCase();
-
-							/*
-							 * Based on the tag name of the current element, its attributes
-							 * get fetched and stored in corresponding models. Each model
-							 * takes care of validating the data passed in to its constructor.
-							 * After creating the corresponding model, it is put into a
-							 * ColorThemeModel which wil be put into the HashMap that will be
-							 * returned as the result of this process. The key for each
-							 * ColorThemeModel is the "applyTo" attribute of the root element node.
-							 */
-							switch (tagName.toLowerCase()) {
-								// Border
-								case "border" -> {
-									BorderModel bm = new BorderModel(
-										childElement.getAttribute("colors"),
-										childElement.getAttribute("thickness"),
-										childElement.getAttribute("roundness")
-									);
-									ctm.setBorderModel(bm);
-								}
-								// Font
-								case "font" -> {
-									FontModel fm = new FontModel(
-										childElement.getAttribute("source"),
-										childElement.getAttribute("family"),
-										childElement.getAttribute("ligature"),
-										childElement.getAttribute("size")
-									);
-									ctm.setFontModel(fm);
-								}
-								// Icon1
-								case "icon1" -> {
-									IconModel im = new IconModel(
-										childElement.getAttribute("source"),
-										childElement.getAttribute("width"),
-										childElement.getAttribute("height")
-									);
-									ctm.setIconModel1(im);
-								}
-								// Icon2
-								case "icon2" -> {
-									IconModel im = new IconModel(
-										childElement.getAttribute("source"),
-										childElement.getAttribute("width"),
-										childElement.getAttribute("height")
-									);
-									ctm.setIconModel2(im);
-								}
-								// Background
-								case "background" -> {
-									ColorModel cm = new ColorModel(childElement.getAttribute("colors"));
-									ctm.setBackgroundModel(cm);
-								}
-								// Foreground
-								case "foreground" -> {
-									ColorModel cm = new ColorModel(childElement.getAttribute("colors"));
-									ctm.setForegroundModel(cm);
-								}
-							}
+							constructColorThemeModel(tagName, childElement, ctm);
 						}
 					}
 					// Place the currently generated ColorThemeModel into the HashMap

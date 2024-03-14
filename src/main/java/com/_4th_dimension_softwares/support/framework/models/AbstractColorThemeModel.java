@@ -17,7 +17,7 @@ public abstract class AbstractColorThemeModel {
 		this.iconModel2 = new IconModel();
 	}
 
-	protected AbstractColorThemeModel(ColorModel backgroundModel, ColorModel foregroundModel, BorderModel borderModel, FontModel fontModel, IconModel iconModel1, IconModel iconModel2) {
+	protected AbstractColorThemeModel(final ColorModel backgroundModel, final ColorModel foregroundModel, final BorderModel borderModel, final FontModel fontModel, final IconModel iconModel1, final IconModel iconModel2) {
 		this.backgroundModel = backgroundModel;
 		this.foregroundModel = foregroundModel;
 		this.borderModel = borderModel;

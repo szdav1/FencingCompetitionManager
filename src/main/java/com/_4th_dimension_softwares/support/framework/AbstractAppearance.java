@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import com._4th_dimension_softwares.support.appdata.SizeData;
 import com._4th_dimension_softwares.support.framework.models.BorderModel;
 import com._4th_dimension_softwares.support.framework.models.ColorThemeModel;
+import com._4th_dimension_softwares.support.framework.models.FontModel;
 import com._4th_dimension_softwares.support.util.Resources;
 
 public abstract class AbstractAppearance {
@@ -30,22 +31,34 @@ public abstract class AbstractAppearance {
 		this.icon2 = null;
 	}
 
-	public AbstractAppearance(ColorThemeModel colorThemeModel) {
+	public AbstractAppearance(final ColorThemeModel colorThemeModel) {
 		this.backgrounds = colorThemeModel.getBackgroundModel().getColors();
 		this.foregrounds = colorThemeModel.getForegroundModel().getColors();
 		this.borderModel = colorThemeModel.getBorderModel();
+		this.icon1 = colorThemeModel.getIconModel1().getIcon();
+		this.icon2 = colorThemeModel.getIconModel2().getIcon();
+		this.createFont(colorThemeModel.getFontModel());
+	}
 
+	/**
+	 * Creates a <code>Font</code> object based on the values
+	 * of the specified font model.
+	 *
+	 * @param fontModel A <code>Font</code> object that has been initialized
+	 *                  based on the given <code>FontModel</code>
+	 */
+	private void createFont(final FontModel fontModel) {
 		try {
 			// Font family
-			if (colorThemeModel.getFontModel().getSource().isBlank() && !colorThemeModel.getFontModel().getFamily().isBlank())
-				this.font = new Font(colorThemeModel.getFontModel().getFamily(), colorThemeModel.getFontModel().getLigature(),
-					colorThemeModel.getFontModel().getSize());
+			if (fontModel.getSource().isBlank() && !fontModel.getFamily().isBlank())
+				this.font = new Font(fontModel.getFamily(), fontModel.getLigature(),
+					fontModel.getSize());
 
-			// Custom font
-			else if (!colorThemeModel.getFontModel().getSource().isBlank()) {
+				// Custom font
+			else if (!fontModel.getSource().isBlank()) {
 				try {
-					this.font = Font.createFont(Font.TRUETYPE_FONT, new File(Resources.get(colorThemeModel.getFontModel().getSource())))
-						.deriveFont(colorThemeModel.getFontModel().getLigature(), (float) colorThemeModel.getFontModel().getSize());
+					this.font = Font.createFont(Font.TRUETYPE_FONT, new File(Resources.get(fontModel.getSource())))
+						.deriveFont(fontModel.getLigature(), (float) fontModel.getSize());
 				}
 				catch (Exception exc) {
 					this.font = new Font(Font.MONOSPACED, Font.PLAIN, SizeData.FONT_SIZE);
@@ -59,9 +72,6 @@ public abstract class AbstractAppearance {
 		catch (Exception exc) {
 			exc.printStackTrace();
 		}
-
-		this.icon1 = colorThemeModel.getIconModel1().getIcon();
-		this.icon2 = colorThemeModel.getIconModel2().getIcon();
 	}
 
 	public List<Color> getBackgrounds() {

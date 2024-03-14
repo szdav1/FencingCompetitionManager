@@ -1,11 +1,12 @@
 package com._4th_dimension_softwares.app.components.base.label;
 
-import java.awt.Dimension;
+import java.awt.*;
 
 import javax.swing.SwingConstants;
 
 import com._4th_dimension_softwares.app.frame.XFrame;
 import com._4th_dimension_softwares.support.framework.Appearance;
+import com._4th_dimension_softwares.support.util.Util;
 
 /**
  * The XLabel class is an extended representation
@@ -64,7 +65,7 @@ public class XLabel extends AbstractXLabel {
 	 * @param appearanceName The name of the <code>Appearance</code> that's values
 	 *                       should be implemented on this label
 	 */
-	public XLabel(Dimension dimension, String text, XFrame frame, String appearanceName) {
+	public XLabel(Dimension dimension, String text, final XFrame frame, String appearanceName) {
 		super(dimension, text, frame, appearanceName);
 	}
 
@@ -79,10 +80,10 @@ public class XLabel extends AbstractXLabel {
 	 * @param height         The height of the label
 	 * @param text           The text of the label
 	 * @param frame          The main frame of the Application
-	 * @param appearanceName TThe name of the <code>Appearance</code> that's values
+	 * @param appearanceName The name of the <code>Appearance</code> that's values
 	 *                       should be implemented on this label
 	 */
-	public XLabel(int x, int y, int width, int height, String text, XFrame frame, String appearanceName) {
+	public XLabel(int x, int y, int width, int height, String text, final XFrame frame, String appearanceName) {
 		super(x, y, width, height, text, frame, appearanceName);
 	}
 
@@ -112,5 +113,54 @@ public class XLabel extends AbstractXLabel {
 	@Override
 	public Appearance getAppearance() {
 		return this.appearance;
+	}
+
+	@Override
+	public void paintBackground(int x, int y, int w, int h, int r, final Graphics2D g2D) {
+		LinearGradientPaint lgp;
+
+		if (this.appearance.getBackgrounds().size() >= 2) {
+			lgp = new LinearGradientPaint(x, y, w, h, Util.calcEqualFracts(this.appearance.getBackgrounds().size()),
+				this.appearance.getBackgroundsAsArray());
+
+			g2D.setPaint(lgp);
+		}
+		else
+			g2D.setColor(this.appearance.getBackgrounds().get(0));
+
+		// Fill background
+		g2D.fillRoundRect(x, y, w, h, r, r);
+	}
+
+	@Override
+	public void paintForeground() {
+	}
+
+	@Override
+	public void paintIcon() {
+	}
+
+	@Override
+	public void paintBorder(int x, int y, int w, int h, int r, final Graphics2D g2D) {
+		LinearGradientPaint lgp;
+
+		if (this.appearance.getBorderModel().getThickness() != 0) {
+			g2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+			if (this.appearance.getBorderModel().getColorModel().getColors().size() >= 2) {
+				lgp = new LinearGradientPaint(x, y, w, h, Util.calcEqualFracts(this.appearance.getBorderModel()
+					.getColorModel()
+					.getColors()
+					.size()), this.appearance.getBorderColorsAsArray());
+
+				g2D.setPaint(lgp);
+			}
+			else
+				g2D.setColor(this.appearance.getBorderModel().getColorModel().getColors().get(0));
+
+			g2D.setStroke(new BasicStroke(this.appearance.getBorderModel().getThickness(), BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER));
+			// Draw border
+			g2D.drawRoundRect(x, y, w, h, r, r);
+		}
 	}
 }

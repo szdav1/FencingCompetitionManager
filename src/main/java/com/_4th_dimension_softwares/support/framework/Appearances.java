@@ -12,7 +12,7 @@ import java.util.HashMap;
  */
 public final class Appearances {
 	private static boolean initialized = false;
-	private static HashMap<String, Appearance> appearances;
+	private static HashMap<String, Appearance> values;
 
 	/**
 	 * Initializes the <code>Appearances</code> <code>HashMap</code>.
@@ -21,9 +21,9 @@ public final class Appearances {
 	 *
 	 * @param appearances The <code>HashMap</code> provided by the <code>ColorThemeProcessor</code>
 	 */
-	public static void init(HashMap<String, Appearance> appearances) {
+	public static void init(final HashMap<String, Appearance> appearances) {
 		if (!initialized && !appearances.isEmpty()) {
-			Appearances.appearances = appearances;
+			Appearances.values = appearances;
 			initialized = true;
 		}
 	}
@@ -41,7 +41,7 @@ public final class Appearances {
 		if (!initialized)
 			throw new RuntimeException("Appearances haven't been initialized");
 
-		Appearance a = appearances.get(componentName);
+		Appearance a = values.get(componentName);
 
 		return a == null ? new Appearance() : a;
 	}

@@ -1,7 +1,5 @@
 package com._4th_dimension_softwares.support.consts;
 
-import java.awt.BorderLayout;
-
 /**
  * Defines position constants for component
  * placement. These constants are used when
@@ -81,7 +79,7 @@ public enum PositionConstants {
      *
      * @return The layout level (Z coordinate) of the desired constant
      */
-    public Integer getLayoutLevel() {
+    public Integer layoutLevel() {
         return this.layoutLevel;
     }
 
@@ -91,7 +89,7 @@ public enum PositionConstants {
 	 *
 	 * @return The border layout position of the desired constant
 	 */
-    public String getBorderLayoutPosition() {
+    public String borderLayoutPosition() {
         return this.borderLayoutPosition;
     }
 }

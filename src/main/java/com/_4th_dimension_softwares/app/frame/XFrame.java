@@ -1,6 +1,5 @@
 package com._4th_dimension_softwares.app.frame;
 
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 
 import javax.swing.JComponent;
@@ -25,6 +24,7 @@ public class XFrame extends AbstractXFrame {
 	// Content panel
 	private final XPanel contentPanel;
 	// Frame parts
+	// Sidebar
 	private final Sidebar sidebar;
 
 	/**
@@ -40,7 +40,7 @@ public class XFrame extends AbstractXFrame {
 		super(title, appearanceName);
 
 		// Instantiate and set the content panel
-		this.contentPanel = new XPanel(new Dimension(this.getWidth(), this.getHeight()), new BorderLayout(), this, appearanceName);
+		this.contentPanel = new XPanel(new Dimension(this.getWidth(), this.getHeight()), null, this, appearanceName);
 		this.setContentPane(this.contentPanel);
 
 		// Instantiate and add the frame part components
@@ -49,19 +49,17 @@ public class XFrame extends AbstractXFrame {
 	}
 
 	@Override
-	public void addComponent(JComponent component, PositionConstants positionConstants) {
+	public void addComponent(final JComponent component, PositionConstants positionConstants) {
 		this.contentPanel.addComponent(component, positionConstants);
 	}
 
 	@Override
-	public void addComponent(JComponent component) {
+	public void addComponent(final JComponent component) {
 		this.contentPanel.addComponent(component);
 	}
 
 	@Override
-	public JComponent removeComponent(JComponent component) {
-		this.contentPanel.removeComponent(component);
-
-		return component;
+	public JComponent removeComponent(final JComponent component) {
+		return this.contentPanel.removeComponent(component);
 	}
 }

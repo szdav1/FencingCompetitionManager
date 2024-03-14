@@ -19,7 +19,7 @@ public abstract class AbstractColorModel {
 		this.turnStringToColorList(line);
 	}
 
-	private void turnStringToColorList(String str) {
+	private void turnStringToColorList(final String str) {
 		this.colors.clear();
 
 		// If the value given is blank, a black color is used

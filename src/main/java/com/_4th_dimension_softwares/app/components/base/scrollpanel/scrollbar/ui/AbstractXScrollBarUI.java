@@ -44,27 +44,27 @@ public abstract class AbstractXScrollBarUI extends BasicScrollBarUI {
 		g2D.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
 
 		// Start and end coordinates for painting
-		final int x = 0;
-		final int y = 0;
-		final int w = c.getWidth();
-		final int h = c.getHeight();
+		final int X = 0;
+		final int Y = 0;
+		final int W = c.getWidth();
+		final int H = c.getHeight();
 		// Roundness
-		final int rns = this.appearance.getBorderModel().getRoundness();
+		final int RNS = this.appearance.getBorderModel().getRoundness();
 		// Linear Gradient Paint
 		LinearGradientPaint lgp;
 
+		// Use single color
 		if (this.appearance.getBackgrounds().size() == 1)
 			g2D.setColor(this.appearance.getBackgrounds().get(0));
-			// Paint the track with a linear gradient paint
+		// Paint the track with a linear gradient paint
 		else {
-			lgp = new LinearGradientPaint(x, y, w, h, Util.calcEqualFracts(this.appearance.getBackgrounds().size()),
+			lgp = new LinearGradientPaint(X, Y, W, H, Util.calcEqualFracts(this.appearance.getBackgrounds().size()),
 				this.appearance.getBackgroundsAsArray());
 			g2D.setPaint(lgp);
 		}
-		// Use single color
 
 		// Paint the track
-		g2D.fillRect(x, y, w, h);
+		g2D.fillRect(X, Y, W, H);
 
 		// Destroy the Graphics2D object as it is no longer needed
 		g2D.dispose();
@@ -77,26 +77,26 @@ public abstract class AbstractXScrollBarUI extends BasicScrollBarUI {
 		g2D.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
 
 		// Start and end coordinates for painting
-		final int x = r.x;
-		final int y = r.y;
-		final int w = r.width;
-		final int h = r.height;
+		final int X = r.x;
+		final int Y = r.y;
+		final int W = r.width;
+		final int H = r.height;
 		// Roundness
-		final int rns = this.appearance.getBorderModel().getRoundness();
+		final int RNS = this.appearance.getBorderModel().getRoundness();
 		// Linear Gradient Paint
 		GradientPaint gp;
 
 		// Use single color
 		if (this.appearance.getForegrounds().size() == 1)
 			g2D.setColor(this.appearance.getForegrounds().get(0));
-			// Paint the track with a linear gradient paint
+		// Paint the track with a linear gradient paint
 		else {
-			gp = new GradientPaint(x, y, this.appearance.getForegrounds().get(0), w, h, this.appearance.getForegrounds().get(1));
+			gp = new GradientPaint(X, Y, this.appearance.getForegrounds().get(0), W, H, this.appearance.getForegrounds().get(1));
 			g2D.setPaint(gp);
 		}
 
 		// Paint the thumb
-		g2D.fillRoundRect(x, y, w, h, rns, rns);
+		g2D.fillRoundRect(X, Y, W, H, RNS, RNS);
 
 		// Destroy the Graphics2D object as it is no longer needed
 		g2D.dispose();
