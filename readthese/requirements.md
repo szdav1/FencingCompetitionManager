@@ -12,11 +12,11 @@ These are the requirements that must be fulfilled in order to be able to work on
 | Build Tool JVM      | -       | 18.0.2.1 |
 | Unit Test Framework | JUnit 5 | 5.8.1    |
 
-![](imgs\java.png)
+![](imgs/java.png)
 
 *Java version*
 
-![](imgs\gradle.png)
+![](imgs/gradle.png)
 
 *Gradle version*
 

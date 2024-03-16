@@ -14,10 +14,10 @@ Logs are very important parts of the development process as they can be used to 
 > 
 > 5. Logs should have diagrams about results and stored data
 
-![](imgs\worklog.png)
+![](imgs/worklog.png)
 
 *Example for work log*
 
-![](imgs\testlog.png)
+![](imgs/testlog.png)
 
 *Example for other type of log (test log)*
