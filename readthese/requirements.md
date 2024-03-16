@@ -20,6 +20,6 @@ These are the requirements that must be fulfilled in order to be able to work on
 
 *Gradle version*
 
-![](imgs\junit.png)
+![](imgs/junit.png)
 
 *JUnit version*
