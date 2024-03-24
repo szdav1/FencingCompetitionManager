@@ -142,7 +142,7 @@ public final class Util {
 	 * @param heightPercentage The amount of percentage the icon should be resized on the Y axis
 	 * @return A scaled <code>ImageIcon</code> that was created from the specified source
 	 */
-	public static ImageIcon loadImageIcon(String source, int widthPercentage, int heightPercentage) {
+	public static ImageIcon loadImageIcon(final String source, int widthPercentage, int heightPercentage) {
 		ImageIcon i = new ImageIcon(source);
 		return new ImageIcon(i.getImage().getScaledInstance(i.getIconWidth()*widthPercentage/100, i.getIconHeight()*heightPercentage/100, Image.SCALE_SMOOTH));
 	}
@@ -155,7 +155,7 @@ public final class Util {
 	 * @param source The path of the icon
 	 * @return The <code>ImageIcon</code> that was created from the specified source
 	 */
-	public static ImageIcon loadImageIcon(String source) {
+	public static ImageIcon loadImageIcon(final String source) {
 		return loadImageIcon(source, 100, 100);
 	}
 
