@@ -9,7 +9,6 @@ import com._4th_dimension_softwares.app.components.interfaces.XComponent;
 import com._4th_dimension_softwares.app.frame.XFrame;
 import com._4th_dimension_softwares.support.framework.Appearance;
 import com._4th_dimension_softwares.support.framework.Appearances;
-import com._4th_dimension_softwares.support.util.Util;
 
 public abstract class AbstractXLabel extends JLabel implements XComponent, CustomGraphicsUser {
 	protected Appearance appearance;

@@ -1,7 +1,5 @@
 package com._4th_dimension_softwares.app.components.base.scrollpanel.scrollbar.ui;
 
-import com._4th_dimension_softwares.support.framework.Appearance;
-
 /**
  * The <code>XScrollBarUI</code> class is an extended representation
  * of Swing's <code>BasicScrollBarUI</code> class. It works similarly to
