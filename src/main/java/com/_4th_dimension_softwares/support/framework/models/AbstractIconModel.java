@@ -12,7 +12,7 @@ public abstract class AbstractIconModel {
 		this.icon = null;
 	}
 
-	protected AbstractIconModel(String source, String widthPercentage, String heightPercentage) {
+	protected AbstractIconModel(final String source, String widthPercentage, String heightPercentage) {
 		if (!source.isBlank())
 			this.icon = Util.loadImageIcon(Resources.get(source), Util.toInt(widthPercentage, 100, (i) -> i > 0),
 				Util.toInt(heightPercentage, 100, (i) -> i > 0));

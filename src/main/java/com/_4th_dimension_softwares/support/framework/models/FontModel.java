@@ -28,7 +28,7 @@ public final class FontModel extends AbstractFontModel {
 	 * @param ligature The ligature of the font model
 	 * @param size     The size of the font model
 	 */
-	public FontModel(String source, String family, String ligature, String size) {
+	public FontModel(final String source, String family, String ligature, String size) {
 		super(source, family, ligature, size);
 	}
 

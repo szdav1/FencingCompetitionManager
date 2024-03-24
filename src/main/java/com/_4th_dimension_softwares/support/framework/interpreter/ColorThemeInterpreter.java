@@ -32,7 +32,7 @@ public final class ColorThemeInterpreter {
 	 * @param filePath The path or name of the desired XML file that contains
 	 *                 the color theme data
 	 */
-	public static void interpretColorTheme(String filePath) {
+	public static void interpretColorTheme(final String filePath) {
 		HashMap<String, Appearance> appearances = new HashMap<>();
 
 		ColorThemeReader.readColorThemeFromXML(filePath)

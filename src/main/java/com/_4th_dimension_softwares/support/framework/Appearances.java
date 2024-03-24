@@ -37,7 +37,7 @@ public final class Appearances {
 	 * @throws RuntimeException If the <code>Appearance</code>s haven't been initialized before
 	 *                          calling this method
 	 */
-	public static Appearance get(String componentName) {
+	public static Appearance get(final String componentName) {
 		if (!initialized)
 			throw new RuntimeException("Appearances haven't been initialized");
 

@@ -30,7 +30,7 @@ public final class Resources {
 	 * @param filePath The path of the desired file starting from resources
 	 * @return The full path of the desired file
 	 */
-	public static String get(String filePath) {
+	public static String get(final String filePath) {
 		URL fileURL = Resources.class.getResource(filePath);
 
 		if (fileURL != null)

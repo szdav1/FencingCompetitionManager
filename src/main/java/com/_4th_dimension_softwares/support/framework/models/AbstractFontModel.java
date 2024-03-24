@@ -18,7 +18,7 @@ public abstract class AbstractFontModel {
 		this.size = SizeData.FONT_SIZE;
 	}
 
-	protected AbstractFontModel(String source, String type, String ligature, String size) {
+	protected AbstractFontModel(final String source, String type, String ligature, String size) {
 		this.source = source;
 		this.family = type;
 		this.size = Util.toInt(size, SizeData.FONT_SIZE, (i) -> i > 0);

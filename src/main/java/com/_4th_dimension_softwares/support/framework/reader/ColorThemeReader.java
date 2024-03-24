@@ -97,7 +97,7 @@ public final class ColorThemeReader {
 	 * @return A <code>HashMap</code> that contains the component's name as key, and the
 	 * constructed <code>ColorThemeModel</code>s as values
 	 */
-	public static HashMap<String, ColorThemeModel> readColorThemeFromXML(String filePath) {
+	public static HashMap<String, ColorThemeModel> readColorThemeFromXML(final String filePath) {
 		HashMap<String, ColorThemeModel> colorThemeModels = new HashMap<>();
 
 		try {

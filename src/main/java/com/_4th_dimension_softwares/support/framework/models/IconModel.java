@@ -30,7 +30,7 @@ public final class IconModel extends AbstractIconModel {
 	 * @param widthPercentage  The amount of percentage the icon should be scaled on the X axis
 	 * @param heightPercentage The amount of percentage the icon should be scaled on the Y axis
 	 */
-	public IconModel(String source, String widthPercentage, String heightPercentage) {
+	public IconModel(final String source, String widthPercentage, String heightPercentage) {
 		super(source, widthPercentage, heightPercentage);
 	}
 
