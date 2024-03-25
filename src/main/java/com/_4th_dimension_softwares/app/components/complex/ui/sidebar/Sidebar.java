@@ -23,7 +23,7 @@ public final class Sidebar extends AbstractSidebar {
 	 * @param appearanceName The name of the <code>Appearance</code> that's
 	 *                       values should be implemented on this sidebar
 	 */
-	public Sidebar(XFrame frame, String appearanceName) {
+	public Sidebar(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
 	}
 

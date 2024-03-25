@@ -9,9 +9,9 @@ import java.util.Objects;
  *
  * @author szd
  */
-public final class Resources {
+public final class ResourceHandler {
 	// Not instantiatable
-	private Resources() {
+	private ResourceHandler() {
 	}
 
 	/**
@@ -31,13 +31,13 @@ public final class Resources {
 	 * @return The full path of the desired file
 	 */
 	public static String get(final String filePath) {
-		URL fileURL = Resources.class.getResource(filePath);
+		URL fileURL = ResourceHandler.class.getResource(filePath);
 
 		if (fileURL != null)
 			return fileURL.getFile();
 
 		try {
-			return Objects.requireNonNull(Resources.class.getResource("/"+filePath)).getFile();
+			return Objects.requireNonNull(ResourceHandler.class.getResource("/"+filePath)).getFile();
 		}
 		catch (Exception exc) {
 			return "";

@@ -10,6 +10,7 @@ import java.awt.Toolkit;
  *
  * @author szd
  */
+// TODO: Make hard coded sizes and dimension responsive
 public final class SizeData {
 	// Screen Dimension, width and height
 	public static final Dimension SCREEN_SIZE = Toolkit.getDefaultToolkit().getScreenSize();
@@ -21,10 +22,12 @@ public final class SizeData {
 	public static final int BORDER_SIZE = 2;
 
 	// Scroll bar size and Dimension
+	// Vertical
 	public static final int V_SCROLL_BAR_WIDTH = 30;
 	public static final int V_SCROLL_BAR_HEIGHT = 30;
 	public static final Dimension V_SCROLL_BAR_DIMENSION = new Dimension(V_SCROLL_BAR_WIDTH, V_SCROLL_BAR_HEIGHT);
 
+	// Horizontal
 	public static final int H_SCROLL_BAR_WIDTH = 30;
 	public static final int H_SCROLL_BAR_HEIGHT = 30;
 	public static final Dimension H_SCROLL_BAR_DIMENSION = new Dimension(H_SCROLL_BAR_WIDTH, H_SCROLL_BAR_HEIGHT);

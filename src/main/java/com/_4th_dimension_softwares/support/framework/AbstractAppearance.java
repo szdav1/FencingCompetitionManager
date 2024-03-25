@@ -12,7 +12,7 @@ import com._4th_dimension_softwares.support.appdata.SizeData;
 import com._4th_dimension_softwares.support.framework.models.BorderModel;
 import com._4th_dimension_softwares.support.framework.models.ColorThemeModel;
 import com._4th_dimension_softwares.support.framework.models.FontModel;
-import com._4th_dimension_softwares.support.util.Resources;
+import com._4th_dimension_softwares.support.util.ResourceHandler;
 
 public abstract class AbstractAppearance {
 	protected List<Color> backgrounds;
@@ -57,7 +57,7 @@ public abstract class AbstractAppearance {
 				// Custom font
 			else if (!fontModel.getSource().isBlank()) {
 				try {
-					this.font = Font.createFont(Font.TRUETYPE_FONT, new File(Resources.get(fontModel.getSource())))
+					this.font = Font.createFont(Font.TRUETYPE_FONT, new File(ResourceHandler.get(fontModel.getSource())))
 						.deriveFont(fontModel.getLigature(), (float) fontModel.getSize());
 				}
 				catch (Exception exc) {

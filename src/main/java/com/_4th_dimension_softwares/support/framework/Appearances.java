@@ -23,7 +23,7 @@ public final class Appearances {
 	 */
 	public static void init(final HashMap<String, Appearance> appearances) {
 		if (!initialized && !appearances.isEmpty()) {
-			Appearances.values = appearances;
+			values = appearances;
 			initialized = true;
 		}
 	}

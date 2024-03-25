@@ -12,7 +12,7 @@ import com._4th_dimension_softwares.support.consts.PositionConstants;
 public abstract class AbstractSidebar extends XPanel implements XSidebar {
 	protected List<MenuButton> menuButtons;
 
-	protected AbstractSidebar(XFrame frame, String appearanceName) {
+	protected AbstractSidebar(final XFrame frame, String appearanceName) {
 		super(SizeData.SIDEBAR_DIMENSION, frame, appearanceName);
 
 		// Automatically add the sidebar to the main frame of the application

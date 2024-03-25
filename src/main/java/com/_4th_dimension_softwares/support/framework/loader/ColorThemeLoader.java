@@ -1,4 +1,4 @@
-package com._4th_dimension_softwares.support.framework.interpreter;
+package com._4th_dimension_softwares.support.framework.loader;
 
 import java.util.HashMap;
 
@@ -7,16 +7,16 @@ import com._4th_dimension_softwares.support.framework.Appearances;
 import com._4th_dimension_softwares.support.framework.reader.ColorThemeReader;
 
 /**
- * The <code>ColorThemeInterpreter</code> converts every
+ * The <code>ColorThemeLoader</code> converts every
  * <code>ColorThemeModel</code> into <code>Appearances</code>. Every <code>Appearance</code>
  * is put into a <code>HashMap</code> with the corresponding key,
  * and returned at the end of the process.
  *
  * @author szd
  */
-public final class ColorThemeInterpreter {
+public final class ColorThemeLoader {
 	// Not instantiatable
-	private ColorThemeInterpreter() {
+	private ColorThemeLoader() {
 	}
 
 	/**
@@ -32,10 +32,10 @@ public final class ColorThemeInterpreter {
 	 * @param filePath The path or name of the desired XML file that contains
 	 *                 the color theme data
 	 */
-	public static void interpretColorTheme(final String filePath) {
+	public static void loadFromXML(final String filePath) {
 		HashMap<String, Appearance> appearances = new HashMap<>();
 
-		ColorThemeReader.readColorThemeFromXML(filePath)
+		ColorThemeReader.readFromXML(filePath)
 			.forEach((compName, ctm) -> appearances.put(compName, new Appearance(ctm)));
 
 		Appearances.init(appearances);

@@ -6,7 +6,7 @@ import java.util.HashMap;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import com._4th_dimension_softwares.support.framework.models.*;
-import com._4th_dimension_softwares.support.util.Resources;
+import com._4th_dimension_softwares.support.util.ResourceHandler;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -97,13 +97,13 @@ public final class ColorThemeReader {
 	 * @return A <code>HashMap</code> that contains the component's name as key, and the
 	 * constructed <code>ColorThemeModel</code>s as values
 	 */
-	public static HashMap<String, ColorThemeModel> readColorThemeFromXML(final String filePath) {
+	public static HashMap<String, ColorThemeModel> readFromXML(final String filePath) {
 		HashMap<String, ColorThemeModel> colorThemeModels = new HashMap<>();
 
 		try {
 			Document colorThemeDocument = DocumentBuilderFactory.newInstance()
 				.newDocumentBuilder()
-				.parse(new File(Resources.get(filePath)));
+				.parse(new File(ResourceHandler.get(filePath)));
 
 			colorThemeDocument.normalize();
 
