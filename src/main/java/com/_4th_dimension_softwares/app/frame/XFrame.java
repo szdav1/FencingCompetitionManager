@@ -1,5 +1,6 @@
 package com._4th_dimension_softwares.app.frame;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 
 import javax.swing.JComponent;
@@ -26,6 +27,8 @@ public class XFrame extends AbstractXFrame {
 	// Frame parts
 	// Sidebar
 	private final Sidebar sidebar;
+	// Center panel
+	private final XPanel centerPanel;
 
 	/**
 	 * Constructs an <code>XFrame</code> object. This object is
@@ -40,12 +43,52 @@ public class XFrame extends AbstractXFrame {
 		super(title, appearanceName);
 
 		// Instantiate and set the content panel
-		this.contentPanel = new XPanel(new Dimension(this.getWidth(), this.getHeight()), null, this, appearanceName);
+		this.contentPanel = new XPanel(new Dimension(this.getWidth(), this.getHeight()), new BorderLayout(), this, appearanceName);
 		this.setContentPane(this.contentPanel);
+
 
 		// Instantiate and add the frame part components
 		// Sidebar
 		this.sidebar = new Sidebar(this, "sidebar");
+		// Center panel
+		this.centerPanel = new XPanel(this.contentPanel.getPreferredSize(), null, this, appearanceName);
+
+		// Add frame part components
+		this.addComponent(this.centerPanel, PositionConstants.CENTER_POSITION);
+	}
+
+	/**
+	 * Adds the specified component to the center panel of the frame
+	 * placed on the desired Z coordinate specified by the position
+	 * constant.
+	 *
+	 * @param component         The component that should be added to the center panel
+	 * @param positionConstants The Z position on which the component should be placed
+	 */
+	public void addToCenterPanel(JComponent component, PositionConstants positionConstants) {
+		this.centerPanel.addComponent(component, positionConstants);
+	}
+
+	/**
+	 * Adds the specified component to the center panel of the frame
+	 * placed on the desired Z coordinate specified by the position
+	 * constant.
+	 *
+	 * @param component The component that should be added to the center panel
+	 */
+	public void addToCenterPanel(JComponent component) {
+		this.addToCenterPanel(component, PositionConstants.MID_POSITION);
+	}
+
+	/**
+	 * Removes and returns the desired component from the
+	 * center panel of the frame.
+	 *
+	 * @param component The component that should be removed
+	 * @return The removed component
+	 */
+	public JComponent removeFromCenterPanel(JComponent component) {
+		return this.centerPanel.removeComponent(component);
 	}
 
 	@Override

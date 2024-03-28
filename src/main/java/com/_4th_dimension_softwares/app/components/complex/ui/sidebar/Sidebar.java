@@ -2,8 +2,11 @@ package com._4th_dimension_softwares.app.components.complex.ui.sidebar;
 
 import java.util.List;
 
-import com._4th_dimension_softwares.app.components.complex.menu.MenuButton;
+import com._4th_dimension_softwares.app.components.base.button.ButtonType;
+import com._4th_dimension_softwares.app.components.complex.ui.menu.MenuButton;
 import com._4th_dimension_softwares.app.frame.XFrame;
+import com._4th_dimension_softwares.app.listeners.SidebarMouseListener;
+import com._4th_dimension_softwares.support.appdata.SizeData;
 
 /**
  * The <code>Sidebar</code> class contains the declaration of
@@ -13,6 +16,10 @@ import com._4th_dimension_softwares.app.frame.XFrame;
  * etc.
  */
 public final class Sidebar extends AbstractSidebar {
+	// Menu buttons
+	private final MenuButton competitionButton;
+	private final MenuButton settingsButton;
+
 	/**
 	 * Constructs a <code>Sidebar</code> object.
 	 * This object's UI representation is
@@ -25,6 +32,23 @@ public final class Sidebar extends AbstractSidebar {
 	 */
 	public Sidebar(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
+
+		// The listener that takes care of the mouse actions happened in the sidebar
+		final SidebarMouseListener sml = new SidebarMouseListener(this);
+
+		// Menu buttons
+		this.competitionButton = new MenuButton(SizeData.N_BUTTON_DIMENSION, "MENU", frame, ButtonType.FOREGROUND_CHANGER, appearanceName+".buttons");
+		this.settingsButton = new MenuButton(SizeData.N_BUTTON_DIMENSION, "SETTINGS", frame, ButtonType.FOREGROUND_CHANGER, appearanceName+".buttons");
+
+		// Add the menu buttons to the menu button list
+		this.menuButtons.add(competitionButton);
+		this.menuButtons.add(settingsButton);
+
+		// Implement the listener on the buttons
+		this.menuButtons.forEach(btn -> btn.addMouseListener(sml));
+
+		// Add the menu buttons to the sidebar
+		this.menuButtons.forEach(this::addComponent);
 	}
 
 	@Override
