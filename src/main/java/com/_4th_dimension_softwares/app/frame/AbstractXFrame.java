@@ -22,6 +22,5 @@ public abstract class AbstractXFrame extends JFrame implements XContainer {
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		this.setSize(new Dimension(SizeData.SCREEN_WIDTH, SizeData.SCREEN_HEIGHT));
 		this.setLocationRelativeTo(null);
-		this.setVisible(true);
 	}
 }

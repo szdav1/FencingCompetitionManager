@@ -2,8 +2,12 @@ package com._4th_dimension_softwares.app.frame;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Image;
 
+import javax.swing.ImageIcon;
 import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 
 import com._4th_dimension_softwares.app.components.base.panel.XPanel;
 import com._4th_dimension_softwares.app.components.complex.ui.sidebar.Sidebar;
@@ -46,15 +50,37 @@ public class XFrame extends AbstractXFrame {
 		this.contentPanel = new XPanel(new Dimension(this.getWidth(), this.getHeight()), new BorderLayout(), this, appearanceName);
 		this.setContentPane(this.contentPanel);
 
-
 		// Instantiate and add the frame part components
 		// Sidebar
 		this.sidebar = new Sidebar(this, "sidebar");
 		// Center panel
 		this.centerPanel = new XPanel(this.contentPanel.getPreferredSize(), null, this, appearanceName);
 
+		// Background image
+		this.setBackgroundImage();
+
 		// Add frame part components
 		this.addComponent(this.centerPanel, PositionConstants.CENTER_POSITION);
+
+		// Set visibility
+		this.setVisible(true);
+	}
+
+	/**
+	 * Sets the background image of the frame.
+	 * This image will only cover the center area of the
+	 * frame. The image is the secondary mage contained in the frame's
+	 * <code>Appearance</code>.
+	 */
+	private void setBackgroundImage() {
+		if (this.appearance.getIcon2() != null) {
+			JLabel l = new JLabel(new ImageIcon(this.appearance.getIcon2()
+				.getImage()
+				.getScaledInstance(this.centerPanel.getWidth(), this.centerPanel.getHeight(), Image.SCALE_SMOOTH)));
+
+			l.setBounds(0, 0, this.centerPanel.getWidth(), this.centerPanel.getHeight());
+			this.centerPanel.addComponent(l, PositionConstants.BACKGROUND_POSITION);
+		}
 	}
 
 	/**

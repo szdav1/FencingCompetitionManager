@@ -5,7 +5,7 @@ import java.util.List;
 import com._4th_dimension_softwares.app.components.base.button.ButtonType;
 import com._4th_dimension_softwares.app.components.complex.ui.menu.MenuButton;
 import com._4th_dimension_softwares.app.frame.XFrame;
-import com._4th_dimension_softwares.app.listeners.SidebarMouseListener;
+import com._4th_dimension_softwares.app.control.SidebarController;
 import com._4th_dimension_softwares.support.appdata.SizeData;
 
 /**
@@ -34,7 +34,7 @@ public final class Sidebar extends AbstractSidebar {
 		super(frame, appearanceName);
 
 		// The listener that takes care of the mouse actions happened in the sidebar
-		final SidebarMouseListener sml = new SidebarMouseListener(this);
+		final SidebarController sml = new SidebarController(this);
 
 		// Menu buttons
 		this.competitionButton = new MenuButton(SizeData.N_BUTTON_DIMENSION, "MENU", frame, ButtonType.FOREGROUND_CHANGER, appearanceName+".buttons");

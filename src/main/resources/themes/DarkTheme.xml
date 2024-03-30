@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DarkTheme>
     <appearance applyTo="window">
-        <background colors="[0,0,0,255][10,10,10,255]"/>
+        <background colors="[0,0,0,255][255,10,10,255][255,0,200,255]"/>
     </appearance>
 
     <appearance applyTo="sidebar">
@@ -20,7 +20,8 @@
     </appearance>
 
     <appearance applyTo="sidebar.buttons.dropdown.buttons">
-        <background colors="[0,0,0,255][100,100,100,255]"/>
+        <background colors="[0,0,0,255][255,0,0,255][255,0,200,255][0,0,0,0]"/>
         <foreground colors="[255,255,255,255][100,100,100,255]"/>
+        <font source="/fonts/Halimun-W7jn.ttf" ligature="normal" size="@proportional"/>
     </appearance>
 </DarkTheme>

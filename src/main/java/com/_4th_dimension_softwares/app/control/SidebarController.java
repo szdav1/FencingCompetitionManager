@@ -1,7 +1,11 @@
-package com._4th_dimension_softwares.app.listeners;
+package com._4th_dimension_softwares.app.control;
 
+import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Optional;
+
+import javax.swing.JComponent;
 
 import com._4th_dimension_softwares.app.components.complex.ui.menu.MenuButton;
 import com._4th_dimension_softwares.app.components.complex.ui.sidebar.Sidebar;
@@ -14,7 +18,7 @@ import com._4th_dimension_softwares.app.components.complex.ui.sidebar.Sidebar;
  * that happens inside the sidebar and must be handled will end up being processed
  * by this class.
  */
-public final class SidebarMouseListener implements MouseListener {
+public final class SidebarController implements MouseListener {
 	private final Sidebar sidebar;
 	private MenuButton previousButton;
 
@@ -26,8 +30,25 @@ public final class SidebarMouseListener implements MouseListener {
 	 *
 	 * @param sidebar The sidebar that will receive this listener
 	 */
-	public SidebarMouseListener(final Sidebar sidebar) {
+	public SidebarController(final Sidebar sidebar) {
 		this.sidebar = sidebar;
+	}
+
+	/**
+	 * Tries to find the origin of an <code>InputEvent</code>.
+	 * If the component that caused the event is in contained in
+	 * the sidebar, it is returned wrapped around an <code>Optional</code>.
+	 *
+	 * @param ie The event that happened
+	 * @return An <code>Optional</code> containing the source of the event
+	 */
+	private Optional<JComponent> findSourceOfInputEvent(final InputEvent ie) {
+		for (MenuButton btn : this.sidebar.getButtons()) {
+			if (btn.equals(ie.getSource()))
+				return Optional.of(btn);
+		}
+
+		return Optional.empty();
 	}
 
 	@Override
@@ -37,12 +58,11 @@ public final class SidebarMouseListener implements MouseListener {
 		 * panel stays open even after exiting it with the
 		 * cursor.
 		 * */
-		this.sidebar.getButtons().forEach(btn -> {
-			if (btn.equals(e.getSource())) {
-				this.previousButton = btn;
-				btn.setActive(!btn.isActive());
-			}
-		});
+		if (this.findSourceOfInputEvent(e).isPresent()) {
+			MenuButton btn = (MenuButton) this.findSourceOfInputEvent(e).get();
+			this.previousButton = btn;
+			btn.setActive(!btn.isActive());
+		}
 	}
 
 	@Override
@@ -61,16 +81,17 @@ public final class SidebarMouseListener implements MouseListener {
 		 * before the current one making its dropdown panel stay open) it
 		 * is deactivated.
 		 * */
-		this.sidebar.getButtons().forEach(btn -> {
-			if (btn.equals(e.getSource()) && !btn.isActive()) {
-				if (this.previousButton != null) {
-					this.previousButton.setActive(false);
-					this.previousButton.hideDropdownPanel();
-				}
+		if (this.findSourceOfInputEvent(e).isPresent()) {
+			MenuButton btn = (MenuButton) this.findSourceOfInputEvent(e).get();
 
+			if (!btn.isActive())
 				btn.showDropdownPanel();
+
+			if (this.previousButton != null && !btn.equals(this.previousButton)) {
+				this.previousButton.setActive(false);
+				this.previousButton.hideDropdownPanel();
 			}
-		});
+		}
 	}
 
 	@Override
@@ -81,9 +102,11 @@ public final class SidebarMouseListener implements MouseListener {
 		 * was clicked, it has been activated so its dropdown panel
 		 * must stay open after exiting.
 		 * */
-		this.sidebar.getButtons().forEach(btn -> {
-			if (btn.equals(e.getSource()) && !btn.isActive())
+		if (this.findSourceOfInputEvent(e).isPresent()) {
+			MenuButton btn = (MenuButton) this.findSourceOfInputEvent(e).get();
+
+			if (!btn.isActive())
 				btn.hideDropdownPanel();
-		});
+		}
 	}
 }

@@ -2,6 +2,7 @@ package com._4th_dimension_softwares.app.components.complex.ui.menu;
 
 import java.awt.Dimension;
 import java.awt.LayoutManager;
+import java.awt.Rectangle;
 
 import com._4th_dimension_softwares.app.components.base.button.ButtonType;
 import com._4th_dimension_softwares.app.components.base.button.XButton;
@@ -55,6 +56,11 @@ public class DropdownPanel extends AbstractDropdownPanel {
 	@Override
 	public void createAndAddButton(String buttonText) {
 		XButton btn = new XButton(new Dimension(this.getWidth()-(SizeData.BORDER_SIZE), SizeData.BUTTON_HEIGHT), buttonText, this.frame, ButtonType.BACKGROUND_CHANGER, "sidebar.buttons.dropdown.buttons");
-		this.add(btn);
+
+		this.buttonList.add(btn);
+		int newHeight = SizeData.calcDropdownHeight(this.buttonList.size());
+		this.setSize(this.getWidth(), newHeight);
+
+		this.addComponent(btn);
 	}
 }

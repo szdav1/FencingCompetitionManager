@@ -1,6 +1,7 @@
 package com._4th_dimension_softwares.app.components.complex.ui.menu;
 
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 
 import com._4th_dimension_softwares.app.components.base.button.ButtonType;
 import com._4th_dimension_softwares.app.components.base.button.XButton;
@@ -18,7 +19,8 @@ public abstract class AbstractMenuButton extends XButton {
 
 		this.isActive = false;
 		this.dropdownPosition = RelativePositions.TO_RIGHT;
-		this.dropdownPanel = new DropdownPanel(0, 0, SizeData.DROPDOWN_WIDTH, SizeData.DROPDOWN_HEIGHT, frame, appearanceName+".dropdown");
+		this.dropdownPanel = new DropdownPanel(0, 0, SizeData.DROPDOWN_WIDTH, SizeData.DROPDOWN_HEIGHT,
+			new FlowLayout(FlowLayout.CENTER, 0, SizeData.BORDER_SIZE), frame, appearanceName+".dropdown");
 	}
 
 	public AbstractMenuButton(Dimension dimension, final XFrame frame, ButtonType type, String appearanceName) {
@@ -26,7 +28,8 @@ public abstract class AbstractMenuButton extends XButton {
 
 		this.isActive = false;
 		this.dropdownPosition = RelativePositions.TO_RIGHT;
-		this.dropdownPanel = new DropdownPanel(0, 0, SizeData.DROPDOWN_WIDTH, SizeData.DROPDOWN_HEIGHT, frame, appearanceName+".dropdown");
+		this.dropdownPanel = new DropdownPanel(0, 0, SizeData.DROPDOWN_WIDTH, SizeData.DROPDOWN_HEIGHT,
+			new FlowLayout(FlowLayout.CENTER, 0, SizeData.BORDER_SIZE), frame, appearanceName+".dropdown");
 	}
 
 	public AbstractMenuButton(int x, int y, int width, int height, String text, final XFrame frame, ButtonType type, String appearanceName) {
@@ -34,7 +37,8 @@ public abstract class AbstractMenuButton extends XButton {
 
 		this.isActive = false;
 		this.dropdownPosition = RelativePositions.TO_RIGHT;
-		this.dropdownPanel = new DropdownPanel(0, 0, SizeData.DROPDOWN_WIDTH, SizeData.DROPDOWN_HEIGHT, frame, appearanceName+".dropdown");
+		this.dropdownPanel = new DropdownPanel(0, 0, SizeData.DROPDOWN_WIDTH, SizeData.DROPDOWN_HEIGHT,
+			new FlowLayout(FlowLayout.CENTER, 0, SizeData.BORDER_SIZE), frame, appearanceName+".dropdown");
 	}
 
 	public AbstractMenuButton(int x, int y, int width, int height, final XFrame frame, ButtonType type, String appearanceName) {
@@ -42,7 +46,8 @@ public abstract class AbstractMenuButton extends XButton {
 
 		this.isActive = false;
 		this.dropdownPosition = RelativePositions.TO_RIGHT;
-		this.dropdownPanel = new DropdownPanel(0, 0, SizeData.DROPDOWN_WIDTH, SizeData.DROPDOWN_HEIGHT, frame, appearanceName+".dropdown");
+		this.dropdownPanel = new DropdownPanel(0, 0, SizeData.DROPDOWN_WIDTH, SizeData.DROPDOWN_HEIGHT,
+			new FlowLayout(FlowLayout.CENTER, 0, SizeData.BORDER_SIZE), frame, appearanceName+".dropdown");
 	}
 
 	/**

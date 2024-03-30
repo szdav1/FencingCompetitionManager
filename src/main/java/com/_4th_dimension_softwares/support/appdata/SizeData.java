@@ -10,7 +10,6 @@ import java.awt.Toolkit;
  *
  * @author szd
  */
-// TODO: Make hard coded sizes and dimension responsive
 public final class SizeData {
 	// Screen Dimension, width and height
 	public static final Dimension SCREEN_SIZE = Toolkit.getDefaultToolkit().getScreenSize();
@@ -23,13 +22,13 @@ public final class SizeData {
 
 	// Scroll bar size and Dimension
 	// Vertical
-	public static final int V_SCROLL_BAR_WIDTH = 30;
-	public static final int V_SCROLL_BAR_HEIGHT = 30;
+	public static final int V_SCROLL_BAR_WIDTH = (int) (SCREEN_WIDTH*1.5f/100);
+	public static final int V_SCROLL_BAR_HEIGHT = (int) (SCREEN_WIDTH*1.5f/100);
 	public static final Dimension V_SCROLL_BAR_DIMENSION = new Dimension(V_SCROLL_BAR_WIDTH, V_SCROLL_BAR_HEIGHT);
 
 	// Horizontal
-	public static final int H_SCROLL_BAR_WIDTH = 30;
-	public static final int H_SCROLL_BAR_HEIGHT = 30;
+	public static final int H_SCROLL_BAR_WIDTH = (int) (SCREEN_WIDTH*1.5f/100);
+	public static final int H_SCROLL_BAR_HEIGHT = (int) (SCREEN_WIDTH*1.5f/100);
 	public static final Dimension H_SCROLL_BAR_DIMENSION = new Dimension(H_SCROLL_BAR_WIDTH, H_SCROLL_BAR_HEIGHT);
 
 	// Sidebar size and Dimension
@@ -51,11 +50,22 @@ public final class SizeData {
 	public static final Dimension W_BUTTON_DIMENSION = new Dimension(W_BUTTON_WIDTH, BUTTON_HEIGHT);
 
 	// Dropdown panel size and dimension
-	public static final int DROPDOWN_WIDTH = BUTTON_WIDTH;
-	public static final int DROPDOWN_HEIGHT = BUTTON_HEIGHT*3;
+	public static final int DROPDOWN_WIDTH = BUTTON_WIDTH+(BORDER_SIZE*2);
+	public static final int DROPDOWN_HEIGHT = BUTTON_HEIGHT*3+(BORDER_SIZE*4);
 	public static final Dimension DROPDOWN_DIMENSION = new Dimension(DROPDOWN_WIDTH, DROPDOWN_HEIGHT);
 
 	// Not instantiatable
 	private SizeData() {
+	}
+
+	/**
+	 * Calculates the height of a dropdown panel
+	 * that contains the given amount of buttons.
+	 *
+	 * @param buttonQuantity The amount of buttons held by the dropdown panel
+	 * @return The new height of the dropdown panel
+	 */
+	public static int calcDropdownHeight(int buttonQuantity) {
+		return BUTTON_HEIGHT*buttonQuantity+((buttonQuantity+1)*BORDER_SIZE);
 	}
 }
