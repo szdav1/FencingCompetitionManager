@@ -26,7 +26,7 @@ public final class SidebarController implements MouseListener {
 	 * Constructs a <code>SidebarMouseListener</code>. It is
 	 * important to note that the sidebar object that is passed
 	 * into the constructor must be the same object where the
-	 * mouse actions happen.
+	 * actions happen.
 	 *
 	 * @param sidebar The sidebar that will receive this listener
 	 */

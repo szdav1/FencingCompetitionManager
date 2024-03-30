@@ -2,7 +2,6 @@ package com._4th_dimension_softwares.app.components.complex.ui.menu;
 
 import java.awt.Dimension;
 import java.awt.LayoutManager;
-import java.awt.Rectangle;
 
 import com._4th_dimension_softwares.app.components.base.button.ButtonType;
 import com._4th_dimension_softwares.app.components.base.button.XButton;
