@@ -1,12 +1,12 @@
-package com._4th_dimension_softwares.app.control;
+package com._4th_dimension_softwares.app.control.sidebar;
 
 import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.Optional;
 
 import javax.swing.JComponent;
 
+import com._4th_dimension_softwares.app.control.Controller;
 import com._4th_dimension_softwares.app.view.components.complex.ui.menu.MenuButton;
 import com._4th_dimension_softwares.app.view.components.complex.ui.sidebar.Sidebar;
 
@@ -18,7 +18,7 @@ import com._4th_dimension_softwares.app.view.components.complex.ui.sidebar.Sideb
  * that happens inside the sidebar and must be handled will end up being processed
  * by this class.
  */
-public final class SidebarController implements MouseListener {
+public final class SidebarController extends Controller {
 	private final Sidebar sidebar;
 	private MenuButton previousButton;
 
@@ -65,14 +65,6 @@ public final class SidebarController implements MouseListener {
 			this.previousButton = btn;
 			btn.setActive(!btn.isActive());
 		}
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
 	}
 
 	@Override
