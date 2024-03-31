@@ -67,13 +67,33 @@ public abstract class AbstractXTextField extends JTextField implements XComponen
 		// Background
 		this.paintBackground(X, Y, W, H, R, g2D);
 
-		// Border
-		this.paintBorder(X, Y, W, H, R, g2D);
-
 		// Paint text
 		super.paintComponent(g);
 		// Needed in order for the displaying to work properly
 		this.setBorder(null);
+
+		// Destroy the Graphics2D object as it is no longer needed
+		g2D.dispose();
+	}
+
+	@Override
+	public void paint(Graphics g) {
+		// Cast Graphics to Graphics2D
+		Graphics2D g2D = (Graphics2D) g;
+		g2D.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+
+		// Start and end coordinates for painting
+		final int X = 0;
+		final int Y = 0;
+		final int W = this.getWidth();
+		final int H = this.getHeight();
+		// Roundness
+		final int R = this.appearance.getBorderModel().getRoundness();
+
+		// Paint the component
+		super.paint(g);
+		// Paint the border
+		this.paintBorder(X, Y, W, H, R, g2D);
 
 		// Destroy the Graphics2D object as it is no longer needed
 		g2D.dispose();

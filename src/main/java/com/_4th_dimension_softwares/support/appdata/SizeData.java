@@ -66,6 +66,6 @@ public final class SizeData {
 	 * @return The new height of the dropdown panel
 	 */
 	public static int calcDropdownHeight(int buttonQuantity) {
-		return BUTTON_HEIGHT*buttonQuantity+((buttonQuantity+1)*BORDER_SIZE);
+		return BUTTON_HEIGHT*buttonQuantity;
 	}
 }

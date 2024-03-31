@@ -1,6 +1,5 @@
 package com._4th_dimension_softwares.app.components.complex.ui.sidebar;
 
-import java.awt.FlowLayout;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +14,7 @@ public abstract class AbstractSidebar extends XPanel implements XSidebar {
 	protected List<MenuButton> menuButtons;
 
 	protected AbstractSidebar(final XFrame frame, String appearanceName) {
-		super(SizeData.SIDEBAR_DIMENSION, new FlowLayout(FlowLayout.CENTER, 0, SizeData.BORDER_SIZE), frame, appearanceName);
+		super(SizeData.SIDEBAR_DIMENSION, frame, appearanceName);
 
 		this.menuButtons = new ArrayList<>();
 

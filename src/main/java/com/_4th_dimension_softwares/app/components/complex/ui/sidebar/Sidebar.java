@@ -40,6 +40,10 @@ public final class Sidebar extends AbstractSidebar {
 		this.competitionButton = new MenuButton(SizeData.N_BUTTON_DIMENSION, "MENU", frame, ButtonType.FOREGROUND_CHANGER, appearanceName+".buttons");
 		this.settingsButton = new MenuButton(SizeData.N_BUTTON_DIMENSION, "SETTINGS", frame, ButtonType.FOREGROUND_CHANGER, appearanceName+".buttons");
 
+		this.competitionButton.addButtonToDropdown("Hello");
+		this.competitionButton.addButtonToDropdown("World");
+		this.competitionButton.addButtonToDropdown("!");
+
 		// Add the menu buttons to the menu button list
 		this.menuButtons.add(competitionButton);
 		this.menuButtons.add(settingsButton);
