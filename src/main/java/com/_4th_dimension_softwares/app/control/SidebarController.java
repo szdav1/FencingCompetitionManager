@@ -7,14 +7,14 @@ import java.util.Optional;
 
 import javax.swing.JComponent;
 
-import com._4th_dimension_softwares.app.components.complex.ui.menu.MenuButton;
-import com._4th_dimension_softwares.app.components.complex.ui.sidebar.Sidebar;
+import com._4th_dimension_softwares.app.view.components.complex.ui.menu.MenuButton;
+import com._4th_dimension_softwares.app.view.components.complex.ui.sidebar.Sidebar;
 
 /**
  * The <code>SidebarMouseListener</code> is the class that handles mouse
  * actions that happened inside the sidebar using a <code>MouseListener</code>.
  * This "listener" class takes care of handling the menu buttons' dropdown panels,
- * actions happening inside the dropdown panels etc. Basically, every mouse action
+ * actions happening inside the dropdown panels etc. Basically, every action
  * that happens inside the sidebar and must be handled will end up being processed
  * by this class.
  */
@@ -58,8 +58,10 @@ public final class SidebarController implements MouseListener {
 		 * panel stays open even after exiting it with the
 		 * cursor.
 		 * */
-		if (this.findSourceOfInputEvent(e).isPresent()) {
-			MenuButton btn = (MenuButton) this.findSourceOfInputEvent(e).get();
+		Optional<JComponent> srcOptional = this.findSourceOfInputEvent(e);
+
+		if (srcOptional.isPresent()) {
+			MenuButton btn = (MenuButton) srcOptional.get();
 			this.previousButton = btn;
 			btn.setActive(!btn.isActive());
 		}
@@ -81,8 +83,10 @@ public final class SidebarController implements MouseListener {
 		 * before the current one making its dropdown panel stay open) it
 		 * is deactivated.
 		 * */
-		if (this.findSourceOfInputEvent(e).isPresent()) {
-			MenuButton btn = (MenuButton) this.findSourceOfInputEvent(e).get();
+		Optional<JComponent> srcOptional = this.findSourceOfInputEvent(e);
+
+		if (srcOptional.isPresent()) {
+			MenuButton btn = (MenuButton) srcOptional.get();
 
 			if (!btn.isActive())
 				btn.showDropdownPanel();
@@ -102,8 +106,10 @@ public final class SidebarController implements MouseListener {
 		 * was clicked, it has been activated so its dropdown panel
 		 * must stay open after exiting.
 		 * */
-		if (this.findSourceOfInputEvent(e).isPresent()) {
-			MenuButton btn = (MenuButton) this.findSourceOfInputEvent(e).get();
+		Optional<JComponent> srcOptional = this.findSourceOfInputEvent(e);
+
+		if (srcOptional.isPresent()) {
+			MenuButton btn = (MenuButton) srcOptional.get();
 
 			if (!btn.isActive())
 				btn.hideDropdownPanel();

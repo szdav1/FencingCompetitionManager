@@ -1,6 +1,6 @@
 package com._4th_dimension_softwares.app.run;
 
-import com._4th_dimension_softwares.app.frame.XFrame;
+import com._4th_dimension_softwares.app.view.frame.XFrame;
 import com._4th_dimension_softwares.support.framework.loader.ColorThemeLoader;
 
 /**
