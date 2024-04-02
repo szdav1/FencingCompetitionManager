@@ -9,7 +9,7 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 
 import com._4th_dimension_softwares.app.view.components.base.panel.XPanel;
-import com._4th_dimension_softwares.app.view.components.complex.ui.sidebar.Sidebar;
+import com._4th_dimension_softwares.app.view.components.custom.ui.sidebar.Sidebar;
 import com._4th_dimension_softwares.support.consts.PositionConstants;
 
 /**

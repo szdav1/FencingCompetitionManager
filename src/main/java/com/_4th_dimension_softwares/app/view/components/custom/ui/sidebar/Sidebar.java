@@ -1,9 +1,9 @@
-package com._4th_dimension_softwares.app.view.components.complex.ui.sidebar;
+package com._4th_dimension_softwares.app.view.components.custom.ui.sidebar;
 
 import java.util.List;
 
 import com._4th_dimension_softwares.app.view.components.base.button.ButtonType;
-import com._4th_dimension_softwares.app.view.components.complex.ui.menu.MenuButton;
+import com._4th_dimension_softwares.app.view.components.custom.ui.menu.MenuButton;
 import com._4th_dimension_softwares.app.view.frame.XFrame;
 import com._4th_dimension_softwares.app.control.sidebar.SidebarController;
 import com._4th_dimension_softwares.support.appdata.SizeData;

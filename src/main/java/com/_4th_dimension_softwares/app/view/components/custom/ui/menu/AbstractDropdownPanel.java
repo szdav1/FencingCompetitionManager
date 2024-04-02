@@ -1,4 +1,4 @@
-package com._4th_dimension_softwares.app.view.components.complex.ui.menu;
+package com._4th_dimension_softwares.app.view.components.custom.ui.menu;
 
 import java.awt.LayoutManager;
 import java.util.ArrayList;

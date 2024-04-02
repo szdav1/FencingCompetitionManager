@@ -7,8 +7,8 @@ import java.util.Optional;
 import javax.swing.JComponent;
 
 import com._4th_dimension_softwares.app.control.Controller;
-import com._4th_dimension_softwares.app.view.components.complex.ui.menu.MenuButton;
-import com._4th_dimension_softwares.app.view.components.complex.ui.sidebar.Sidebar;
+import com._4th_dimension_softwares.app.view.components.custom.ui.menu.MenuButton;
+import com._4th_dimension_softwares.app.view.components.custom.ui.sidebar.Sidebar;
 
 /**
  * The <code>SidebarMouseListener</code> is the class that handles mouse

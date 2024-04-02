@@ -2,7 +2,7 @@ package com._4th_dimension_softwares.app.view.components.interfaces;
 
 import java.util.List;
 
-import com._4th_dimension_softwares.app.view.components.complex.ui.menu.MenuButton;
+import com._4th_dimension_softwares.app.view.components.custom.ui.menu.MenuButton;
 
 /**
  * The <code>XSidebar</code> interface is a
