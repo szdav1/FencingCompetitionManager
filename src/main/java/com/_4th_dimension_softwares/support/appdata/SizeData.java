@@ -32,7 +32,7 @@ public final class SizeData {
 	public static final Dimension H_SCROLL_BAR_DIMENSION = new Dimension(H_SCROLL_BAR_WIDTH, H_SCROLL_BAR_HEIGHT);
 
 	// Sidebar size and Dimension
-	public static final int SIDEBAR_WIDTH = (SCREEN_WIDTH*5/100)+(BORDER_SIZE*2);
+	public static final int SIDEBAR_WIDTH = SCREEN_WIDTH*8/100;
 	public static final int SIDEBAR_HEIGHT = SCREEN_HEIGHT;
 	public static final Dimension SIDEBAR_DIMENSION = new Dimension(SIDEBAR_WIDTH, SIDEBAR_HEIGHT);
 
@@ -53,6 +53,10 @@ public final class SizeData {
 	public static final int DROPDOWN_WIDTH = BUTTON_WIDTH+(BORDER_SIZE*2);
 	public static final int DROPDOWN_HEIGHT = BUTTON_HEIGHT*3+(BORDER_SIZE*4);
 	public static final Dimension DROPDOWN_DIMENSION = new Dimension(DROPDOWN_WIDTH, DROPDOWN_HEIGHT);
+
+	// Separator line size adn dimension
+	public static final int SEPARATOR_WIDTH = SCREEN_WIDTH*8/100;
+	public static final Dimension SEPARATOR_DIMENSION = new Dimension(SEPARATOR_WIDTH, BORDER_SIZE);
 
 	// Not instantiatable
 	private SizeData() {

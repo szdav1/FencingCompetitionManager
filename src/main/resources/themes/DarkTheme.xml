@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DarkTheme>
     <appearance applyTo="window">
-        <background colors="[0,0,0,255][255,10,10,255][255,0,200,255]"/>
+        <background colors="[0,0,0,255]"/>
     </appearance>
 
     <appearance applyTo="sidebar">
         <background colors="[0,0,0,255]"/>
-        <border colors="[255,0,0,255]" thickness="@proportional"/>
+        <border colors="[30,30,30,255]" thickness="@proportional"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.header">
+        <background colors="[0,0,0,0]"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons">
-        <background colors="[0,0,0,255]"/>
-        <foreground colors="[255,255,255,255][100,100,100,255]"/>
+        <background colors="[0,0,0,255][30,30,30,255]"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.separator">
+        <background colors="[30,30,30,255]"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.dropdown">
-        <background colors="[0,0,0,255][50,50,50,255][100,100,100,255]"/>
-        <border colors="[255,0,0,255]" thickness="@proportional"/>
-        <padding vetical="0" horizontal="0"/>
+        <background colors="[0,0,0,255]"/>
+        <border colors="[30,30,30,255]" thickness="@proportional"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.dropdown.buttons">
-        <background colors="[0,0,0,255][100,100,100,255]"/>
+        <background colors="[0,0,0,255][30,30,30,255]"/>
         <foreground colors="[255,255,255,255][100,100,100,255]"/>
     </appearance>
 </DarkTheme>

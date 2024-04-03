@@ -1,7 +1,5 @@
 package com._4th_dimension_softwares.app.view.frame;
 
-import java.awt.Dimension;
-
 import javax.swing.JFrame;
 
 import com._4th_dimension_softwares.app.view.components.interfaces.XContainer;
@@ -20,7 +18,7 @@ public abstract class AbstractXFrame extends JFrame implements XContainer {
 		this.setTitle(title);
 		this.setUndecorated(true);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		this.setSize(new Dimension(SizeData.SCREEN_WIDTH, SizeData.SCREEN_HEIGHT));
+		this.setSize(SizeData.SCREEN_WIDTH, SizeData.SCREEN_HEIGHT);
 		this.setLocationRelativeTo(null);
 	}
 }

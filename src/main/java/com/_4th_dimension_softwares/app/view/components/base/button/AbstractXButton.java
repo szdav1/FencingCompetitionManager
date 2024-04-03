@@ -101,7 +101,7 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 		final int R = this.appearance.getBorderModel().getRoundness();
 
 		// Fill the background - Used for Foreground and Icon mainly
-		if (this.appearance.getBackgrounds().size() >= 2) {
+		if (this.appearance.getBackgrounds().size() >= 2 && this.type != ButtonType.BACKGROUND_CHANGER) {
 			LinearGradientPaint lgp = new LinearGradientPaint(X, Y, W, H, Util.calcEqualFracts(this.appearance.getBackgrounds().size()),
 				this.appearance.getBackgroundsAsArray());
 

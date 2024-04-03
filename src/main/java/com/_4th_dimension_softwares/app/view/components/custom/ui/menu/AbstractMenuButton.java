@@ -6,18 +6,15 @@ import com._4th_dimension_softwares.app.view.components.base.button.ButtonType;
 import com._4th_dimension_softwares.app.view.components.base.button.XButton;
 import com._4th_dimension_softwares.app.view.frame.XFrame;
 import com._4th_dimension_softwares.support.appdata.SizeData;
-import com._4th_dimension_softwares.support.consts.RelativePositions;
 
 public abstract class AbstractMenuButton extends XButton {
 	protected boolean active;
-	protected RelativePositions dropdownPosition;
 	protected DropdownPanel dropdownPanel;
 
 	public AbstractMenuButton(Dimension dimension, String text, final XFrame frame, ButtonType type, String appearanceName) {
 		super(dimension, text, frame, type, appearanceName);
 
 		this.active = false;
-		this.dropdownPosition = RelativePositions.TO_RIGHT;
 		this.dropdownPanel = new DropdownPanel(0, 0, SizeData.DROPDOWN_WIDTH, SizeData.DROPDOWN_HEIGHT, frame, appearanceName+".dropdown");
 	}
 
@@ -29,7 +26,6 @@ public abstract class AbstractMenuButton extends XButton {
 		super(x, y, width, height, text, frame, type, appearanceName);
 
 		this.active = false;
-		this.dropdownPosition = RelativePositions.TO_RIGHT;
 		this.dropdownPanel = new DropdownPanel(0, 0, SizeData.DROPDOWN_WIDTH, SizeData.DROPDOWN_HEIGHT, frame, appearanceName+".dropdown");
 	}
 

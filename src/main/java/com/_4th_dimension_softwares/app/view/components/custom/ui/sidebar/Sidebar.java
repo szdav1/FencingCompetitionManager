@@ -3,6 +3,8 @@ package com._4th_dimension_softwares.app.view.components.custom.ui.sidebar;
 import java.util.List;
 
 import com._4th_dimension_softwares.app.view.components.base.button.ButtonType;
+import com._4th_dimension_softwares.app.view.components.base.label.XLabel;
+import com._4th_dimension_softwares.app.view.components.base.panel.XPanel;
 import com._4th_dimension_softwares.app.view.components.custom.ui.menu.MenuButton;
 import com._4th_dimension_softwares.app.view.frame.XFrame;
 import com._4th_dimension_softwares.app.control.sidebar.SidebarController;
@@ -17,6 +19,10 @@ import com._4th_dimension_softwares.support.consts.RelativePositions;
  * etc.
  */
 public final class Sidebar extends AbstractSidebar {
+	// Header
+	private final XLabel header;
+	// Separator panels
+	private final XPanel separator;
 	// Menu buttons
 	private final MenuButton competitionButton;
 	private final MenuButton settingsButton;
@@ -34,17 +40,21 @@ public final class Sidebar extends AbstractSidebar {
 	public Sidebar(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
 
+		this.usePadding();
+
 		// The listener that takes care of the mouse actions happened in the sidebar
 		final SidebarController sml = new SidebarController(this);
 
+		// Header
+		this.header = new XLabel(SizeData.BUTTON_DIMENSION, "Management", frame, appearanceName+".header");
+		this.header.centerContent();
+
+		// Separator panels
+		this.separator = new XPanel(SizeData.SEPARATOR_DIMENSION, frame, appearanceName+".separator");
+
 		// Menu buttons
-		this.competitionButton = new MenuButton(SizeData.N_BUTTON_DIMENSION, "MENU", frame, ButtonType.FOREGROUND_CHANGER, appearanceName+".buttons");
-
-		this.settingsButton = new MenuButton(SizeData.N_BUTTON_DIMENSION, "SETTINGS", frame, ButtonType.FOREGROUND_CHANGER, appearanceName+".buttons");
-
-		this.competitionButton.addButtonToDropdown("Hello");
-		this.competitionButton.addButtonToDropdown("World");
-		this.competitionButton.addButtonToDropdown("!");
+		this.competitionButton = new MenuButton(SizeData.BUTTON_DIMENSION, "Competition", frame, ButtonType.BACKGROUND_CHANGER, appearanceName+".buttons");
+		this.settingsButton = new MenuButton(SizeData.BUTTON_DIMENSION, "SETTINGS", frame, ButtonType.BACKGROUND_CHANGER, appearanceName+".buttons");
 
 		// Add the menu buttons to the menu button list
 		this.menuButtons.add(competitionButton);
@@ -53,6 +63,10 @@ public final class Sidebar extends AbstractSidebar {
 		// Implement the listener on the buttons
 		this.menuButtons.forEach(btn -> btn.addMouseListener(sml));
 
+		// Add the header to the sidebar
+		this.addComponent(this.header);
+		// Add the separator
+		this.addComponent(this.separator);
 		// Add the menu buttons to the sidebar
 		this.menuButtons.forEach(this::addComponent);
 	}
@@ -64,10 +78,8 @@ public final class Sidebar extends AbstractSidebar {
 	 * to be visible.
 	 */
 	public void performAdjustments() {
-		if (!this.frame.isVisible())
-			return;
-
-		this.menuButtons.forEach(btn -> btn.adjustDropdownPosition(RelativePositions.TO_RIGHT, -SizeData.BORDER_SIZE, 0));
+		this.menuButtons.forEach(btn ->
+			btn.adjustDropdownPosition(RelativePositions.TO_RIGHT, -SizeData.BORDER_SIZE, 0));
 	}
 
 	@Override

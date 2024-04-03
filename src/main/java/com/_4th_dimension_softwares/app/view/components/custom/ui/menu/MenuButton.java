@@ -51,9 +51,7 @@ public class MenuButton extends AbstractMenuButton {
 	 *                          relative position of the dropdown panel
 	 */
 	public void adjustDropdownPosition(RelativePositions relativePositions, int xAdjustment, int yAdjustment) {
-		this.dropdownPosition = relativePositions;
-
-		if (this.getParent() == null)
+		if (this.getParent() == null || !this.frame.isVisible())
 			return;
 
 		final Point p = this.getLocationOnScreen();
@@ -62,8 +60,7 @@ public class MenuButton extends AbstractMenuButton {
 			case TO_RIGHT -> this.dropdownPanel.setLocation(p.x+xAdjustment, p.y+yAdjustment);
 			case TO_LEFT -> this.dropdownPanel.setLocation(p.x-this.getWidth()+xAdjustment, p.y+yAdjustment);
 			case AT_BOTTOM -> this.dropdownPanel.setLocation(p.x+xAdjustment, p.y-this.getHeight()+yAdjustment);
-			case ON_TOP ->
-				this.dropdownPanel.setLocation(p.x+xAdjustment, p.y-this.dropdownPanel.getHeight()+yAdjustment);
+			case ON_TOP -> this.dropdownPanel.setLocation(p.x+xAdjustment, p.y-this.dropdownPanel.getHeight()+yAdjustment);
 		}
 	}
 
