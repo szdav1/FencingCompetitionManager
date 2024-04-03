@@ -59,26 +59,4 @@ public abstract class AbstractMenuButton extends XButton {
 	public DropdownPanel getDropdownPanel() {
 		return this.dropdownPanel;
 	}
-
-	/**
-	 * Sets the relative position of the dropdown panel.
-	 * The position of the dropdown panel is always relative
-	 * to the menu button's position.
-	 * <p>Valid values are:</p>
-	 * - <code>ON_TOP</code> the dropdown panel will be displaying
-	 * on top of the menu button.
-	 * <p></p>
-	 * - <code>TO_RIGHT</code> the dropdown panel will be displaying
-	 * on the right side of the menu button.
-	 * <p></p>
-	 * - <code>AT_BOTTOM</code> the dropdown panel will be displaying
-	 * at the bottom of the menu button.
-	 * <p></p>
-	 * - <code>TO_LEFT</code> the dropdown panel will be displaying
-	 * on the left side of the menu button.
-	 *
-	 * @param relativePositions A <code>RelativePositions</code> enum value that defines the
-	 *                          relative position of the dropdown panel
-	 */
-	public abstract void setDropdownPosition(RelativePositions relativePositions);
 }

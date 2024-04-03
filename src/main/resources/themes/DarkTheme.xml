@@ -17,6 +17,7 @@
     <appearance applyTo="sidebar.buttons.dropdown">
         <background colors="[0,0,0,255][50,50,50,255][100,100,100,255]"/>
         <border colors="[255,0,0,255]" thickness="@proportional"/>
+        <padding vetical="0" horizontal="0"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.dropdown.buttons">

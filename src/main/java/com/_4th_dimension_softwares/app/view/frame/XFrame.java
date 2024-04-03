@@ -49,7 +49,7 @@ public class XFrame extends AbstractXFrame {
 		this.contentPanel = new XPanel(new Dimension(this.getWidth(), this.getHeight()), new BorderLayout(), this, appearanceName);
 		this.setContentPane(this.contentPanel);
 
-		// Instantiate and add the frame part components
+		// Instantiate and add parts of the frame
 		// Sidebar
 		this.sidebar = new Sidebar(this, "sidebar");
 		// Center panel
@@ -59,10 +59,17 @@ public class XFrame extends AbstractXFrame {
 		this.setBackgroundImage();
 
 		// Add frame part components
+		// Sidebar
+		this.addComponent(this.sidebar, PositionConstants.LEFT_POSITION);
+		// Center panel
 		this.addComponent(this.centerPanel, PositionConstants.CENTER_POSITION);
 
 		// Set visibility
 		this.setVisible(true);
+
+		// Perform fine adjustments on locations and dimensions
+		// That require the frame to be visible
+		this.sidebar.performAdjustments();
 	}
 
 	/**

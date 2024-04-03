@@ -52,12 +52,18 @@ public class DropdownPanel extends AbstractDropdownPanel {
 		super(x, y, width, height, frame, appearanceName);
 	}
 
-	@Override
+	/**
+	 * Creates and adds a button to the dropdown panel
+	 * with the specified text.
+	 *
+	 * @param buttonText The text of the button
+	 */
 	public void createAndAddButton(String buttonText) {
-		XButton btn = new XButton(new Dimension(this.getWidth(), SizeData.BUTTON_HEIGHT), buttonText, this.frame, ButtonType.BACKGROUND_CHANGER, "sidebar.buttons.dropdown.buttons");
+		XButton btn = new XButton(new Dimension(this.getWidth()-(this.appearance.getHorizontalPadding()*2), SizeData.BUTTON_HEIGHT),
+			buttonText, this.frame, ButtonType.BACKGROUND_CHANGER, "sidebar.buttons.dropdown.buttons");
 
 		this.buttonList.add(btn);
-		int newHeight = SizeData.calcDropdownHeight(this.buttonList.size());
+		int newHeight = SizeData.calcDropdownHeight(this.buttonList.size())+((this.buttonList.size()+1)*this.appearance.getVerticalPadding());
 
 		this.setSize(this.getWidth(), newHeight);
 		this.addComponent(btn);

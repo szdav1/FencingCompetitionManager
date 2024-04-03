@@ -32,21 +32,26 @@ public final class ColorThemeModel extends AbstractColorThemeModel {
 	 * that this class contains mostly safe, valid models that
 	 * can be accessed from this class that collects them.
 	 *
-	 * @param backgroundModel The model for the background colors
-	 * @param foregroundModel The model for the foreground colors
-	 * @param borderModel     The model for the border
-	 * @param fontModel       The model for the font
-	 * @param iconModel1      The model of the main icon
-	 * @param iconModel2      The model of the secondary icon
+	 * @param verticalPadding   The vertical padding (inner margin) that should be applied to a component's <code>LayoutManager</code> defined in %
+	 * @param horizontalPadding The horizontal padding (inner margin) that should be applied to a component's <code>LayoutManager</code> defined in %
+	 * @param backgroundModel   The model for the background colors
+	 * @param foregroundModel   The model for the foreground colors
+	 * @param borderModel       The model for the border
+	 * @param fontModel         The model for the font
+	 * @param iconModel1        The model of the main icon
+	 * @param iconModel2        The model of the secondary icon
 	 */
-	public ColorThemeModel(final ColorModel backgroundModel, final ColorModel foregroundModel, final BorderModel borderModel, final FontModel fontModel, final IconModel iconModel1, final IconModel iconModel2) {
-		super(backgroundModel, foregroundModel, borderModel, fontModel, iconModel1, iconModel2);
+	public ColorThemeModel(int verticalPadding, int horizontalPadding, ColorModel backgroundModel, ColorModel foregroundModel, BorderModel borderModel, FontModel fontModel, IconModel iconModel1, IconModel iconModel2) {
+		super(verticalPadding, horizontalPadding, backgroundModel, foregroundModel, borderModel, fontModel, iconModel1, iconModel2);
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof ColorThemeModel ctm) {
-			return this.backgroundModel.equals(ctm.getBackgroundModel()) &&
+			return this.verticalPadding == ctm.getVerticalPadding() &&
+				this.horizontalPadding == ctm.getHorizontalPadding() &&
+				this.backgroundModel.equals(ctm.getBackgroundModel()) &&
 				this.foregroundModel.equals(ctm.getForegroundModel()) &&
 				this.borderModel.equals(ctm.getBorderModel()) &&
 				this.fontModel.equals(ctm.getFontModel()) &&
@@ -60,7 +65,9 @@ public final class ColorThemeModel extends AbstractColorThemeModel {
 	@Override
 	public String toString() {
 		return "ColorThemeModel{"+
-			"backgroundModel="+backgroundModel+
+			"verticalPadding="+verticalPadding+
+			", horizontalPadding="+horizontalPadding+
+			", backgroundModel="+backgroundModel+
 			", foregroundModel="+foregroundModel+
 			", borderModel="+borderModel+
 			", fontModel="+fontModel+

@@ -7,6 +7,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 import com._4th_dimension_softwares.support.framework.models.*;
 import com._4th_dimension_softwares.support.util.ResourceHandler;
+import com._4th_dimension_softwares.support.util.Util;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -79,6 +80,11 @@ public final class ColorThemeReader {
 			case "foreground" -> {
 				ColorModel cm = new ColorModel(element.getAttribute("colors"));
 				ctm.setForegroundModel(cm);
+			}
+			// Padding
+			case "padding" -> {
+				ctm.setVerticalPadding(Util.toInt(element.getAttribute("vertical"), 0, (i) -> i >= 0));
+				ctm.setHorizontalPadding(Util.toInt(element.getAttribute("horizontal"), 0, (i) -> i >= 0));
 			}
 		}
 	}

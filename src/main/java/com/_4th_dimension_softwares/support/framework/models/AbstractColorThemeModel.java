@@ -1,6 +1,10 @@
 package com._4th_dimension_softwares.support.framework.models;
 
+import com._4th_dimension_softwares.support.appdata.SizeData;
+
 public abstract class AbstractColorThemeModel {
+	protected int verticalPadding;
+	protected int horizontalPadding;
 	protected ColorModel backgroundModel;
 	protected ColorModel foregroundModel;
 	protected BorderModel borderModel;
@@ -9,6 +13,8 @@ public abstract class AbstractColorThemeModel {
 	protected IconModel iconModel2;
 
 	protected AbstractColorThemeModel() {
+		this.verticalPadding = 0;
+		this.horizontalPadding = 0;
 		this.backgroundModel = new ColorModel();
 		this.foregroundModel = new ColorModel("[255,255,255,255]");
 		this.borderModel = new BorderModel();
@@ -17,13 +23,33 @@ public abstract class AbstractColorThemeModel {
 		this.iconModel2 = new IconModel();
 	}
 
-	protected AbstractColorThemeModel(final ColorModel backgroundModel, final ColorModel foregroundModel, final BorderModel borderModel, final FontModel fontModel, final IconModel iconModel1, final IconModel iconModel2) {
+	protected AbstractColorThemeModel(final int verticalPadding, final int horizontalPadding, final ColorModel backgroundModel,
+		final ColorModel foregroundModel, final BorderModel borderModel, final FontModel fontModel, final IconModel iconModel1, final IconModel iconModel2) {
+
+		this.verticalPadding = SizeData.SCREEN_WIDTH*verticalPadding/100;
+		this.horizontalPadding = SizeData.SCREEN_HEIGHT*horizontalPadding/100;
 		this.backgroundModel = backgroundModel;
 		this.foregroundModel = foregroundModel;
 		this.borderModel = borderModel;
 		this.fontModel = fontModel;
 		this.iconModel1 = iconModel1;
 		this.iconModel2 = iconModel2;
+	}
+
+	public int getVerticalPadding() {
+		return this.verticalPadding;
+	}
+
+	public void setVerticalPadding(int verticalPadding) {
+		this.verticalPadding = verticalPadding;
+	}
+
+	public int getHorizontalPadding() {
+		return this.horizontalPadding;
+	}
+
+	public void setHorizontalPadding(int horizontalPadding) {
+		this.horizontalPadding = horizontalPadding;
 	}
 
 	public ColorModel getBackgroundModel() {

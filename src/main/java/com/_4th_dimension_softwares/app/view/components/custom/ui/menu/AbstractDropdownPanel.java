@@ -15,24 +15,17 @@ public abstract class AbstractDropdownPanel extends XPanel {
 		super(x, y, width, height, layoutManager, frame, appearanceName);
 
 		this.buttonList = new ArrayList<>();
+		this.setSize(this.getWidth()+this.appearance.getHorizontalPadding(), this.getHeight()+this.appearance.getVerticalPadding());
 	}
 
 	public AbstractDropdownPanel(int x, int y, int width, int height, final XFrame frame, String appearanceName) {
 		super(x, y, width, height, frame, appearanceName);
 
 		this.buttonList = new ArrayList<>();
+		this.setSize(this.getWidth()+this.appearance.getHorizontalPadding(), this.getHeight()+this.appearance.getVerticalPadding());
 	}
 
 	public List<XButton> getButtonList() {
 		return this.buttonList;
 	}
-
-
-	/**
-	 * Creates and adds a button to the dropdown panel
-	 * with the specified text.
-	 *
-	 * @param buttonText The text of the button
-	 */
-	public abstract void createAndAddButton(String buttonText);
 }

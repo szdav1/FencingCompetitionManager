@@ -5,7 +5,6 @@ import java.awt.Point;
 
 import com._4th_dimension_softwares.app.view.components.base.button.ButtonType;
 import com._4th_dimension_softwares.app.view.frame.XFrame;
-import com._4th_dimension_softwares.support.appdata.SizeData;
 import com._4th_dimension_softwares.support.consts.PositionConstants;
 import com._4th_dimension_softwares.support.consts.RelativePositions;
 
@@ -32,11 +31,47 @@ public class MenuButton extends AbstractMenuButton {
 	}
 
 	/**
+	 * Sets the relative position of the dropdown panel.
+	 * The position of the dropdown panel is always relative
+	 * to the menu button's position.
+	 * <p>Valid values are:</p>
+	 * <code>ON_TOP</code> the dropdown panel will be displaying
+	 * on top of the menu button.
+	 * <p></p>
+	 * <code>TO_RIGHT</code> the dropdown panel will be displaying
+	 * on the right side of the menu button.
+	 * <p></p>
+	 * <code>AT_BOTTOM</code> the dropdown panel will be displaying
+	 * at the bottom of the menu button.
+	 * <p></p>
+	 * <code>TO_LEFT</code> the dropdown panel will be displaying
+	 * on the left side of the menu button.
+	 *
+	 * @param relativePositions A <code>RelativePositions</code> enum value that defines the
+	 *                          relative position of the dropdown panel
+	 */
+	public void adjustDropdownPosition(RelativePositions relativePositions, int xAdjustment, int yAdjustment) {
+		this.dropdownPosition = relativePositions;
+
+		if (this.getParent() == null)
+			return;
+
+		final Point p = this.getLocationOnScreen();
+
+		switch (relativePositions) {
+			case TO_RIGHT -> this.dropdownPanel.setLocation(p.x+xAdjustment, p.y+yAdjustment);
+			case TO_LEFT -> this.dropdownPanel.setLocation(p.x-this.getWidth()+xAdjustment, p.y+yAdjustment);
+			case AT_BOTTOM -> this.dropdownPanel.setLocation(p.x+xAdjustment, p.y-this.getHeight()+yAdjustment);
+			case ON_TOP ->
+				this.dropdownPanel.setLocation(p.x+xAdjustment, p.y-this.dropdownPanel.getHeight()+yAdjustment);
+		}
+	}
+
+	/**
 	 * Adds the dropdown panel of this menu button
 	 * to the main frame of the application at the set position.
 	 */
 	public void showDropdownPanel() {
-		this.setDropdownPosition(this.dropdownPosition);
 		this.frame.addToCenterPanel(this.dropdownPanel, PositionConstants.HIGH_POSITION);
 	}
 
@@ -46,19 +81,5 @@ public class MenuButton extends AbstractMenuButton {
 	 */
 	public void hideDropdownPanel() {
 		this.frame.removeFromCenterPanel(this.dropdownPanel);
-	}
-
-	@Override
-	public void setDropdownPosition(RelativePositions relativePositions) {
-		this.dropdownPosition = relativePositions;
-
-		if (this.getParent() == null)
-			return;
-
-		final Point p = this.getLocationOnScreen();
-
-		if (relativePositions == RelativePositions.TO_RIGHT)
-			this.dropdownPanel.setLocation(p.x-SizeData.BORDER_SIZE, p.y);
-
 	}
 }
