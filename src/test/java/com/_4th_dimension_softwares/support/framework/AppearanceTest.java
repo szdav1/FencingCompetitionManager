@@ -3,11 +3,12 @@ package com._4th_dimension_softwares.support.framework;
 import java.awt.Color;
 import java.awt.Font;
 
-import com._4th_dimension_softwares.support.framework.models.ColorModel;
-import com._4th_dimension_softwares.support.framework.models.ColorThemeModel;
-import com._4th_dimension_softwares.support.framework.models.FontModel;
-import com._4th_dimension_softwares.support.framework.models.IconModel;
-import com._4th_dimension_softwares.support.util.Util;
+import com._4th_dimension_software.support.framework.Appearance;
+import com._4th_dimension_software.support.framework.models.ColorModel;
+import com._4th_dimension_software.support.framework.models.ColorThemeModel;
+import com._4th_dimension_software.support.framework.models.FontModel;
+import com._4th_dimension_software.support.framework.models.IconModel;
+import com._4th_dimension_software.support.util.Util;
 import org.junit.jupiter.api.*;
 
 class AppearanceTest {

@@ -2,7 +2,8 @@ package com._4th_dimension_softwares.support.framework.models;
 
 import java.awt.Color;
 
-import com._4th_dimension_softwares.support.util.Util;
+import com._4th_dimension_software.support.framework.models.ColorModel;
+import com._4th_dimension_software.support.util.Util;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
