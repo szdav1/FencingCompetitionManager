@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Icon related tests" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-04-04T18:51:34" hostname="DESKTOP-FN3U10C" time="0.342">
+<testsuite name="Icon related tests" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-04-04T18:54:23" hostname="DESKTOP-FN3U10C" time="0.361">
   <properties/>
-  <testcase name="The icon of the Appearance should not be null" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$IconRelatedTests" time="0.298"/>
+  <testcase name="The icon of the Appearance should not be null" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$IconRelatedTests" time="0.32"/>
   <testcase name="The icon of the Appearance should be null" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$IconRelatedTests" time="0.005"/>
-  <testcase name="The size of the icon should be 256x256" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$IconRelatedTests" time="0.035"/>
+  <testcase name="The size of the icon should be 256x256" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$IconRelatedTests" time="0.027"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
