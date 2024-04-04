@@ -11,14 +11,11 @@
 
     <appearance applyTo="sidebar.header">
         <background colors="[0,0,0,0]"/>
+        <border colors="[30,30,30,255]" thickness="@proportional"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons">
         <background colors="[0,0,0,255][30,30,30,255]"/>
-    </appearance>
-
-    <appearance applyTo="sidebar.separator">
-        <background colors="[30,30,30,255]"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.dropdown">

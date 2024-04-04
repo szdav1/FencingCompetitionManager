@@ -5,13 +5,26 @@
     </appearance>
 
     <appearance applyTo="sidebar">
-        <background colors="[255,0,0,255][0,255,0,255]"/>
+        <background colors="[0,0,0,255]"/>
+        <border colors="[30,30,30,255]" thickness="@proportional"/>
     </appearance>
 
-    <appearance applyTo="test">
-        <background colors="[255,255,255,255][255,255,255,255][255,0,0,255]"/>
-        <foreground colors="[0,0,0,255]"/>
-        <font source="/fonts/Halimun-W7jn.ttf" ligature="normal" size="10"/>
-        <border roundness="50" colors="[255,0,0,255][0,0,255,255]" thickness="@proportional"/>
+    <appearance applyTo="sidebar.header">
+        <background colors="[0,0,0,0]"/>
+        <border colors="[30,30,30,255]" thickness="@proportional"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.buttons">
+        <background colors="[0,0,0,255][30,30,30,255]"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.buttons.dropdown">
+        <background colors="[0,0,0,255]"/>
+        <border colors="[30,30,30,255]" thickness="@proportional"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.buttons.dropdown.buttons">
+        <background colors="[0,0,0,255][30,30,30,255]"/>
+        <foreground colors="[255,255,255,255][100,100,100,255]"/>
     </appearance>
 </DarkTheme>

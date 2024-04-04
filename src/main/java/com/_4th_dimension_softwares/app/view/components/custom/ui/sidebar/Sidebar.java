@@ -2,12 +2,11 @@ package com._4th_dimension_softwares.app.view.components.custom.ui.sidebar;
 
 import java.util.List;
 
+import com._4th_dimension_softwares.app.control.sidebar.SidebarController;
 import com._4th_dimension_softwares.app.view.components.base.button.ButtonType;
 import com._4th_dimension_softwares.app.view.components.base.label.XLabel;
-import com._4th_dimension_softwares.app.view.components.base.panel.XPanel;
 import com._4th_dimension_softwares.app.view.components.custom.ui.menu.MenuButton;
 import com._4th_dimension_softwares.app.view.frame.XFrame;
-import com._4th_dimension_softwares.app.control.sidebar.SidebarController;
 import com._4th_dimension_softwares.support.appdata.SizeData;
 import com._4th_dimension_softwares.support.consts.RelativePositions;
 
@@ -21,8 +20,6 @@ import com._4th_dimension_softwares.support.consts.RelativePositions;
 public final class Sidebar extends AbstractSidebar {
 	// Header
 	private final XLabel header;
-	// Separator panels
-	private final XPanel separator;
 	// Menu buttons
 	private final MenuButton competitionButton;
 	private final MenuButton settingsButton;
@@ -49,12 +46,9 @@ public final class Sidebar extends AbstractSidebar {
 		this.header = new XLabel(SizeData.BUTTON_DIMENSION, "Management", frame, appearanceName+".header");
 		this.header.centerContent();
 
-		// Separator panels
-		this.separator = new XPanel(SizeData.SEPARATOR_DIMENSION, frame, appearanceName+".separator");
-
 		// Menu buttons
 		this.competitionButton = new MenuButton(SizeData.BUTTON_DIMENSION, "Competition", frame, ButtonType.BACKGROUND_CHANGER, appearanceName+".buttons");
-		this.settingsButton = new MenuButton(SizeData.BUTTON_DIMENSION, "SETTINGS", frame, ButtonType.BACKGROUND_CHANGER, appearanceName+".buttons");
+		this.settingsButton = new MenuButton(SizeData.BUTTON_DIMENSION, "Settings", frame, ButtonType.BACKGROUND_CHANGER, appearanceName+".buttons");
 
 		// Add the menu buttons to the menu button list
 		this.menuButtons.add(competitionButton);
@@ -65,8 +59,7 @@ public final class Sidebar extends AbstractSidebar {
 
 		// Add the header to the sidebar
 		this.addComponent(this.header);
-		// Add the separator
-		this.addComponent(this.separator);
+
 		// Add the menu buttons to the sidebar
 		this.menuButtons.forEach(this::addComponent);
 	}

@@ -3,7 +3,7 @@
     <option name="MAIN_CLASS_NAME" value="com._4th_dimension_softwares.app.run.Main" />
     <module name="FencingCompetitionManager.main" />
     <method v="2">
-      <option name="Make" enabled="true" />
+      <option name="Gradle.BeforeRunTask" enabled="true" tasks="build" externalProjectPath="$PROJECT_DIR$" vmOptions="" scriptParameters="" />
     </method>
   </configuration>
 </component>
