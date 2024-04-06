@@ -1,6 +1,11 @@
 package com._4th_dimension_software.app.view.components.custom.ui.sidebar;
 
+import java.awt.Dimension;
+import java.awt.Insets;
 import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
 
 import com._4th_dimension_software.app.control.sidebar.SidebarController;
 import com._4th_dimension_software.app.view.frame.XFrame;
@@ -37,18 +42,20 @@ public final class Sidebar extends AbstractSidebar {
 	public Sidebar(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
 
-		this.usePadding();
-
 		// The listener that takes care of the mouse actions happened in the sidebar
 		final SidebarController sml = new SidebarController(this);
 
 		// Header
-		this.header = new XLabel(SizeData.BUTTON_DIMENSION, "Management", frame, appearanceName+".header");
+		this.header = new XLabel(SizeData.W_BUTTON_DIMENSION, "Management", frame, appearanceName+".header");
 		this.header.centerContent();
 
 		// Menu buttons
-		this.competitionButton = new MenuButton(SizeData.BUTTON_DIMENSION, "Competition", frame, ButtonType.BACKGROUND_CHANGER, appearanceName+".buttons");
-		this.settingsButton = new MenuButton(SizeData.BUTTON_DIMENSION, "Settings", frame, ButtonType.BACKGROUND_CHANGER, appearanceName+".buttons");
+		this.competitionButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "New", frame, ButtonType.BACKGROUND_CHANGER, appearanceName+".buttons");
+		this.competitionButton.addButtonToDropdown("Competition");
+		this.competitionButton.addButtonToDropdown("Empty Poule");
+		this.competitionButton.addButtonToDropdown("Empty Table");
+
+		this.settingsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Settings", frame, ButtonType.BACKGROUND_CHANGER, appearanceName+".buttons");
 
 		// Add the menu buttons to the menu button list
 		this.menuButtons.add(competitionButton);
@@ -72,7 +79,7 @@ public final class Sidebar extends AbstractSidebar {
 	 */
 	public void performAdjustments() {
 		this.menuButtons.forEach(btn ->
-			btn.adjustDropdownPosition(RelativePositions.TO_RIGHT, -SizeData.BORDER_SIZE, 0));
+			btn.adjustDropdownPosition(RelativePositions.TO_RIGHT, 0, 0));
 	}
 
 	@Override

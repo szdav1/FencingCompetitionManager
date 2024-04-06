@@ -97,9 +97,7 @@ public final class Appearance extends AbstractAppearance {
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Appearance a) {
-			return this.verticalPadding == a.getVerticalPadding() &&
-				this.horizontalPadding == a.getHorizontalPadding() &&
-				this.backgrounds.equals(a.getBackgrounds()) &&
+			return this.backgrounds.equals(a.getBackgrounds()) &&
 				this.foregrounds.equals(a.getForegrounds()) &&
 				this.borderModel.equals(a.getBorderModel()) &&
 				this.font.equals(a.getFont()) &&
@@ -113,8 +111,7 @@ public final class Appearance extends AbstractAppearance {
 	@Override
 	public String toString() {
 		return "Appearance{"+
-			"padding="+verticalPadding+
-			", backgrounds="+backgrounds+
+			"backgrounds="+backgrounds+
 			", foregrounds="+foregrounds+
 			", borderModel="+borderModel+
 			", font="+font+

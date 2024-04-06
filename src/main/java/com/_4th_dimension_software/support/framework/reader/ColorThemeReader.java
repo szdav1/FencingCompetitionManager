@@ -81,11 +81,6 @@ public final class ColorThemeReader {
 				ColorModel cm = new ColorModel(element.getAttribute("colors"));
 				ctm.setForegroundModel(cm);
 			}
-			// Padding
-			case "padding" -> {
-				ctm.setVerticalPadding(Util.toInt(element.getAttribute("vertical"), 0, (i) -> i >= 0));
-				ctm.setHorizontalPadding(Util.toInt(element.getAttribute("horizontal"), 0, (i) -> i >= 0));
-			}
 		}
 	}
 

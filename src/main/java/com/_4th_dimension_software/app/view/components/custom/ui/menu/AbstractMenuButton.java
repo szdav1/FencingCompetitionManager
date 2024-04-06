@@ -1,11 +1,14 @@
 package com._4th_dimension_software.app.view.components.custom.ui.menu;
 
 import java.awt.Dimension;
+import java.awt.Insets;
 
-import com._4th_dimension_software.app.view.frame.XFrame;
-import com._4th_dimension_software.support.appdata.SizeData;
+import javax.swing.SwingConstants;
+
 import com._4th_dimension_software.app.view.components.base.button.ButtonType;
 import com._4th_dimension_software.app.view.components.base.button.XButton;
+import com._4th_dimension_software.app.view.frame.XFrame;
+import com._4th_dimension_software.support.appdata.SizeData;
 
 public abstract class AbstractMenuButton extends XButton {
 	protected boolean active;
@@ -13,6 +16,9 @@ public abstract class AbstractMenuButton extends XButton {
 
 	public AbstractMenuButton(Dimension dimension, String text, final XFrame frame, ButtonType type, String appearanceName) {
 		super(dimension, text, frame, type, appearanceName);
+
+		this.setHorizontalAlignment(SwingConstants.LEFT);
+		this.setMargin(new Insets(0, SizeData.calc(1), 0, 0));
 
 		this.active = false;
 		this.dropdownPanel = new DropdownPanel(0, 0, SizeData.DROPDOWN_WIDTH, SizeData.DROPDOWN_HEIGHT, frame, appearanceName+".dropdown");
@@ -24,6 +30,9 @@ public abstract class AbstractMenuButton extends XButton {
 
 	public AbstractMenuButton(int x, int y, int width, int height, String text, final XFrame frame, ButtonType type, String appearanceName) {
 		super(x, y, width, height, text, frame, type, appearanceName);
+
+		this.setHorizontalAlignment(SwingConstants.LEFT);
+		this.setMargin(new Insets(0, SizeData.calc(1), 0, 0));
 
 		this.active = false;
 		this.dropdownPanel = new DropdownPanel(0, 0, SizeData.DROPDOWN_WIDTH, SizeData.DROPDOWN_HEIGHT, frame, appearanceName+".dropdown");

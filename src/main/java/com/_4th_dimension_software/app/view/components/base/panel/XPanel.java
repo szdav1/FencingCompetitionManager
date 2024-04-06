@@ -130,24 +130,6 @@ public class XPanel extends AbstractXPanel {
 			fl.setAlignment(alignment);
 	}
 
-	/**
-	 * Sets the padding (inner margin) of the container to the
-	 * padding defined in the color theme file. If the constructor
-	 * that doesn't take a layout manager is called to instantiate
-	 * this class, by default the values defined in the color theme
-	 * file are going to be used (if there is no padding defined the
-	 * default value is 0). However, if a constructor that does take a
-	 * layout manager is called, accessing the proportional values defined
-	 * in the color theme file is not possible. This method gives an easy
-	 * solution to this problem.
-	 */
-	public void usePadding() {
-		if (this.getLayout() instanceof FlowLayout fl) {
-			fl.setVgap(this.appearance.getVerticalPadding());
-			fl.setHgap(this.appearance.getHorizontalPadding());
-		}
-	}
-
 	@Override
 	public XFrame getFrame() {
 		return this.frame;

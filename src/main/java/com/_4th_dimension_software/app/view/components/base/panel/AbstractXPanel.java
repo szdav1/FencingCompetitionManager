@@ -26,7 +26,7 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
 
 	protected AbstractXPanel(Dimension dimension, final XFrame frame, String appearanceName) {
 		this(dimension, null, frame, appearanceName);
-		this.setLayout(new FlowLayout(FlowLayout.CENTER, this.appearance.getHorizontalPadding(), this.appearance.getVerticalPadding()));
+		this.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 	}
 
 	protected AbstractXPanel(int x, int y, int width, int height, LayoutManager layoutManager, final XFrame frame, String appearanceName) {
@@ -40,7 +40,7 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
 
 	protected AbstractXPanel(int x, int y, int width, int height, final XFrame frame, String appearanceName) {
 		this(x, y, width, height, null, frame, appearanceName);
-		this.setLayout(new FlowLayout(FlowLayout.CENTER, this.appearance.getHorizontalPadding(), this.appearance.getVerticalPadding()));
+		this.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 	}
 
 	@Override

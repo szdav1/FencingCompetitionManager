@@ -31,16 +31,17 @@ public final class SizeData {
 	public static final int H_SCROLL_BAR_HEIGHT = (int) (SCREEN_WIDTH*1.5f/100);
 	public static final Dimension H_SCROLL_BAR_DIMENSION = new Dimension(H_SCROLL_BAR_WIDTH, H_SCROLL_BAR_HEIGHT);
 
-	// Sidebar size and Dimension
-	public static final int SIDEBAR_WIDTH = SCREEN_WIDTH*8/100;
-	public static final int SIDEBAR_HEIGHT = SCREEN_HEIGHT;
-	public static final Dimension SIDEBAR_DIMENSION = new Dimension(SIDEBAR_WIDTH, SIDEBAR_HEIGHT);
 
 	// Button size and dimension
 	public static final int N_BUTTON_WIDTH = SCREEN_WIDTH*5/100;
 	public static final int BUTTON_WIDTH = SCREEN_WIDTH*8/100;
 	public static final int W_BUTTON_WIDTH = SCREEN_WIDTH*10/100;
 	public static final int BUTTON_HEIGHT = SCREEN_HEIGHT*5/100;
+
+	// Sidebar size and Dimension
+	public static final int SIDEBAR_WIDTH = W_BUTTON_WIDTH;
+	public static final int SIDEBAR_HEIGHT = SCREEN_HEIGHT;
+	public static final Dimension SIDEBAR_DIMENSION = new Dimension(SIDEBAR_WIDTH, SIDEBAR_HEIGHT);
 
 	// Narrow button dimension
 	public static final Dimension N_BUTTON_DIMENSION = new Dimension(N_BUTTON_WIDTH, BUTTON_HEIGHT);
@@ -50,8 +51,8 @@ public final class SizeData {
 	public static final Dimension W_BUTTON_DIMENSION = new Dimension(W_BUTTON_WIDTH, BUTTON_HEIGHT);
 
 	// Dropdown panel size and dimension
-	public static final int DROPDOWN_WIDTH = BUTTON_WIDTH+(BORDER_SIZE*2);
-	public static final int DROPDOWN_HEIGHT = BUTTON_HEIGHT*3+(BORDER_SIZE*4);
+	public static final int DROPDOWN_WIDTH = BUTTON_WIDTH;
+	public static final int DROPDOWN_HEIGHT = BUTTON_HEIGHT*3;
 	public static final Dimension DROPDOWN_DIMENSION = new Dimension(DROPDOWN_WIDTH, DROPDOWN_HEIGHT);
 
 	// Separator line size adn dimension
@@ -71,5 +72,16 @@ public final class SizeData {
 	 */
 	public static int calcDropdownHeight(int buttonQuantity) {
 		return BUTTON_HEIGHT*buttonQuantity;
+	}
+
+	/**
+	 * Calculates the given percentage of the
+	 * window's width.
+	 *
+	 * @param percentage The amount of percentage that should be calculated
+	 * @return The percentage of the width of the window
+	 */
+	public static int calc(int percentage) {
+		return SCREEN_WIDTH*percentage/100;
 	}
 }

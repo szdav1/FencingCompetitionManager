@@ -15,8 +15,6 @@ import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.util.ResourceHandler;
 
 public abstract class AbstractAppearance {
-	protected int verticalPadding;
-	protected int horizontalPadding;
 	protected List<Color> backgrounds;
 	protected List<Color> foregrounds;
 	protected BorderModel borderModel;
@@ -25,8 +23,6 @@ public abstract class AbstractAppearance {
 	protected ImageIcon icon2;
 
 	protected AbstractAppearance() {
-		this.verticalPadding = 0;
-		this.horizontalPadding = 0;
 		this.backgrounds = new ArrayList<>(List.of(Color.black));
 		this.foregrounds = new ArrayList<>(List.of(Color.white));
 		this.borderModel = new BorderModel();
@@ -36,8 +32,6 @@ public abstract class AbstractAppearance {
 	}
 
 	public AbstractAppearance(final ColorThemeModel colorThemeModel) {
-		this.verticalPadding = colorThemeModel.getVerticalPadding();
-		this.horizontalPadding = colorThemeModel.getHorizontalPadding();
 		this.backgrounds = colorThemeModel.getBackgroundModel().getColors();
 		this.foregrounds = colorThemeModel.getForegroundModel().getColors();
 		this.borderModel = colorThemeModel.getBorderModel();
@@ -78,22 +72,6 @@ public abstract class AbstractAppearance {
 		catch (Exception exc) {
 			exc.printStackTrace();
 		}
-	}
-
-	public int getHorizontalPadding() {
-		return this.horizontalPadding;
-	}
-
-	public void setHorizontalPadding(int horizontalPadding) {
-		this.horizontalPadding = horizontalPadding;
-	}
-
-	public int getVerticalPadding() {
-		return this.verticalPadding;
-	}
-
-	public void setVerticalPadding(int verticalPadding) {
-		this.verticalPadding = verticalPadding;
 	}
 
 	public List<Color> getBackgrounds() {

@@ -32,7 +32,6 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 		this.setFont(appearance.getFont());
 		this.setForeground(appearance.getForegrounds().get(0));
 		this.setFocusable(false);
-		this.setBorder(null);
 		this.setContentAreaFilled(false);
 		this.setBounds(new Rectangle(0, 0, dimension.width, dimension.height));
 		this.setPreferredSize(dimension);
@@ -53,7 +52,6 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 		this.setFont(appearance.getFont());
 		this.setForeground(appearance.getForegrounds().get(0));
 		this.setFocusable(false);
-		this.setBorder(null);
 		this.setContentAreaFilled(false);
 		this.setPreferredSize(new Dimension(width, height));
 		this.setBounds(new Rectangle(x, y, width, height));
@@ -112,23 +110,25 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 
 		g2D.fillRoundRect(X, Y, W, H, R, R);
 
-		// Background
-		if (this.type == ButtonType.BACKGROUND_CHANGER) {
-			this.paintBackground(X, Y, W, H, R, g2D);
-		}
-		// Foreground
-		else if (this.type == ButtonType.FOREGROUND_CHANGER) {
-			this.paintForeground();
-		}
-		// Icon
-		else if (this.type == ButtonType.ICON_CHANGER) {
-			this.paintIcon();
+		switch (this.type) {
+			// Background
+			case BACKGROUND_CHANGER -> {
+				this.paintBackground(X, Y, W, H, R, g2D);
+				// Paint the secondary foreground if present
+				this.paintForeground();
+			}
+			// Foreground
+			case FOREGROUND_CHANGER -> {
+				this.paintForeground();
+				// Paint the secondary background if present
+				this.paintBackground(X, Y, W, H, R, g2D);
+			}
+			// Icon
+			case ICON_CHANGER -> this.paintIcon();
 		}
 
 		// Paint Icon and Text
 		super.paintComponent(g);
-		// Needed in order for the displaying to work properly
-		this.setBorder(null);
 
 		// Destroy the Graphics2D object as it is no longer needed
 		g2D.dispose();

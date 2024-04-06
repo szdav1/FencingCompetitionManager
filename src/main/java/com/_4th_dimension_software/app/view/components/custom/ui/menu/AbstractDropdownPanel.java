@@ -15,14 +15,14 @@ public abstract class AbstractDropdownPanel extends XPanel {
 		super(x, y, width, height, layoutManager, frame, appearanceName);
 
 		this.buttonList = new ArrayList<>();
-		this.setSize(this.getWidth()+this.appearance.getHorizontalPadding(), this.getHeight()+this.appearance.getVerticalPadding());
+		this.setSize(this.getWidth(), this.getHeight());
 	}
 
 	public AbstractDropdownPanel(int x, int y, int width, int height, final XFrame frame, String appearanceName) {
 		super(x, y, width, height, frame, appearanceName);
 
 		this.buttonList = new ArrayList<>();
-		this.setSize(this.getWidth()+this.appearance.getHorizontalPadding(), this.getHeight()+this.appearance.getVerticalPadding());
+		this.setSize(this.getWidth(), this.getHeight());
 	}
 
 	public List<XButton> getButtonList() {
