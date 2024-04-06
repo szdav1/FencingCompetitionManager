@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: com._4th_dimension_softwares.app.run.Main
+Main-Class: com._4th_dimension_software.app.run.Main
 

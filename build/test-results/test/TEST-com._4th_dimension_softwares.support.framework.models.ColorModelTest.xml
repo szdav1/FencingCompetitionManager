@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com._4th_dimension_softwares.support.framework.models.ColorModelTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2024-04-06T13:30:43" hostname="DESKTOP-FN3U10C" time="0.018">
+<testsuite name="com._4th_dimension_softwares.support.framework.models.ColorModelTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2024-04-06T13:32:25" hostname="DESKTOP-FN3U10C" time="0.017">
   <properties/>
   <testcase name="[1] [400, 400; 400][356; 765; 4322; 77][red, green, blue, 0.5]" classname="com._4th_dimension_softwares.support.framework.models.ColorModelTest" time="0.002"/>
   <testcase name="[2] [[]][[][[[]]][]]]" classname="com._4th_dimension_softwares.support.framework.models.ColorModelTest" time="0.001"/>
