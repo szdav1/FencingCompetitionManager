@@ -88,50 +88,57 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 	protected void paintComponent(Graphics g) {
 		// Cast Graphics to Graphics2D
 		Graphics2D g2D = (Graphics2D) g;
-		g2D.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
 
-		// Start and end coordinates for painting
-		final int X = 0;
-		final int Y = 0;
-		final int W = this.getWidth();
-		final int H = this.getHeight();
-		// Roundness
-		final int R = this.appearance.getBorderModel().getRoundness();
+		if (g2D != null) {
+			g2D.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
 
-		// Fill the background - Used for Foreground and Icon mainly
-		if (this.appearance.getBackgrounds().size() >= 2 && this.type != ButtonType.BACKGROUND_CHANGER) {
-			LinearGradientPaint lgp = new LinearGradientPaint(X, Y, W, H, Util.calcEqualFracts(this.appearance.getBackgrounds().size()),
-				this.appearance.getBackgroundsAsArray());
+			// Start and end coordinates for painting
+			final int X = 0;
+			final int Y = 0;
+			final int W = this.getWidth();
+			final int H = this.getHeight();
+			// Roundness
+			final int R = this.appearance.getBorderModel().getRoundness();
 
-			g2D.setPaint(lgp);
-		}
-		else
-			g2D.setColor(this.appearance.getBackgrounds().get(0));
+			// Fill the background - Used for Foreground and Icon mainly
+			if (this.appearance.getBackgrounds().size() >= 2 && this.type != ButtonType.BACKGROUND_CHANGER) {
+				LinearGradientPaint lgp = new LinearGradientPaint(X, Y, W, H, Util.calcEqualFracts(this.appearance.getBackgrounds().size()),
+					this.appearance.getBackgroundsAsArray());
 
-		g2D.fillRoundRect(X, Y, W, H, R, R);
-
-		switch (this.type) {
-			// Background
-			case BACKGROUND_CHANGER -> {
-				this.paintBackground(X, Y, W, H, R, g2D);
-				// Paint the secondary foreground if present
-				this.paintForeground();
+				g2D.setPaint(lgp);
 			}
-			// Foreground
-			case FOREGROUND_CHANGER -> {
-				this.paintForeground();
-				// Paint the secondary background if present
-				this.paintBackground(X, Y, W, H, R, g2D);
+			else
+				g2D.setColor(this.appearance.getBackgrounds().get(0));
+
+			g2D.fillRoundRect(X, Y, W, H, R, R);
+
+			switch (this.type) {
+				// Background
+				case BACKGROUND_CHANGER -> {
+					this.paintBackground(X, Y, W, H, R, g2D);
+					// Paint the secondary foreground if present
+					this.paintForeground();
+					// Paint the secondary icon if present
+					this.paintIcon();
+				}
+				// Foreground
+				case FOREGROUND_CHANGER -> {
+					this.paintForeground();
+					// Paint the secondary background if present
+					this.paintBackground(X, Y, W, H, R, g2D);
+					// Paint the secondary icon if present
+					this.paintIcon();
+				}
+				// Icon
+				case ICON_CHANGER -> this.paintIcon();
 			}
-			// Icon
-			case ICON_CHANGER -> this.paintIcon();
+
+			// Paint Icon and Text
+			super.paintComponent(g);
+
+			// Destroy the Graphics2D object as it is no longer needed
+			g2D.dispose();
 		}
-
-		// Paint Icon and Text
-		super.paintComponent(g);
-
-		// Destroy the Graphics2D object as it is no longer needed
-		g2D.dispose();
 	}
 
 	@Override

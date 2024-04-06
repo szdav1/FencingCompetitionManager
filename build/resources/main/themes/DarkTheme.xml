@@ -15,6 +15,8 @@
     <appearance applyTo="sidebar.buttons">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
+        <icon1 source="/icons/newGray.png" width="15" height="15"/>
+        <icon2 source="/icons/newWhite.png" width="15" height="15"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.dropdown">

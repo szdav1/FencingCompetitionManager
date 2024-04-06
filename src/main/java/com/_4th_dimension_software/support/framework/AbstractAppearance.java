@@ -94,7 +94,15 @@ public abstract class AbstractAppearance {
 		return this.icon1;
 	}
 
+	public void setIcon1(ImageIcon icon1) {
+		this.icon1 = icon1;
+	}
+
 	public ImageIcon getIcon2() {
 		return this.icon2;
+	}
+
+	public void setIcon2(ImageIcon icon2) {
+		this.icon2 = icon2;
 	}
 }

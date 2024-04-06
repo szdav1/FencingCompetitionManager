@@ -1,5 +1,6 @@
 package com._4th_dimension_software.app.control.sidebar;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
 import java.util.Optional;
@@ -7,6 +8,7 @@ import java.util.Optional;
 import javax.swing.JComponent;
 
 import com._4th_dimension_software.app.control.Controller;
+import com._4th_dimension_software.app.view.components.base.button.XButton;
 import com._4th_dimension_software.app.view.components.custom.ui.menu.MenuButton;
 import com._4th_dimension_software.app.view.components.custom.ui.sidebar.Sidebar;
 
@@ -35,9 +37,9 @@ public final class SidebarController extends Controller {
 	}
 
 	/**
-	 * Tries to find the origin of an <code>InputEvent</code>.
+	 * Tries to find the origin of the specified <code>InputEvent</code>.
 	 * If the component that caused the event is in contained in
-	 * the sidebar, it is returned wrapped around an <code>Optional</code>.
+	 * the sidebar, it is returned in an <code>Optional</code>.
 	 *
 	 * @param ie The event that happened
 	 * @return An <code>Optional</code> containing the source of the event

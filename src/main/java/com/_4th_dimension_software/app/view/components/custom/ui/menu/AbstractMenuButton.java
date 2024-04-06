@@ -2,6 +2,7 @@ package com._4th_dimension_software.app.view.components.custom.ui.menu;
 
 import java.awt.Dimension;
 import java.awt.Insets;
+import java.awt.event.ActionListener;
 
 import javax.swing.SwingConstants;
 
@@ -10,7 +11,7 @@ import com._4th_dimension_software.app.view.components.base.button.XButton;
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.appdata.SizeData;
 
-public abstract class AbstractMenuButton extends XButton {
+public abstract class AbstractMenuButton extends XButton implements ActionListener {
 	protected boolean active;
 	protected DropdownPanel dropdownPanel;
 
@@ -51,6 +52,7 @@ public abstract class AbstractMenuButton extends XButton {
 	 */
 	public void addButtonToDropdown(String buttonText) {
 		this.dropdownPanel.createAndAddButton(buttonText);
+		this.dropdownPanel.getLastButton().addActionListener(this);
 	}
 
 	public boolean isActive() {

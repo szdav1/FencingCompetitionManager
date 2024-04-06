@@ -2,6 +2,7 @@ package com._4th_dimension_software.app.view.components.custom.ui.menu;
 
 import java.awt.Dimension;
 import java.awt.Point;
+import java.awt.event.ActionEvent;
 
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.consts.PositionConstants;
@@ -78,5 +79,19 @@ public class MenuButton extends AbstractMenuButton {
 	 */
 	public void hideDropdownPanel() {
 		this.frame.removeFromCenterPanel(this.dropdownPanel);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		/*
+		 * Control the closing of the dropdown panel
+		 * when a button is pressed inside it.
+		 * */
+		this.dropdownPanel.getButtons().forEach(btn -> {
+			if (btn.equals(e.getSource())) {
+				this.setActive(false);
+				this.hideDropdownPanel();
+			}
+		});
 	}
 }

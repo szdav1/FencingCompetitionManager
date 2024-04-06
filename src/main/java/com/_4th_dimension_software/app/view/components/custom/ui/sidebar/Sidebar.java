@@ -1,11 +1,6 @@
 package com._4th_dimension_software.app.view.components.custom.ui.sidebar;
 
-import java.awt.Dimension;
-import java.awt.Insets;
 import java.util.List;
-
-import javax.swing.JButton;
-import javax.swing.SwingConstants;
 
 import com._4th_dimension_software.app.control.sidebar.SidebarController;
 import com._4th_dimension_software.app.view.frame.XFrame;
@@ -61,7 +56,7 @@ public final class Sidebar extends AbstractSidebar {
 		this.menuButtons.add(competitionButton);
 		this.menuButtons.add(settingsButton);
 
-		// Implement the listener on the buttons
+		// Implement the controller on the buttons
 		this.menuButtons.forEach(btn -> btn.addMouseListener(sml));
 
 		// Add the header to the sidebar
