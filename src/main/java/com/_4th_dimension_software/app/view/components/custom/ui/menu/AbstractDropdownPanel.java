@@ -4,21 +4,21 @@ import java.awt.LayoutManager;
 import java.util.ArrayList;
 import java.util.List;
 
-import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.app.view.components.base.button.XButton;
 import com._4th_dimension_software.app.view.components.base.panel.XPanel;
+import com._4th_dimension_software.app.view.frame.XFrame;
 
 public abstract class AbstractDropdownPanel extends XPanel {
 	protected List<XButton> buttons;
 
-	public AbstractDropdownPanel(int x, int y, int width, int height, LayoutManager layoutManager, final XFrame frame, String appearanceName) {
+	protected AbstractDropdownPanel(int x, int y, int width, int height, LayoutManager layoutManager, final XFrame frame, String appearanceName) {
 		super(x, y, width, height, layoutManager, frame, appearanceName);
 
 		this.buttons = new ArrayList<>();
 		this.setSize(this.getWidth(), this.getHeight());
 	}
 
-	public AbstractDropdownPanel(int x, int y, int width, int height, final XFrame frame, String appearanceName) {
+	protected AbstractDropdownPanel(int x, int y, int width, int height, final XFrame frame, String appearanceName) {
 		super(x, y, width, height, frame, appearanceName);
 
 		this.buttons = new ArrayList<>();

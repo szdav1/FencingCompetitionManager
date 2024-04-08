@@ -117,10 +117,8 @@ public class XLabel extends AbstractXLabel {
 
 	@Override
 	public void paintBackground(int x, int y, int w, int h, int r, final Graphics2D g2D) {
-		LinearGradientPaint lgp;
-
 		if (this.appearance.getBackgrounds().size() >= 2) {
-			lgp = new LinearGradientPaint(x, y, w, h, Util.calcEqualFracts(this.appearance.getBackgrounds().size()),
+			LinearGradientPaint lgp = new LinearGradientPaint(x, y, w, h, Util.calcEqualFracts(this.appearance.getBackgrounds().size()),
 				this.appearance.getBackgroundsAsArray());
 
 			g2D.setPaint(lgp);
@@ -129,7 +127,7 @@ public class XLabel extends AbstractXLabel {
 			g2D.setColor(this.appearance.getBackgrounds().get(0));
 
 		// Fill background
-		g2D.fillRoundRect(x, y, w, h, r, r);
+		g2D.fillRoundRect(x, y, this.getWidth(), this.getHeight(), r, r);
 	}
 
 	@Override
@@ -142,13 +140,12 @@ public class XLabel extends AbstractXLabel {
 
 	@Override
 	public void paintBorder(int x, int y, int w, int h, int r, final Graphics2D g2D) {
-		LinearGradientPaint lgp;
+		g2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
 		if (this.appearance.getBorderModel().getThickness() != 0) {
-			g2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
 			if (this.appearance.getBorderModel().getColorModel().getColors().size() >= 2) {
-				lgp = new LinearGradientPaint(x, y, w, h, Util.calcEqualFracts(this.appearance.getBorderModel()
+				LinearGradientPaint lgp = new LinearGradientPaint(x, y, w, h, Util.calcEqualFracts(this.appearance.getBorderModel()
 					.getColorModel()
 					.getColors()
 					.size()), this.appearance.getBorderColorsAsArray());
@@ -160,7 +157,7 @@ public class XLabel extends AbstractXLabel {
 
 			g2D.setStroke(new BasicStroke(this.appearance.getBorderModel().getThickness(), BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER));
 			// Draw border
-			g2D.drawRoundRect(x, y, w, h, r, r);
+			g2D.drawRoundRect(x, y, this.getWidth(), this.getHeight(), r, r);
 		}
 	}
 }

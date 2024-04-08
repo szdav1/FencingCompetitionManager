@@ -1,6 +1,7 @@
 package com._4th_dimension_software.support.framework.models;
 
 public abstract class AbstractColorThemeModel {
+	protected boolean linearPaint;
 	protected ColorModel backgroundModel;
 	protected ColorModel foregroundModel;
 	protected BorderModel borderModel;
@@ -9,6 +10,7 @@ public abstract class AbstractColorThemeModel {
 	protected IconModel iconModel2;
 
 	protected AbstractColorThemeModel() {
+		this.linearPaint = true;
 		this.backgroundModel = new ColorModel();
 		this.foregroundModel = new ColorModel("[255,255,255,255]");
 		this.borderModel = new BorderModel();
@@ -17,15 +19,28 @@ public abstract class AbstractColorThemeModel {
 		this.iconModel2 = new IconModel();
 	}
 
-	protected AbstractColorThemeModel(final ColorModel backgroundModel,
+	protected AbstractColorThemeModel(final boolean paintLinearly, final ColorModel backgroundModel,
 		final ColorModel foregroundModel, final BorderModel borderModel, final FontModel fontModel, final IconModel iconModel1, final IconModel iconModel2) {
 
+		this.linearPaint = paintLinearly;
 		this.backgroundModel = backgroundModel;
 		this.foregroundModel = foregroundModel;
 		this.borderModel = borderModel;
 		this.fontModel = fontModel;
 		this.iconModel1 = iconModel1;
 		this.iconModel2 = iconModel2;
+	}
+
+	public boolean isLinearPaint() {
+		return this.linearPaint;
+	}
+
+	public void setLinearPaint(boolean linearPaint) {
+		this.linearPaint = linearPaint;
+	}
+
+	public void setLinearPaint(String linearPaint) {
+		this.linearPaint = Boolean.parseBoolean(linearPaint);
 	}
 
 	public ColorModel getBackgroundModel() {

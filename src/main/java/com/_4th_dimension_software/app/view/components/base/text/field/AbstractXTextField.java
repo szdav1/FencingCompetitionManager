@@ -60,7 +60,7 @@ public abstract class AbstractXTextField extends JTextField implements XComponen
 		final int X = 0;
 		final int Y = 0;
 		final int W = this.getWidth();
-		final int H = this.getHeight();
+		final int H = this.appearance.isLinearPaint() ? 0 : this.getHeight();
 		// Roundness
 		final int R = this.appearance.getBorderModel().getRoundness();
 

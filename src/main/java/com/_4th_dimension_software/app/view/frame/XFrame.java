@@ -79,14 +79,16 @@ public class XFrame extends AbstractXFrame {
 	 * <code>Appearance</code>.
 	 */
 	private void setBackgroundImage() {
-		if (this.appearance.getIcon2() != null) {
-			JLabel l = new JLabel(new ImageIcon(this.appearance.getIcon2()
-				.getImage()
-				.getScaledInstance(this.centerPanel.getWidth(), this.centerPanel.getHeight(), Image.SCALE_SMOOTH)));
+		if (this.appearance.getIcon2() == null)
+			return;
 
-			l.setBounds(0, 0, this.centerPanel.getWidth(), this.centerPanel.getHeight());
-			this.centerPanel.addComponent(l, PositionConstants.BACKGROUND_POSITION);
-		}
+		JLabel l = new JLabel(new ImageIcon(this.appearance.getIcon2()
+			.getImage()
+			.getScaledInstance(this.centerPanel.getWidth(), this.centerPanel.getHeight(), Image.SCALE_SMOOTH)));
+
+		l.setBounds(0, 0, this.centerPanel.getWidth(), this.centerPanel.getHeight());
+		this.centerPanel.addComponent(l, PositionConstants.BACKGROUND_POSITION);
+
 	}
 
 	/**

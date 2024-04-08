@@ -12,7 +12,6 @@ import com._4th_dimension_software.app.view.components.interfaces.XComponent;
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.framework.Appearance;
 import com._4th_dimension_software.support.framework.Appearances;
-import com._4th_dimension_software.support.util.Util;
 
 public abstract class AbstractXButton extends JButton implements MouseListener, XComponent, CustomGraphicsUser {
 	protected boolean entered = false;
@@ -20,12 +19,10 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 
 	protected Appearance appearance;
 	protected final XFrame frame;
-	protected final ButtonType type;
 
-	protected AbstractXButton(Dimension dimension, String text, final XFrame frame, ButtonType type, String appearanceName) {
+	protected AbstractXButton(Dimension dimension, String text, final XFrame frame, String appearanceName) {
 		this.appearance = Appearances.get(appearanceName);
 		this.frame = frame;
-		this.type = type;
 
 		this.setIcon(appearance.getIcon1() == null ? appearance.getIcon2() : appearance.getIcon1());
 		this.setText(text);
@@ -38,14 +35,13 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 		this.addMouseListener(this);
 	}
 
-	protected AbstractXButton(Dimension dimension, final XFrame frame, ButtonType type, String appearanceName) {
-		this(dimension, "", frame, type, appearanceName);
+	protected AbstractXButton(Dimension dimension, final XFrame frame, String appearanceName) {
+		this(dimension, "", frame, appearanceName);
 	}
 
-	protected AbstractXButton(int x, int y, int width, int height, String text, final XFrame frame, ButtonType type, String appearanceName) {
+	protected AbstractXButton(int x, int y, int width, int height, String text, final XFrame frame, String appearanceName) {
 		this.appearance = Appearances.get(appearanceName);
 		this.frame = frame;
-		this.type = type;
 
 		this.setIcon(appearance.getIcon1() == null ? appearance.getIcon2() : appearance.getIcon1());
 		this.setText(text);
@@ -58,8 +54,8 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 		this.addMouseListener(this);
 	}
 
-	protected AbstractXButton(int x, int y, int width, int height, final XFrame frame, ButtonType type, String appearanceName) {
-		this(x, y, width, height, "", frame, type, appearanceName);
+	protected AbstractXButton(int x, int y, int width, int height, final XFrame frame, String appearanceName) {
+		this(x, y, width, height, "", frame, appearanceName);
 	}
 
 	/**
@@ -96,42 +92,16 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 			final int X = 0;
 			final int Y = 0;
 			final int W = this.getWidth();
-			final int H = this.getHeight();
+			final int H = this.appearance.isLinearPaint() ? 0 : this.getHeight();
 			// Roundness
 			final int R = this.appearance.getBorderModel().getRoundness();
 
-			// Fill the background - Used for Foreground and Icon mainly
-			if (this.appearance.getBackgrounds().size() >= 2 && this.type != ButtonType.BACKGROUND_CHANGER) {
-				LinearGradientPaint lgp = new LinearGradientPaint(X, Y, W, H, Util.calcEqualFracts(this.appearance.getBackgrounds().size()),
-					this.appearance.getBackgroundsAsArray());
-
-				g2D.setPaint(lgp);
-			}
-			else
-				g2D.setColor(this.appearance.getBackgrounds().get(0));
-
-			g2D.fillRoundRect(X, Y, W, H, R, R);
-
-			switch (this.type) {
-				// Background
-				case BACKGROUND_CHANGER -> {
-					this.paintBackground(X, Y, W, H, R, g2D);
-					// Paint the secondary foreground if present
-					this.paintForeground();
-					// Paint the secondary icon if present
-					this.paintIcon();
-				}
-				// Foreground
-				case FOREGROUND_CHANGER -> {
-					this.paintForeground();
-					// Paint the secondary background if present
-					this.paintBackground(X, Y, W, H, R, g2D);
-					// Paint the secondary icon if present
-					this.paintIcon();
-				}
-				// Icon
-				case ICON_CHANGER -> this.paintIcon();
-			}
+			// Paint the background
+			this.paintBackground(X, Y, W, H, R, g2D);
+			// Paint the foreground
+			this.paintForeground();
+			// Paint the icon (Actually set the corresponding icon)
+			this.paintIcon();
 
 			// Paint Icon and Text
 			super.paintComponent(g);

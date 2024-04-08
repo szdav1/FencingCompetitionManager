@@ -3,12 +3,11 @@ package com._4th_dimension_software.app.view.components.custom.ui.sidebar;
 import java.util.List;
 
 import com._4th_dimension_software.app.control.sidebar.SidebarController;
+import com._4th_dimension_software.app.view.components.base.label.XLabel;
+import com._4th_dimension_software.app.view.components.custom.ui.menu.MenuButton;
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.consts.RelativePositions;
-import com._4th_dimension_software.app.view.components.base.button.ButtonType;
-import com._4th_dimension_software.app.view.components.base.label.XLabel;
-import com._4th_dimension_software.app.view.components.custom.ui.menu.MenuButton;
 
 /**
  * The <code>Sidebar</code> class contains the declaration of
@@ -45,12 +44,12 @@ public final class Sidebar extends AbstractSidebar {
 		this.header.centerContent();
 
 		// Menu buttons
-		this.competitionButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "New", frame, ButtonType.BACKGROUND_CHANGER, appearanceName+".buttons");
+		this.competitionButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "New", frame, appearanceName+".buttons.new");
 		this.competitionButton.addButtonToDropdown("Competition");
 		this.competitionButton.addButtonToDropdown("Empty Poule");
 		this.competitionButton.addButtonToDropdown("Empty Table");
 
-		this.settingsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Settings", frame, ButtonType.BACKGROUND_CHANGER, appearanceName+".buttons");
+		this.settingsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Settings", frame, appearanceName+".buttons.settings");
 
 		// Add the menu buttons to the menu button list
 		this.menuButtons.add(competitionButton);

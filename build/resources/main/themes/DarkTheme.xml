@@ -12,14 +12,24 @@
         <background colors="[0,0,0,0]"/>
     </appearance>
 
-    <appearance applyTo="sidebar.buttons">
+    <appearance applyTo="sidebar.buttons.new">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
         <icon1 source="/icons/newGray.png" width="15" height="15"/>
         <icon2 source="/icons/newWhite.png" width="15" height="15"/>
     </appearance>
 
-    <appearance applyTo="sidebar.buttons.dropdown">
+    <appearance applyTo="sidebar.buttons.settings">
+        <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+        <foreground colors="[128,128,128,255][255,255,255,255]"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.buttons.new.dropdown">
+        <background colors="[27,27,27,255]"/>
+        <border colors="[72,58,255,255][178,0,255,255]" thickness="@proportional"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.buttons.settings.dropdown">
         <background colors="[27,27,27,255]"/>
         <border colors="[72,58,255,255][178,0,255,255]" thickness="@proportional"/>
     </appearance>

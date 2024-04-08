@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="FencingCompetitionManager [run]" type="Application" factoryName="Application">
+  <configuration default="false" name="[build and run]" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="com._4th_dimension_software.app.run.Main" />
     <module name="FencingCompetitionManager.main" />
     <method v="2">

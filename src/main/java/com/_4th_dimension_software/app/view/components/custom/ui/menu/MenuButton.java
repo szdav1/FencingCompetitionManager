@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.consts.PositionConstants;
 import com._4th_dimension_software.support.consts.RelativePositions;
-import com._4th_dimension_software.app.view.components.base.button.ButtonType;
 
 /**
  * The <code>MenuButton</code> class is a child of the
@@ -23,12 +22,11 @@ public class MenuButton extends AbstractMenuButton {
 	 * @param dimension      The Dimension of the menu button
 	 * @param text           The text of the menu button
 	 * @param frame          The main frame of the application
-	 * @param type           The type of the button
 	 * @param appearanceName The name of the <code>Appearance</code> that's values
 	 *                       should be implemented on this panel
 	 */
-	public MenuButton(Dimension dimension, String text, final XFrame frame, ButtonType type, String appearanceName) {
-		super(dimension, text, frame, type, appearanceName);
+	public MenuButton(Dimension dimension, String text, final XFrame frame, String appearanceName) {
+		super(dimension, text, frame, appearanceName);
 	}
 
 	/**

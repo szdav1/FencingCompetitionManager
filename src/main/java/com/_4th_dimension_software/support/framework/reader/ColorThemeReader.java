@@ -7,7 +7,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 import com._4th_dimension_software.support.framework.models.*;
 import com._4th_dimension_software.support.util.ResourceHandler;
-import com._4th_dimension_software.support.util.Util;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -81,6 +80,7 @@ public final class ColorThemeReader {
 				ColorModel cm = new ColorModel(element.getAttribute("colors"));
 				ctm.setForegroundModel(cm);
 			}
+			case "paintlinearly" -> ctm.setLinearPaint(element.getAttribute("value"));
 		}
 	}
 

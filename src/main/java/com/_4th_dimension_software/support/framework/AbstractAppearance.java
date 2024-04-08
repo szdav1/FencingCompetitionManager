@@ -15,6 +15,7 @@ import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.util.ResourceHandler;
 
 public abstract class AbstractAppearance {
+	protected boolean linearPaint;
 	protected List<Color> backgrounds;
 	protected List<Color> foregrounds;
 	protected BorderModel borderModel;
@@ -23,6 +24,7 @@ public abstract class AbstractAppearance {
 	protected ImageIcon icon2;
 
 	protected AbstractAppearance() {
+		this.linearPaint = true;
 		this.backgrounds = new ArrayList<>(List.of(Color.black));
 		this.foregrounds = new ArrayList<>(List.of(Color.white));
 		this.borderModel = new BorderModel();
@@ -32,6 +34,7 @@ public abstract class AbstractAppearance {
 	}
 
 	public AbstractAppearance(final ColorThemeModel colorThemeModel) {
+		this.linearPaint = colorThemeModel.isLinearPaint();
 		this.backgrounds = colorThemeModel.getBackgroundModel().getColors();
 		this.foregrounds = colorThemeModel.getForegroundModel().getColors();
 		this.borderModel = colorThemeModel.getBorderModel();
@@ -74,6 +77,10 @@ public abstract class AbstractAppearance {
 		}
 	}
 
+	public boolean isLinearPaint() {
+		return this.linearPaint;
+	}
+
 	public List<Color> getBackgrounds() {
 		return this.backgrounds;
 	}
@@ -94,15 +101,7 @@ public abstract class AbstractAppearance {
 		return this.icon1;
 	}
 
-	public void setIcon1(ImageIcon icon1) {
-		this.icon1 = icon1;
-	}
-
 	public ImageIcon getIcon2() {
 		return this.icon2;
-	}
-
-	public void setIcon2(ImageIcon icon2) {
-		this.icon2 = icon2;
 	}
 }

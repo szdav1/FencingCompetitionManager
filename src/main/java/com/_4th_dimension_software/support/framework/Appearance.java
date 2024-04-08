@@ -97,7 +97,8 @@ public final class Appearance extends AbstractAppearance {
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Appearance a) {
-			return this.backgrounds.equals(a.getBackgrounds()) &&
+			return this.linearPaint == a.isLinearPaint() &&
+				this.backgrounds.equals(a.getBackgrounds()) &&
 				this.foregrounds.equals(a.getForegrounds()) &&
 				this.borderModel.equals(a.getBorderModel()) &&
 				this.font.equals(a.getFont()) &&
@@ -111,7 +112,8 @@ public final class Appearance extends AbstractAppearance {
 	@Override
 	public String toString() {
 		return "Appearance{"+
-			"backgrounds="+backgrounds+
+			"linearPaint="+linearPaint+
+			", backgrounds="+backgrounds+
 			", foregrounds="+foregrounds+
 			", borderModel="+borderModel+
 			", font="+font+
