@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com._4th_dimension_softwares.support.framework.models.IconModelTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2024-04-08T20:05:47" hostname="DESKTOP-FN3U10C" time="0.108">
+<testsuite name="com._4th_dimension_softwares.support.framework.models.IconModelTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2024-04-09T19:39:19" hostname="DESKTOP-FN3U10C" time="0.126">
   <properties/>
-  <testcase name="The icon should be loaded with 50% smaller dimensions" classname="com._4th_dimension_softwares.support.framework.models.IconModelTest" time="0.009"/>
-  <testcase name="Should load the icon normally" classname="com._4th_dimension_softwares.support.framework.models.IconModelTest" time="0.011"/>
-  <testcase name="[1] -43" classname="com._4th_dimension_softwares.support.framework.models.IconModelTest" time="0.011"/>
+  <testcase name="The icon should be loaded with 50% smaller dimensions" classname="com._4th_dimension_softwares.support.framework.models.IconModelTest" time="0.016"/>
+  <testcase name="Should load the icon normally" classname="com._4th_dimension_softwares.support.framework.models.IconModelTest" time="0.022"/>
+  <testcase name="[1] -43" classname="com._4th_dimension_softwares.support.framework.models.IconModelTest" time="0.012"/>
   <testcase name="[2] -78" classname="com._4th_dimension_softwares.support.framework.models.IconModelTest" time="0.01"/>
   <testcase name="[3] 0" classname="com._4th_dimension_softwares.support.framework.models.IconModelTest" time="0.01"/>
   <testcase name="[4] jklfgl" classname="com._4th_dimension_softwares.support.framework.models.IconModelTest" time="0.011"/>
   <testcase name="[5] fĂ¶9845Ă¶9[]{[}" classname="com._4th_dimension_softwares.support.framework.models.IconModelTest" time="0.011"/>
-  <testcase name="[6] \///=%()+!*" classname="com._4th_dimension_softwares.support.framework.models.IconModelTest" time="0.016"/>
+  <testcase name="[6] \///=%()+!*" classname="com._4th_dimension_softwares.support.framework.models.IconModelTest" time="0.014"/>
   <testcase name="The icon should be loaded with its default dimensions: w=512px, h=512px" classname="com._4th_dimension_softwares.support.framework.models.IconModelTest" time="0.011"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
