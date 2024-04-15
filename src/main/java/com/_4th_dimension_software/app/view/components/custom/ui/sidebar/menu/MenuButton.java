@@ -94,6 +94,7 @@ public class MenuButton extends AbstractMenuButton {
 	 */
 	public void showDropdownPanel() {
 		this.frame.addToCenterPanel(this.dropdownPanel, PositionConstants.HIGH_POSITION);
+		this.dropdownPanel.setDisplaying(true);
 	}
 
 	/**
@@ -102,6 +103,7 @@ public class MenuButton extends AbstractMenuButton {
 	 */
 	public void hideDropdownPanel() {
 		this.frame.removeFromCenterPanel(this.dropdownPanel);
+		this.dropdownPanel.setDisplaying(false);
 	}
 
 	@Override

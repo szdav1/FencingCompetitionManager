@@ -20,6 +20,7 @@ import com._4th_dimension_software.support.appdata.SizeData;
  */
 public class DropdownPanel extends XPanel {
 	private List<XButton> buttons;
+	private boolean displaying;
 
 	/**
 	 * Constructs a <code>DropdownPanel</code> object.
@@ -39,6 +40,7 @@ public class DropdownPanel extends XPanel {
 		super(x, y, width, height, layoutManager, frame, appearanceName);
 
 		this.buttons = new ArrayList<>();
+		this.displaying = false;
 	}
 
 	/**
@@ -58,10 +60,19 @@ public class DropdownPanel extends XPanel {
 		super(x, y, width, height, frame, appearanceName);
 
 		this.buttons = new ArrayList<>();
+		this.displaying = false;
 	}
 
 	public List<XButton> getButtons() {
 		return this.buttons;
+	}
+
+	public boolean isDisplaying() {
+		return this.displaying;
+	}
+
+	public void setDisplaying(boolean displaying) {
+		this.displaying = displaying;
 	}
 
 	/**

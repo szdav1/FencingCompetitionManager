@@ -4,8 +4,6 @@ import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
 import java.util.Optional;
 
-import javax.swing.JComponent;
-
 import com._4th_dimension_software.app.control.Controller;
 import com._4th_dimension_software.app.view.components.custom.ui.sidebar.Sidebar;
 import com._4th_dimension_software.app.view.components.custom.ui.sidebar.menu.MenuButton;
@@ -20,7 +18,8 @@ import com._4th_dimension_software.app.view.components.custom.ui.sidebar.menu.Me
  */
 public final class SidebarController extends Controller {
 	private final Sidebar sidebar;
-	private MenuButton previousButton;
+	private MenuButton prevButton;
+	private MenuButton prevEnteredButton;
 
 	/**
 	 * Constructs a <code>SidebarMouseListener</code>. It is
@@ -36,19 +35,31 @@ public final class SidebarController extends Controller {
 
 	/**
 	 * Tries to find the origin of the specified <code>InputEvent</code>.
-	 * If the component that caused the event is contained in
+	 * If the <code>XButton</code> that caused the event is contained in
 	 * the sidebar, it is returned in an <code>Optional</code>.
 	 *
 	 * @param ie The event that happened
 	 * @return An <code>Optional</code> containing the source of the event
 	 */
-	private Optional<JComponent> findSourceOfInputEvent(final InputEvent ie) {
+	private Optional<MenuButton> findButtonSourceOfInputEvent(final InputEvent ie) {
 		for (MenuButton btn : this.sidebar.getButtons()) {
+			// If one of the buttons is the source
 			if (btn.equals(ie.getSource()))
 				return Optional.of(btn);
 		}
 
 		return Optional.empty();
+	}
+
+	/**
+	 * Determines whether the center panel of the frame was the
+	 * source of the specified <code>InputEvent</code>.
+	 *
+	 * @param ie The event that triggered the action
+	 * @return True if the center panel was the source of the event, false otherwise
+	 */
+	private boolean isCenterPanelEntered(final InputEvent ie) {
+		return this.sidebar.getFrame().getCenterPanel().equals(ie.getSource());
 	}
 
 	/**
@@ -58,13 +69,22 @@ public final class SidebarController extends Controller {
 	 * @param me The <code>MouseEvent</code> that triggered a dropdown panel
 	 */
 	private void handleDropdownPanels(final MouseEvent me) {
-		Optional<JComponent> srcOptional = this.findSourceOfInputEvent(me);
+		Optional<MenuButton> btnOptional = this.findButtonSourceOfInputEvent(me);
+		boolean cpEntered = this.isCenterPanelEntered(me);
 
-		if (srcOptional.isEmpty())
+		/*
+		 * If the center panel is entered and there was a button previously
+		 * hovered by the mouse which is currently not active, its dropdown
+		 * panel should be removed from the scene.
+		 * */
+		if (cpEntered && this.prevEnteredButton != null && !this.prevEnteredButton.isActive())
+			this.prevEnteredButton.hideDropdownPanel();
+
+		if (btnOptional.isEmpty())
 			return;
 
 		int meID = me.getID();
-		MenuButton btn = (MenuButton) srcOptional.get();
+		MenuButton btn = btnOptional.get();
 
 		/*
 		 * Show the dropdown panel of the hovered menu button.
@@ -73,13 +93,34 @@ public final class SidebarController extends Controller {
 		 * is deactivated.
 		 * */
 		if (meID == MouseEvent.MOUSE_ENTERED) {
-			if (!btn.isActive())
+			if (this.prevEnteredButton != null) {
+				/*
+				 * If the previously entered button is the same as the currently
+				 * entered button and that button is not displaying its dropdown panel,
+				 * it should start displaying it.
+				 * */
+				if (this.prevEnteredButton.equals(btn) && !btn.getDropdownPanel().isDisplaying())
+					btn.showDropdownPanel();
+				/*
+				 * If the previously entered button is not the same as the currently
+				 * entered button, that button should start displaying its dropdown panel
+				 * while the previous should hide it.
+				 * */
+				else {
+					this.prevEnteredButton.hideDropdownPanel();
+					btn.showDropdownPanel();
+				}
+			}
+			else
 				btn.showDropdownPanel();
 
-			if (this.previousButton != null && !btn.equals(this.previousButton)) {
-				this.previousButton.setActive(false);
-				this.previousButton.hideDropdownPanel();
+
+			if (this.prevButton != null && !btn.equals(this.prevButton)) {
+				this.prevButton.setActive(false);
+				this.prevButton.hideDropdownPanel();
 			}
+
+			this.prevEnteredButton = btn;
 		}
 		/*
 		 * Activate a menu button so that its dropdown
@@ -87,7 +128,7 @@ public final class SidebarController extends Controller {
 		 * cursor.
 		 * */
 		else if (meID == MouseEvent.MOUSE_CLICKED) {
-			this.previousButton = btn;
+			this.prevButton = btn;
 			btn.setActive(!btn.isActive());
 		}
 		/*
@@ -97,7 +138,7 @@ public final class SidebarController extends Controller {
 		 * must stay open after exiting.
 		 * */
 		else if (meID == MouseEvent.MOUSE_EXITED) {
-			if (!btn.isActive())
+			if (!btn.isActive() && cpEntered)
 				btn.hideDropdownPanel();
 		}
 	}

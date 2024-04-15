@@ -46,7 +46,7 @@ public final class Sidebar extends XPanel {
 		final SidebarController sml = new SidebarController(this);
 
 		// Header
-		this.header = new XLabel(SizeData.W_BUTTON_DIMENSION, "Management", frame, appearanceName+".header");
+		this.header = new XLabel(SizeData.W_BUTTON_DIMENSION, "find something to put here", frame, appearanceName+".header");
 		this.header.centerContent();
 
 		// Menu buttons
@@ -56,13 +56,16 @@ public final class Sidebar extends XPanel {
 		this.competitionButton.addButtonToDropdown("Empty Table");
 
 		this.settingsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Settings", frame, appearanceName+".buttons.settings");
+		this.settingsButton.addButtonToDropdown("Hello");
+		this.settingsButton.addButtonToDropdown("World");
 
 		// Add the menu buttons to the menu button list
 		this.menuButtons.add(competitionButton);
 		this.menuButtons.add(settingsButton);
 
-		// Implement the controller on the buttons
+		// Implement the controller
 		this.menuButtons.forEach(btn -> btn.addMouseListener(sml));
+		this.frame.getCenterPanel().addMouseListener(sml);
 
 		// Add the header to the sidebar
 		this.addComponent(this.header);

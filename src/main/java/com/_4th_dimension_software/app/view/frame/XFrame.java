@@ -28,10 +28,10 @@ public class XFrame extends AbstractXFrame {
 	// Content panel
 	private final XPanel contentPanel;
 	// Frame parts
-	// Sidebar
-	private final Sidebar sidebar;
 	// Center panel
 	private final XPanel centerPanel;
+	// Sidebar
+	private final Sidebar sidebar;
 
 	/**
 	 * Constructs an <code>XFrame</code> object. This object is
@@ -50,10 +50,10 @@ public class XFrame extends AbstractXFrame {
 		this.setContentPane(this.contentPanel);
 
 		// Instantiate and add parts of the frame
-		// Sidebar
-		this.sidebar = new Sidebar(this, "sidebar");
 		// Center panel
 		this.centerPanel = new XPanel(this.contentPanel.getPreferredSize(), null, this, appearanceName);
+		// Sidebar
+		this.sidebar = new Sidebar(this, "sidebar");
 
 		// Background image
 		this.setBackgroundImage();
@@ -123,6 +123,10 @@ public class XFrame extends AbstractXFrame {
 	 */
 	public JComponent removeFromCenterPanel(JComponent component) {
 		return this.centerPanel.removeComponent(component);
+	}
+
+	public XPanel getCenterPanel() {
+		return this.centerPanel;
 	}
 
 	@Override
