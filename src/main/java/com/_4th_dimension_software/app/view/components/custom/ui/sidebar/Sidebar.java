@@ -1,10 +1,12 @@
 package com._4th_dimension_software.app.view.components.custom.ui.sidebar;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com._4th_dimension_software.app.control.sidebar.SidebarController;
 import com._4th_dimension_software.app.view.components.base.label.XLabel;
-import com._4th_dimension_software.app.view.components.custom.ui.menu.MenuButton;
+import com._4th_dimension_software.app.view.components.base.panel.XPanel;
+import com._4th_dimension_software.app.view.components.custom.ui.sidebar.menu.MenuButton;
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.consts.RelativePositions;
@@ -16,7 +18,9 @@ import com._4th_dimension_software.support.consts.RelativePositions;
  * buttons displayed in the sidebar are controlled by this class
  * etc.
  */
-public final class Sidebar extends AbstractSidebar {
+public final class Sidebar extends XPanel {
+	// List of the buttons
+	private List<MenuButton> menuButtons;
 	// Header
 	private final XLabel header;
 	// Menu buttons
@@ -34,7 +38,9 @@ public final class Sidebar extends AbstractSidebar {
 	 *                       values should be implemented on this sidebar
 	 */
 	public Sidebar(final XFrame frame, String appearanceName) {
-		super(frame, appearanceName);
+		super(SizeData.SIDEBAR_DIMENSION, frame, appearanceName);
+
+		this.menuButtons = new ArrayList<>();
 
 		// The listener that takes care of the mouse actions happened in the sidebar
 		final SidebarController sml = new SidebarController(this);
@@ -76,7 +82,6 @@ public final class Sidebar extends AbstractSidebar {
 			btn.adjustDropdownPosition(RelativePositions.TO_RIGHT, 0, 0));
 	}
 
-	@Override
 	public List<MenuButton> getButtons() {
 		return this.menuButtons;
 	}

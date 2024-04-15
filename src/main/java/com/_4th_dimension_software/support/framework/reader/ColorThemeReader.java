@@ -80,7 +80,8 @@ public final class ColorThemeReader {
 				ColorModel cm = new ColorModel(element.getAttribute("colors"));
 				ctm.setForegroundModel(cm);
 			}
-			case "paintlinearly" -> ctm.setLinearPaint(element.getAttribute("value"));
+			// Modifier: Background painting method
+			case "modifier" -> ctm.setLinearPaint(element.getAttribute("paintLinearly"));
 		}
 	}
 
@@ -113,28 +114,30 @@ public final class ColorThemeReader {
 			for (int i = 0; i < rootNodes.getLength(); i++) {
 				Node rootNode = rootNodes.item(i);
 
-				if (rootNode.getNodeType() == Node.ELEMENT_NODE) {
-					Element rootElement = (Element) rootNode;
-					NodeList childNodes = rootElement.getChildNodes();
-					// Instantiate a ColorThemeModel for the current iteration
-					ColorThemeModel ctm = new ColorThemeModel();
+				if (rootNode.getNodeType() != Node.ELEMENT_NODE)
+					continue;
 
-					for (int j = 0; j < childNodes.getLength(); j++) {
-						Node childNode = childNodes.item(j);
+				Element rootElement = (Element) rootNode;
+				NodeList childNodes = rootElement.getChildNodes();
+				// Instantiate a ColorThemeModel for the current iteration
+				ColorThemeModel ctm = new ColorThemeModel();
 
-						if (childNode.getNodeType() == Node.ELEMENT_NODE) {
-							Element childElement = (Element) childNode;
-							String tagName = childElement.getTagName().toLowerCase();
-							constructColorThemeModel(tagName, childElement, ctm);
-						}
-					}
-					// Place the currently generated ColorThemeModel into the HashMap
-					colorThemeModels.put(rootElement.getAttribute("applyTo"), ctm);
+				for (int j = 0; j < childNodes.getLength(); j++) {
+					Node childNode = childNodes.item(j);
+
+					if (childNode.getNodeType() != Node.ELEMENT_NODE)
+						continue;
+
+					Element childElement = (Element) childNode;
+					String tagName = childElement.getTagName().toLowerCase();
+					constructColorThemeModel(tagName, childElement, ctm);
 				}
+				// Place the currently generated ColorThemeModel into the HashMap
+				colorThemeModels.put(rootElement.getAttribute("applyTo"), ctm);
 			}
 		}
 		catch (Exception exc) {
-			exc.printStackTrace(); //TODO: Implement backup theme (in-code theme)
+			exc.printStackTrace(); // TODO: Implement backup theme (in-code theme)
 		}
 
 		return colorThemeModels;

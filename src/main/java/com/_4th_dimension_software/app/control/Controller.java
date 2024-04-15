@@ -1,8 +1,6 @@
 package com._4th_dimension_software.app.control;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 
 /**
  * The <code>Controller</code> class is a child class
@@ -23,7 +21,7 @@ import java.awt.event.MouseEvent;
  * component is focused, the <code>KeyListener</code> interface is the
  * perfect solution.
  */
-public class Controller extends AbstractController {
+public class Controller implements ActionListener, MouseListener, MouseMotionListener, KeyListener {
 	// ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e) {

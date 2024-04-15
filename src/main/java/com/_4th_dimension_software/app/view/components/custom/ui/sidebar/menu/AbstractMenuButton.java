@@ -1,4 +1,4 @@
-package com._4th_dimension_software.app.view.components.custom.ui.menu;
+package com._4th_dimension_software.app.view.components.custom.ui.sidebar.menu;
 
 import java.awt.Dimension;
 import java.awt.Insets;
@@ -40,29 +40,5 @@ public abstract class AbstractMenuButton extends XButton implements ActionListen
 
 	protected AbstractMenuButton(int x, int y, int width, int height, final XFrame frame, String appearanceName) {
 		this(x, y, width, height, "", frame, appearanceName);
-	}
-
-	/**
-	 * Shortcut to the <code>DropdownPanel</code> class's
-	 * <code>createAndAddButton()</code> method. It calls the
-	 * dropdown panel's method with the specified text.
-	 *
-	 * @param buttonText The text of the button
-	 */
-	public void addButtonToDropdown(String buttonText) {
-		this.dropdownPanel.createAndAddButton(buttonText);
-		this.dropdownPanel.getLastButton().addActionListener(this);
-	}
-
-	public boolean isActive() {
-		return this.active;
-	}
-
-	public void setActive(boolean active) {
-		this.active = active;
-	}
-
-	public DropdownPanel getDropdownPanel() {
-		return this.dropdownPanel;
 	}
 }

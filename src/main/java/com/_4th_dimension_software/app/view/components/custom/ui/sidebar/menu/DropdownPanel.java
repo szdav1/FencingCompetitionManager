@@ -1,11 +1,14 @@
-package com._4th_dimension_software.app.view.components.custom.ui.menu;
+package com._4th_dimension_software.app.view.components.custom.ui.sidebar.menu;
 
 import java.awt.Dimension;
 import java.awt.LayoutManager;
+import java.util.ArrayList;
+import java.util.List;
 
+import com._4th_dimension_software.app.view.components.base.button.XButton;
+import com._4th_dimension_software.app.view.components.base.panel.XPanel;
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.appdata.SizeData;
-import com._4th_dimension_software.app.view.components.base.button.XButton;
 
 /**
  * The <code>DropdownPanel</code> class is a child class
@@ -15,7 +18,9 @@ import com._4th_dimension_software.app.view.components.base.button.XButton;
  * This class holds the buttons that it contains in an <code>ArrayList</code>
  * for easier access.
  */
-public class DropdownPanel extends AbstractDropdownPanel {
+public class DropdownPanel extends XPanel {
+	private List<XButton> buttons;
+
 	/**
 	 * Constructs a <code>DropdownPanel</code> object.
 	 * The created object will be placed on the specified X and Y
@@ -32,6 +37,8 @@ public class DropdownPanel extends AbstractDropdownPanel {
 	 */
 	public DropdownPanel(int x, int y, int width, int height, LayoutManager layoutManager, final XFrame frame, String appearanceName) {
 		super(x, y, width, height, layoutManager, frame, appearanceName);
+
+		this.buttons = new ArrayList<>();
 	}
 
 	/**
@@ -49,6 +56,30 @@ public class DropdownPanel extends AbstractDropdownPanel {
 	 */
 	public DropdownPanel(int x, int y, int width, int height, final XFrame frame, String appearanceName) {
 		super(x, y, width, height, frame, appearanceName);
+
+		this.buttons = new ArrayList<>();
+	}
+
+	public List<XButton> getButtons() {
+		return this.buttons;
+	}
+
+	/**
+	 * Returns the first button in the dropdown panel.
+	 *
+	 * @return The first button in the dropdown panel
+	 */
+	public XButton getFirstButton() {
+		return this.buttons.get(0);
+	}
+
+	/**
+	 * Returns the last button in the dropdown panel.
+	 *
+	 * @return The last button in the dropdown panel
+	 */
+	public XButton getLastButton() {
+		return this.buttons.get(this.buttons.size()-1);
 	}
 
 	/**
@@ -58,8 +89,7 @@ public class DropdownPanel extends AbstractDropdownPanel {
 	 * @param buttonText The text of the button
 	 */
 	public void createAndAddButton(String buttonText) {
-		XButton btn = new XButton(new Dimension(this.getWidth(), SizeData.BUTTON_HEIGHT),
-			buttonText, this.frame, "sidebar.buttons.dropdown.buttons");
+		XButton btn = new XButton(new Dimension(this.getWidth(), SizeData.BUTTON_HEIGHT), buttonText, this.frame, "sidebar.buttons.dropdown.buttons");
 
 		this.buttons.add(btn);
 		int newHeight = SizeData.calcDropdownHeight(this.buttons.size());

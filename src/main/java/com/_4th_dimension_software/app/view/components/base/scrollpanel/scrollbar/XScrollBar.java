@@ -2,6 +2,13 @@ package com._4th_dimension_software.app.view.components.base.scrollpanel.scrollb
 
 import java.awt.Dimension;
 
+import javax.swing.JScrollBar;
+
+import com._4th_dimension_software.app.view.components.base.scrollpanel.scrollbar.ui.XScrollBarUI;
+import com._4th_dimension_software.support.appdata.SizeData;
+import com._4th_dimension_software.support.framework.Appearance;
+import com._4th_dimension_software.support.framework.Appearances;
+
 /**
  * The <code>XScrollBar</code> class is an extended representation
  * of Swing's <code>JScrollBar</code> class. It works similarly to
@@ -15,7 +22,9 @@ import java.awt.Dimension;
  *
  * @author szd
  */
-public class XScrollBar extends AbstractXScrollBar {
+public class XScrollBar extends JScrollBar {
+	private Appearance appearance;
+
 	/**
 	 * Constructs an <code>XScrollBar</code> object. This object is
 	 * similar to a <code>JScrollBar</code> object, only this is much
@@ -27,7 +36,13 @@ public class XScrollBar extends AbstractXScrollBar {
 	 *                       implemented on this scrollbar
 	 */
 	public XScrollBar(Dimension dimension, int orientation, String appearanceName) {
-		super(dimension, orientation, appearanceName);
+		this.appearance = Appearances.get(appearanceName);
+
+		this.setBorder(null);
+		this.setFocusable(false);
+		this.setOrientation(orientation);
+		this.setUI(new XScrollBarUI(appearanceName));
+		this.setPreferredSize(dimension);
 	}
 
 	/**
@@ -40,6 +55,12 @@ public class XScrollBar extends AbstractXScrollBar {
 	 *                       implemented on this scrollbar
 	 */
 	public XScrollBar(int orientation, String appearanceName) {
-		super(orientation, appearanceName);
+		this(orientation == JScrollBar.VERTICAL ?
+			SizeData.V_SCROLL_BAR_DIMENSION :
+			SizeData.H_SCROLL_BAR_DIMENSION, orientation, appearanceName);
+	}
+
+	public Appearance getAppearance() {
+		return this.appearance;
 	}
 }

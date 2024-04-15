@@ -1,6 +1,5 @@
 package com._4th_dimension_software.app.control.sidebar;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
 import java.util.Optional;
@@ -8,9 +7,8 @@ import java.util.Optional;
 import javax.swing.JComponent;
 
 import com._4th_dimension_software.app.control.Controller;
-import com._4th_dimension_software.app.view.components.base.button.XButton;
-import com._4th_dimension_software.app.view.components.custom.ui.menu.MenuButton;
 import com._4th_dimension_software.app.view.components.custom.ui.sidebar.Sidebar;
+import com._4th_dimension_software.app.view.components.custom.ui.sidebar.menu.MenuButton;
 
 /**
  * The <code>SidebarMouseListener</code> is the class that handles mouse
@@ -38,7 +36,7 @@ public final class SidebarController extends Controller {
 
 	/**
 	 * Tries to find the origin of the specified <code>InputEvent</code>.
-	 * If the component that caused the event is in contained in
+	 * If the component that caused the event is contained in
 	 * the sidebar, it is returned in an <code>Optional</code>.
 	 *
 	 * @param ie The event that happened
@@ -53,35 +51,28 @@ public final class SidebarController extends Controller {
 		return Optional.empty();
 	}
 
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		/*
-		 * Activate a menu button so that its dropdown
-		 * panel stays open even after exiting it with the
-		 * cursor.
-		 * */
-		Optional<JComponent> srcOptional = this.findSourceOfInputEvent(e);
+	/**
+	 * Performs the appropriate dropdown panel method
+	 * according to the ID of the given <code>MouseEvent</code>.
+	 *
+	 * @param me The <code>MouseEvent</code> that triggered a dropdown panel
+	 */
+	private void handleDropdownPanels(final MouseEvent me) {
+		Optional<JComponent> srcOptional = this.findSourceOfInputEvent(me);
 
-		if (srcOptional.isPresent()) {
-			MenuButton btn = (MenuButton) srcOptional.get();
-			this.previousButton = btn;
-			btn.setActive(!btn.isActive());
-		}
-	}
+		if (srcOptional.isEmpty())
+			return;
 
-	@Override
-	public void mouseEntered(MouseEvent e) {
+		int meID = me.getID();
+		MenuButton btn = (MenuButton) srcOptional.get();
+
 		/*
 		 * Show the dropdown panel of the hovered menu button.
 		 * If there's a previous button (a button that has been pressed
 		 * before the current one making its dropdown panel stay open) it
 		 * is deactivated.
 		 * */
-		Optional<JComponent> srcOptional = this.findSourceOfInputEvent(e);
-
-		if (srcOptional.isPresent()) {
-			MenuButton btn = (MenuButton) srcOptional.get();
-
+		if (meID == MouseEvent.MOUSE_ENTERED) {
 			if (!btn.isActive())
 				btn.showDropdownPanel();
 
@@ -90,23 +81,39 @@ public final class SidebarController extends Controller {
 				this.previousButton.hideDropdownPanel();
 			}
 		}
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
+		/*
+		 * Activate a menu button so that its dropdown
+		 * panel stays open even after exiting it with the
+		 * cursor.
+		 * */
+		else if (meID == MouseEvent.MOUSE_CLICKED) {
+			this.previousButton = btn;
+			btn.setActive(!btn.isActive());
+		}
 		/*
 		 * Hide the dropdown panel of the exited menu button.
 		 * If the menu button that has been exited by the cursor
 		 * was clicked, it has been activated so its dropdown panel
 		 * must stay open after exiting.
 		 * */
-		Optional<JComponent> srcOptional = this.findSourceOfInputEvent(e);
-
-		if (srcOptional.isPresent()) {
-			MenuButton btn = (MenuButton) srcOptional.get();
-
+		else if (meID == MouseEvent.MOUSE_EXITED) {
 			if (!btn.isActive())
 				btn.hideDropdownPanel();
 		}
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		this.handleDropdownPanels(e);
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		this.handleDropdownPanels(e);
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		this.handleDropdownPanels(e);
 	}
 }
