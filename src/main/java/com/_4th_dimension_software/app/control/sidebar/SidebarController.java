@@ -59,7 +59,9 @@ public final class SidebarController extends Controller {
 	 * @return True if the center panel was the source of the event, false otherwise
 	 */
 	private boolean isCenterPanelEntered(final InputEvent ie) {
-		return this.sidebar.getFrame().getCenterPanel().equals(ie.getSource());
+		return this.sidebar.getFrame()
+			.getCenterPanel()
+			.equals(ie.getSource());
 	}
 
 	/**
