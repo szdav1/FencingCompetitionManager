@@ -79,8 +79,10 @@ public final class SidebarController extends Controller {
 		 * hovered by the mouse which is currently not active, its dropdown
 		 * panel should be removed from the scene.
 		 * */
-		if (cpEntered && this.prevEnteredButton != null && !this.prevEnteredButton.isActive())
+		if (cpEntered && this.prevEnteredButton != null && !this.prevEnteredButton.isActive()) {
 			this.prevEnteredButton.hideDropdownPanel();
+			return;
+		}
 
 		if (btnOptional.isEmpty())
 			return;
