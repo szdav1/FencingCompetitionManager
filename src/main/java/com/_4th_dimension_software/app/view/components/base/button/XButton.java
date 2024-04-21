@@ -125,25 +125,25 @@ public class XButton extends AbstractXButton {
 	@Override
 	public void mousePressed(MouseEvent e) {
 		this.pressed = true;
-		this.paintComponent(this.getGraphics());
+		this.repaint();
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		this.pressed = false;
-		this.paintComponent(this.getGraphics());
+		this.repaint();
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		this.entered = true;
-		this.paintComponent(this.getGraphics());
+		this.repaint();
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
 		this.entered = false;
-		this.paintComponent(this.getGraphics());
+		this.repaint();
 	}
 
 	@Override

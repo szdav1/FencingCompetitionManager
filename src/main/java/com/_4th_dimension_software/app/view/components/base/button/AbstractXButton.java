@@ -31,6 +31,7 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 		this.setFont(appearance.getFont());
 		this.setForeground(appearance.getForegrounds().get(0));
 		this.setFocusable(false);
+		this.setBorderPainted(false);
 		this.setContentAreaFilled(false);
 		this.setBounds(new Rectangle(0, 0, dimension.width, dimension.height));
 		this.setPreferredSize(dimension);
@@ -50,6 +51,7 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 		this.setFont(appearance.getFont());
 		this.setForeground(appearance.getForegrounds().get(0));
 		this.setFocusable(false);
+		this.setBorderPainted(false);
 		this.setContentAreaFilled(false);
 		this.setPreferredSize(new Dimension(width, height));
 		this.setBounds(new Rectangle(x, y, width, height));
@@ -211,20 +213,18 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 	}
 
 	@Override
-	protected void paintComponent(Graphics g) {
+	public void paint(Graphics g) {
 		// Cast Graphics to Graphics2D
 		Graphics2D g2D = (Graphics2D) g;
-
-		if (g2D == null)
-			return;
-
 		g2D.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
 
+		Rectangle clipRect = g.getClipBounds();
+
 		// Start and end coordinates for painting
-		final int X = 0;
-		final int Y = 0;
-		final int W = this.getWidth();
-		final int H = this.appearance.isLinearPaint() ? 0 : this.getHeight();
+		final int X = clipRect.x;
+		final int Y = clipRect.y;
+		final int W = clipRect.width;
+		final int H = clipRect.height;
 		// Roundness
 		final int R = this.appearance.getBorderModel().getRoundness();
 
@@ -234,32 +234,10 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 		this.paintForeground();
 		// Paint the icon (Actually set the corresponding icon)
 		this.paintIcon();
-
-		// Paint Icon and Text
-		super.paintComponent(g);
-
-		// Destroy the Graphics2D object as it is no longer needed
-		g2D.dispose();
-	}
-
-	@Override
-	public void paint(Graphics g) {
-		// Cast Graphics to Graphics2D
-		Graphics2D g2D = (Graphics2D) g;
-		g2D.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
-
-		// Start and end coordinates for painting
-		final int X = 0;
-		final int Y = 0;
-		final int W = this.getWidth();
-		final int H = this.getHeight();
-		// Roundness
-		final int R = this.appearance.getBorderModel().getRoundness();
-
-		// Paint the component
-		super.paint(g);
 		// Paint the border
 		this.paintBorder(X, Y, W, H, R, g2D);
+		// Paint the component
+		super.paint(g);
 
 		// Destroy the Graphics2D object as it is no longer needed
 		g2D.dispose();
