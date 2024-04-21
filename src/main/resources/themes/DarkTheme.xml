@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DarkTheme>
     <appearance applyTo="window">
-        <background colors="[12,14,14,255][200,0,0,255]"/>
-        <paintModifier paintLinearly="false"/>
+        <background colors="[12,14,14,255]"/>
     </appearance>
 
     <appearance applyTo="sidebar">
         <background colors="[27,27,27,255]"/>
+        <border colors="[255,0,0,255][0,0,255,255]" thickness="@proportional"/>
+
+        <modifiers>
+            <borderSections right="true"/>
+        </modifiers>
     </appearance>
 
     <appearance applyTo="sidebar.header">

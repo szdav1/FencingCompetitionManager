@@ -32,25 +32,30 @@ public final class ColorThemeModel extends AbstractColorThemeModel {
 	 * that this class contains mostly safe, valid models that
 	 * can be accessed from this class that collects them.
 	 *
-	 * @param linearPaint   Defines whether the background should be painted linearly or not
-	 * @param backgroundModel The model for the background colors
-	 * @param foregroundModel The model for the foreground colors
-	 * @param borderModel     The model for the border
-	 * @param fontModel       The model for the font
-	 * @param iconModel1      The model of the main icon
-	 * @param iconModel2      The model of the secondary icon
+	 * @param linearPaint       Defines whether the background should be painted linearly or not
+	 * @param paintTopBorder    Defines whether the top of the border should be painted
+	 * @param paintRightBorder  Defines whether the right side of the border should be painted
+	 * @param paintBottomBorder Defines whether the bottom of the border should be painted
+	 * @param paintLeftBorder   Defines whether the left side of the border should be painted
+	 * @param backgroundModel   The model for the background colors
+	 * @param foregroundModel   The model for the foreground colors
+	 * @param borderModel       The model for the border
+	 * @param fontModel         The model for the font
+	 * @param iconModel1        The model of the main icon
+	 * @param iconModel2        The model of the secondary icon
 	 */
-	public ColorThemeModel(final boolean linearPaint, final ColorModel backgroundModel, final ColorModel foregroundModel,
-		final BorderModel borderModel, final FontModel fontModel, final IconModel iconModel1, final IconModel iconModel2) {
+	public ColorThemeModel(final boolean linearPaint, final boolean paintTopBorder, final boolean paintRightBorder, final boolean paintBottomBorder,
+		final boolean paintLeftBorder, final ColorModel backgroundModel, final ColorModel foregroundModel, final BorderModel borderModel, final FontModel fontModel,
+		final IconModel iconModel1, final IconModel iconModel2) {
 
-		super(linearPaint, backgroundModel, foregroundModel, borderModel, fontModel, iconModel1, iconModel2);
+		super(linearPaint, paintTopBorder, paintRightBorder, paintBottomBorder, paintLeftBorder, backgroundModel, foregroundModel, borderModel, fontModel, iconModel1, iconModel2);
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof ColorThemeModel ctm) {
-			return this.linearPaint == ctm.isLinearPaint() &&
+			return this.borderPaintRules.equals(ctm.getBorderPaintRules()) &&
+				this.linearPaint == ctm.isLinearPaint() &&
 				this.backgroundModel.equals(ctm.getBackgroundModel()) &&
 				this.foregroundModel.equals(ctm.getForegroundModel()) &&
 				this.borderModel.equals(ctm.getBorderModel()) &&
@@ -66,6 +71,7 @@ public final class ColorThemeModel extends AbstractColorThemeModel {
 	public String toString() {
 		return "ColorThemeModel{"+
 			"linearPaint="+linearPaint+
+			", borderPaintRules="+borderPaintRules+
 			", backgroundModel="+backgroundModel+
 			", foregroundModel="+foregroundModel+
 			", borderModel="+borderModel+

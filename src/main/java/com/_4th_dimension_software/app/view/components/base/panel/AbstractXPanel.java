@@ -69,24 +69,74 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
 
 	@Override
 	public void paintBorder(int x, int y, int w, int h, int r, final Graphics2D g2D) {
+		LinearGradientPaint lgp;
+
 		g2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-		if (this.appearance.getBorderModel().getThickness() != 0) {
-			if (this.appearance.getBorderModel().getColorModel().getColors().size() >= 2) {
-				LinearGradientPaint lgp = new LinearGradientPaint(x, y, w, h, Util.calcEqualFracts(this.appearance.getBorderModel()
+		if (this.appearance.getBorderModel().getThickness() <= 0)
+			return;
+
+		// Set the specified stroke
+		g2D.setStroke(new BasicStroke(this.appearance.getBorderModel().getThickness(), BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER));
+
+		// Set the coloring of the border based on the number of colors specified in the color theme
+		if (this.appearance.getBorderModel().getColorModel().getColors().size() >= 2) {
+			// Draw full border
+			if (this.appearance.getBorderModel().getThickness() != 0 && !this.appearance.shouldPaintBorderSection("top") &&
+				!this.appearance.shouldPaintBorderSection("right") && !this.appearance.shouldPaintBorderSection("bottom") && !this.appearance.shouldPaintBorderSection("left") ||
+				this.appearance.isBorderPainted()) {
+
+				lgp = new LinearGradientPaint(x, y, w, h, Util.calcEqualFracts(this.appearance.getBorderModel()
 					.getColorModel()
 					.getColors()
 					.size()), this.appearance.getBorderColorsAsArray());
 
 				g2D.setPaint(lgp);
+				g2D.drawRoundRect(x, y, this.getWidth(), this.getHeight(), r, r);
 			}
-			else
-				g2D.setColor(this.appearance.getBorderModel().getColorModel().getColors().get(0));
+			// Draw top section of the border only
+			if (this.appearance.shouldPaintBorderSection("top")) {
+				lgp = new LinearGradientPaint(0, 0, this.getWidth(), 0, Util.calcEqualFracts(this.appearance.getBorderModel()
+					.getColorModel()
+					.getColors()
+					.size()), this.appearance.getBorderColorsAsArray());
 
-			g2D.setStroke(new BasicStroke(this.appearance.getBorderModel().getThickness(), BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER));
-			// Draw border
-			g2D.drawRoundRect(x, y, this.getWidth(), this.getHeight(), r, r);
+				g2D.setPaint(lgp);
+				g2D.drawLine(0, 0, this.getWidth(), 0);
+			}
+			// Draw right section of the border only
+			if (this.appearance.shouldPaintBorderSection("right")) {
+				lgp = new LinearGradientPaint(this.getWidth(), 0, this.getWidth(), this.getHeight(), Util.calcEqualFracts(this.appearance.getBorderModel()
+					.getColorModel()
+					.getColors()
+					.size()), this.appearance.getBorderColorsAsArray());
+
+				g2D.setPaint(lgp);
+				g2D.drawLine(this.getWidth(), 0, this.getWidth(), this.getHeight());
+			}
+			// Draw bottom section of the border only
+			if (this.appearance.shouldPaintBorderSection("bottom")) {
+				lgp = new LinearGradientPaint(0, this.getHeight(), this.getWidth(), this.getHeight(), Util.calcEqualFracts(this.appearance.getBorderModel()
+					.getColorModel()
+					.getColors()
+					.size()), this.appearance.getBorderColorsAsArray());
+
+				g2D.setPaint(lgp);
+				g2D.drawLine(0, this.getHeight(), this.getWidth(), this.getHeight());
+			}
+			// Draw left side of the border only
+			if (this.appearance.shouldPaintBorderSection("left")) {
+				lgp = new LinearGradientPaint(0, 0, 0, this.getHeight(), Util.calcEqualFracts(this.appearance.getBorderModel()
+					.getColorModel()
+					.getColors()
+					.size()), this.appearance.getBorderColorsAsArray());
+
+				g2D.setPaint(lgp);
+				g2D.drawLine(0, 0, 0, this.getHeight());
+			}
 		}
+		else
+			g2D.setColor(this.appearance.getBorderModel().getColorModel().getColors().get(0));
 	}
 
 	@Override

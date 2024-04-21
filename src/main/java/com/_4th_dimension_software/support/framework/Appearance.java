@@ -46,6 +46,35 @@ public final class Appearance extends AbstractAppearance {
 	}
 
 	/**
+	 * Returns the summary value of the booleans
+	 * in the borderPaintRules <code>HashMap</code>. If
+	 * only one of the values is false, the return value is
+	 * going to be false as well.
+	 *
+	 * @return The sum value of the contents of the borderPaintRules <code>HashMap</code>
+	 */
+	public boolean isBorderPainted() {
+		return this.borderPaintRules.get("top") &&
+			this.borderPaintRules.get("right") &&
+			this.borderPaintRules.get("bottom") &&
+			this.borderPaintRules.get("left");
+	}
+
+	/**
+	 * Returns whether the specified section of the border
+	 * should be painted or not.
+	 *
+	 * @param sectionName The name of the section of the border
+	 * @return Whether the specified section should be painted or not
+	 */
+	public boolean shouldPaintBorderSection(String sectionName) {
+		if (!this.borderPaintRules.containsKey(sectionName))
+			return true;
+
+		return this.borderPaintRules.get(sectionName);
+	}
+
+	/**
 	 * Converts the backgrounds <code>ArrayList</code> to an
 	 * array that contains the same data as the ArrayList.
 	 *
@@ -97,7 +126,8 @@ public final class Appearance extends AbstractAppearance {
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Appearance a) {
-			return this.linearPaint == a.isLinearPaint() &&
+			return this.borderPaintRules.equals(a.getBorderPaintRules()) &&
+				this.linearPaint == a.isLinearPaint() &&
 				this.backgrounds.equals(a.getBackgrounds()) &&
 				this.foregrounds.equals(a.getForegrounds()) &&
 				this.borderModel.equals(a.getBorderModel()) &&
@@ -113,6 +143,7 @@ public final class Appearance extends AbstractAppearance {
 	public String toString() {
 		return "Appearance{"+
 			"linearPaint="+linearPaint+
+			", borderPaintRules="+borderPaintRules+
 			", backgrounds="+backgrounds+
 			", foregrounds="+foregrounds+
 			", borderModel="+borderModel+

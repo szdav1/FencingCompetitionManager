@@ -4,18 +4,20 @@ import java.awt.Color;
 import java.awt.Font;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.ImageIcon;
 
+import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.framework.models.BorderModel;
 import com._4th_dimension_software.support.framework.models.ColorThemeModel;
 import com._4th_dimension_software.support.framework.models.FontModel;
-import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.util.ResourceHandler;
 
 public abstract class AbstractAppearance {
 	protected boolean linearPaint;
+	protected HashMap<String, Boolean> borderPaintRules;
 	protected List<Color> backgrounds;
 	protected List<Color> foregrounds;
 	protected BorderModel borderModel;
@@ -31,16 +33,32 @@ public abstract class AbstractAppearance {
 		this.font = new Font(Font.MONOSPACED, Font.PLAIN, SizeData.FONT_SIZE);
 		this.icon1 = null;
 		this.icon2 = null;
+
+		this.initBorderPaintRules();
 	}
 
 	public AbstractAppearance(final ColorThemeModel colorThemeModel) {
 		this.linearPaint = colorThemeModel.isLinearPaint();
+		this.borderPaintRules = colorThemeModel.getBorderPaintRules();
 		this.backgrounds = colorThemeModel.getBackgroundModel().getColors();
 		this.foregrounds = colorThemeModel.getForegroundModel().getColors();
 		this.borderModel = colorThemeModel.getBorderModel();
 		this.icon1 = colorThemeModel.getIconModel1().getIcon();
 		this.icon2 = colorThemeModel.getIconModel2().getIcon();
+
 		this.createFont(colorThemeModel.getFontModel());
+	}
+
+	/**
+	 * Initializes the <code>borderPaintRules</code> <code>HashMap</code>
+	 * with every value being <code>true</code>.
+	 */
+	private void initBorderPaintRules() {
+		this.borderPaintRules = new HashMap<>();
+		this.borderPaintRules.put("top", false);
+		this.borderPaintRules.put("right", false);
+		this.borderPaintRules.put("bottom", false);
+		this.borderPaintRules.put("left", false);
 	}
 
 	/**
@@ -79,6 +97,10 @@ public abstract class AbstractAppearance {
 
 	public boolean isLinearPaint() {
 		return this.linearPaint;
+	}
+
+	public HashMap<String, Boolean> getBorderPaintRules() {
+		return this.borderPaintRules;
 	}
 
 	public List<Color> getBackgrounds() {

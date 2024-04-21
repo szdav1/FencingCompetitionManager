@@ -225,4 +225,21 @@ public final class Util {
 
 		return List.of(cs1, cs2);
 	}
+
+	/**
+	 * Returns the boolean value of a string. If the specified
+	 * string is not appropriate to be translated to a boolean,
+	 * the specified default value is returned. Else, the boolean
+	 * value of the defined string gets returned.
+	 *
+	 * @param str          The string that should be turned into a boolean
+	 * @param defaultValue The default value that should get returned in case of an invalid string
+	 * @return The boolean representation of the specified string or the default value
+	 */
+	public static boolean toBoolean(String str, boolean defaultValue) {
+		if (str.isBlank())
+			return defaultValue;
+
+		return Boolean.parseBoolean(str);
+	}
 }

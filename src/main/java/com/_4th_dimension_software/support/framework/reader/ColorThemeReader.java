@@ -24,6 +24,36 @@ public final class ColorThemeReader {
 	}
 
 	/**
+	 * Handles the <code>modifiers</code> tag in the color theme
+	 * document. This method takes care of validating and processing
+	 * every child element of the <code>specified element</code> and
+	 * put the corresponding values into the specified <code>color theme model</code>.
+	 *
+	 * @param element The <code>Element</code> of the current iteration
+	 * @param ctm     The <code>ColorThemeModel</code> of the current iteration
+	 */
+	private static void handleModifiers(final Element element, final ColorThemeModel ctm) {
+		NodeList elementChildren = element.getChildNodes();
+
+		for (int i = 0; i < elementChildren.getLength(); i++) {
+			if (elementChildren.item(i).getNodeType() != Node.ELEMENT_NODE)
+				continue;
+
+			Element childElement = (Element) elementChildren.item(i);
+
+			if (childElement.getTagName().equalsIgnoreCase("paint"))
+				ctm.setLinearPaint(childElement.getAttribute("linear"));
+
+			else if (childElement.getTagName().equalsIgnoreCase("borderSections")) {
+				ctm.setBorderPaintRule("top", childElement.getAttribute("top"));
+				ctm.setBorderPaintRule("right", childElement.getAttribute("right"));
+				ctm.setBorderPaintRule("bottom", childElement.getAttribute("bottom"));
+				ctm.setBorderPaintRule("left", childElement.getAttribute("left"));
+			}
+		}
+	}
+
+	/**
 	 * Initializes the values of the specified <code>ColorThemeModel</code>
 	 * based on the given tag name and the current element of the iteration.
 	 *
@@ -80,8 +110,7 @@ public final class ColorThemeReader {
 				ColorModel cm = new ColorModel(element.getAttribute("colors"));
 				ctm.setForegroundModel(cm);
 			}
-			// Modifier: Background painting method
-			case "paintmodifier" -> ctm.setLinearPaint(element.getAttribute("paintLinearly"));
+			case "modifiers" -> handleModifiers(element, ctm);
 		}
 	}
 
