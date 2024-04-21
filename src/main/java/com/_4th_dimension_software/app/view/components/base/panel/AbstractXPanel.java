@@ -90,7 +90,7 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
 	}
 
 	@Override
-	protected void paintComponent(Graphics g) {
+	public void paint(Graphics g) {
 		// Cast Graphics to Graphics2D
 		Graphics2D g2D = (Graphics2D) g;
 		g2D.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
@@ -105,31 +105,10 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
 
 		// Background
 		this.paintBackground(X, Y, W, H, R, g2D);
-
-		// Paint added components
-		super.paintComponent(g);
-		// Needed in order for the displaying to work properly
-		this.setBorder(null);
-	}
-
-	@Override
-	public void paint(Graphics g) {
-		// Cast Graphics to Graphics2D
-		Graphics2D g2D = (Graphics2D) g;
-		g2D.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
-
-		// Start and end coordinates for painting
-		final int X = 0;
-		final int Y = 0;
-		final int W = this.getWidth();
-		final int H = this.getHeight();
-		// Roundness
-		final int R = this.appearance.getBorderModel().getRoundness();
-
-		// Paint the component
-		super.paint(g);
 		// Paint the border
 		this.paintBorder(X, Y, W, H, R, g2D);
+		// Paint the component
+		super.paint(g);
 
 		// Destroy the Graphics2D object as it is no longer needed
 		g2D.dispose();

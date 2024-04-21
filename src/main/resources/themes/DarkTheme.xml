@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DarkTheme>
     <appearance applyTo="window">
-        <background colors="[12,14,14,255]"/>
+        <background colors="[12,14,14,255][200,0,0,255]"/>
+        <paintModifier paintLinearly="false"/>
     </appearance>
 
     <appearance applyTo="sidebar">

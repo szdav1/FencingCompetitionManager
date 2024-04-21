@@ -81,7 +81,7 @@ public final class ColorThemeReader {
 				ctm.setForegroundModel(cm);
 			}
 			// Modifier: Background painting method
-			case "modifier" -> ctm.setLinearPaint(element.getAttribute("paintLinearly"));
+			case "paintmodifier" -> ctm.setLinearPaint(element.getAttribute("paintLinearly"));
 		}
 	}
 
