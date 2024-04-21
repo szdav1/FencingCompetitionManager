@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Font related tests" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-04-21T13:17:06" hostname="DESKTOP-FN3U10C" time="0.04">
+<testsuite name="Font related tests" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-04-21T13:23:02" hostname="DESKTOP-PDMD8RI" time="0.074">
   <properties/>
-  <testcase name="The family (name) of the font should be the default font family: monospaced (Font.MONOSPACED)" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$FontRelatedTests" time="0.023"/>
-  <testcase name="The family (name) of the font should be Arial" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$FontRelatedTests" time="0.007"/>
-  <testcase name="The family (name) of the font should be the specified custom font: Halimun" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$FontRelatedTests" time="0.006"/>
+  <testcase name="The family (name) of the font should be the default font family: monospaced (Font.MONOSPACED)" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$FontRelatedTests" time="0.047"/>
+  <testcase name="The family (name) of the font should be Arial" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$FontRelatedTests" time="0.012"/>
+  <testcase name="The family (name) of the font should be the specified custom font: Halimun" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$FontRelatedTests" time="0.01"/>
   <system-out><![CDATA[
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
