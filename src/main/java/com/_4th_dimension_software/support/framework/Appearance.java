@@ -61,13 +61,28 @@ public final class Appearance extends AbstractAppearance {
 	}
 
 	/**
+	 * Returns the summary value of the booleans
+	 * in the borderPaintRules <code>HashMap</code>. If
+	 * only one of the values is true, the return value is
+	 * going to be true as well.
+	 *
+	 * @return The sum value of the contents of the borderPaintRules <code>HashMap</code>
+	 */
+	public boolean isBorderNotPainted() {
+		return !this.borderPaintRules.get("top") &&
+			!this.borderPaintRules.get("right") &&
+			!this.borderPaintRules.get("bottom") &&
+			!this.borderPaintRules.get("left");
+	}
+
+	/**
 	 * Returns whether the specified section of the border
 	 * should be painted or not.
 	 *
 	 * @param sectionName The name of the section of the border
 	 * @return Whether the specified section should be painted or not
 	 */
-	public boolean shouldPaintBorderSection(String sectionName) {
+	public boolean isBorderSectionPainted(String sectionName) {
 		if (!this.borderPaintRules.containsKey(sectionName))
 			return true;
 
