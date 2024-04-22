@@ -10,21 +10,21 @@
 
     <appearance applyTo="sidebar.header">
         <background colors="[0,0,0,0]"/>
-        <icon1 source="/icons/dashboard.png" width="8" height="8"/>
+        <icon1 source="/icons/dashboard.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.new">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/newGray.png" width="15" height="15"/>
-        <icon2 source="/icons/newWhite.png" width="15" height="15"/>
+        <icon1 source="/icons/newGray.png" width="3" height="3"/>
+        <icon2 source="/icons/newWhite.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.settings">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/settingsGray.png" width="15" height="15"/>
-        <icon2 source="/icons/settingsWhite.png" width="15" height="15"/>
+        <icon1 source="/icons/settingsGray.png" width="3" height="3"/>
+        <icon2 source="/icons/settingsWhite.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.new.dropdown">

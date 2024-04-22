@@ -16,11 +16,11 @@ public final class SizeData {
 	public static final int SCREEN_WIDTH = SCREEN_SIZE.width;
 	public static final int SCREEN_HEIGHT = SCREEN_SIZE.height;
 
-	// Proportional value
-	private static final int PROPORTIONALITY_FACTOR = SCREEN_WIDTH/SCREEN_HEIGHT;
+	// Proportional factor
+	public static final int PROPORTIONALITY_FACTOR = SCREEN_WIDTH/SCREEN_HEIGHT;
 
 	// Font size
-	public static final int FONT_SIZE = PROPORTIONALITY_FACTOR*13;
+	public static final int FONT_SIZE = PROPORTIONALITY_FACTOR*14;
 	public static final int BORDER_SIZE = 2;
 
 	// Scroll bar size and Dimension
@@ -36,10 +36,10 @@ public final class SizeData {
 
 
 	// Button size and dimension
-	public static final int N_BUTTON_WIDTH = SCREEN_WIDTH*5/100;
-	public static final int BUTTON_WIDTH = SCREEN_WIDTH*8/100;
+	public static final int N_BUTTON_WIDTH = PROPORTIONALITY_FACTOR*150;
+	public static final int BUTTON_WIDTH = PROPORTIONALITY_FACTOR*180;
 	public static final int W_BUTTON_WIDTH = PROPORTIONALITY_FACTOR*200;
-	public static final int BUTTON_HEIGHT = SCREEN_HEIGHT*5/100;
+	public static final int BUTTON_HEIGHT = PROPORTIONALITY_FACTOR*60;
 
 	// Sidebar size and Dimension
 	public static final int SIDEBAR_WIDTH = W_BUTTON_WIDTH;
@@ -59,7 +59,7 @@ public final class SizeData {
 	public static final Dimension DROPDOWN_DIMENSION = new Dimension(DROPDOWN_WIDTH, DROPDOWN_HEIGHT);
 
 	// Separator line size adn dimension
-	public static final int SEPARATOR_WIDTH = SCREEN_WIDTH*8/100;
+	public static final int SEPARATOR_WIDTH = PROPORTIONALITY_FACTOR*10;
 	public static final Dimension SEPARATOR_DIMENSION = new Dimension(SEPARATOR_WIDTH, BORDER_SIZE);
 
 	// Not instantiatable

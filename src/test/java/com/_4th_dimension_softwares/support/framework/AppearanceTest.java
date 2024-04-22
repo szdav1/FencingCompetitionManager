@@ -103,14 +103,14 @@ class AppearanceTest {
 		}
 
 		@Test
-		@DisplayName("The size of the icon should be 256x256")
-		void theSizeOfTheIconShouldBe256x256() {
-			ctm.setIconModel1(new IconModel("/testIcon.png", "50", "50"));
+		@DisplayName("The size of the icon should be 50x50")
+		void theSizeOfTheIconShouldBe50x50() {
+			ctm.setIconModel1(new IconModel("/testIcon.png", "5", "5"));
 			Appearance a = new Appearance(ctm);
 
 			Assertions.assertAll(
-				() -> Assertions.assertEquals(256, a.getIcon1().getIconWidth()),
-				() -> Assertions.assertEquals(256, a.getIcon1().getIconHeight())
+				() -> Assertions.assertEquals(50, a.getIcon1().getIconWidth()),
+				() -> Assertions.assertEquals(50, a.getIcon1().getIconHeight())
 			);
 		}
 	}

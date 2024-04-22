@@ -2,6 +2,7 @@ package com._4th_dimension_softwares.support.framework.models;
 
 import java.awt.MediaTracker;
 
+import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.framework.models.IconModel;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -38,10 +39,10 @@ class IconModelTest {
 	}
 
 	@Test
-	@DisplayName("The icon should be loaded with 50% smaller dimensions")
-	void shouldLoadIconWith50percentSmallerDimensions() {
+	@DisplayName("The icon should be loaded with 500x500 dimension")
+	void shouldLoadIconWith500x500Dimension() {
 		im = new IconModel("/testIcon.png", "50", "50");
-		int actual = 512*50/100;
+		int actual = SizeData.PROPORTIONALITY_FACTOR*(500);
 
 		Assertions.assertAll(
 			() -> Assertions.assertEquals(actual, im.getIcon().getIconWidth()),
@@ -51,13 +52,13 @@ class IconModelTest {
 
 	@ParameterizedTest
 	@ValueSource(strings = {"-43", "-78", "0", "jklfgl", "fö9845ö9[]{[}", "\\///=%()+!*"})
-	@DisplayName("Should load the icon with its default dimensions because every passed in data is invalid")
-	void shouldLoadTheIconWithItsDefaultDimensions(String str) {
+	@DisplayName("Should load the icon with the default precalculated dimensions because every passed in data is invalid")
+	void shouldLoadTheIconWithDefaultPrecalculatedDimensions(String str) {
 		im = new IconModel("/testIcon.png", str, str);
 
 		Assertions.assertAll(
-			() -> Assertions.assertEquals(512, im.getIcon().getIconWidth()),
-			() -> Assertions.assertEquals(512, im.getIcon().getIconHeight())
+			() -> Assertions.assertEquals(30, im.getIcon().getIconWidth()),
+			() -> Assertions.assertEquals(30, im.getIcon().getIconHeight())
 		);
 	}
 }

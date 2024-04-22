@@ -2,7 +2,6 @@ package com._4th_dimension_software.support.framework.models;
 
 import javax.swing.ImageIcon;
 
-import com._4th_dimension_software.support.util.ResourceHandler;
 import com._4th_dimension_software.support.util.Util;
 
 public abstract class AbstractIconModel {
@@ -14,14 +13,14 @@ public abstract class AbstractIconModel {
 
 	protected AbstractIconModel(final String source, String widthPercentage, String heightPercentage) {
 		if (!source.isBlank())
-			this.icon = Util.loadImageIcon(ResourceHandler.get(source), Util.toInt(widthPercentage, 100, (i) -> i > 0),
-				Util.toInt(heightPercentage, 100, (i) -> i > 0));
+			this.icon = Util.loadImageIcon(source, Util.toInt(widthPercentage, 3, (i) -> i > 0),
+				Util.toInt(heightPercentage, 3, (i) -> i > 0));
 		else
 			this.icon = null;
 	}
 
 	protected AbstractIconModel(String source) {
-		this.icon = Util.loadImageIcon(ResourceHandler.get(source));
+		this.icon = Util.loadImageIcon(source);
 	}
 
 	public ImageIcon getIcon() {

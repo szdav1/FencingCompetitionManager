@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.swing.ImageIcon;
 
+import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.util.macros.IntValidator;
 
 /**
@@ -143,8 +144,9 @@ public final class Util {
 	 * @return A scaled <code>ImageIcon</code> that was created from the specified source
 	 */
 	public static ImageIcon loadImageIcon(final String source, int widthPercentage, int heightPercentage) {
-		ImageIcon i = new ImageIcon(source);
-		return new ImageIcon(i.getImage().getScaledInstance(i.getIconWidth()*widthPercentage/100, i.getIconHeight()*heightPercentage/100, Image.SCALE_SMOOTH));
+		ImageIcon i = new ImageIcon(ResourceHandler.get(source));
+		return new ImageIcon(i.getImage().getScaledInstance(SizeData.PROPORTIONALITY_FACTOR*(widthPercentage*10),
+			SizeData.PROPORTIONALITY_FACTOR*(heightPercentage*10), Image.SCALE_SMOOTH));
 	}
 
 	/**
@@ -156,7 +158,7 @@ public final class Util {
 	 * @return The <code>ImageIcon</code> that was created from the specified source
 	 */
 	public static ImageIcon loadImageIcon(final String source) {
-		return loadImageIcon(source, 100, 100);
+		return new ImageIcon(ResourceHandler.get(source));
 	}
 
 	/**
