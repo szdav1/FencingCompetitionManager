@@ -17,10 +17,10 @@ public final class SizeData {
 	public static final int SCREEN_HEIGHT = SCREEN_SIZE.height;
 
 	// Proportional value
-	private static final int PROPORTIONAL_VALUE = SCREEN_WIDTH/SCREEN_HEIGHT;
+	private static final int PROPORTIONALITY_FACTOR = SCREEN_WIDTH/SCREEN_HEIGHT;
 
 	// Font size
-	public static final int FONT_SIZE = PROPORTIONAL_VALUE*13;
+	public static final int FONT_SIZE = PROPORTIONALITY_FACTOR*13;
 	public static final int BORDER_SIZE = 2;
 
 	// Scroll bar size and Dimension
@@ -38,7 +38,7 @@ public final class SizeData {
 	// Button size and dimension
 	public static final int N_BUTTON_WIDTH = SCREEN_WIDTH*5/100;
 	public static final int BUTTON_WIDTH = SCREEN_WIDTH*8/100;
-	public static final int W_BUTTON_WIDTH = SCREEN_WIDTH*14/100;
+	public static final int W_BUTTON_WIDTH = PROPORTIONALITY_FACTOR*200;
 	public static final int BUTTON_HEIGHT = SCREEN_HEIGHT*5/100;
 
 	// Sidebar size and Dimension
