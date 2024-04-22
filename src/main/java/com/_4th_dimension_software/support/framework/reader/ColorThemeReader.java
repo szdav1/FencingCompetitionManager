@@ -44,7 +44,7 @@ public final class ColorThemeReader {
 			if (childElement.getTagName().equalsIgnoreCase("paint"))
 				ctm.setLinearPaint(childElement.getAttribute("linear"));
 
-			else if (childElement.getTagName().equalsIgnoreCase("borderSections")) {
+			else if (childElement.getTagName().equalsIgnoreCase("bordersections")) {
 				ctm.setBorderPaintRule("top", childElement.getAttribute("top"));
 				ctm.setBorderPaintRule("right", childElement.getAttribute("right"));
 				ctm.setBorderPaintRule("bottom", childElement.getAttribute("bottom"));
@@ -166,7 +166,7 @@ public final class ColorThemeReader {
 			}
 		}
 		catch (Exception exc) {
-			exc.printStackTrace(); // TODO: Implement backup theme (in-code theme)
+			exc.printStackTrace();
 		}
 
 		return colorThemeModels;

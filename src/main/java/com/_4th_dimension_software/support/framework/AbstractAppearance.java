@@ -77,21 +77,15 @@ public abstract class AbstractAppearance {
 
 				// Custom font
 			else if (!fontModel.getSource().isBlank()) {
-				try {
-					this.font = Font.createFont(Font.TRUETYPE_FONT, new File(ResourceHandler.get(fontModel.getSource())))
-						.deriveFont(fontModel.getLigature(), (float) fontModel.getSize());
-				}
-				catch (Exception exc) {
-					this.font = new Font(Font.MONOSPACED, Font.PLAIN, SizeData.FONT_SIZE);
-				}
+				this.font = Font.createFont(Font.TRUETYPE_FONT, new File(ResourceHandler.get(fontModel.getSource())))
+					.deriveFont(fontModel.getLigature(), (float) fontModel.getSize());
 			}
-
 			// Backup font
 			else
-				this.font = new Font(Font.MONOSPACED, Font.PLAIN, SizeData.FONT_SIZE);
+				this.font = new Font("Arial", Font.PLAIN, SizeData.FONT_SIZE);
 		}
 		catch (Exception exc) {
-			exc.printStackTrace();
+			this.font = new Font("Arial", Font.PLAIN, SizeData.FONT_SIZE);
 		}
 	}
 

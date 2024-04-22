@@ -72,12 +72,12 @@ class AppearanceTest {
 		}
 
 		@Test
-		@DisplayName("The family (name) of the font should be the default font family: monospaced (Font.MONOSPACED)")
-		void theFamilyOfTheFontShouldBeTheDefaultMonospaced() {
+		@DisplayName("The family (name) of the font should be the default font family: Arial")
+		void theFamilyOfTheFontShouldBeTheDefaultArial() {
 			ctm.setFontModel(new FontModel("src/test/resourcs/fnts\\Haliun-W7jn.ttf", "Something", "Plain", "25"));
 			Appearance a = new Appearance(ctm);
 
-			Assertions.assertEquals(Font.MONOSPACED + ".plain", a.getFont().getFontName());
+			Assertions.assertEquals("Arial", a.getFont().getFontName());
 		}
 	}
 

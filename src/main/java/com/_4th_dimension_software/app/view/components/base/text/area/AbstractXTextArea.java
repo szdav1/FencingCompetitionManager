@@ -109,6 +109,7 @@ public abstract class AbstractXTextArea extends JTextArea implements XComponent,
 					g2D.setPaint(lgp);
 					g2D.drawLine(0, 0, this.getWidth(), 0);
 				}
+
 				// Draw right section of the border only
 				if (this.appearance.isBorderSectionPainted("right")) {
 					lgp = new LinearGradientPaint(this.getWidth(), 0, this.getWidth(), this.getHeight(), Util.calcEqualFracts(this.appearance.getBorderModel()
@@ -119,6 +120,7 @@ public abstract class AbstractXTextArea extends JTextArea implements XComponent,
 					g2D.setPaint(lgp);
 					g2D.drawLine(this.getWidth(), 0, this.getWidth(), this.getHeight());
 				}
+
 				// Draw bottom section of the border only
 				if (this.appearance.isBorderSectionPainted("bottom")) {
 					lgp = new LinearGradientPaint(0, this.getHeight(), this.getWidth(), this.getHeight(), Util.calcEqualFracts(this.appearance.getBorderModel()
@@ -129,6 +131,7 @@ public abstract class AbstractXTextArea extends JTextArea implements XComponent,
 					g2D.setPaint(lgp);
 					g2D.drawLine(0, this.getHeight(), this.getWidth(), this.getHeight());
 				}
+
 				// Draw left side of the border only
 				if (this.appearance.isBorderSectionPainted("left")) {
 					lgp = new LinearGradientPaint(0, 0, 0, this.getHeight(), Util.calcEqualFracts(this.appearance.getBorderModel()
