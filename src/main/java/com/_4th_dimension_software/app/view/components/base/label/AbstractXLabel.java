@@ -21,7 +21,9 @@ public abstract class AbstractXLabel extends JLabel implements XComponent, Custo
 
 		this.setIcon(appearance.getIcon1() == null ? appearance.getIcon2() : appearance.getIcon1());
 		this.setText(text);
+		this.setHorizontalAlignment(JLabel.CENTER);
 		this.setFont(appearance.getFont());
+		this.setVerticalAlignment(JLabel.CENTER);
 		this.setForeground(appearance.getForegrounds().get(0));
 		this.setPreferredSize(dimension);
 		this.setBounds(new Rectangle(0, 0, dimension.width, dimension.height));
@@ -34,6 +36,8 @@ public abstract class AbstractXLabel extends JLabel implements XComponent, Custo
 		this.setIcon(appearance.getIcon1() == null ? appearance.getIcon2() : appearance.getIcon1());
 		this.setText(text);
 		this.setFont(appearance.getFont());
+		this.setHorizontalAlignment(JLabel.CENTER);
+		this.setVerticalAlignment(JLabel.CENTER);
 		this.setForeground(appearance.getForegrounds().get(0));
 		this.setBounds(new Rectangle(x, y, width, height));
 	}

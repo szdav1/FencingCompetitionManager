@@ -21,7 +21,7 @@ public abstract class AbstractMenuButton extends XButton implements ActionListen
 		this.setMargin(new Insets(0, SizeData.calc(1), 0, 0));
 
 		this.active = false;
-		this.dropdownPanel = new DropdownPanel(0, 0, SizeData.DROPDOWN_WIDTH, SizeData.DROPDOWN_HEIGHT, frame, appearanceName+".dropdown");
+		this.dropdownPanel = new DropdownPanel(0, 0, this.getWidth(), SizeData.DROPDOWN_HEIGHT, frame, appearanceName+".dropdown");
 	}
 
 	protected AbstractMenuButton(Dimension dimension, final XFrame frame, String appearanceName) {
@@ -35,7 +35,7 @@ public abstract class AbstractMenuButton extends XButton implements ActionListen
 		this.setMargin(new Insets(0, SizeData.calc(1), 0, 0));
 
 		this.active = false;
-		this.dropdownPanel = new DropdownPanel(0, 0, SizeData.DROPDOWN_WIDTH, SizeData.DROPDOWN_HEIGHT, frame, appearanceName+".dropdown");
+		this.dropdownPanel = new DropdownPanel(0, 0, this.getWidth(), SizeData.DROPDOWN_HEIGHT, frame, appearanceName+".dropdown");
 	}
 
 	protected AbstractMenuButton(int x, int y, int width, int height, final XFrame frame, String appearanceName) {
