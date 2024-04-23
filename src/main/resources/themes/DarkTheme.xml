@@ -16,8 +16,12 @@
     <appearance applyTo="sidebar.buttons.new">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
+        <border colors="[255,0,0,255][0,0,255,255]" thickness="@proportional" roundness="50"/>
         <icon1 source="/icons/newGray.png" width="3" height="3"/>
         <icon2 source="/icons/newWhite.png" width="3" height="3"/>
+        <modifiers>
+            <borderSections top="True" right="True" bottom="True" left="True"/>
+        </modifiers>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.settings">
