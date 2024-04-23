@@ -145,6 +145,7 @@ public final class Util {
 	 */
 	public static ImageIcon loadImageIcon(final String source, int widthPercentage, int heightPercentage) {
 		ImageIcon i = new ImageIcon(ResourceHandler.get(source));
+
 		return new ImageIcon(i.getImage().getScaledInstance(SizeData.PROPORTIONALITY_FACTOR*(widthPercentage*10),
 			SizeData.PROPORTIONALITY_FACTOR*(heightPercentage*10), Image.SCALE_SMOOTH));
 	}
