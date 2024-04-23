@@ -73,57 +73,30 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
 		if (this.appearance.getBorderModel().getThickness() <= 0)
 			return;
 
-		BorderPainter bp = new BorderPainter(x, y, w, h, r, this.appearance, g2D);
-
 		g2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		g2D.setStroke(new BasicStroke(this.appearance.getBorderModel().getThickness(), BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER));
 
-		// Set the coloring of the border based on the number of colors specified in the color theme
-		if (this.appearance.getBorderModel().getColorModel().getColors().size() >= 2) {
-			// Draw full border
-			if (this.appearance.getBorderModel().getThickness() != 0 && this.appearance.isBorderNotPainted() || this.appearance.isBorderPainted())
-				bp.paintFullBorder();
-			else {
-				// Draw top section of the border only
-				if (this.appearance.isBorderSectionPainted("top"))
-					bp.paintTopBorder();
+		BorderPainter bp = new BorderPainter(x, y, this.getWidth(), this.getHeight(), r, this.appearance, g2D);
 
-				// Draw right section of the border only
-				if (this.appearance.isBorderSectionPainted("right"))
-					bp.paintRightBorder();
-
-				// Draw bottom section of the border only
-				if (this.appearance.isBorderSectionPainted("bottom"))
-					bp.paintBottomBorder();
-
-				// Draw left side of the border only
-				if (this.appearance.isBorderSectionPainted("left"))
-					bp.paintLeftBorder();
-			}
-		}
+		// Draw full border
+		if (this.appearance.getBorderModel().getThickness() != 0 && this.appearance.isBorderNotPainted() || this.appearance.isBorderPainted())
+			bp.paintFullBorder();
 		else {
-			g2D.setColor(this.appearance.getBorderModel().getColorModel().getColors().get(0));
+			// Draw top section of the border only
+			if (this.appearance.isBorderSectionPainted("top"))
+				bp.paintTopBorder();
 
-			// Draw full border
-			if (this.appearance.getBorderModel().getThickness() != 0 && this.appearance.isBorderNotPainted() || this.appearance.isBorderPainted())
-				g2D.drawRoundRect(x, y, this.getWidth(), this.getHeight(), r, r);
-			else {
-				// Draw top section of the border only
-				if (this.appearance.isBorderSectionPainted("top"))
-					g2D.drawLine(0, 0, this.getWidth(), 0);
+			// Draw right section of the border only
+			if (this.appearance.isBorderSectionPainted("right"))
+				bp.paintRightBorder();
 
-				// Draw right section of the border only
-				if (this.appearance.isBorderSectionPainted("right"))
-					g2D.drawLine(this.getWidth(), 0, this.getWidth(), this.getHeight());
+			// Draw bottom section of the border only
+			if (this.appearance.isBorderSectionPainted("bottom"))
+				bp.paintBottomBorder();
 
-				// Draw bottom section of the border only
-				if (this.appearance.isBorderSectionPainted("bottom"))
-					g2D.drawLine(0, this.getHeight(), this.getWidth(), this.getHeight());
-
-				// Draw left side of the border only
-				if (this.appearance.isBorderSectionPainted("left"))
-					g2D.drawLine(0, 0, 0, this.getHeight());
-			}
+			// Draw left side of the border only
+			if (this.appearance.isBorderSectionPainted("left"))
+				bp.paintLeftBorder();
 		}
 	}
 
