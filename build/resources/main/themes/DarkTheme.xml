@@ -13,6 +13,10 @@
         <icon1 source="/icons/dashboard.png" width="3" height="3"/>
     </appearance>
 
+    <appearance applyTo="sidebar.separator">
+        <background colors="[0,0,0,0][72,58,255,255][178,0,255,255][0,0,0,0][0,0,0,0]"/>
+    </appearance>
+
     <appearance applyTo="sidebar.buttons.new">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>

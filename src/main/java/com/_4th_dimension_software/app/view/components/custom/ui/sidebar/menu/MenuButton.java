@@ -134,6 +134,8 @@ public class MenuButton extends AbstractMenuButton {
         this.dropdownPanel.getButtons().forEach(btn -> {
             if (btn.equals(e.getSource())) {
                 this.setActive(false);
+                btn.reset();
+                btn.repaint();
                 this.hideDropdownPanel();
             }
         });

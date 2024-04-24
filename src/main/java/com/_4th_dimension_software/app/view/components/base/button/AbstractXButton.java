@@ -63,6 +63,14 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
     }
 
     /**
+     * Resets all states of the button.
+     */
+    public void reset() {
+        this.entered = false;
+        this.pressed = false;
+    }
+
+    /**
      * Retrieves the main icon from the <code>Appearance</code>
      * of the button object wrapped into an Optional.
      *

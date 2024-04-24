@@ -110,7 +110,7 @@ public abstract class AbstractXLabel extends JLabel implements XComponent, Custo
 		final int X = clipRect.x;
 		final int Y = clipRect.y;
 		final int W = clipRect.width;
-		final int H = clipRect.height;
+		final int H = this.appearance.isLinearPaint() ? 0 : clipRect.height;
 		// Roundness
 		final int R = this.appearance.getBorderModel().getRoundness();
 

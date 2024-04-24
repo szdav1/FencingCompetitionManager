@@ -59,7 +59,7 @@ public final class SizeData {
 	public static final Dimension DROPDOWN_DIMENSION = new Dimension(DROPDOWN_WIDTH, DROPDOWN_HEIGHT);
 
 	// Separator line size adn dimension
-	public static final int SEPARATOR_WIDTH = PROPORTIONALITY_FACTOR*10;
+	public static final int SEPARATOR_WIDTH = W_BUTTON_WIDTH;
 	public static final Dimension SEPARATOR_DIMENSION = new Dimension(SEPARATOR_WIDTH, BORDER_SIZE);
 
 	// Not instantiatable

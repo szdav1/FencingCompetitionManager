@@ -44,7 +44,7 @@ public final class ColorThemeReader {
 			if (childElement.getTagName().equalsIgnoreCase("paint"))
 				ctm.setLinearPaint(childElement.getAttribute("linear"));
 
-			else if (childElement.getTagName().equalsIgnoreCase("bordersections")) {
+			else if (childElement.getTagName().equalsIgnoreCase("border")) {
 				ctm.setBorderPaintRule("top", childElement.getAttribute("top"));
 				ctm.setBorderPaintRule("right", childElement.getAttribute("right"));
 				ctm.setBorderPaintRule("bottom", childElement.getAttribute("bottom"));
