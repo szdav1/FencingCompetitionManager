@@ -1,15 +1,12 @@
 package com._4th_dimension_software.app.view.components.custom.ui.sidebar.menu;
 
-import java.awt.Dimension;
-import java.awt.Point;
-import java.awt.event.ActionEvent;
-
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.consts.PositionConstants;
 import com._4th_dimension_software.support.consts.RelativePositions;
 
-import javax.swing.JButton;
-import javax.swing.SwingConstants;
+import java.awt.Dimension;
+import java.awt.Point;
+import java.awt.event.ActionEvent;
 
 /**
  * The <code>MenuButton</code> class is a child of the
