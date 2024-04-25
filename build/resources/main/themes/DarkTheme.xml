@@ -1,29 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DarkTheme>
+    <!--  Window  -->
     <appearance applyTo="window">
         <background colors="[12,14,14,255]"/>
     </appearance>
 
+    <!--  Sidebar  -->
     <appearance applyTo="sidebar">
         <background colors="[27,27,27,255]"/>
     </appearance>
 
+    <!--  Header of the sidebar  -->
     <appearance applyTo="sidebar.header">
         <background colors="[0,0,0,0]"/>
         <icon1 source="/icons/dashboard.png" width="3" height="3"/>
     </appearance>
 
+    <!--  Separators of the sidebar  -->
     <appearance applyTo="sidebar.separator">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255][0,0,0,0][0,0,0,0]"/>
     </appearance>
 
-    <appearance applyTo="sidebar.buttons.new">
+    <!--  Poule button of the sidebar  -->
+    <appearance applyTo="sidebar.buttons.poule">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/newGray.png" width="3" height="3"/>
-        <icon2 source="/icons/newWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/pouleGray.png" width="3" height="3"/>
+        <icon2 source="/icons/pouleWhite.png" width="3" height="3"/>
     </appearance>
 
+    <appearance applyTo="sidebar.buttons.poule.dropdown">
+        <background colors="[27,27,27,255]"/>
+        <border colors="[72,58,255,255][178,0,255,255]" thickness="@proportional"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.buttons.poule.dropdown.empty">
+        <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+        <foreground colors="[128,128,128,255][255,255,255,255]"/>
+        <icon1 source="/icons/emptyGray.png" width="3" height="2"/>
+        <icon2 source="/icons/emptyWhite.png" width="3" height="2"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.buttons.poule.dropdown.database">
+        <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+        <foreground colors="[128,128,128,255][255,255,255,255]"/>
+        <icon1 source="/icons/fromDatabaseGray.png" width="3" height="3"/>
+        <icon2 source="/icons/fromDatabaseWhite.png" width="3" height="3"/>
+    </appearance>
+
+    <!--  Table button of the sidebar  -->
+    <appearance applyTo="sidebar.buttons.table">
+        <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+        <foreground colors="[128,128,128,255][255,255,255,255]"/>
+        <icon1 source="/icons/tableGray.png" width="3" height="3"/>
+        <icon2 source="/icons/tableWhite.png" width="3" height="3"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.buttons.table.dropdown">
+        <background colors="[27,27,27,255]"/>
+        <border colors="[72,58,255,255][178,0,255,255]" thickness="@proportional"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.buttons.table.dropdown.empty">
+        <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+        <foreground colors="[128,128,128,255][255,255,255,255]"/>
+        <icon1 source="/icons/emptyGray.png" width="3" height="2"/>
+        <icon2 source="/icons/emptyWhite.png" width="3" height="2"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.buttons.table.dropdown.database">
+        <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+        <foreground colors="[128,128,128,255][255,255,255,255]"/>
+        <icon1 source="/icons/fromDatabaseGray.png" width="3" height="3"/>
+        <icon2 source="/icons/fromDatabaseWhite.png" width="3" height="3"/>
+    </appearance>
+
+    <!--  Competition button of the sidebar  -->
+    <appearance applyTo="sidebar.buttons.competition">
+        <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+        <foreground colors="[128,128,128,255][255,255,255,255]"/>
+        <icon1 source="/icons/competitionGray.png" width="3" height="3"/>
+        <icon2 source="/icons/competitionWhite.png" width="3" height="3"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.buttons.competition.dropdown">
+        <background colors="[27,27,27,255]"/>
+        <border colors="[72,58,255,255][178,0,255,255]" thickness="@proportional"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.buttons.competition.dropdown.empty">
+        <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+        <foreground colors="[128,128,128,255][255,255,255,255]"/>
+        <icon1 source="/icons/emptyGray.png" width="3" height="2"/>
+        <icon2 source="/icons/emptyWhite.png" width="3" height="2"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.buttons.competition.dropdown.database">
+        <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+        <foreground colors="[128,128,128,255][255,255,255,255]"/>
+        <icon1 source="/icons/fromDatabaseGray.png" width="3" height="3"/>
+        <icon2 source="/icons/fromDatabaseWhite.png" width="3" height="3"/>
+    </appearance>
+
+    <!--  Settings button of the sidebar  -->
     <appearance applyTo="sidebar.buttons.settings">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
@@ -31,17 +110,30 @@
         <icon2 source="/icons/settingsWhite.png" width="3" height="3"/>
     </appearance>
 
-    <appearance applyTo="sidebar.buttons.new.dropdown">
-        <background colors="[27,27,27,255]"/>
-        <border colors="[72,58,255,255][178,0,255,255]" thickness="@proportional"/>
-    </appearance>
-
     <appearance applyTo="sidebar.buttons.settings.dropdown">
         <background colors="[27,27,27,255]"/>
         <border colors="[72,58,255,255][178,0,255,255]" thickness="@proportional"/>
     </appearance>
 
-    <appearance applyTo="sidebar.buttons.dropdown.buttons">
+    <appearance applyTo="sidebar.buttons.settings.dropdown.appearance">
+        <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+        <foreground colors="[128,128,128,255][255,255,255,255]"/>
+    </appearance>
+
+    <!--  Database button of the sidebar  -->
+    <appearance applyTo="sidebar.buttons.database">
+        <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+        <foreground colors="[128,128,128,255][255,255,255,255]"/>
+        <icon1 source="/icons/databaseGray.png" width="3" height="3"/>
+        <icon2 source="/icons/databaseWhite.png" width="3" height="3"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.buttons.database.dropdown">
+        <background colors="[27,27,27,255]"/>
+        <border colors="[72,58,255,255][178,0,255,255]" thickness="@proportional"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.buttons.database.dropdown.connect">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
     </appearance>

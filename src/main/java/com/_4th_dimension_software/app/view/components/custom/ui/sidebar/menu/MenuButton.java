@@ -67,6 +67,19 @@ public class MenuButton extends AbstractMenuButton {
     /**
      * Shortcut to the <code>DropdownPanel</code> class's
      * <code>createAndAddButton()</code> method. It calls the
+     * dropdown panel's method with the specified text and appearanceName.
+     *
+     * @param appearanceName The name of the <code>Appearance</code>
+     * @param buttonText The text of the button
+     */
+    public void addButtonToDropdown(String buttonText, String appearanceName) {
+        this.dropdownPanel.createAndAddButton(buttonText, appearanceName);
+        this.dropdownPanel.getLastButton().addActionListener(this);
+    }
+
+    /**
+     * Shortcut to the <code>DropdownPanel</code> class's
+     * <code>createAndAddButton()</code> method. It calls the
      * dropdown panel's method with the specified text.
      *
      * @param buttonText The text of the button
