@@ -131,7 +131,7 @@ public class MenuButton extends AbstractMenuButton {
      *
      * @param position The position of the content of the button
      */
-    public void adjustButtonContent(int position) {
+    public void adjustContentOfButtonsInDropdown(int position) {
         this.dropdownPanel.getButtons().forEach(btn -> btn.setHorizontalAlignment(position));
     }
 

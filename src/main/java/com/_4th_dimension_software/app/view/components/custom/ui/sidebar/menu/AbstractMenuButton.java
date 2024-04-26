@@ -1,9 +1,11 @@
 package com._4th_dimension_software.app.view.components.custom.ui.sidebar.menu;
 
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Insets;
 import java.awt.event.ActionListener;
 
+import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 import com._4th_dimension_software.app.view.components.base.button.XButton;

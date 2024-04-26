@@ -9,6 +9,7 @@ import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.consts.RelativePositions;
 
+import javax.swing.SwingConstants;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +32,7 @@ public final class Sidebar extends XPanel {
 	private final MenuButton pouleButton;
 	private final MenuButton tableButton;
 	private final MenuButton competitionButton;
+	private final MenuButton rulesetsButton;
 	private final MenuButton settingsButton;
 	private final MenuButton databaseButton;
 
@@ -64,26 +66,40 @@ public final class Sidebar extends XPanel {
 		this.pouleButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Poule", frame, appearanceName+".buttons.poule");
 		this.pouleButton.addButtonToDropdown("Empty Poule", appearanceName+".buttons.poule.dropdown.empty");
 		this.pouleButton.addButtonToDropdown("From Database", appearanceName+".buttons.poule.dropdown.database");
+		this.pouleButton.addButtonToDropdown("View Poule Stats", appearanceName+".buttons.poule.dropdown.stats");
+		this.pouleButton.adjustContentOfButtonsInDropdown(SwingConstants.LEADING);
 
 		this.tableButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Table", frame, appearanceName+".buttons.table");
 		this.tableButton.addButtonToDropdown("Empty Table", appearanceName+".buttons.table.dropdown.empty");
 		this.tableButton.addButtonToDropdown("From Database", appearanceName+".buttons.table.dropdown.database");
+		this.tableButton.addButtonToDropdown("View Table Stats", appearanceName+".buttons.table.dropdown.stats");
+		this.tableButton.adjustContentOfButtonsInDropdown(SwingConstants.LEADING);
 
 		this.competitionButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Competition", frame, appearanceName+".buttons.competition");
 		this.competitionButton.addButtonToDropdown("Empty Competition", appearanceName+".buttons.competition.dropdown.empty");
 		this.competitionButton.addButtonToDropdown("From Database", appearanceName+".buttons.competition.dropdown.database");
+		this.competitionButton.addButtonToDropdown("View Comp. Stats", appearanceName+".buttons.competition.dropdown.stats");
+		this.competitionButton.adjustContentOfButtonsInDropdown(SwingConstants.LEADING);
+
+		this.rulesetsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Rulesets", frame, appearanceName+".buttons.ruleset");
+		this.rulesetsButton.addButtonToDropdown("View Rulesets", appearanceName+".buttons.ruleset.dropdown.view");
+		this.rulesetsButton.addButtonToDropdown("New Ruleset", appearanceName+".buttons.ruleset.dropdown.add");
+		this.rulesetsButton.adjustContentOfButtonsInDropdown(SwingConstants.LEADING);
 
 		this.settingsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Settings", frame, appearanceName+".buttons.settings");
 		this.settingsButton.addButtonToDropdown("Appearance", appearanceName+".buttons.settings.dropdown.appearance");
+		this.settingsButton.adjustContentOfButtonsInDropdown(SwingConstants.LEADING);
 
 		this.databaseButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Database", frame, appearanceName+".buttons.database");
 		this.databaseButton.addButtonToDropdown("Connect", appearanceName+".buttons.database.dropdown.connect");
-		this.databaseButton.addButtonToDropdown("Manage");
+		this.databaseButton.addButtonToDropdown("Manage", appearanceName+".buttons.database.dropdown.manage");
+		this.databaseButton.adjustContentOfButtonsInDropdown(SwingConstants.LEADING);
 
 		// Add the menu buttons to the menu button list
 		this.menuButtons.add(this.pouleButton);
 		this.menuButtons.add(this.tableButton);
 		this.menuButtons.add(this.competitionButton);
+		this.menuButtons.add(this.rulesetsButton);
 		this.menuButtons.add(this.settingsButton);
 		this.menuButtons.add(this.databaseButton);
 
