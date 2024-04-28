@@ -171,29 +171,36 @@
     </appearance>
 
     <!--  Rule set button of the sidebar  -->
-    <appearance applyTo="sidebar.buttons.ruleset">
+    <appearance applyTo="sidebar.buttons.ruleSet">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/rulesetGray.png" width="3" height="3"/>
-        <icon2 source="/icons/rulesetWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/ruleSetGray.png" width="3" height="3"/>
+        <icon2 source="/icons/ruleSetWhite.png" width="3" height="3"/>
     </appearance>
 
-    <appearance applyTo="sidebar.buttons.ruleset.dropdown">
+    <appearance applyTo="sidebar.buttons.ruleSet.dropdown">
         <background colors="[27,27,27,255]"/>
         <border colors="[72,58,255,255][178,0,255,255]" thickness="@proportional"/>
     </appearance>
 
-    <appearance applyTo="sidebar.buttons.ruleset.dropdown.view">
+    <appearance applyTo="sidebar.buttons.ruleSet.dropdown.view">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
         <icon1 source="/icons/viewGray.png" width="3" height="3"/>
         <icon2 source="/icons/viewWhite.png" width="3" height="3"/>
     </appearance>
 
-    <appearance applyTo="sidebar.buttons.ruleset.dropdown.add">
+    <appearance applyTo="sidebar.buttons.ruleSet.dropdown.add">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
         <icon1 source="/icons/newGray.png" width="3" height="3"/>
         <icon2 source="/icons/newWhite.png" width="3" height="3"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.buttons.ruleSet.dropdown.delete">
+        <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+        <foreground colors="[128,128,128,255][255,255,255,255]"/>
+        <icon1 source="/icons/deleteGray.png" width="3" height="3"/>
+        <icon2 source="/icons/deleteWhite.png" width="3" height="3"/>
     </appearance>
 </DarkTheme>

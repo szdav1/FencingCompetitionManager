@@ -32,7 +32,7 @@ public final class Sidebar extends XPanel {
 	private final MenuButton pouleButton;
 	private final MenuButton tableButton;
 	private final MenuButton competitionButton;
-	private final MenuButton rulesetsButton;
+	private final MenuButton ruleSetsButton;
 	private final MenuButton settingsButton;
 	private final MenuButton databaseButton;
 
@@ -81,10 +81,11 @@ public final class Sidebar extends XPanel {
 		this.competitionButton.addButtonToDropdown("View Comp. Stats", appearanceName+".buttons.competition.dropdown.stats");
 		this.competitionButton.adjustContentOfButtonsInDropdown(SwingConstants.LEADING);
 
-		this.rulesetsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Rulesets", frame, appearanceName+".buttons.ruleset");
-		this.rulesetsButton.addButtonToDropdown("View Rulesets", appearanceName+".buttons.ruleset.dropdown.view");
-		this.rulesetsButton.addButtonToDropdown("New Ruleset", appearanceName+".buttons.ruleset.dropdown.add");
-		this.rulesetsButton.adjustContentOfButtonsInDropdown(SwingConstants.LEADING);
+		this.ruleSetsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Rule Sets", frame, appearanceName+".buttons.ruleSet");
+		this.ruleSetsButton.addButtonToDropdown("View Rule Sets", appearanceName+".buttons.ruleSet.dropdown.view");
+		this.ruleSetsButton.addButtonToDropdown("New Rule Set", appearanceName+".buttons.ruleSet.dropdown.add");
+		this.ruleSetsButton.addButtonToDropdown("Delete Rule Set", appearanceName+".buttons.ruleSet.dropdown.delete");
+		this.ruleSetsButton.adjustContentOfButtonsInDropdown(SwingConstants.LEADING);
 
 		this.settingsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Settings", frame, appearanceName+".buttons.settings");
 		this.settingsButton.addButtonToDropdown("Appearance", appearanceName+".buttons.settings.dropdown.appearance");
@@ -99,7 +100,7 @@ public final class Sidebar extends XPanel {
 		this.menuButtons.add(this.pouleButton);
 		this.menuButtons.add(this.tableButton);
 		this.menuButtons.add(this.competitionButton);
-		this.menuButtons.add(this.rulesetsButton);
+		this.menuButtons.add(this.ruleSetsButton);
 		this.menuButtons.add(this.settingsButton);
 		this.menuButtons.add(this.databaseButton);
 
