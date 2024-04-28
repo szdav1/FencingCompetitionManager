@@ -85,6 +85,7 @@ public final class Sidebar extends XPanel {
 		this.ruleSetsButton.addButtonToDropdown("View Rule Sets", appearanceName+".buttons.ruleSet.dropdown.view");
 		this.ruleSetsButton.addButtonToDropdown("New Rule Set", appearanceName+".buttons.ruleSet.dropdown.add");
 		this.ruleSetsButton.addButtonToDropdown("Delete Rule Set", appearanceName+".buttons.ruleSet.dropdown.delete");
+		this.ruleSetsButton.addButtonToDropdown("Modify Rule Set", appearanceName+".buttons.ruleSet.dropdown.modify");
 		this.ruleSetsButton.adjustContentOfButtonsInDropdown(SwingConstants.LEADING);
 
 		this.settingsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Settings", frame, appearanceName+".buttons.settings");
