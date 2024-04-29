@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<English>
+    <words for="sidebar">
+        <header>Vezérlés</header>
+        <poule>Kör</poule>
+        <table>Tábla</table>
+        <competition>Verseny</competition>
+        <ruleSet>Szabálykészletek</ruleSet>
+        <settings>Beállítások</settings>
+        <database>Adatbázis</database>
+        <exit>Kilépés</exit>
+    </words>
+
+    <words for="sidebar.poule">
+        <empty>Üres Kör</empty>
+        <database>Adatbázisból...</database>
+        <stats>Kör Statisztikák</stats>
+    </words>
+
+    <words for="sidebar.table">
+        <empty>Üres Tábla</empty>
+        <database>Adatbázisból...</database>
+        <stats>Tábla Statisztikák</stats>
+    </words>
+
+    <words for="sidebar.competition">
+        <empty>Üres Verseny</empty>
+        <database>Adatbázisból...</database>
+        <stats>Verseny Statisztikák</stats>
+    </words>
+
+    <words for="sidebar.ruleSet">
+        <view>Szabálykészletek</view>
+        <new>Új Szabálykészlet</new>
+        <delete>Törlés</delete>
+        <modify>Módosítás</modify>
+    </words>
+
+    <words for="sidebar.settings">
+        <appearance>Kinézet</appearance>
+    </words>
+
+    <words for="sidebar.database">
+        <connect>Csatlakozás</connect>
+        <manage>Menedzsment</manage>
+    </words>
+</English>

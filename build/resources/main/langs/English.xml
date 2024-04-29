@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<English>
+    <words for="sidebar">
+        <header>Dashboard</header>
+        <poule>Poule</poule>
+        <table>Table</table>
+        <competition>Competition</competition>
+        <ruleSet>Rule Sets</ruleSet>
+        <settings>Settings</settings>
+        <database>Database</database>
+        <exit>Exit</exit>
+    </words>
+
+    <words for="sidebar.poule">
+        <empty>Empty Poule</empty>
+        <database>From Database</database>
+        <stats>View Poule Stats</stats>
+    </words>
+
+    <words for="sidebar.table">
+        <empty>Empty Table</empty>
+        <database>From Database</database>
+        <stats>View Table Stats</stats>
+    </words>
+
+    <words for="sidebar.competition">
+        <empty>Empty Competition</empty>
+        <database>From Database</database>
+        <stats>View Comp. Stats</stats>
+    </words>
+
+    <words for="sidebar.ruleSet">
+        <view>View Rule Sets</view>
+        <new>New Rule Set</new>
+        <delete>Delete Rule Set(s)</delete>
+        <modify>Modify Rule Set</modify>
+    </words>
+
+    <words for="sidebar.settings">
+        <appearance>Appearance</appearance>
+    </words>
+
+    <words for="sidebar.database">
+        <connect>Connect</connect>
+        <manage>Manage</manage>
+    </words>
+</English>
