@@ -21,6 +21,14 @@
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255][0,0,0,0][0,0,0,0]"/>
     </appearance>
 
+    <!--  Exit button of the sidebar  -->
+    <appearance applyTo="sidebar.buttons.exit">
+        <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+        <foreground colors="[128,128,128,255][255,255,255,255]"/>
+        <icon1 source="/icons/exitGray.png" width="3" height="4"/>
+        <icon2 source="/icons/exitWhite.png" width="3" height="4"/>
+    </appearance>
+
     <!--  Poule button of the sidebar  -->
     <appearance applyTo="sidebar.buttons.poule">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
@@ -141,6 +149,13 @@
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
         <icon1 source="/icons/appearanceGray.png" width="3" height="3"/>
         <icon2 source="/icons/appearanceWhite.png" width="3" height="3"/>
+    </appearance>
+
+    <appearance applyTo="sidebar.buttons.settings.dropdown.resize">
+        <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+        <foreground colors="[128,128,128,255][255,255,255,255]"/>
+        <icon1 source="/icons/resizeGray.png" width="3" height="3"/>
+        <icon2 source="/icons/resizeWhite.png" width="3" height="3"/>
     </appearance>
 
     <!--  Database button of the sidebar  -->

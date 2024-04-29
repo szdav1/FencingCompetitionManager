@@ -1,6 +1,7 @@
 package com._4th_dimension_software.app.view.components.custom.ui.sidebar.menu;
 
 import java.awt.Dimension;
+import java.awt.Insets;
 import java.awt.LayoutManager;
 import java.util.ArrayList;
 import java.util.List;
@@ -103,6 +104,7 @@ public class DropdownPanel extends XPanel {
     public void createAndAddButton(String buttonText, String appearanceName) {
         this.recentAppearanceName = appearanceName;
         XButton btn = new XButton(new Dimension(this.getWidth(), SizeData.BUTTON_HEIGHT), buttonText, this.frame, appearanceName);
+        btn.setMargin(new Insets(0, SizeData.BUTTON_TEXT_MARGIN, 0, 0));
 
         this.buttons.add(btn);
         int newHeight = SizeData.calcDropdownHeight(this.buttons.size());

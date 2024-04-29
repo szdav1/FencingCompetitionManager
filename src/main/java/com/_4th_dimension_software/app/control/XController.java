@@ -21,7 +21,7 @@ import java.awt.event.*;
  * component is focused, the <code>KeyListener</code> interface is the
  * perfect solution.
  */
-public class Controller implements ActionListener, MouseListener, MouseMotionListener, KeyListener {
+public class XController implements ActionListener, MouseListener, MouseMotionListener, KeyListener {
 	// ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e) {

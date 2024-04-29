@@ -54,111 +54,127 @@ import com._4th_dimension_software.support.framework.Appearance;
  * @author szd
  */
 public class XButton extends AbstractXButton {
-	/**
-	 * Constructs an <code>XButton</code> object. This object is
-	 * similar to a <code>JButton</code> object, only this is much
-	 * easier to customize using an Appearance object.
-	 *
-	 * @param dimension      The Dimension of the button
-	 * @param text           The text of the button
-	 * @param frame          The main frame of the application
-	 * @param appearanceName The name of the <code>Appearance</code> that's values
-	 *                       should be implemented on this button
-	 */
-	public XButton(Dimension dimension, String text, final XFrame frame, String appearanceName) {
-		super(dimension, text, frame,  appearanceName);
-	}
+    /**
+     * Constructs an <code>XButton</code> object. This object is
+     * similar to a <code>JButton</code> object, only this is much
+     * easier to customize using an Appearance object.
+     *
+     * @param dimension      The Dimension of the button
+     * @param text           The text of the button
+     * @param frame          The main frame of the application
+     * @param appearanceName The name of the <code>Appearance</code> that's values
+     *                       should be implemented on this button
+     */
+    public XButton(Dimension dimension, String text, final XFrame frame, String appearanceName) {
+        super(dimension, text, frame, appearanceName);
+    }
 
-	/**
-	 * Constructs an <code>XButton</code> object. This object is
-	 * similar to a <code>JButton</code> object, only this is much
-	 * easier to customize using an Appearance object.
-	 *
-	 * @param dimension      The Dimension of the button
-	 * @param frame          The main frame of the application
-	 * @param appearanceName The name of the <code>Appearance</code> that's values
-	 *                       should be implemented on this button
-	 */
-	public XButton(Dimension dimension, final XFrame frame, String appearanceName) {
-		super(dimension, frame, appearanceName);
-	}
+    /**
+     * Constructs an <code>XButton</code> object. This object is
+     * similar to a <code>JButton</code> object, only this is much
+     * easier to customize using an Appearance object.
+     *
+     * @param dimension      The Dimension of the button
+     * @param frame          The main frame of the application
+     * @param appearanceName The name of the <code>Appearance</code> that's values
+     *                       should be implemented on this button
+     */
+    public XButton(Dimension dimension, final XFrame frame, String appearanceName) {
+        super(dimension, frame, appearanceName);
+    }
 
-	/**
-	 * Constructs an <code>XButton</code> object. This object is
-	 * similar to a <code>JButton</code> object, only this is much
-	 * easier to customize using an Appearance object.
-	 *
-	 * @param x              The X coordinate of the button in no-layout manager space
-	 * @param y              The Y coordinate of the button in no-layout manager space
-	 * @param width          The width of the button
-	 * @param height         The height of the button
-	 * @param text           The text of the button
-	 * @param frame          The main frame of the application
-	 * @param appearanceName The name of the <code>Appearance</code> that's values
-	 *                       should be implemented on this button
-	 */
-	public XButton(int x, int y, int width, int height, String text, final XFrame frame, String appearanceName) {
-		super(x, y, width, height, text, frame, appearanceName);
-	}
+    /**
+     * Constructs an <code>XButton</code> object. This object is
+     * similar to a <code>JButton</code> object, only this is much
+     * easier to customize using an Appearance object.
+     *
+     * @param x              The X coordinate of the button in no-layout manager space
+     * @param y              The Y coordinate of the button in no-layout manager space
+     * @param width          The width of the button
+     * @param height         The height of the button
+     * @param text           The text of the button
+     * @param frame          The main frame of the application
+     * @param appearanceName The name of the <code>Appearance</code> that's values
+     *                       should be implemented on this button
+     */
+    public XButton(int x, int y, int width, int height, String text, final XFrame frame, String appearanceName) {
+        super(x, y, width, height, text, frame, appearanceName);
+    }
 
-	/**
-	 * Constructs an <code>XButton</code> object. This object is
-	 * similar to a <code>JButton</code> object, only this is much
-	 * easier to customize using an Appearance object.
-	 *
-	 * @param x              The X coordinate of the button in no-layout manager space
-	 * @param y              The Y coordinate of the button in no-layout manager space
-	 * @param width          The width of the button
-	 * @param height         The height of the button
-	 * @param frame          The main frame of the application
-	 * @param appearanceName The name of the <code>Appearance</code> that's values
-	 *                       should be implemented on this button
-	 */
-	public XButton(int x, int y, int width, int height, final XFrame frame, String appearanceName) {
-		super(x, y, width, height, frame, appearanceName);
-	}
+    /**
+     * Constructs an <code>XButton</code> object. This object is
+     * similar to a <code>JButton</code> object, only this is much
+     * easier to customize using an Appearance object.
+     *
+     * @param x              The X coordinate of the button in no-layout manager space
+     * @param y              The Y coordinate of the button in no-layout manager space
+     * @param width          The width of the button
+     * @param height         The height of the button
+     * @param frame          The main frame of the application
+     * @param appearanceName The name of the <code>Appearance</code> that's values
+     *                       should be implemented on this button
+     */
+    public XButton(int x, int y, int width, int height, final XFrame frame, String appearanceName) {
+        super(x, y, width, height, frame, appearanceName);
+    }
 
-	@Override
-	public void mouseClicked(MouseEvent e) {
-	}
+    /**
+     * Adjusts the content of the button using
+     * the specified <code>position</code> value.
+     * <p>The valid values for position are:</p>
+     * <p><code>SwingConstants.LEFT</code></p>
+     * <p><code>SwingConstants.RIGHT</code></p>
+     * <p><code>SwingConstants.CENTER</code></p>
+     * <p><code>SwingConstants.LEADING</code></p>
+     * <p><code>SwingConstants.TRAILING</code></p>
+     *
+     * @param position The position of the content of the button
+     */
+    public void adjustContent(int position) {
+        this.setHorizontalAlignment(position);
+    }
 
-	@Override
-	public void mousePressed(MouseEvent e) {
-		this.pressed = true;
-		this.repaint();
-	}
+    @Override
+    public void mouseClicked(MouseEvent e) {
+    }
 
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		this.pressed = false;
-		this.repaint();
-	}
+    @Override
+    public void mousePressed(MouseEvent e) {
+        this.pressed = true;
+        this.repaint();
+    }
 
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		this.entered = true;
-		this.repaint();
-	}
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        this.pressed = false;
+        this.repaint();
+    }
 
-	@Override
-	public void mouseExited(MouseEvent e) {
-		this.entered = false;
-		this.repaint();
-	}
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        this.entered = true;
+        this.repaint();
+    }
 
-	@Override
-	public XFrame getFrame() {
-		return this.frame;
-	}
+    @Override
+    public void mouseExited(MouseEvent e) {
+        this.entered = false;
+        this.repaint();
+    }
 
-	@Override
-	public void repaintFrame() {
-		if (this.frame != null)
-			this.frame.repaint();
-	}
+    @Override
+    public XFrame getFrame() {
+        return this.frame;
+    }
 
-	@Override
-	public Appearance getAppearance() {
-		return this.appearance;
-	}
+    @Override
+    public void repaintFrame() {
+        if (this.frame != null)
+            this.frame.repaint();
+    }
+
+    @Override
+    public Appearance getAppearance() {
+        return this.appearance;
+    }
 }

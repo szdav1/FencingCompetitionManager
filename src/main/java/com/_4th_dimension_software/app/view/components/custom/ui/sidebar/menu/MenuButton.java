@@ -7,6 +7,8 @@ import com._4th_dimension_software.support.consts.RelativePositions;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 
 /**
  * The <code>MenuButton</code> class is a child of the
@@ -70,7 +72,7 @@ public class MenuButton extends AbstractMenuButton {
      * dropdown panel's method with the specified text and appearanceName.
      *
      * @param appearanceName The name of the <code>Appearance</code>
-     * @param buttonText The text of the button
+     * @param buttonText     The text of the button
      */
     public void addButtonToDropdown(String buttonText, String appearanceName) {
         this.dropdownPanel.createAndAddButton(buttonText, appearanceName);
@@ -131,8 +133,34 @@ public class MenuButton extends AbstractMenuButton {
      *
      * @param position The position of the content of the button
      */
-    public void adjustContentOfButtonsInDropdown(int position) {
+    public void adjustContentOfButtonsInDropdownPanel(int position) {
         this.dropdownPanel.getButtons().forEach(btn -> btn.setHorizontalAlignment(position));
+    }
+
+    /**
+     * Adds the specified <code>MouseListener</code> interface
+     * to this object and every other button object stored
+     * inside the dropdown panel of this button.
+     *
+     * @param ml The <code>MouseListener</code> interface that should be added
+     */
+    public void addMouseListenerToAll(final MouseListener ml) {
+        this.addMouseListener(ml);
+        this.dropdownPanel.getButtons()
+            .forEach(btn -> btn.addMouseListener(ml));
+    }
+
+    /**
+     * Adds the specified <code>ActionListener</code> interface
+     * to this object and every other button object stored
+     * inside the dropdown panel of this button.
+     *
+     * @param al The <code>MouseListener</code> interface that should be added
+     */
+    public void addActionListenerToAll(final ActionListener al) {
+        this.addActionListener(al);
+        this.dropdownPanel.getButtons()
+            .forEach(btn -> btn.addActionListener(al));
     }
 
     @Override

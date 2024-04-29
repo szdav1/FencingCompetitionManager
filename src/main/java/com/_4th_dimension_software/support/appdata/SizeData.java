@@ -34,17 +34,11 @@ public final class SizeData {
 	public static final int H_SCROLL_BAR_HEIGHT = (int) (SCREEN_WIDTH*1.5f/100);
 	public static final Dimension H_SCROLL_BAR_DIMENSION = new Dimension(H_SCROLL_BAR_WIDTH, H_SCROLL_BAR_HEIGHT);
 
-
 	// Button size and dimension
 	public static final int N_BUTTON_WIDTH = PROPORTIONALITY_FACTOR*150;
 	public static final int BUTTON_WIDTH = PROPORTIONALITY_FACTOR*180;
 	public static final int W_BUTTON_WIDTH = PROPORTIONALITY_FACTOR*200;
 	public static final int BUTTON_HEIGHT = PROPORTIONALITY_FACTOR*60;
-
-	// Sidebar size and Dimension
-	public static final int SIDEBAR_WIDTH = W_BUTTON_WIDTH;
-	public static final int SIDEBAR_HEIGHT = SCREEN_HEIGHT;
-	public static final Dimension SIDEBAR_DIMENSION = new Dimension(SIDEBAR_WIDTH, SIDEBAR_HEIGHT);
 
 	// Narrow button dimension
 	public static final Dimension N_BUTTON_DIMENSION = new Dimension(N_BUTTON_WIDTH, BUTTON_HEIGHT);
@@ -52,6 +46,11 @@ public final class SizeData {
 	public static final Dimension BUTTON_DIMENSION = new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT);
 	// Wide button dimension
 	public static final Dimension W_BUTTON_DIMENSION = new Dimension(W_BUTTON_WIDTH, BUTTON_HEIGHT);
+
+	// Sidebar size and Dimension
+	public static final int SIDEBAR_WIDTH = W_BUTTON_WIDTH;
+	public static final int SIDEBAR_HEIGHT = SCREEN_HEIGHT;
+	public static final Dimension SIDEBAR_DIMENSION = new Dimension(SIDEBAR_WIDTH, SIDEBAR_HEIGHT);
 
 	// Dropdown panel size and dimension
 	public static final int DROPDOWN_WIDTH = BUTTON_WIDTH;
@@ -61,6 +60,9 @@ public final class SizeData {
 	// Separator line size adn dimension
 	public static final int SEPARATOR_WIDTH = W_BUTTON_WIDTH;
 	public static final Dimension SEPARATOR_DIMENSION = new Dimension(SEPARATOR_WIDTH, BORDER_SIZE);
+
+	// Text margin in buttons
+	public static final int BUTTON_TEXT_MARGIN = PROPORTIONALITY_FACTOR*10;
 
 	// Not instantiatable
 	private SizeData() {
@@ -85,6 +87,6 @@ public final class SizeData {
 	 * @return The percentage of the width of the window
 	 */
 	public static int calc(int percentage) {
-		return SCREEN_WIDTH*percentage/100;
+		return PROPORTIONALITY_FACTOR*percentage;
 	}
 }

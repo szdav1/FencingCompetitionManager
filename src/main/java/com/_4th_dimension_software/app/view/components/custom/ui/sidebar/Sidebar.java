@@ -1,6 +1,7 @@
 package com._4th_dimension_software.app.view.components.custom.ui.sidebar;
 
 import com._4th_dimension_software.app.control.sidebar.SidebarController;
+import com._4th_dimension_software.app.view.components.base.button.XButton;
 import com._4th_dimension_software.app.view.components.base.label.XLabel;
 import com._4th_dimension_software.app.view.components.base.panel.XPanel;
 import com._4th_dimension_software.app.view.components.custom.separator.Separator;
@@ -10,6 +11,7 @@ import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.consts.RelativePositions;
 
 import javax.swing.SwingConstants;
+import java.awt.Insets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +30,7 @@ public final class Sidebar extends XPanel {
 	// Separators
 	private final Separator separator1;
 	private final Separator separator2;
+	private final Separator separator3;
 	// Menu buttons
 	private final MenuButton pouleButton;
 	private final MenuButton tableButton;
@@ -35,6 +38,8 @@ public final class Sidebar extends XPanel {
 	private final MenuButton ruleSetsButton;
 	private final MenuButton settingsButton;
 	private final MenuButton databaseButton;
+	// Exit button
+	private final XButton exitButton;
 
 	/**
 	 * Constructs a <code>Sidebar</code> object.
@@ -52,7 +57,7 @@ public final class Sidebar extends XPanel {
 		this.menuButtons = new ArrayList<>();
 
 		// The listener that takes care of the mouse actions happened in the sidebar
-		final SidebarController sml = new SidebarController(this);
+		final SidebarController sc = new SidebarController(this);
 
 		// Header
 		this.header = new XLabel(SizeData.W_BUTTON_DIMENSION, "Dashboard", frame, appearanceName+".header");
@@ -61,41 +66,50 @@ public final class Sidebar extends XPanel {
 		// Separators
 		this.separator1 = new Separator(SizeData.SEPARATOR_DIMENSION, appearanceName+".separator");
 		this.separator2 = new Separator(SizeData.SEPARATOR_DIMENSION, appearanceName+".separator");
+		this.separator3 = new Separator(SizeData.SEPARATOR_DIMENSION, appearanceName+".separator");
 
 		// Menu buttons
 		this.pouleButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Poule", frame, appearanceName+".buttons.poule");
 		this.pouleButton.addButtonToDropdown("Empty Poule", appearanceName+".buttons.poule.dropdown.empty");
 		this.pouleButton.addButtonToDropdown("From Database", appearanceName+".buttons.poule.dropdown.database");
 		this.pouleButton.addButtonToDropdown("View Poule Stats", appearanceName+".buttons.poule.dropdown.stats");
-		this.pouleButton.adjustContentOfButtonsInDropdown(SwingConstants.LEADING);
+		this.pouleButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEADING);
 
 		this.tableButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Table", frame, appearanceName+".buttons.table");
 		this.tableButton.addButtonToDropdown("Empty Table", appearanceName+".buttons.table.dropdown.empty");
 		this.tableButton.addButtonToDropdown("From Database", appearanceName+".buttons.table.dropdown.database");
 		this.tableButton.addButtonToDropdown("View Table Stats", appearanceName+".buttons.table.dropdown.stats");
-		this.tableButton.adjustContentOfButtonsInDropdown(SwingConstants.LEADING);
+		this.tableButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEADING);
 
 		this.competitionButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Competition", frame, appearanceName+".buttons.competition");
 		this.competitionButton.addButtonToDropdown("Empty Competition", appearanceName+".buttons.competition.dropdown.empty");
 		this.competitionButton.addButtonToDropdown("From Database", appearanceName+".buttons.competition.dropdown.database");
 		this.competitionButton.addButtonToDropdown("View Comp. Stats", appearanceName+".buttons.competition.dropdown.stats");
-		this.competitionButton.adjustContentOfButtonsInDropdown(SwingConstants.LEADING);
+		this.competitionButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEADING);
 
 		this.ruleSetsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Rule Sets", frame, appearanceName+".buttons.ruleSet");
 		this.ruleSetsButton.addButtonToDropdown("View Rule Sets", appearanceName+".buttons.ruleSet.dropdown.view");
 		this.ruleSetsButton.addButtonToDropdown("New Rule Set", appearanceName+".buttons.ruleSet.dropdown.add");
 		this.ruleSetsButton.addButtonToDropdown("Delete Rule Set", appearanceName+".buttons.ruleSet.dropdown.delete");
 		this.ruleSetsButton.addButtonToDropdown("Modify Rule Set", appearanceName+".buttons.ruleSet.dropdown.modify");
-		this.ruleSetsButton.adjustContentOfButtonsInDropdown(SwingConstants.LEADING);
+		this.ruleSetsButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEADING);
 
 		this.settingsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Settings", frame, appearanceName+".buttons.settings");
 		this.settingsButton.addButtonToDropdown("Appearance", appearanceName+".buttons.settings.dropdown.appearance");
-		this.settingsButton.adjustContentOfButtonsInDropdown(SwingConstants.LEADING);
+		this.settingsButton.addButtonToDropdown("Window Size", appearanceName+".buttons.settings.dropdown.resize");
+		this.settingsButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEADING);
 
 		this.databaseButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, "Database", frame, appearanceName+".buttons.database");
 		this.databaseButton.addButtonToDropdown("Connect", appearanceName+".buttons.database.dropdown.connect");
 		this.databaseButton.addButtonToDropdown("Manage", appearanceName+".buttons.database.dropdown.manage");
-		this.databaseButton.adjustContentOfButtonsInDropdown(SwingConstants.LEADING);
+		this.databaseButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEADING);
+
+		// Exit button
+		this.exitButton = new XButton(SizeData.W_BUTTON_DIMENSION, "Exit", frame, appearanceName+".buttons.exit");
+		this.exitButton.addActionListener(sc);
+		this.exitButton.addMouseListener(sc);
+		this.exitButton.setMargin(new Insets(0, SizeData.BUTTON_TEXT_MARGIN, 0, 0));
+		this.exitButton.adjustContent(SwingConstants.LEFT);
 
 		// Add the menu buttons to the menu button list
 		this.menuButtons.add(this.pouleButton);
@@ -106,8 +120,11 @@ public final class Sidebar extends XPanel {
 		this.menuButtons.add(this.databaseButton);
 
 		// Implement the controller
-		this.menuButtons.forEach(btn -> btn.addMouseListener(sml));
-		this.frame.getCenterPanel().addMouseListener(sml);
+		this.menuButtons.forEach(btn -> {
+			btn.addMouseListenerToAll(sc);
+			btn.addActionListenerToAll(sc);
+		});
+		this.frame.getCenterPanel().addMouseListener(sc);
 
 		// Add the header to the sidebar
 		this.addComponent(this.header);
@@ -121,6 +138,9 @@ public final class Sidebar extends XPanel {
 			if (i == 2)
 				this.addComponent(this.separator2);
 		}
+		this.addComponent(this.separator3);
+		// Add the exit button
+		this.addComponent(exitButton);
 	}
 
 	/**
@@ -136,5 +156,9 @@ public final class Sidebar extends XPanel {
 
 	public List<MenuButton> getButtons() {
 		return this.menuButtons;
+	}
+
+	public XButton getExitButton() {
+		return this.exitButton;
 	}
 }
