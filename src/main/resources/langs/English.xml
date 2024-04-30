@@ -38,6 +38,7 @@
 
     <words for="sidebar.settings">
         <appearance>Appearance</appearance>
+        <language>Language</language>
     </words>
 
     <words for="sidebar.database">

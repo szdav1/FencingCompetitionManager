@@ -97,6 +97,7 @@ public final class Sidebar extends XPanel {
 
 		this.settingsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.settings"), frame, appearanceName+".buttons.settings");
 		this.settingsButton.addButtonToDropdown(LanguagePack.get("sidebar.settings.appearance"), appearanceName+".buttons.settings.dropdown.appearance");
+		this.settingsButton.addButtonToDropdown(LanguagePack.get("sidebar.settings.language"), appearanceName+".buttons.settings.dropdown.language");
 		this.settingsButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEADING);
 
 		this.databaseButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.database"), frame, appearanceName+".buttons.database");
