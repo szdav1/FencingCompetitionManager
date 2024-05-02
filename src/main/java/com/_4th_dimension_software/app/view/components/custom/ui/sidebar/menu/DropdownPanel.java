@@ -1,15 +1,15 @@
 package com._4th_dimension_software.app.view.components.custom.ui.sidebar.menu;
 
+import com._4th_dimension_software.app.view.components.base.button.XButton;
+import com._4th_dimension_software.app.view.components.base.panel.XPanel;
+import com._4th_dimension_software.app.view.frame.XFrame;
+import com._4th_dimension_software.support.appdata.SizeData;
+
 import java.awt.Dimension;
 import java.awt.Insets;
 import java.awt.LayoutManager;
 import java.util.ArrayList;
 import java.util.List;
-
-import com._4th_dimension_software.app.view.components.base.button.XButton;
-import com._4th_dimension_software.app.view.components.base.panel.XPanel;
-import com._4th_dimension_software.app.view.frame.XFrame;
-import com._4th_dimension_software.support.appdata.SizeData;
 
 /**
  * The <code>DropdownPanel</code> class is a child class
@@ -97,13 +97,13 @@ public class DropdownPanel extends XPanel {
 
     /**
      * Creates and adds a button to the dropdown panel
-     * with the specified text.
+     * with the specified text and shortcut key text.
      *
      * @param buttonText The text of the button
      */
-    public void createAndAddButton(String buttonText, String appearanceName) {
+    public void createAndAddButton(String buttonText, String shortcutKeyText, String appearanceName) {
         this.recentAppearanceName = appearanceName;
-        XButton btn = new XButton(new Dimension(this.getWidth(), SizeData.BUTTON_HEIGHT), buttonText, this.frame, appearanceName);
+        XButton btn = new XButton(new Dimension(this.getWidth(), SizeData.BUTTON_HEIGHT), buttonText, shortcutKeyText, this.frame, appearanceName);
         btn.setMargin(new Insets(0, SizeData.BUTTON_TEXT_MARGIN, 0, 0));
 
         this.buttons.add(btn);
@@ -111,6 +111,16 @@ public class DropdownPanel extends XPanel {
 
         this.setSize(this.getWidth(), newHeight);
         this.addComponent(btn);
+    }
+
+    /**
+     * Creates and adds a button to the dropdown panel
+     * with the specified text.
+     *
+     * @param buttonText The text of the button
+     */
+    public void createAndAddButton(String buttonText, String appearanceName) {
+        this.createAndAddButton(buttonText, "", appearanceName);
     }
 
     /**

@@ -71,27 +71,27 @@ public final class Sidebar extends XPanel {
 
 		// Menu buttons
 		this.pouleButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.poule"), frame, appearanceName+".buttons.poule");
-		this.pouleButton.addButtonToDropdown(LanguagePack.get("sidebar.poule.empty"), appearanceName+".buttons.poule.dropdown.empty");
-		this.pouleButton.addButtonToDropdown(LanguagePack.get("sidebar.poule.database"), appearanceName+".buttons.poule.dropdown.database");
-		this.pouleButton.addButtonToDropdown(LanguagePack.get("sidebar.poule.stats"), appearanceName+".buttons.poule.dropdown.stats");
+		this.pouleButton.addButtonToDropdown(LanguagePack.get("sidebar.poule.empty"), "F1", appearanceName+".buttons.poule.dropdown.empty");
+		this.pouleButton.addButtonToDropdown(LanguagePack.get("sidebar.poule.database"), "F2", appearanceName+".buttons.poule.dropdown.database");
+		this.pouleButton.addButtonToDropdown(LanguagePack.get("sidebar.poule.stats"), "F3", appearanceName+".buttons.poule.dropdown.stats");
 		this.pouleButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEADING);
 
 		this.tableButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.table"), frame, appearanceName+".buttons.table");
-		this.tableButton.addButtonToDropdown(LanguagePack.get("sidebar.table.empty"), appearanceName+".buttons.table.dropdown.empty");
-		this.tableButton.addButtonToDropdown(LanguagePack.get("sidebar.table.database"), appearanceName+".buttons.table.dropdown.database");
-		this.tableButton.addButtonToDropdown(LanguagePack.get("sidebar.table.stats"), appearanceName+".buttons.table.dropdown.stats");
+		this.tableButton.addButtonToDropdown(LanguagePack.get("sidebar.table.empty"), "F4", appearanceName+".buttons.table.dropdown.empty");
+		this.tableButton.addButtonToDropdown(LanguagePack.get("sidebar.table.database"), "F5", appearanceName+".buttons.table.dropdown.database");
+		this.tableButton.addButtonToDropdown(LanguagePack.get("sidebar.table.stats"), "F6", appearanceName+".buttons.table.dropdown.stats");
 		this.tableButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEADING);
 
 		this.competitionButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.competition"), frame, appearanceName+".buttons.competition");
-		this.competitionButton.addButtonToDropdown(LanguagePack.get("sidebar.competition.empty"), appearanceName+".buttons.competition.dropdown.empty");
-		this.competitionButton.addButtonToDropdown(LanguagePack.get("sidebar.competition.database"), appearanceName+".buttons.competition.dropdown.database");
-		this.competitionButton.addButtonToDropdown(LanguagePack.get("sidebar.competition.stats"), appearanceName+".buttons.competition.dropdown.stats");
+		this.competitionButton.addButtonToDropdown(LanguagePack.get("sidebar.competition.empty"), "F7", appearanceName+".buttons.competition.dropdown.empty");
+		this.competitionButton.addButtonToDropdown(LanguagePack.get("sidebar.competition.database"), "F8", appearanceName+".buttons.competition.dropdown.database");
+		this.competitionButton.addButtonToDropdown(LanguagePack.get("sidebar.competition.stats"), "F9", appearanceName+".buttons.competition.dropdown.stats");
 		this.competitionButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEADING);
 
 		this.ruleSetsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.ruleSet"), frame, appearanceName+".buttons.ruleSet");
-		this.ruleSetsButton.addButtonToDropdown(LanguagePack.get("sidebar.ruleSet.view"), appearanceName+".buttons.ruleSet.dropdown.view");
-		this.ruleSetsButton.addButtonToDropdown(LanguagePack.get("sidebar.ruleSet.new"), appearanceName+".buttons.ruleSet.dropdown.add");
-		this.ruleSetsButton.addButtonToDropdown(LanguagePack.get("sidebar.ruleSet.delete"), appearanceName+".buttons.ruleSet.dropdown.delete");
+		this.ruleSetsButton.addButtonToDropdown(LanguagePack.get("sidebar.ruleSet.view"), "F10", appearanceName+".buttons.ruleSet.dropdown.view");
+		this.ruleSetsButton.addButtonToDropdown(LanguagePack.get("sidebar.ruleSet.new"), "F11", appearanceName+".buttons.ruleSet.dropdown.add");
+		this.ruleSetsButton.addButtonToDropdown(LanguagePack.get("sidebar.ruleSet.delete"), "F12", appearanceName+".buttons.ruleSet.dropdown.delete");
 		this.ruleSetsButton.addButtonToDropdown(LanguagePack.get("sidebar.ruleSet.modify"), appearanceName+".buttons.ruleSet.dropdown.modify");
 		this.ruleSetsButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEADING);
 
@@ -106,7 +106,7 @@ public final class Sidebar extends XPanel {
 		this.databaseButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEADING);
 
 		// Exit button
-		this.exitButton = new XButton(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.exit"), frame, appearanceName+".buttons.exit");
+		this.exitButton = new XButton(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.exit"), "ESC", frame, appearanceName+".buttons.exit");
 		this.exitButton.addActionListener(sc);
 		this.exitButton.addMouseListener(sc);
 		this.exitButton.setMargin(new Insets(0, SizeData.BUTTON_TEXT_MARGIN, 0, 0));

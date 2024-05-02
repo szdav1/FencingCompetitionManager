@@ -24,10 +24,10 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
     protected final XFrame frame;
     protected final XLabel shortcutKeyLabel;
 
-    protected AbstractXButton(Dimension dimension, String text, final XFrame frame, String appearanceName) {
+    protected AbstractXButton(Dimension dimension, String text, String shortcutKeyText, final XFrame frame, String appearanceName) {
         this.appearance = Appearances.get(appearanceName);
         this.frame = frame;
-        this.shortcutKeyLabel = new XLabel(SizeData.SHORTCUT_KEY_LABEL_DIMENSION, "", frame, "shortcutKeyLabel");
+        this.shortcutKeyLabel = new XLabel(SizeData.SHORTCUT_KEY_LABEL_DIMENSION, shortcutKeyText, frame, "shortcutKeyLabel");
 
         this.setIcon(appearance.getIcon1() == null ? appearance.getIcon2() : appearance.getIcon1());
         this.setText(text);
@@ -45,14 +45,14 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
         this.add(this.shortcutKeyLabel);
     }
 
-    protected AbstractXButton(Dimension dimension, final XFrame frame, String appearanceName) {
-        this(dimension, "", frame, appearanceName);
+    protected AbstractXButton(Dimension dimension, String text, final XFrame frame, String appearanceName) {
+        this(dimension, text, "", frame, appearanceName);
     }
 
-    protected AbstractXButton(int x, int y, int width, int height, String text, final XFrame frame, String appearanceName) {
+    protected AbstractXButton(int x, int y, int width, int height, String text, String shortcutKeyText, final XFrame frame, String appearanceName) {
         this.appearance = Appearances.get(appearanceName);
         this.frame = frame;
-        this.shortcutKeyLabel = new XLabel(SizeData.SHORTCUT_KEY_LABEL_DIMENSION, "", frame, "shortcutKeyLabel");
+        this.shortcutKeyLabel = new XLabel(SizeData.SHORTCUT_KEY_LABEL_DIMENSION, shortcutKeyText, frame, "shortcutKeyLabel");
 
         this.setIcon(appearance.getIcon1() == null ? appearance.getIcon2() : appearance.getIcon1());
         this.setText(text);
@@ -70,8 +70,8 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
         this.add(this.shortcutKeyLabel);
     }
 
-    protected AbstractXButton(int x, int y, int width, int height, final XFrame frame, String appearanceName) {
-        this(x, y, width, height, "", frame, appearanceName);
+    protected AbstractXButton(int x, int y, int width, int height, String text, final XFrame frame, String appearanceName) {
+        this(x, y, width, height, text, "", frame, appearanceName);
     }
 
     /**
