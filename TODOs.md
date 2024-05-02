@@ -2,6 +2,8 @@
 
 > - Add backup color theme in the ColorThemeReader
 
-> - Display the shortcut keys of the options inside the dropdown panels
+> - Add backup settings in SettingsReader
 
-> - Add window size reduction option (later)
+> - Add backup language in LanguageReader
+
+> - Display the shortcut keys of the options inside the dropdown panels
