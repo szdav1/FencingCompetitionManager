@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Icon related tests" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-05-02T07:44:26" hostname="DESKTOP-PDMD8RI" time="0.42">
+<testsuite name="Icon related tests" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-05-02T09:55:03" hostname="DESKTOP-PDMD8RI" time="0.177">
   <properties/>
-  <testcase name="The icon of the Appearance should not be null" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$IconRelatedTests" time="0.331"/>
-  <testcase name="The icon of the Appearance should be null" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$IconRelatedTests" time="0.005"/>
-  <testcase name="The size of the icon should be 50x50" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$IconRelatedTests" time="0.078"/>
+  <testcase name="The icon of the Appearance should not be null" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$IconRelatedTests" time="0.122"/>
+  <testcase name="The icon of the Appearance should be null" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$IconRelatedTests" time="0.002"/>
+  <testcase name="The size of the icon should be 50x50" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$IconRelatedTests" time="0.048"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

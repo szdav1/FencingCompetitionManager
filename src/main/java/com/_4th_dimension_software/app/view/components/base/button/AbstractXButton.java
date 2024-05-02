@@ -1,8 +1,10 @@
 package com._4th_dimension_software.app.view.components.base.button;
 
+import com._4th_dimension_software.app.view.components.base.label.XLabel;
 import com._4th_dimension_software.app.view.components.interfaces.CustomGraphicsUser;
 import com._4th_dimension_software.app.view.components.interfaces.XComponent;
 import com._4th_dimension_software.app.view.frame.XFrame;
+import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.theme.Appearance;
 import com._4th_dimension_software.support.theme.Appearances;
 import com._4th_dimension_software.support.util.BorderPainter;
@@ -18,24 +20,29 @@ import java.util.Optional;
 public abstract class AbstractXButton extends JButton implements MouseListener, XComponent, CustomGraphicsUser {
     protected boolean entered = false;
     protected boolean pressed = false;
-
     protected Appearance appearance;
     protected final XFrame frame;
+    protected final XLabel shortcutKeyLabel;
 
     protected AbstractXButton(Dimension dimension, String text, final XFrame frame, String appearanceName) {
         this.appearance = Appearances.get(appearanceName);
         this.frame = frame;
+        this.shortcutKeyLabel = new XLabel(SizeData.SHORTCUT_KEY_LABEL_DIMENSION, "", frame, "shortcutKeyLabel");
 
         this.setIcon(appearance.getIcon1() == null ? appearance.getIcon2() : appearance.getIcon1());
         this.setText(text);
         this.setFont(appearance.getFont());
         this.setForeground(appearance.getForegrounds().get(0));
+        this.setLayout(new FlowLayout(FlowLayout.RIGHT, 0, 0));
         this.setFocusable(false);
         this.setBorderPainted(false);
         this.setContentAreaFilled(false);
         this.setBounds(new Rectangle(0, 0, dimension.width, dimension.height));
         this.setPreferredSize(dimension);
         this.addMouseListener(this);
+
+        // Add shortcut key label
+        this.add(this.shortcutKeyLabel);
     }
 
     protected AbstractXButton(Dimension dimension, final XFrame frame, String appearanceName) {
@@ -45,21 +52,36 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
     protected AbstractXButton(int x, int y, int width, int height, String text, final XFrame frame, String appearanceName) {
         this.appearance = Appearances.get(appearanceName);
         this.frame = frame;
+        this.shortcutKeyLabel = new XLabel(SizeData.SHORTCUT_KEY_LABEL_DIMENSION, "", frame, "shortcutKeyLabel");
 
         this.setIcon(appearance.getIcon1() == null ? appearance.getIcon2() : appearance.getIcon1());
         this.setText(text);
         this.setFont(appearance.getFont());
         this.setForeground(appearance.getForegrounds().get(0));
+        this.setLayout(new FlowLayout(FlowLayout.RIGHT, 0, 0));
         this.setFocusable(false);
         this.setBorderPainted(false);
         this.setContentAreaFilled(false);
         this.setPreferredSize(new Dimension(width, height));
         this.setBounds(new Rectangle(x, y, width, height));
         this.addMouseListener(this);
+
+        // Add shortcut key label
+        this.add(this.shortcutKeyLabel);
     }
 
     protected AbstractXButton(int x, int y, int width, int height, final XFrame frame, String appearanceName) {
         this(x, y, width, height, "", frame, appearanceName);
+    }
+
+    /**
+     * Sets the text of the shortcut key label
+     * of this button to the specified text.
+     *
+     * @param shortcutKeyText The text representation of the shortcut key
+     */
+    public void setShortcutKeyText(String shortcutKeyText) {
+        this.shortcutKeyLabel.setText(shortcutKeyText);
     }
 
     /**
@@ -162,20 +184,28 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 
     @Override
     public void paintForeground() {
-        if (this.appearance.getForegrounds().size() >= 2) {
+        if (this.appearance.getForegrounds().size() >= 2 && this.shortcutKeyLabel.getAppearance().getForegrounds().size() >= 2) {
             // If the button is entered by the mouse, the second color specified in the
             // Appearance will be set as the foreground
             // If not, the first color specified in the Appearance will be set as the foreground
             this.setForeground(this.entered ? this.appearance.getForegrounds().get(1) : this.appearance.getForegrounds().get(0));
+            this.shortcutKeyLabel.setForeground(this.entered ?
+                this.shortcutKeyLabel.getAppearance().getForegrounds().get(1) :
+                this.shortcutKeyLabel.getAppearance().getForegrounds().get(0));
 
             // If the button is pressed, the first color specified in the
             // Appearance will be set as the foreground
             // If not, the second color specified in the Appearance will be set as the foreground
             this.setForeground(this.pressed ? this.appearance.getForegrounds().get(0) : this.appearance.getForegrounds().get(1));
+            this.shortcutKeyLabel.setForeground(this.pressed ?
+                this.shortcutKeyLabel.getAppearance().getForegrounds().get(0) :
+                this.shortcutKeyLabel.getAppearance().getForegrounds().get(1));
 
             // If the state of the button is normal, the (default) first color is used
-            if (!this.entered && !this.pressed)
+            if (!this.entered && !this.pressed) {
                 this.setForeground(this.appearance.getForegrounds().get(0));
+                this.shortcutKeyLabel.setForeground(this.shortcutKeyLabel.getAppearance().getForegrounds().get(0));
+            }
         }
     }
 
