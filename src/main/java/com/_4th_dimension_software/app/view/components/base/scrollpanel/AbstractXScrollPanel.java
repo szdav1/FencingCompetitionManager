@@ -13,8 +13,8 @@ import com._4th_dimension_software.app.view.components.base.scrollpanel.scrollba
 import com._4th_dimension_software.app.view.components.interfaces.XComponent;
 import com._4th_dimension_software.app.view.components.interfaces.XContainer;
 import com._4th_dimension_software.app.view.frame.XFrame;
-import com._4th_dimension_software.support.framework.Appearance;
-import com._4th_dimension_software.support.framework.Appearances;
+import com._4th_dimension_software.support.theme.Appearance;
+import com._4th_dimension_software.support.theme.Appearances;
 import com._4th_dimension_software.app.view.components.base.panel.XPanel;
 
 public abstract class AbstractXScrollPanel extends JScrollPane implements XComponent, XContainer {

@@ -6,8 +6,8 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.plaf.basic.BasicScrollBarUI;
 
-import com._4th_dimension_software.support.framework.Appearance;
-import com._4th_dimension_software.support.framework.Appearances;
+import com._4th_dimension_software.support.theme.Appearance;
+import com._4th_dimension_software.support.theme.Appearances;
 import com._4th_dimension_software.support.util.Util;
 
 /**

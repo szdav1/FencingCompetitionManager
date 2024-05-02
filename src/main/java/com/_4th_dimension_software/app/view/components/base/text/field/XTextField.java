@@ -5,7 +5,7 @@ import java.awt.Dimension;
 import javax.swing.JTextField;
 
 import com._4th_dimension_software.app.view.frame.XFrame;
-import com._4th_dimension_software.support.framework.Appearance;
+import com._4th_dimension_software.support.theme.Appearance;
 
 /**
  * The XTextField class is an extended representation

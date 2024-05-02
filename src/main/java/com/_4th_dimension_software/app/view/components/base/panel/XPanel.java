@@ -9,7 +9,7 @@ import javax.swing.JComponent;
 
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.consts.PositionConstants;
-import com._4th_dimension_software.support.framework.Appearance;
+import com._4th_dimension_software.support.theme.Appearance;
 
 /**
  * The <code>XPanel</code> class is an extended representation

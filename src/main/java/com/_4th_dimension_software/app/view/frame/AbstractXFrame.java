@@ -4,8 +4,8 @@ import javax.swing.JFrame;
 
 import com._4th_dimension_software.app.view.components.interfaces.XContainer;
 import com._4th_dimension_software.support.appdata.SizeData;
-import com._4th_dimension_software.support.framework.Appearance;
-import com._4th_dimension_software.support.framework.Appearances;
+import com._4th_dimension_software.support.theme.Appearance;
+import com._4th_dimension_software.support.theme.Appearances;
 
 public abstract class AbstractXFrame extends JFrame implements XContainer {
 	protected Appearance appearance;

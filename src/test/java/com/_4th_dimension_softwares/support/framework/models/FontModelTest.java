@@ -3,7 +3,7 @@ package com._4th_dimension_softwares.support.framework.models;
 import java.awt.Font;
 
 import com._4th_dimension_software.support.appdata.SizeData;
-import com._4th_dimension_software.support.framework.models.FontModel;
+import com._4th_dimension_software.support.theme.models.FontModel;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

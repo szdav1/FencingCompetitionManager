@@ -4,7 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.LinearGradientPaint;
 
 import com._4th_dimension_software.support.consts.PaintMethod;
-import com._4th_dimension_software.support.framework.Appearance;
+import com._4th_dimension_software.support.theme.Appearance;
 
 /**
  * The <code>BorderPainter</code> class defines methods

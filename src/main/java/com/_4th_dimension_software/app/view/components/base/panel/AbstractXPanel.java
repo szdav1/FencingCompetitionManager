@@ -8,8 +8,8 @@ import com._4th_dimension_software.app.view.components.interfaces.CustomGraphics
 import com._4th_dimension_software.app.view.components.interfaces.XComponent;
 import com._4th_dimension_software.app.view.components.interfaces.XContainer;
 import com._4th_dimension_software.app.view.frame.XFrame;
-import com._4th_dimension_software.support.framework.Appearance;
-import com._4th_dimension_software.support.framework.Appearances;
+import com._4th_dimension_software.support.theme.Appearance;
+import com._4th_dimension_software.support.theme.Appearances;
 import com._4th_dimension_software.support.util.BorderPainter;
 import com._4th_dimension_software.support.util.Util;
 

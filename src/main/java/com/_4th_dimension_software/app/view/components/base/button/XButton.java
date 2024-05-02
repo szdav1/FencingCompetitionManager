@@ -4,7 +4,7 @@ import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 
 import com._4th_dimension_software.app.view.frame.XFrame;
-import com._4th_dimension_software.support.framework.Appearance;
+import com._4th_dimension_software.support.theme.Appearance;
 
 /**
  * The XButton class is an extended representation

@@ -6,8 +6,8 @@ import javax.swing.JScrollBar;
 
 import com._4th_dimension_software.app.view.components.base.scrollpanel.scrollbar.ui.XScrollBarUI;
 import com._4th_dimension_software.support.appdata.SizeData;
-import com._4th_dimension_software.support.framework.Appearance;
-import com._4th_dimension_software.support.framework.Appearances;
+import com._4th_dimension_software.support.theme.Appearance;
+import com._4th_dimension_software.support.theme.Appearances;
 
 /**
  * The <code>XScrollBar</code> class is an extended representation

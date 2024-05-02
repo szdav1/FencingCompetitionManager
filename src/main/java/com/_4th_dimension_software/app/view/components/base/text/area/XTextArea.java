@@ -3,7 +3,7 @@ package com._4th_dimension_software.app.view.components.base.text.area;
 import java.awt.Dimension;
 
 import com._4th_dimension_software.app.view.frame.XFrame;
-import com._4th_dimension_software.support.framework.Appearance;
+import com._4th_dimension_software.support.theme.Appearance;
 
 /**
  * The XTextArea class is an extended representation

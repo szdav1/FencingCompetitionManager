@@ -3,8 +3,8 @@ package com._4th_dimension_software.app.view.components.base.button;
 import com._4th_dimension_software.app.view.components.interfaces.CustomGraphicsUser;
 import com._4th_dimension_software.app.view.components.interfaces.XComponent;
 import com._4th_dimension_software.app.view.frame.XFrame;
-import com._4th_dimension_software.support.framework.Appearance;
-import com._4th_dimension_software.support.framework.Appearances;
+import com._4th_dimension_software.support.theme.Appearance;
+import com._4th_dimension_software.support.theme.Appearances;
 import com._4th_dimension_software.support.util.BorderPainter;
 import com._4th_dimension_software.support.util.Util;
 
