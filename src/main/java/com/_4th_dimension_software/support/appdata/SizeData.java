@@ -37,7 +37,7 @@ public final class SizeData {
     // Button size and dimension
     public static final int N_BUTTON_WIDTH = PROPORTIONALITY_FACTOR*150;
     public static final int BUTTON_WIDTH = PROPORTIONALITY_FACTOR*180;
-    public static final int W_BUTTON_WIDTH = PROPORTIONALITY_FACTOR*200;
+    public static final int W_BUTTON_WIDTH = PROPORTIONALITY_FACTOR*220;
     public static final int BUTTON_HEIGHT = PROPORTIONALITY_FACTOR*60;
 
     // Narrow button dimension
@@ -65,7 +65,7 @@ public final class SizeData {
     public static final int BUTTON_TEXT_MARGIN = PROPORTIONALITY_FACTOR*10;
 
     // Shortcut key label size and dimension
-    public static final int SHORTCUT_KEY_LABEL_WIDTH = PROPORTIONALITY_FACTOR*30;
+    public static final int SHORTCUT_KEY_LABEL_WIDTH = PROPORTIONALITY_FACTOR*40;
     public static final Dimension SHORTCUT_KEY_LABEL_DIMENSION = new Dimension(SHORTCUT_KEY_LABEL_WIDTH, BUTTON_HEIGHT);
 
     // Not instantiatable

@@ -12,6 +12,8 @@ import com._4th_dimension_software.support.util.Util;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+
 import java.awt.*;
 import java.awt.event.MouseListener;
 import java.util.List;
@@ -28,6 +30,8 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
         this.appearance = Appearances.get(appearanceName);
         this.frame = frame;
         this.shortcutKeyLabel = new XLabel(SizeData.SHORTCUT_KEY_LABEL_DIMENSION, shortcutKeyText, frame, "shortcutKeyLabel");
+        this.shortcutKeyLabel.setHorizontalAlignment(JLabel.CENTER);
+        this.shortcutKeyLabel.setVerticalAlignment(JLabel.CENTER);
 
         this.setIcon(appearance.getIcon1() == null ? appearance.getIcon2() : appearance.getIcon1());
         this.setText(text);
@@ -53,6 +57,8 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
         this.appearance = Appearances.get(appearanceName);
         this.frame = frame;
         this.shortcutKeyLabel = new XLabel(SizeData.SHORTCUT_KEY_LABEL_DIMENSION, shortcutKeyText, frame, "shortcutKeyLabel");
+        this.shortcutKeyLabel.setHorizontalAlignment(JLabel.CENTER);
+        this.shortcutKeyLabel.setVerticalAlignment(JLabel.CENTER);
 
         this.setIcon(appearance.getIcon1() == null ? appearance.getIcon2() : appearance.getIcon1());
         this.setText(text);
