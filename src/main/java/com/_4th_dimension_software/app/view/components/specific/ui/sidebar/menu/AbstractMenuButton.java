@@ -18,6 +18,7 @@ public abstract class AbstractMenuButton extends XButton implements ActionListen
 		super(dimension, text, frame, appearanceName);
 
 		this.setHorizontalAlignment(SwingConstants.LEFT);
+		this.setVerticalAlignment(SwingConstants.CENTER);
 		this.setMargin(new Insets(0, SizeData.BUTTON_TEXT_MARGIN, 0, 0));
 
 		this.active = false;
@@ -32,6 +33,7 @@ public abstract class AbstractMenuButton extends XButton implements ActionListen
 		super(x, y, width, height, text, frame, appearanceName);
 
 		this.setHorizontalAlignment(SwingConstants.LEFT);
+		this.setVerticalAlignment(SwingConstants.CENTER);
 		this.setMargin(new Insets(0, SizeData.BUTTON_TEXT_MARGIN, 0, 0));
 
 		this.active = false;

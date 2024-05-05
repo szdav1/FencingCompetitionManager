@@ -5,3 +5,5 @@
 > - Add backup settings in SettingsReader
 
 > - Add backup language in LanguageReader
+
+> - Think about shortcut keys

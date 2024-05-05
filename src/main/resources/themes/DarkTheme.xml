@@ -5,7 +5,7 @@
         <background colors="[12,14,14,255]"/>
     </appearance>
 
-    <!--  Shortcut label  -->
+    <!--  Shortcut key label  -->
     <appearance applyTo="shortcutKeyLabel">
         <background colors="[0,0,0,0]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>

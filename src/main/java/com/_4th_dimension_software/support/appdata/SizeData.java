@@ -65,7 +65,7 @@ public final class SizeData {
     public static final int BUTTON_TEXT_MARGIN = PROPORTIONALITY_FACTOR*10;
 
     // Shortcut key label size and dimension
-    public static final int SHORTCUT_KEY_LABEL_WIDTH = PROPORTIONALITY_FACTOR*40;
+    public static final int SHORTCUT_KEY_LABEL_WIDTH = PROPORTIONALITY_FACTOR*52;
     public static final Dimension SHORTCUT_KEY_LABEL_DIMENSION = new Dimension(SHORTCUT_KEY_LABEL_WIDTH, BUTTON_HEIGHT);
 
     // Not instantiatable

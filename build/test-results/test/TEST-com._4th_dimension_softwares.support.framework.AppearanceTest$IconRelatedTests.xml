@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Icon related tests" tests="3" skipped="3" failures="0" errors="0" timestamp="2024-05-05T17:41:43" hostname="DESKTOP-FN3U10C" time="0.003">
+<testsuite name="Icon related tests" tests="3" skipped="3" failures="0" errors="0" timestamp="2024-05-05T18:37:30" hostname="DESKTOP-FN3U10C" time="0.003">
   <properties/>
   <testcase name="The icon of the Appearance should not be null" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$IconRelatedTests" time="0.001">
     <skipped/>
   </testcase>
-  <testcase name="The icon of the Appearance should be null" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$IconRelatedTests" time="0.001">
+  <testcase name="The icon of the Appearance should be null" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$IconRelatedTests" time="0.0">
     <skipped/>
   </testcase>
   <testcase name="The size of the icon should be 50x50" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$IconRelatedTests" time="0.0">
