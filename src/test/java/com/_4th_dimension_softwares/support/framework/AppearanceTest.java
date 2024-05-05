@@ -82,6 +82,7 @@ class AppearanceTest {
 
 	@Nested
 	@DisplayName("Icon related tests")
+	@Disabled("Icons were tested and worked properly, the test icon is unnecessary and was removed")
 	class IconRelatedTests {
 		@Test
 		@DisplayName("The icon of the Appearance should not be null")

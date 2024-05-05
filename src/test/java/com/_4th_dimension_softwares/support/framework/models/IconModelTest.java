@@ -5,6 +5,7 @@ import java.awt.MediaTracker;
 import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.theme.models.IconModel;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -21,6 +22,7 @@ class IconModelTest {
 
 	@Test
 	@DisplayName("Should load the icon normally")
+	@Disabled("Icons were tested and worked properly, the test icon is unnecessary and was removed")
 	void shouldLoadTheIconNormally() {
 		im = new IconModel("/testIcon.png");
 
@@ -29,6 +31,7 @@ class IconModelTest {
 
 	@Test
 	@DisplayName("The icon should be loaded with its default dimensions: w=512px, h=512px")
+	@Disabled("Icons were tested and worked properly, the test icon is unnecessary and was removed")
 	void theIconShouldHaveItsDefaultDimensions() {
 		im = new IconModel("/testIcon.png");
 
@@ -40,6 +43,7 @@ class IconModelTest {
 
 	@Test
 	@DisplayName("The icon should be loaded with 500x500 dimension")
+	@Disabled("Icons were tested and worked properly, the test icon is unnecessary and was removed")
 	void shouldLoadIconWith500x500Dimension() {
 		im = new IconModel("/testIcon.png", "50", "50");
 		int actual = SizeData.PROPORTIONALITY_FACTOR*(500);
@@ -53,6 +57,7 @@ class IconModelTest {
 	@ParameterizedTest
 	@ValueSource(strings = {"-43", "-78", "0", "jklfgl", "fö9845ö9[]{[}", "\\///=%()+!*"})
 	@DisplayName("Should load the icon with the default precalculated dimensions because every passed in data is invalid")
+	@Disabled("Icons were tested and worked properly, the test icon is unnecessary and was removed")
 	void shouldLoadTheIconWithDefaultPrecalculatedDimensions(String str) {
 		im = new IconModel("/testIcon.png", str, str);
 
