@@ -23,15 +23,6 @@ public final class SidebarController extends XController {
 	private MenuButton prevButton;
 	private MenuButton prevEnteredButton;
 
-	// Key actions
-	private final SidebarKeyActions sidebarKeyActions;
-	private final PouleMenuKeyActions pouleMenuKeyActions;
-	private final TableMenuKeyActions tableMenuKeyActions;
-	private final CompetitionMenuKeyActions competitionMenuKeyActions;
-	private final RuleSetMenuKeyActions ruleSetMenuKeyActions;
-	private final SettingsMenuKeyActions settingsMenuKeyActions;
-	private final DatabaseMenuKeyActions databaseMenuKeyActions;
-
 	/**
 	 * Constructs a <code>SidebarMouseListener</code>. It is
 	 * important to note that the sidebar object that is passed
@@ -43,14 +34,14 @@ public final class SidebarController extends XController {
 	public SidebarController(final Sidebar sidebar) {
 		this.sidebar = sidebar;
 
-		// Actions
-		this.sidebarKeyActions = new SidebarKeyActions(sidebar);
-		this.pouleMenuKeyActions = new PouleMenuKeyActions(sidebar);
-		this.tableMenuKeyActions = new TableMenuKeyActions(sidebar);
-		this.competitionMenuKeyActions = new CompetitionMenuKeyActions(sidebar);
-		this.ruleSetMenuKeyActions = new RuleSetMenuKeyActions(sidebar);
-		this.settingsMenuKeyActions = new SettingsMenuKeyActions(sidebar);
-		this.databaseMenuKeyActions = new DatabaseMenuKeyActions(sidebar);
+		// Key actions
+		final SidebarKeyActions sidebarKeyActions = new SidebarKeyActions(sidebar);
+		final PouleMenuKeyActions pouleMenuKeyActions = new PouleMenuKeyActions(sidebar);
+		final TableMenuKeyActions tableMenuKeyActions = new TableMenuKeyActions(sidebar);
+		final CompetitionMenuKeyActions competitionMenuKeyActions = new CompetitionMenuKeyActions(sidebar);
+		final RuleSetMenuKeyActions ruleSetMenuKeyActions = new RuleSetMenuKeyActions(sidebar);
+		final SettingsMenuKeyActions settingsMenuKeyActions = new SettingsMenuKeyActions(sidebar);
+		final DatabaseMenuKeyActions databaseMenuKeyActions = new DatabaseMenuKeyActions(sidebar);
 	}
 
 	/**
