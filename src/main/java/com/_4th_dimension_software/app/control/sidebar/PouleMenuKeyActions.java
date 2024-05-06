@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.KeyStroke;
 
-import com._4th_dimension_software.app.view.components.specific.ui.sidebar.Sidebar;
+import com._4th_dimension_software.app.view.components.built.ui.sidebar.Sidebar;
 import com._4th_dimension_software.support.consts.FrameState;
 
 /**

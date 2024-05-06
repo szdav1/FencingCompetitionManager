@@ -1,4 +1,4 @@
-package com._4th_dimension_software.app.view.components.specific.ui.sidebar.menu;
+package com._4th_dimension_software.app.view.components.built.ui.sidebar.menu;
 
 import com._4th_dimension_software.app.view.components.base.button.XButton;
 import com._4th_dimension_software.app.view.components.base.panel.XPanel;

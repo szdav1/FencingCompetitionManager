@@ -1,4 +1,4 @@
-package com._4th_dimension_software.app.view.components.specific.ui.sidebar.menu;
+package com._4th_dimension_software.app.view.components.built.ui.sidebar.menu;
 
 import java.awt.Dimension;
 import java.awt.Insets;

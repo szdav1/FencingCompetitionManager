@@ -1,11 +1,11 @@
-package com._4th_dimension_software.app.view.components.specific.ui.sidebar;
+package com._4th_dimension_software.app.view.components.built.ui.sidebar;
 
 import com._4th_dimension_software.app.control.sidebar.SidebarController;
 import com._4th_dimension_software.app.view.components.base.button.XButton;
 import com._4th_dimension_software.app.view.components.base.label.XLabel;
 import com._4th_dimension_software.app.view.components.base.panel.XPanel;
-import com._4th_dimension_software.app.view.components.specific.separator.Separator;
-import com._4th_dimension_software.app.view.components.specific.ui.sidebar.menu.MenuButton;
+import com._4th_dimension_software.app.view.components.built.ui.separator.Separator;
+import com._4th_dimension_software.app.view.components.built.ui.sidebar.menu.MenuButton;
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.consts.RelativePositions;

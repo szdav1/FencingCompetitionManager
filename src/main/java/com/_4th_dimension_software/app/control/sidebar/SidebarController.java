@@ -7,8 +7,8 @@ import java.util.Optional;
 
 import com._4th_dimension_software.app.control.XController;
 import com._4th_dimension_software.app.view.components.base.button.XButton;
-import com._4th_dimension_software.app.view.components.specific.ui.sidebar.Sidebar;
-import com._4th_dimension_software.app.view.components.specific.ui.sidebar.menu.MenuButton;
+import com._4th_dimension_software.app.view.components.built.ui.sidebar.Sidebar;
+import com._4th_dimension_software.app.view.components.built.ui.sidebar.menu.MenuButton;
 
 /**
  * The <code>SidebarMouseListener</code> is the class that handles mouse
@@ -35,13 +35,13 @@ public final class SidebarController extends XController {
 		this.sidebar = sidebar;
 
 		// Key actions
-		final SidebarKeyActions sidebarKeyActions = new SidebarKeyActions(sidebar);
-		final PouleMenuKeyActions pouleMenuKeyActions = new PouleMenuKeyActions(sidebar);
-		final TableMenuKeyActions tableMenuKeyActions = new TableMenuKeyActions(sidebar);
-		final CompetitionMenuKeyActions competitionMenuKeyActions = new CompetitionMenuKeyActions(sidebar);
-		final RuleSetMenuKeyActions ruleSetMenuKeyActions = new RuleSetMenuKeyActions(sidebar);
-		final SettingsMenuKeyActions settingsMenuKeyActions = new SettingsMenuKeyActions(sidebar);
-		final DatabaseMenuKeyActions databaseMenuKeyActions = new DatabaseMenuKeyActions(sidebar);
+		new SidebarKeyActions(sidebar);
+		new PouleMenuKeyActions(sidebar);
+		new TableMenuKeyActions(sidebar);
+		new CompetitionMenuKeyActions(sidebar);
+		new RuleSetMenuKeyActions(sidebar);
+		new SettingsMenuKeyActions(sidebar);
+		new DatabaseMenuKeyActions(sidebar);
 	}
 
 	/**

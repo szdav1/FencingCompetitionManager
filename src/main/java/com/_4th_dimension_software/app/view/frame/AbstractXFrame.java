@@ -2,7 +2,7 @@ package com._4th_dimension_software.app.view.frame;
 
 import javax.swing.JFrame;
 
-import com._4th_dimension_software.app.view.components.interfaces.XContainer;
+import com._4th_dimension_software.app.view.interfaces.XContainer;
 import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.consts.FrameState;
 import com._4th_dimension_software.support.theme.Appearance;

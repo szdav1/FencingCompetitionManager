@@ -1,4 +1,4 @@
-package com._4th_dimension_software.app.view.components.interfaces;
+package com._4th_dimension_software.app.view.interfaces;
 
 import javax.swing.JComponent;
 

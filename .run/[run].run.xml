@@ -1,5 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="[run]" type="Application" factoryName="Application">
+    <output_file path="D:\projects\FencingCompetitionManager\.run\runOutput.log" is_save="true" />
     <option name="MAIN_CLASS_NAME" value="com._4th_dimension_software.app.run.Main" />
     <module name="FencingCompetitionManager.main" />
     <method v="2">

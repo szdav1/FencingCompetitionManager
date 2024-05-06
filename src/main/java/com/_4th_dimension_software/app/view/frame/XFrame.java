@@ -9,8 +9,7 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 
 import com._4th_dimension_software.app.view.components.base.panel.XPanel;
-import com._4th_dimension_software.app.view.components.specific.ui.sidebar.Sidebar;
-import com._4th_dimension_software.support.consts.FrameState;
+import com._4th_dimension_software.app.view.components.built.ui.sidebar.Sidebar;
 import com._4th_dimension_software.support.consts.PositionConstants;
 
 /**
@@ -68,8 +67,7 @@ public class XFrame extends AbstractXFrame {
 		// Set visibility
 		this.setVisible(true);
 
-		// Perform fine adjustments on locations and dimensions
-		// That require the frame to be visible
+		// Perform fine adjustments on locations and dimensions that require the frame to be visible
 		this.sidebar.performAdjustments();
 	}
 

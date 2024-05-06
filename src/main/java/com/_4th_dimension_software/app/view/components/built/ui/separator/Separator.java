@@ -1,4 +1,4 @@
-package com._4th_dimension_software.app.view.components.specific.separator;
+package com._4th_dimension_software.app.view.components.built.ui.separator;
 
 import com._4th_dimension_software.app.view.components.base.label.XLabel;
 

@@ -4,9 +4,9 @@ import java.awt.*;
 
 import javax.swing.JLayeredPane;
 
-import com._4th_dimension_software.app.view.components.interfaces.CustomGraphicsUser;
-import com._4th_dimension_software.app.view.components.interfaces.XComponent;
-import com._4th_dimension_software.app.view.components.interfaces.XContainer;
+import com._4th_dimension_software.app.view.interfaces.CustomGraphicsUser;
+import com._4th_dimension_software.app.view.interfaces.XComponent;
+import com._4th_dimension_software.app.view.interfaces.XContainer;
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.theme.Appearance;
 import com._4th_dimension_software.support.theme.Appearances;

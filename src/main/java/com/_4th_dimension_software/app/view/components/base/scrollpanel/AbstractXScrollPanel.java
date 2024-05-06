@@ -10,8 +10,8 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
 import com._4th_dimension_software.app.view.components.base.scrollpanel.scrollbar.XScrollBar;
-import com._4th_dimension_software.app.view.components.interfaces.XComponent;
-import com._4th_dimension_software.app.view.components.interfaces.XContainer;
+import com._4th_dimension_software.app.view.interfaces.XComponent;
+import com._4th_dimension_software.app.view.interfaces.XContainer;
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.theme.Appearance;
 import com._4th_dimension_software.support.theme.Appearances;
