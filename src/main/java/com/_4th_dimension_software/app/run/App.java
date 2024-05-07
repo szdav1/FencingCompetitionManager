@@ -12,21 +12,21 @@ import com._4th_dimension_software.support.theme.loader.ColorThemeLoader;
  * @author szd
  */
 public final class App {
-    private final XFrame frame;
+	private final XFrame frame;
 
-    /**
-     * Initializes the application and runs it.
-     * This is the entry point of the application.
-     */
-    public App() {
-        // Read the settings file
-        SettingsLoader.loadFromXML("/settings/Settings.xml");
-        // Interpret the specified color theme and open the application window
-        ColorThemeLoader.loadFromXML(Settings.get("colorTheme"));
-        // Load the specified language XML file
-        LanguagePackLoader.loadFromXML(Settings.get("language"));
+	/**
+	 * Initializes the application and runs it.
+	 * This is the entry point of the application.
+	 */
+	public App() {
+		// Read the settings file
+		SettingsLoader.loadFromXML("/settings/Settings.xml");
+		// Interpret the specified color theme and open the application window
+		ColorThemeLoader.loadFromXML(Settings.get("colorTheme"));
+		// Load the specified language XML file
+		LanguagePackLoader.loadFromXML(Settings.get("language"));
 
-        // Open application window
-        this.frame = new XFrame("CompetitionManager 0.5-WORK-IN-PROGRESS", "window");
-    }
+		// Open application window
+		this.frame = new XFrame("CompetitionManager 0.5-WORK-IN-PROGRESS", "window");
+	}
 }

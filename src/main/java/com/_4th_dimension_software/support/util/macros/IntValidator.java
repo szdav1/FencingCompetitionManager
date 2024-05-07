@@ -7,6 +7,8 @@ package com._4th_dimension_software.support.util.macros;
  * values in the <code>Util</code> class's <code>toInt()</code> method based
  * on the return value of this interface's lambda
  * expression.
+ *
+ * @author szd
  */
 @FunctionalInterface
 public interface IntValidator {

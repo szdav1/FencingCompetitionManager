@@ -7,6 +7,8 @@ import com._4th_dimension_software.support.settings.reader.SettingsReader;
  * The <code>SettingsLoader</code> class loads
  * the contents of the Settings.xml file and
  * initializes the <code>Settings</code> class.
+ *
+ * @author szd
  */
 public final class SettingsLoader {
     // Not instantiatable

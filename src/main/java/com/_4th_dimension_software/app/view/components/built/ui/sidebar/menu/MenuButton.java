@@ -15,6 +15,8 @@ import java.awt.event.MouseListener;
  * <code>XButton</code> class. This class is used to create
  * structured menus for easy navigation. It has a dropdown panel,
  * which is activated when the button is pressed.
+ *
+ * @author szd
  */
 public class MenuButton extends AbstractMenuButton {
     /**

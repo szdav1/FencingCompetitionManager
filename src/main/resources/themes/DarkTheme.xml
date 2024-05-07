@@ -31,16 +31,16 @@
     <appearance applyTo="sidebar.buttons.exit">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/exitGray.png" width="3" height="4"/>
-        <icon2 source="/icons/exitWhite.png" width="3" height="4"/>
+        <icon1 source="/icons/Exit.png" width="3" height="4" color="[128,128,128,255]"/>
+        <icon2 source="/icons/Exit.png" width="3" height="4"/>
     </appearance>
 
     <!--  Poule button of the sidebar  -->
     <appearance applyTo="sidebar.buttons.poule">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/pouleGray.png" width="3" height="3"/>
-        <icon2 source="/icons/pouleWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/Poule.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/Poule.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.poule.dropdown">
@@ -51,30 +51,30 @@
     <appearance applyTo="sidebar.buttons.poule.dropdown.empty">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/emptyGray.png" width="3" height="3"/>
-        <icon2 source="/icons/emptyWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/Empty.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/Empty.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.poule.dropdown.database">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/fromDatabaseGray.png" width="3" height="3"/>
-        <icon2 source="/icons/fromDatabaseWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/FromDatabase.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/FromDatabase.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.poule.dropdown.stats">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/statsGray.png" width="3" height="3"/>
-        <icon2 source="/icons/statsWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/Stats.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/Stats.png" width="3" height="3"/>
     </appearance>
 
     <!--  Table button of the sidebar  -->
     <appearance applyTo="sidebar.buttons.table">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/tableGray.png" width="3" height="3"/>
-        <icon2 source="/icons/tableWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/Table.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/Table.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.table.dropdown">
@@ -85,30 +85,30 @@
     <appearance applyTo="sidebar.buttons.table.dropdown.empty">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/emptyGray.png" width="3" height="3"/>
-        <icon2 source="/icons/emptyWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/Empty.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/Empty.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.table.dropdown.database">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/fromDatabaseGray.png" width="3" height="3"/>
-        <icon2 source="/icons/fromDatabaseWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/FromDatabase.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/FromDatabase.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.table.dropdown.stats">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/statsGray.png" width="3" height="3"/>
-        <icon2 source="/icons/statsWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/Stats.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/Stats.png" width="3" height="3"/>
     </appearance>
 
     <!--  Competition button of the sidebar  -->
     <appearance applyTo="sidebar.buttons.competition">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/competitionGray.png" width="3" height="3"/>
-        <icon2 source="/icons/competitionWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/Competition.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/Competition.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.competition.dropdown">
@@ -119,30 +119,30 @@
     <appearance applyTo="sidebar.buttons.competition.dropdown.empty">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/emptyGray.png" width="3" height="3"/>
-        <icon2 source="/icons/emptyWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/Empty.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/Empty.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.competition.dropdown.database">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/fromDatabaseGray.png" width="3" height="3"/>
-        <icon2 source="/icons/fromDatabaseWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/FromDatabase.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/FromDatabase.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.competition.dropdown.stats">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/statsGray.png" width="3" height="3"/>
-        <icon2 source="/icons/statsWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/Stats.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/Stats.png" width="3" height="3"/>
     </appearance>
 
     <!--  Settings button of the sidebar  -->
     <appearance applyTo="sidebar.buttons.settings">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/settingsGray.png" width="3" height="3"/>
-        <icon2 source="/icons/settingsWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/Settings.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/Settings.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.settings.dropdown">
@@ -153,23 +153,23 @@
     <appearance applyTo="sidebar.buttons.settings.dropdown.appearance">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/appearanceGray.png" width="3" height="3"/>
-        <icon2 source="/icons/appearanceWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/Appearance.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/Appearance.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.settings.dropdown.language">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/languageGray.png" width="3" height="3"/>
-        <icon2 source="/icons/languageWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/Language.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/Language.png" width="3" height="3"/>
     </appearance>
 
     <!--  Database button of the sidebar  -->
     <appearance applyTo="sidebar.buttons.database">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/databaseGray.png" width="3" height="3"/>
-        <icon2 source="/icons/databaseWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/Database.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/Database.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.database.dropdown">
@@ -180,23 +180,23 @@
     <appearance applyTo="sidebar.buttons.database.dropdown.connect">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/connectGray.png" width="3" height="3"/>
-        <icon2 source="/icons/connectWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/Connect.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/Connect.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.database.dropdown.manage">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/manageGray.png" width="3" height="3"/>
-        <icon2 source="/icons/manageWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/Manage.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/Manage.png" width="3" height="3"/>
     </appearance>
 
     <!--  Rule set button of the sidebar  -->
     <appearance applyTo="sidebar.buttons.ruleSet">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/ruleSetGray.png" width="3" height="3"/>
-        <icon2 source="/icons/ruleSetWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/RuleSet.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/RuleSet.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.ruleSet.dropdown">
@@ -207,28 +207,28 @@
     <appearance applyTo="sidebar.buttons.ruleSet.dropdown.view">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/viewGray.png" width="3" height="3"/>
-        <icon2 source="/icons/viewWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/View.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/View.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.ruleSet.dropdown.add">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/newGray.png" width="3" height="3"/>
-        <icon2 source="/icons/newWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/New.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/New.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.ruleSet.dropdown.delete">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/deleteGray.png" width="3" height="3"/>
-        <icon2 source="/icons/deleteWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/Delete.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/Delete.png" width="3" height="3"/>
     </appearance>
 
     <appearance applyTo="sidebar.buttons.ruleSet.dropdown.modify">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/modifyGray.png" width="3" height="3"/>
-        <icon2 source="/icons/modifyWhite.png" width="3" height="3"/>
+        <icon1 source="/icons/Modify.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon2 source="/icons/Modify.png" width="3" height="3"/>
     </appearance>
 </DarkTheme>

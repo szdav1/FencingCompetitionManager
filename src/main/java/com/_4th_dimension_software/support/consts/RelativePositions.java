@@ -5,6 +5,8 @@ package com._4th_dimension_software.support.consts;
  * constants that tell a <code>MenuButton</code> object
  * the relative position of their dropdown panel. The positions
  * are relative to the <code>MenuButton</code> itself.
+ *
+ * @author szd
  */
 public enum RelativePositions {
 	/**

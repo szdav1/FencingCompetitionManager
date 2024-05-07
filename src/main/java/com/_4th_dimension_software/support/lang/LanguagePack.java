@@ -7,6 +7,8 @@ import java.util.HashMap;
  * stores language info for the application.
  * It can be initialized only once during the runtime
  * of the application.
+ *
+ * @author szd
  */
 public final class LanguagePack {
 	private static boolean initialized = false;

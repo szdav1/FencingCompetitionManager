@@ -87,7 +87,8 @@ public final class ColorThemeReader {
 				IconModel im = new IconModel(
 					element.getAttribute("source"),
 					element.getAttribute("width"),
-					element.getAttribute("height")
+					element.getAttribute("height"),
+					element.getAttribute("color")
 				);
 				ctm.setIconModel1(im);
 			}
@@ -96,7 +97,8 @@ public final class ColorThemeReader {
 				IconModel im = new IconModel(
 					element.getAttribute("source"),
 					element.getAttribute("width"),
-					element.getAttribute("height")
+					element.getAttribute("height"),
+					element.getAttribute("color")
 				);
 				ctm.setIconModel2(im);
 			}

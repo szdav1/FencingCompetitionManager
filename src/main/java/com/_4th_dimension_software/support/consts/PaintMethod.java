@@ -7,6 +7,8 @@ package com._4th_dimension_software.support.consts;
  * <p>The two methods are:</p>
  * <p><code>GRADIENT</code></p>
  * <p><code>SINGLE_COLOR</code></p>
+ *
+ * @author szd
  */
 public enum PaintMethod {
 	/**

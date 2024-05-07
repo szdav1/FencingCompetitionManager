@@ -20,6 +20,8 @@ import java.awt.event.*;
  * This is because if something is required to be done only when the
  * component is focused, the <code>KeyListener</code> interface is the
  * perfect solution.
+ *
+ * @author szd
  */
 public class XController implements ActionListener, MouseListener, MouseMotionListener, KeyListener {
 	// ActionListener

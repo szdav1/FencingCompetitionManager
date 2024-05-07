@@ -22,6 +22,8 @@ import java.util.List;
  * happening in the sidebar are handled in this class,
  * buttons displayed in the sidebar are controlled by this class
  * etc.
+ *
+ * @author szd
  */
 public final class Sidebar extends XPanel {
 	// List of the buttons

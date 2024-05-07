@@ -17,6 +17,8 @@ import com._4th_dimension_software.app.view.components.built.ui.sidebar.menu.Men
  * actions happening inside the dropdown panels etc. Basically, every action
  * that happens inside the sidebar and must be handled will end up being processed
  * by this class.
+ *
+ * @author szd
  */
 public final class SidebarController extends XController {
 	private final Sidebar sidebar;

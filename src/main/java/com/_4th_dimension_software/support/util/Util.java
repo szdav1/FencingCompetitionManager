@@ -2,8 +2,11 @@ package com._4th_dimension_software.support.util;
 
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 import com._4th_dimension_software.support.appdata.SizeData;
@@ -151,6 +154,24 @@ public final class Util {
 	}
 
 	/**
+	 * Loads an <code>ImageIcon</code> and scales and recolors it based on the
+	 * specified percentages and color. The newly constructed icon
+	 * will be returned after scaling it.
+	 *
+	 * @param source           The path of the icon
+	 * @param widthPercentage  The amount of percentage the icon should be resized on the X axis
+	 * @param heightPercentage The amount of percentage the icon should be resized on the Y axis
+	 * @param color            The desired color the image should be painted to
+	 * @return A scaled <code>ImageIcon</code> that was created from the specified source
+	 */
+	public static ImageIcon loadImageIcon(final String source, int widthPercentage, int heightPercentage, Color color) {
+		return new ImageIcon(recolorImageIcon(source, color).getImage()
+			.getScaledInstance(SizeData.PROPORTIONALITY_FACTOR*(widthPercentage*10),
+				SizeData.PROPORTIONALITY_FACTOR*(heightPercentage*10),
+				Image.SCALE_SMOOTH));
+	}
+
+	/**
 	 * Loads and <code>ImageIcon</code> from the specified
 	 * source, with maintaining the default size
 	 * of the icon.
@@ -160,6 +181,19 @@ public final class Util {
 	 */
 	public static ImageIcon loadImageIcon(final String source) {
 		return new ImageIcon(ResourceHandler.get(source));
+	}
+
+	/**
+	 * Loads and <code>ImageIcon</code> from the specified
+	 * source, with maintaining the default size
+	 * of the icon and recoloring it to the specified color.
+	 *
+	 * @param source The path of the icon
+	 * @param color  The desired color the image should be painted to
+	 * @return A scaled <code>ImageIcon</code> that was created from the specified source
+	 */
+	public static ImageIcon loadImageIcon(final String source, Color color) {
+		return recolorImageIcon(source, color);
 	}
 
 	/**
@@ -244,5 +278,41 @@ public final class Util {
 			return defaultValue;
 
 		return Boolean.parseBoolean(str);
+	}
+
+	/**
+	 * Reproduces the image located at the specified location.
+	 * The reproduced <code>ImageIcon</code> will be the same size and
+	 * every non-transparent pixel will be set to the desired color.
+	 *
+	 * @param imagePath    The path of the image that should be recolored
+	 * @param desiredColor The desired color the image should be painted to
+	 * @return The recolored <code>ImageIcon</code>
+	 */
+	public static ImageIcon recolorImageIcon(final String imagePath, final Color desiredColor) {
+		ImageIcon icon = new ImageIcon();
+
+		try {
+			BufferedImage origin = ImageIO.read(new File(ResourceHandler.get(imagePath)));
+			BufferedImage variant = new BufferedImage(origin.getWidth(), origin.getHeight(), BufferedImage.TYPE_INT_ARGB);
+
+			for (int y = 0; y < origin.getHeight(); y++) {
+				for (int x = 0; x < origin.getWidth(); x++) {
+					Color c = new Color(origin.getRGB(x, y), true);
+
+					if (c.getAlpha() > 0) {
+						Color targetColor = new Color(desiredColor.getRed(), desiredColor.getGreen(), desiredColor.getBlue(), desiredColor.getAlpha());
+						variant.setRGB(x, y, targetColor.getRGB());
+					}
+				}
+			}
+
+			icon = new ImageIcon(variant);
+		}
+		catch (Exception exc) {
+			exc.printStackTrace();
+		}
+
+		return icon;
 	}
 }

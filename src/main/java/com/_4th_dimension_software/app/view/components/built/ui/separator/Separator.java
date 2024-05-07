@@ -8,6 +8,8 @@ import java.awt.Dimension;
  * The <code>Separator</code> class is a subclass
  * of the <code>XLabel</code> class. It only fulfills
  * visual tasks thus has no functionality at all.
+ *
+ * @author szd
  */
 public final class Separator extends XLabel {
     /**

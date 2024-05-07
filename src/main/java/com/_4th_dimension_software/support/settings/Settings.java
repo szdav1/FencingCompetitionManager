@@ -7,6 +7,8 @@ import java.util.HashMap;
  * information about the application's preferred settings
  * like color theme or language. These settings are string
  * representation of the path of the XMLs.
+ *
+ * @author szd
  */
 public final class Settings {
     private static boolean initialized = false;

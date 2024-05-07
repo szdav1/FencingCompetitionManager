@@ -10,6 +10,8 @@ import java.util.HashMap;
 /**
  * The <code>SettingsReader</code> class reads the specified
  * XML file's content and structures it into a <code>HashMap</code>.
+ *
+ * @author szd
  */
 public final class SettingsReader {
     /**

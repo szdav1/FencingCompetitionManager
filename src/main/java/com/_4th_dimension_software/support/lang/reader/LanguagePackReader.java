@@ -12,6 +12,8 @@ import org.w3c.dom.*;
  * The <code>LanguagePackReader</code> class reads
  * and structures a specified XML file that contains
  * language data in the appropriate format.
+ *
+ * @author szd
  */
 public class LanguagePackReader {
 	// Not instantiatable

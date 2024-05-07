@@ -15,6 +15,8 @@ import com._4th_dimension_software.support.theme.Appearance;
  * Based on the number of colors defined for the border, the BorderPainter
  * will automatically configure itself to use gradient or single color
  * painting method.
+ *
+ * @author szd
  */
 public final class BorderPainter {
 	private final int x;

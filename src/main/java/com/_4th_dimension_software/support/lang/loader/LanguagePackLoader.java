@@ -7,6 +7,8 @@ import com._4th_dimension_software.support.lang.reader.LanguagePackReader;
  * The <code>LanguagePackLoader</code> class
  * loads the already read data into the <code>LanguagePack</code>
  * of the current runtime.
+ *
+ * @author szd
  */
 public final class LanguagePackLoader {
 	// Not instantiatable

@@ -18,6 +18,8 @@ import java.util.List;
  * is pressed and activated, the dropdown panel appears.
  * This class holds the buttons that it contains in an <code>ArrayList</code>
  * for easier access.
+ *
+ * @author szd
  */
 public class DropdownPanel extends XPanel {
     private List<XButton> buttons;
