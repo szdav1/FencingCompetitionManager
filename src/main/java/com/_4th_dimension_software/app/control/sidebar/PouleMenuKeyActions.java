@@ -3,6 +3,7 @@ package com._4th_dimension_software.app.control.sidebar;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
+import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 
 import com._4th_dimension_software.app.view.components.built.ui.sidebar.Sidebar;
@@ -28,13 +29,13 @@ public final class PouleMenuKeyActions {
 		this.sidebar = sidebar;
 
 		// Assign the actions with the shortcut keys
-		this.sidebar.getInputMap().put(KeyStroke.getKeyStroke("F1"), "EmptyPouleKeyAction");
+		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"), "EmptyPouleKeyAction");
 		this.sidebar.getActionMap().put("EmptyPouleKeyAction", new EmptyPouleKeyAction());
 
-		this.sidebar.getInputMap().put(KeyStroke.getKeyStroke("F2"), "PouleFromDatabaseKeyAction");
+		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F2"), "PouleFromDatabaseKeyAction");
 		this.sidebar.getActionMap().put("PouleFromDatabaseKeyAction", new PouleFromDatabaseKeyAction());
 
-		this.sidebar.getInputMap().put(KeyStroke.getKeyStroke("F3"), "PouleStatsKeyAction");
+		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F3"), "PouleStatsKeyAction");
 		this.sidebar.getActionMap().put("PouleStatsKeyAction", new PouleStatsKeyAction());
 	}
 
@@ -42,7 +43,7 @@ public final class PouleMenuKeyActions {
 	 * The <code>EmptyPouleKeyAction</code> handles the task of the
 	 * empty poule button inside the poule menu buttons dropdown panel.
 	 */
-	public class EmptyPouleKeyAction extends AbstractAction {
+	private class EmptyPouleKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
@@ -56,7 +57,7 @@ public final class PouleMenuKeyActions {
 	 * The <code>PouleFromDatabaseKeyAction</code> handles the task of the
 	 * poule from database button inside the poule menu buttons dropdown panel.
 	 */
-	public class PouleFromDatabaseKeyAction extends AbstractAction {
+	private class PouleFromDatabaseKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
@@ -70,7 +71,7 @@ public final class PouleMenuKeyActions {
 	 * The <code>PouleStatsKeyAction</code> handles the task of the
 	 * poule stats button inside the poule menu buttons dropdown panel.
 	 */
-	public class PouleStatsKeyAction extends AbstractAction {
+	private class PouleStatsKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)

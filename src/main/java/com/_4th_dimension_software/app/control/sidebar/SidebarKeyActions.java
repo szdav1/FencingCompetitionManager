@@ -3,6 +3,7 @@ package com._4th_dimension_software.app.control.sidebar;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
+import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 
 import com._4th_dimension_software.app.view.components.built.ui.sidebar.Sidebar;
@@ -30,7 +31,7 @@ public final class SidebarKeyActions {
 		this.sidebar = sidebar;
 
 		// Assign the actions with the shortcut keys
-		this.sidebar.getInputMap().put(KeyStroke.getKeyStroke("ESCAPE"), "ExitKeyAction");
+		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("ESCAPE"), "ExitKeyAction");
 		this.sidebar.getActionMap().put("ExitKeyAction", new ExitKeyAction());
 	}
 
@@ -38,7 +39,7 @@ public final class SidebarKeyActions {
 	 * The <code>ExitKeyAction</code> handles the task of the
 	 * exit button inside the sidebar.
 	 */
-	public class ExitKeyAction extends AbstractAction {
+	private class ExitKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)

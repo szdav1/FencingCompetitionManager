@@ -14,6 +14,7 @@ public enum FrameState {
 	 * This is set when nothing is opened.
 	 */
 	NORMAL("normal"),
+	RULE_SET_EDITOR_OPENED("rule set editor opened"),
 	/**
 	 * Defines the state when a panel is
 	 * opened inside the frame.

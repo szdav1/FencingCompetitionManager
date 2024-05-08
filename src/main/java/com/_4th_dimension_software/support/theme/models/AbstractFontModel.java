@@ -23,6 +23,9 @@ public abstract class AbstractFontModel {
 		this.family = type;
 		this.size = Util.toInt(size, SizeData.FONT_SIZE, (i) -> i > 0);
 
+		if (this.size != SizeData.FONT_SIZE)
+			this.size *= SizeData.PROPORTIONALITY_FACTOR;
+
 		this.ligature = switch (ligature.toLowerCase()) {
 			case "bold" -> Font.BOLD;
 			case "italic" -> Font.ITALIC;
@@ -55,7 +58,7 @@ public abstract class AbstractFontModel {
 	}
 
 	public int getSize() {
-		return this.size;
+		return this.size != 0 ? this.size : SizeData.FONT_SIZE;
 	}
 
 	public void setSize(int size) {

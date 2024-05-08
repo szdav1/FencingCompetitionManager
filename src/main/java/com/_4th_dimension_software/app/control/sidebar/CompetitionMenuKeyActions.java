@@ -3,6 +3,7 @@ package com._4th_dimension_software.app.control.sidebar;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
+import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 
 import com._4th_dimension_software.app.view.components.built.ui.sidebar.Sidebar;
@@ -28,13 +29,13 @@ public final class CompetitionMenuKeyActions {
 		this.sidebar = sidebar;
 
 		// Assign the actions with the shortcut keys
-		this.sidebar.getInputMap().put(KeyStroke.getKeyStroke("F7"), "EmptyCompetitionKeyAction");
+		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F7"), "EmptyCompetitionKeyAction");
 		this.sidebar.getActionMap().put("EmptyCompetitionKeyAction", new EmptyCompetitionKeyAction());
 
-		this.sidebar.getInputMap().put(KeyStroke.getKeyStroke("F8"), "CompetitionFromDatabaseKeyAction");
+		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F8"), "CompetitionFromDatabaseKeyAction");
 		this.sidebar.getActionMap().put("CompetitionFromDatabaseKeyAction", new CompetitionFromDatabaseKeyAction());
 
-		this.sidebar.getInputMap().put(KeyStroke.getKeyStroke("F9"), "CompetitionStatsKeyAction");
+		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F9"), "CompetitionStatsKeyAction");
 		this.sidebar.getActionMap().put("CompetitionStatsKeyAction", new CompetitionStatsKeyAction());
 	}
 
@@ -42,7 +43,7 @@ public final class CompetitionMenuKeyActions {
 	 * The <code>EmptyCompetitionKeyAction</code> handles the task of the
 	 * empty competition button inside the competition menu buttons dropdown panel.
 	 */
-	public class EmptyCompetitionKeyAction extends AbstractAction {
+	private class EmptyCompetitionKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
@@ -56,7 +57,7 @@ public final class CompetitionMenuKeyActions {
 	 * The <code>CompetitionFromDatabaseKeyAction</code> handles the task of the
 	 * competition from database button inside the competition menu buttons dropdown panel.
 	 */
-	public class CompetitionFromDatabaseKeyAction extends AbstractAction {
+	private class CompetitionFromDatabaseKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
@@ -70,7 +71,7 @@ public final class CompetitionMenuKeyActions {
 	 * The <code>CompetitionStatsKeyAction</code> handles the task of the
 	 * competition stats button inside the competition menu buttons dropdown panel.
 	 */
-	public class CompetitionStatsKeyAction extends AbstractAction {
+	private class CompetitionStatsKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)

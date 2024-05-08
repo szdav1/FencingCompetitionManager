@@ -116,10 +116,10 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
 
 		// Background
 		this.paintBackground(X, Y, W, H, R, g2D);
-		// Paint the border
-		this.paintBorder(X, Y, W, H, R, g2D);
 		// Paint the component
 		super.paint(g);
+		// Paint the border
+		this.paintBorder(X, Y, W, H, R, g2D);
 
 		// Destroy the Graphics2D object as it is no longer needed
 		g2D.dispose();

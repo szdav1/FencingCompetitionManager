@@ -82,7 +82,7 @@ public abstract class AbstractAppearance {
 			}
 			// Backup font
 			else
-				this.font = new Font("Arial", Font.PLAIN, SizeData.FONT_SIZE);
+				this.font = new Font("Arial", Font.PLAIN, fontModel.getSize());
 		}
 		catch (Exception exc) {
 			this.font = new Font("Arial", Font.PLAIN, SizeData.FONT_SIZE);

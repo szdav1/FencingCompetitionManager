@@ -117,7 +117,7 @@ public final class Sidebar extends XPanel {
 		this.menuButtons.add(this.settingsButton);
 		this.menuButtons.add(this.databaseButton);
 
-		// The listener that takes care of the mouse actions happened in the sidebar
+		// The controller that takes care of the actions happened in the sidebar
 		final SidebarController sc = new SidebarController(this);
 
 		// Implement the controller

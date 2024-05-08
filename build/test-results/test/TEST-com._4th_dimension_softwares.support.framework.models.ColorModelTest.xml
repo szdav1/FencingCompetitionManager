@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com._4th_dimension_softwares.support.framework.models.ColorModelTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2024-05-07T20:08:02" hostname="DESKTOP-FN3U10C" time="0.016">
+<testsuite name="com._4th_dimension_softwares.support.framework.models.ColorModelTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2024-05-08T12:56:17" hostname="DESKTOP-FN3U10C" time="0.018">
   <properties/>
   <testcase name="[1] [400, 400; 400][356; 765; 4322; 77][red, green, blue, 0.5]" classname="com._4th_dimension_softwares.support.framework.models.ColorModelTest" time="0.002"/>
   <testcase name="[2] [[]][[][[[]]][]]]" classname="com._4th_dimension_softwares.support.framework.models.ColorModelTest" time="0.001"/>
-  <testcase name="[1] [255, 0, 255, 255][0, 255, 0, 255][0, 0, 255, 255]" classname="com._4th_dimension_softwares.support.framework.models.ColorModelTest" time="0.003"/>
-  <testcase name="[2] [125,7, 0, 2][0, 43,    65,23][&#9;44, 65&#9;, 355, 33]" classname="com._4th_dimension_softwares.support.framework.models.ColorModelTest" time="0.0"/>
+  <testcase name="[1] [255, 0, 255, 255][0, 255, 0, 255][0, 0, 255, 255]" classname="com._4th_dimension_softwares.support.framework.models.ColorModelTest" time="0.002"/>
+  <testcase name="[2] [125,7, 0, 2][0, 43,    65,23][&#9;44, 65&#9;, 355, 33]" classname="com._4th_dimension_softwares.support.framework.models.ColorModelTest" time="0.001"/>
   <testcase name="[1] [0,255,0,0][255,0,0,255][]" classname="com._4th_dimension_softwares.support.framework.models.ColorModelTest" time="0.001"/>
-  <testcase name="[2] [I, Hope, -255, 6][This, Will, Work, Properly][]" classname="com._4th_dimension_softwares.support.framework.models.ColorModelTest" time="0.001"/>
+  <testcase name="[2] [I, Hope, -255, 6][This, Will, Work, Properly][]" classname="com._4th_dimension_softwares.support.framework.models.ColorModelTest" time="0.002"/>
   <testcase name="The colors should be red green and blue" classname="com._4th_dimension_softwares.support.framework.models.ColorModelTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

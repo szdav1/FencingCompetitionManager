@@ -3,6 +3,7 @@ package com._4th_dimension_software.app.control.sidebar;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
+import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 
 import com._4th_dimension_software.app.view.components.built.ui.sidebar.Sidebar;
@@ -28,13 +29,13 @@ public final class TableMenuKeyActions {
 		this.sidebar = sidebar;
 
 		// Assign the actions with the shortcut keys
-		this.sidebar.getInputMap().put(KeyStroke.getKeyStroke("F4"), "EmptyTableKeyAction");
+		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F4"), "EmptyTableKeyAction");
 		this.sidebar.getActionMap().put("EmptyTableKeyAction", new EmptyTableKeyAction());
 
-		this.sidebar.getInputMap().put(KeyStroke.getKeyStroke("F5"), "TableFromDatabaseKeyAction");
+		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F5"), "TableFromDatabaseKeyAction");
 		this.sidebar.getActionMap().put("TableFromDatabaseKeyAction", new TableFromDatabaseKeyAction());
 
-		this.sidebar.getInputMap().put(KeyStroke.getKeyStroke("F6"), "TableStatsKeyAction");
+		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F6"), "TableStatsKeyAction");
 		this.sidebar.getActionMap().put("TableStatsKeyAction", new TableStatsKeyAction());
 	}
 
@@ -42,7 +43,7 @@ public final class TableMenuKeyActions {
 	 * The <code>EmptyTableKeyAction</code> handles the task of the
 	 * empty table button inside the table menu buttons dropdown panel.
 	 */
-	public class EmptyTableKeyAction extends AbstractAction {
+	private class EmptyTableKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
@@ -56,7 +57,7 @@ public final class TableMenuKeyActions {
 	 * The <code>TableFromDatabaseKeyAction</code> handles the task of the
 	 * table from database button inside the table menu buttons dropdown panel.
 	 */
-	public class TableFromDatabaseKeyAction extends AbstractAction {
+	private class TableFromDatabaseKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
@@ -70,7 +71,7 @@ public final class TableMenuKeyActions {
 	 * The <code>TableStatsKeyAction</code> handles the task of the
 	 * table stats button inside the table menu buttons dropdown panel.
 	 */
-	public class TableStatsKeyAction extends AbstractAction {
+	private class TableStatsKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)

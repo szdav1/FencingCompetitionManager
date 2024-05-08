@@ -3,6 +3,7 @@ package com._4th_dimension_software.app.control.sidebar;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
+import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 
 import com._4th_dimension_software.app.view.components.built.ui.sidebar.Sidebar;
@@ -28,10 +29,10 @@ public final class DatabaseMenuKeyActions {
 		this.sidebar = sidebar;
 
 		// Assign the actions with the shortcut keys
-		this.sidebar.getInputMap().put(KeyStroke.getKeyStroke("C"), "ConnectKeyAction");
+		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("C"), "ConnectKeyAction");
 		this.sidebar.getActionMap().put("ConnectKeyAction", new ConnectKeyAction());
 
-		this.sidebar.getInputMap().put(KeyStroke.getKeyStroke("A"), "ArrangeKeyAction");
+		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("A"), "ArrangeKeyAction");
 		this.sidebar.getActionMap().put("ArrangeKeyAction", new ArrangeKeyAction());
 	}
 
@@ -39,7 +40,7 @@ public final class DatabaseMenuKeyActions {
 	 * The <code>ConnectKeyAction</code> handles the task of the
 	 * connect button inside the database menu buttons dropdown panel.
 	 */
-	public class ConnectKeyAction extends AbstractAction {
+	private class ConnectKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
@@ -51,9 +52,9 @@ public final class DatabaseMenuKeyActions {
 
 	/**
 	 * The <code>ArrangeKeyAction</code> handles the task of the
-	 * arrange button inside the database menu buttons dropdown panel.
+	 * "arrange" button inside the database menu buttons dropdown panel.
 	 */
-	public class ArrangeKeyAction extends AbstractAction {
+	private class ArrangeKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)

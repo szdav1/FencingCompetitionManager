@@ -3,6 +3,7 @@ package com._4th_dimension_software.app.control.sidebar;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
+import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 
 import com._4th_dimension_software.app.view.components.built.ui.sidebar.Sidebar;
@@ -28,10 +29,10 @@ public final class SettingsMenuKeyActions {
 		this.sidebar = sidebar;
 
 		// Assign the actions with the shortcut keys
-		this.sidebar.getInputMap().put(KeyStroke.getKeyStroke("I"), "InterfaceKeyAction");
+		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("I"), "InterfaceKeyAction");
 		this.sidebar.getActionMap().put("InterfaceKeyAction", new InterfaceKeyAction());
 
-		this.sidebar.getInputMap().put(KeyStroke.getKeyStroke("L"), "LanguageKeyAction");
+		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("L"), "LanguageKeyAction");
 		this.sidebar.getActionMap().put("LanguageKeyAction", new LanguageKeyAction());
 	}
 
@@ -39,7 +40,7 @@ public final class SettingsMenuKeyActions {
 	 * The <code>InterfaceKeyAction</code> handles the task of the
 	 * interface button inside the settings menu buttons dropdown panel.
 	 */
-	public class InterfaceKeyAction extends AbstractAction {
+	private class InterfaceKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
@@ -53,7 +54,7 @@ public final class SettingsMenuKeyActions {
 	 * The <code>LanguageKeyAction</code> handles the task of the
 	 * language button inside the settings menu buttons dropdown panel.
 	 */
-	public class LanguageKeyAction extends AbstractAction {
+	private class LanguageKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)

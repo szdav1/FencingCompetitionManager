@@ -9,7 +9,10 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 
 import com._4th_dimension_software.app.view.components.base.panel.XPanel;
+import com._4th_dimension_software.app.view.components.built.ui.editor.AbstractEditor;
+import com._4th_dimension_software.app.view.components.built.ui.editor.RuleSetEditor;
 import com._4th_dimension_software.app.view.components.built.ui.sidebar.Sidebar;
+import com._4th_dimension_software.support.consts.FrameState;
 import com._4th_dimension_software.support.consts.PositionConstants;
 
 /**
@@ -33,6 +36,11 @@ public class XFrame extends AbstractXFrame {
 	// Sidebar
 	private final Sidebar sidebar;
 
+	// Currently opened editor
+	private AbstractEditor openedEditor;
+	// Editors
+	private final RuleSetEditor ruleSetEditor;
+
 	/**
 	 * Constructs an <code>XFrame</code> object. This object is
 	 * the conductor of the actions in the application.
@@ -55,9 +63,11 @@ public class XFrame extends AbstractXFrame {
 		// Sidebar
 		this.sidebar = new Sidebar(this, "sidebar");
 
+		// Editors
+		this.ruleSetEditor = new RuleSetEditor(this, "ruleSetEditor");
+
 		// Background image
 		this.setBackgroundImage();
-
 		// Add frame part components
 		// Sidebar
 		this.addComponent(this.sidebar, PositionConstants.LEFT_POSITION);
@@ -69,6 +79,31 @@ public class XFrame extends AbstractXFrame {
 
 		// Perform fine adjustments on locations and dimensions that require the frame to be visible
 		this.sidebar.performAdjustments();
+	}
+
+	/**
+	 * Adds the rule set editor to the main frame.
+	 * This method only runs if the state of the frame
+	 * is <code>NORMAL</code>.
+	 */
+	public void openRuleSetEditor() {
+		if (this.frameState == FrameState.NORMAL) {
+			this.addToCenterPanel(this.ruleSetEditor);
+			this.openedEditor = this.ruleSetEditor;
+			this.frameState = FrameState.RULE_SET_EDITOR_OPENED;
+		}
+	}
+
+	/**
+	 * Removes the currently opened editor from the main frame.
+	 * This method only runs if the state of the frame is not
+	 * <code>NORMAL</code>.
+	 */
+	public void closeCurrentlyOpenedEditor() {
+		if (this.frameState != FrameState.NORMAL) {
+			this.removeFromCenterPanel(this.openedEditor);
+			this.frameState = FrameState.NORMAL;
+		}
 	}
 
 	/**

@@ -3,6 +3,7 @@ package com._4th_dimension_software.app.control.sidebar;
 import java.awt.event.ActionEvent;
 import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
+import java.util.List;
 import java.util.Optional;
 
 import com._4th_dimension_software.app.control.XController;
@@ -11,9 +12,10 @@ import com._4th_dimension_software.app.view.components.built.ui.sidebar.Sidebar;
 import com._4th_dimension_software.app.view.components.built.ui.sidebar.menu.MenuButton;
 
 /**
- * The <code>SidebarMouseListener</code> is the class that handles mouse
- * actions that happened inside the sidebar using a <code>MouseListener</code>.
- * This "listener" class takes care of handling the menu buttons' dropdown panels,
+ * The <code>SidebarController</code> is the class that handles actions that happened inside the
+ * sidebar using a <code>MouseListener</code>, <code>MouseMotionListener</code>. <code>ActionListener</code>
+ * and <code>KeyListener</code> interfaces.
+ * This controller class takes care of handling the menu buttons' dropdown panels,
  * actions happening inside the dropdown panels etc. Basically, every action
  * that happens inside the sidebar and must be handled will end up being processed
  * by this class.
@@ -177,6 +179,35 @@ public final class SidebarController extends XController {
 			this.sidebar.getFrame().exit();
 	}
 
+	/**
+	 * Handles action that were caused by the rule set menu
+	 * button's buttons.
+	 *
+	 * @param ae The event that occurred
+	 */
+	private void handleRuleSetButtons(final ActionEvent ae) {
+		int srcBtnInd = -1;
+
+		List<XButton> ruleSetMenuButtons = this.sidebar.getButtons()
+			.get(3)
+			.getDropdownPanel()
+			.getButtons();
+
+		for (XButton ruleSetMenuButton : ruleSetMenuButtons) {
+			if (ruleSetMenuButton.equals(ae.getSource()))
+				srcBtnInd = ruleSetMenuButtons.indexOf(ruleSetMenuButton);
+		}
+
+		switch (srcBtnInd) {
+			case 0 -> System.out.println("view rule set");
+			case 1 -> this.sidebar.getFrame().openRuleSetEditor();
+			case 2 -> System.out.println("delete rule set");
+			case 3 -> System.out.println("modify rule set");
+			default -> {
+			}
+		}
+	}
+
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		this.handleDropdownPanels(e);
@@ -195,5 +226,6 @@ public final class SidebarController extends XController {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		this.handleExit(e);
+		this.handleRuleSetButtons(e);
 	}
 }

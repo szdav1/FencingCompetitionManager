@@ -231,4 +231,24 @@
         <icon1 source="/icons/Modify.png" width="3" height="3" color="[128,128,128,255]"/>
         <icon2 source="/icons/Modify.png" width="3" height="3"/>
     </appearance>
+
+    <!--  Editors  -->
+    <appearance applyTo="ruleSetEditor">
+        <background colors="[27,27,27,255]"/>
+        <border colors="[72,58,255,255][178,0,255,255]" thickness="@proportional"/>
+    </appearance>
+
+    <appearance applyTo="ruleSetEditor.buttons.close">
+        <background colors="[0,0,0,0]"/>
+        <foreground colors="[128,128,128,255][255,0,0,255]"/>
+        <font size="20"/>
+    </appearance>
+
+    <appearance applyTo="ruleSetEditor.header">
+        <background colors="[27,27,27,255]"/>
+    </appearance>
+
+    <appearance applyTo="ruleSetEditor.center">
+        <background colors="[27,27,27,255]"/>
+    </appearance>
 </DarkTheme>
