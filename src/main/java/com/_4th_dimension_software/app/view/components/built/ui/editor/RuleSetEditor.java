@@ -7,6 +7,8 @@ import com._4th_dimension_software.app.view.frame.XFrame;
  * of the <code>AbstractEditor</code>. It contains UI
  * elements and handles actions related to rule set
  * creation.
+ *
+ * @author szd
  */
 public class RuleSetEditor extends AbstractEditor {
 	/**
