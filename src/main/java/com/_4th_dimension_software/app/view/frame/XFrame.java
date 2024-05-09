@@ -9,9 +9,7 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 
 import com._4th_dimension_software.app.view.components.base.panel.XPanel;
-import com._4th_dimension_software.app.view.components.built.ui.editor.AbstractEditor;
-import com._4th_dimension_software.app.view.components.built.ui.editor.PouleEditor;
-import com._4th_dimension_software.app.view.components.built.ui.editor.RuleSetEditor;
+import com._4th_dimension_software.app.view.components.built.ui.editor.*;
 import com._4th_dimension_software.app.view.components.built.ui.sidebar.Sidebar;
 import com._4th_dimension_software.support.consts.FrameState;
 import com._4th_dimension_software.support.consts.PositionConstants;
@@ -41,6 +39,8 @@ public class XFrame extends AbstractXFrame {
 	private AbstractEditor openedEditor;
 	// Editors
 	private final PouleEditor pouleEditor;
+	private final TableEditor tableEditor;
+	private final CompetitionEditor competitionEditor;
 	private final RuleSetEditor ruleSetEditor;
 
 	/**
@@ -67,7 +67,9 @@ public class XFrame extends AbstractXFrame {
 
 		// Editors
 		this.pouleEditor = new PouleEditor(this, "pouleEditor");
+		this.tableEditor = new TableEditor(this, "tableEditor");
 		this.ruleSetEditor = new RuleSetEditor(this, "ruleSetEditor");
+		this.competitionEditor = new CompetitionEditor(this, "competitionEditor");
 
 		// Background image
 		this.setBackgroundImage();
@@ -84,11 +86,42 @@ public class XFrame extends AbstractXFrame {
 		this.sidebar.performAdjustments();
 	}
 
+	/**
+	 * Adds the poule editor to the main frame.
+	 * This method only runs if the state of the frame
+	 * is <code>NORMAL</code>.
+	 */
 	public void openPouleEditor() {
 		if (this.frameState == FrameState.NORMAL) {
 			this.addToCenterPanel(this.pouleEditor);
 			this.openedEditor = this.pouleEditor;
 			this.frameState = FrameState.POULE_EDITOR_OPENED;
+		}
+	}
+
+	/**
+	 * Adds the table editor to the main frame.
+	 * This method only runs if the state of the frame
+	 * is <code>NORMAL</code>.
+	 */
+	public void openTableEditor() {
+		if (this.frameState == FrameState.NORMAL) {
+			this.addToCenterPanel(this.tableEditor);
+			this.openedEditor = this.tableEditor;
+			this.frameState = FrameState.TABLE_EDITOR_OPENED;
+		}
+	}
+
+	/**
+	 * Adds the rule set editor to the main frame.
+	 * This method only runs if the state of the frame
+	 * is <code>NORMAL</code>.
+	 */
+	public void openCompetitionEditor() {
+		if (this.frameState == FrameState.NORMAL) {
+			this.addToCenterPanel(this.competitionEditor);
+			this.openedEditor = this.competitionEditor;
+			this.frameState = FrameState.COMPETITION_EDITOR_OPENED;
 		}
 	}
 

@@ -46,10 +46,7 @@ public final class TableMenuKeyActions {
 	private class EmptyTableKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
-				return;
-
-			System.out.println("Empty Table");
+			sidebar.getFrame().openTableEditor();
 		}
 	}
 

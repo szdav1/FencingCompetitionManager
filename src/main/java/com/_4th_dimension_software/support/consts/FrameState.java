@@ -25,6 +25,16 @@ public enum FrameState {
      */
     POULE_EDITOR_OPENED("poule editor opened"),
     /**
+     * Defines the state of the main frame
+     * when the table editor is opened.
+     */
+    TABLE_EDITOR_OPENED("table editor opened"),
+    /**
+     * Defines the state of the main frame
+     * when the competition editor is opened.
+     */
+    COMPETITION_EDITOR_OPENED("competition editor opened"),
+    /**
      * Defines the state when a panel is
      * opened inside the frame.
      */

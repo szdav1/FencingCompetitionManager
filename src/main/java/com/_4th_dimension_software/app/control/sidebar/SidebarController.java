@@ -204,6 +204,56 @@ public final class SidebarController extends XController {
         }
     }
 
+    private void handleTableButtons(final ActionEvent ae) {
+        int srcBtnInd = -1;
+
+        List<XButton> tableMenuButtons = this.sidebar.getButtons()
+            .get(1)
+            .getDropdownPanel()
+            .getButtons();
+
+        for (XButton tableMenuButton : tableMenuButtons) {
+            if (tableMenuButton.equals(ae.getSource()))
+                srcBtnInd = tableMenuButtons.indexOf(tableMenuButton);
+        }
+
+        if (srcBtnInd < 0)
+            return;
+
+        switch (srcBtnInd) {
+            case 0 -> this.sidebar.getFrame().openTableEditor();
+            case 1 -> System.out.println("table from database");
+            case 2 -> System.out.println("view table stats");
+            default -> {
+            }
+        }
+    }
+
+    private void handleCompetitionButtons(final ActionEvent ae) {
+        int srcBtnInd = -1;
+
+        List<XButton> competitionMenuButtons = this.sidebar.getButtons()
+            .get(2)
+            .getDropdownPanel()
+            .getButtons();
+
+        for (XButton competitionMenuButton : competitionMenuButtons) {
+            if (competitionMenuButton.equals(ae.getSource()))
+                srcBtnInd = competitionMenuButtons.indexOf(competitionMenuButton);
+        }
+
+        if (srcBtnInd < 0)
+            return;
+
+        switch (srcBtnInd) {
+            case 0 -> this.sidebar.getFrame().openCompetitionEditor();
+            case 1 -> System.out.println("competition from database");
+            case 2 -> System.out.println("view competition stats");
+            default -> {
+            }
+        }
+    }
+
     /**
      * Handles action that were caused by the rule set menu
      * button's buttons.
@@ -252,6 +302,8 @@ public final class SidebarController extends XController {
     public void actionPerformed(ActionEvent e) {
         this.handleExit(e);
         this.handlePouleButtons(e);
+        this.handleTableButtons(e);
+        this.handleCompetitionButtons(e);
         this.handleRuleSetButtons(e);
     }
 }

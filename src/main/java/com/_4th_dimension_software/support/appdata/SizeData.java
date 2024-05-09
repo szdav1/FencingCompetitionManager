@@ -62,7 +62,7 @@ public final class SizeData {
     public static final Dimension SEPARATOR_DIMENSION = new Dimension(SEPARATOR_WIDTH, BORDER_SIZE);
 
     // Text margin in buttons
-    public static final int BUTTON_TEXT_MARGIN = PROPORTIONALITY_FACTOR*10;
+    public static final int TEXT_MARGIN = PROPORTIONALITY_FACTOR*10;
 
     // Shortcut key label size and dimension
     public static final int SHORTCUT_KEY_LABEL_WIDTH = PROPORTIONALITY_FACTOR*52;

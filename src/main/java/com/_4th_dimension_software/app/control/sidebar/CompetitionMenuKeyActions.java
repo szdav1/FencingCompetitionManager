@@ -46,10 +46,7 @@ public final class CompetitionMenuKeyActions {
 	private class EmptyCompetitionKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
-				return;
-
-			System.out.println("Empty Competition");
+			sidebar.getFrame().openCompetitionEditor();
 		}
 	}
 

@@ -19,7 +19,7 @@ public abstract class AbstractMenuButton extends XButton implements ActionListen
 
 		this.setHorizontalAlignment(SwingConstants.LEFT);
 		this.setVerticalAlignment(SwingConstants.CENTER);
-		this.setMargin(new Insets(0, SizeData.BUTTON_TEXT_MARGIN, 0, 0));
+		this.setMargin(new Insets(0, SizeData.TEXT_MARGIN, 0, 0));
 
 		this.active = false;
 		this.dropdownPanel = new DropdownPanel(0, 0, this.getWidth(), SizeData.DROPDOWN_HEIGHT, frame, appearanceName+".dropdown");
@@ -34,7 +34,7 @@ public abstract class AbstractMenuButton extends XButton implements ActionListen
 
 		this.setHorizontalAlignment(SwingConstants.LEFT);
 		this.setVerticalAlignment(SwingConstants.CENTER);
-		this.setMargin(new Insets(0, SizeData.BUTTON_TEXT_MARGIN, 0, 0));
+		this.setMargin(new Insets(0, SizeData.TEXT_MARGIN, 0, 0));
 
 		this.active = false;
 		this.dropdownPanel = new DropdownPanel(0, 0, this.getWidth(), SizeData.DROPDOWN_HEIGHT, frame, appearanceName+".dropdown");

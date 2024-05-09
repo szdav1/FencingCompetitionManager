@@ -10,7 +10,7 @@ import com._4th_dimension_software.app.view.frame.XFrame;
  *
  * @author szd
  */
-public class RuleSetEditor extends AbstractEditor {
+public final class RuleSetEditor extends AbstractEditor {
 	/**
 	 * Constructs a <code>RuleSetEditor</code> object.
 	 * This editor object is responsible for handling
@@ -22,5 +22,6 @@ public class RuleSetEditor extends AbstractEditor {
 	 */
 	public RuleSetEditor(XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
+		this.setTitle("Rule Set Creator");
 	}
 }

@@ -106,7 +106,7 @@ public final class Sidebar extends XPanel {
 
 		// Exit button
 		this.exitButton = new XButton(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.exit"), "[Esc]", frame, appearanceName+".buttons.exit");
-		this.exitButton.setMargin(new Insets(0, SizeData.BUTTON_TEXT_MARGIN, 0, 0));
+		this.exitButton.setMargin(new Insets(0, SizeData.TEXT_MARGIN, 0, 0));
 		this.exitButton.adjustContent(SwingConstants.LEFT);
 
 		// Add the menu buttons to the menu button list

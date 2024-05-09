@@ -106,7 +106,7 @@ public class DropdownPanel extends XPanel {
     public void createAndAddButton(String buttonText, String shortcutKeyText, String appearanceName) {
         this.recentAppearanceName = appearanceName;
         XButton btn = new XButton(new Dimension(this.getWidth(), SizeData.BUTTON_HEIGHT), buttonText, shortcutKeyText, this.frame, appearanceName);
-        btn.setMargin(new Insets(0, SizeData.BUTTON_TEXT_MARGIN, 0, 0));
+        btn.setMargin(new Insets(0, SizeData.TEXT_MARGIN, 0, 0));
 
         this.buttons.add(btn);
         int newHeight = SizeData.calcDropdownHeight(this.buttons.size());

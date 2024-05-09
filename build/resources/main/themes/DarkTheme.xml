@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+Dark color theme for the application. Every component inside the
+application has an appearance attribute. The "applyTo" attribute
+of the tags specify the component inside the application that should
+implement the values specified in that "appearance" tag.
+-->
 <DarkTheme>
     <!--  Window  -->
     <appearance applyTo="window">
@@ -232,35 +238,6 @@
         <icon2 source="/icons/Modify.png" width="3" height="3"/>
     </appearance>
 
-    <!--  Editors  -->
-    <appearance applyTo="ruleSetEditor">
-        <background colors="[27,27,27,255]"/>
-        <border colors="[72,58,255,255][178,0,255,255]" thickness="@proportional"/>
-    </appearance>
-
-    <appearance applyTo="ruleSetEditor.buttons.close">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[128,128,128,255][172,0,255,255]"/>
-        <font size="20"/>
-    </appearance>
-
-    <appearance applyTo="ruleSetEditor.buttons.confirm">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[128,128,128,255][172,0,255,255]"/>
-    </appearance>
-
-    <appearance applyTo="ruleSetEditor.header">
-        <background colors="[27,27,27,255]"/>
-    </appearance>
-
-    <appearance applyTo="ruleSetEditor.center">
-        <background colors="[27,27,27,255]"/>
-    </appearance>
-
-    <appearance applyTo="ruleSetEditor.footer">
-        <background colors="[27,27,27,255]"/>
-    </appearance>
-
     <!--  Poule editor  -->
     <appearance applyTo="pouleEditor">
         <background colors="[27,27,27,255]"/>
@@ -282,11 +259,114 @@
         <background colors="[27,27,27,255]"/>
     </appearance>
 
+    <appearance applyTo="pouleEditor.title">
+        <background colors="[27,27,27,255]"/>
+    </appearance>
+
     <appearance applyTo="pouleEditor.center">
         <background colors="[27,27,27,255]"/>
     </appearance>
 
     <appearance applyTo="pouleEditor.footer">
+        <background colors="[27,27,27,255]"/>
+    </appearance>
+
+    <!--  Table editor  -->
+    <appearance applyTo="tableEditor">
+        <background colors="[27,27,27,255]"/>
+        <border colors="[72,58,255,255][178,0,255,255]" thickness="@proportional"/>
+    </appearance>
+
+    <appearance applyTo="tableEditor.buttons.close">
+        <background colors="[0,0,0,0]"/>
+        <foreground colors="[128,128,128,255][172,0,255,255]"/>
+        <font size="20"/>
+    </appearance>
+
+    <appearance applyTo="tableEditor.buttons.confirm">
+        <background colors="[0,0,0,0]"/>
+        <foreground colors="[128,128,128,255][172,0,255,255]"/>
+    </appearance>
+
+    <appearance applyTo="tableEditor.header">
+        <background colors="[27,27,27,255]"/>
+    </appearance>
+
+    <appearance applyTo="tableEditor.title">
+        <background colors="[27,27,27,255]"/>
+    </appearance>
+
+    <appearance applyTo="tableEditor.center">
+        <background colors="[27,27,27,255]"/>
+    </appearance>
+
+    <appearance applyTo="tableEditor.footer">
+        <background colors="[27,27,27,255]"/>
+    </appearance>
+
+    <!--  Competition editor  -->
+    <appearance applyTo="competitionEditor">
+        <background colors="[27,27,27,255]"/>
+        <border colors="[72,58,255,255][178,0,255,255]" thickness="@proportional"/>
+    </appearance>
+
+    <appearance applyTo="competitionEditor.buttons.close">
+        <background colors="[0,0,0,0]"/>
+        <foreground colors="[128,128,128,255][172,0,255,255]"/>
+        <font size="20"/>
+    </appearance>
+
+    <appearance applyTo="competitionEditor.buttons.confirm">
+        <background colors="[0,0,0,0]"/>
+        <foreground colors="[128,128,128,255][172,0,255,255]"/>
+    </appearance>
+
+    <appearance applyTo="competitionEditor.header">
+        <background colors="[27,27,27,255]"/>
+    </appearance>
+
+    <appearance applyTo="competitionEditor.title">
+        <background colors="[27,27,27,255]"/>
+    </appearance>
+
+    <appearance applyTo="competitionEditor.center">
+        <background colors="[27,27,27,255]"/>
+    </appearance>
+
+    <appearance applyTo="competitionEditor.footer">
+        <background colors="[27,27,27,255]"/>
+    </appearance>
+
+    <!--  Rule Set editor  -->
+    <appearance applyTo="ruleSetEditor">
+        <background colors="[27,27,27,255]"/>
+        <border colors="[72,58,255,255][178,0,255,255]" thickness="@proportional"/>
+    </appearance>
+
+    <appearance applyTo="ruleSetEditor.buttons.close">
+        <background colors="[0,0,0,0]"/>
+        <foreground colors="[128,128,128,255][172,0,255,255]"/>
+        <font size="20"/>
+    </appearance>
+
+    <appearance applyTo="ruleSetEditor.buttons.confirm">
+        <background colors="[0,0,0,0]"/>
+        <foreground colors="[128,128,128,255][172,0,255,255]"/>
+    </appearance>
+
+    <appearance applyTo="ruleSetEditor.header">
+        <background colors="[27,27,27,255]"/>
+    </appearance>
+
+    <appearance applyTo="ruleSetEditor.title">
+        <background colors="[27,27,27,255]"/>
+    </appearance>
+
+    <appearance applyTo="ruleSetEditor.center">
+        <background colors="[27,27,27,255]"/>
+    </appearance>
+
+    <appearance applyTo="ruleSetEditor.footer">
         <background colors="[27,27,27,255]"/>
     </appearance>
 </DarkTheme>

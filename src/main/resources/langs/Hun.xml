@@ -37,11 +37,12 @@
     </words>
 
     <words for="sidebar.settings">
-        <appearance>Kinézet</appearance>
+        <interface>Kinézet</interface>
+        <language>Nyelv</language>
     </words>
 
     <words for="sidebar.database">
         <connect>Csatlakozás</connect>
-        <manage>Menedzsment</manage>
+        <arrange>Menedzsment</arrange>
     </words>
 </English>
