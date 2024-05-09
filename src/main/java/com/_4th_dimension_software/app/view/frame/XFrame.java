@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 
 import com._4th_dimension_software.app.view.components.base.panel.XPanel;
 import com._4th_dimension_software.app.view.components.built.ui.editor.AbstractEditor;
+import com._4th_dimension_software.app.view.components.built.ui.editor.PouleEditor;
 import com._4th_dimension_software.app.view.components.built.ui.editor.RuleSetEditor;
 import com._4th_dimension_software.app.view.components.built.ui.sidebar.Sidebar;
 import com._4th_dimension_software.support.consts.FrameState;
@@ -39,6 +40,7 @@ public class XFrame extends AbstractXFrame {
 	// Currently opened editor
 	private AbstractEditor openedEditor;
 	// Editors
+	private final PouleEditor pouleEditor;
 	private final RuleSetEditor ruleSetEditor;
 
 	/**
@@ -64,6 +66,7 @@ public class XFrame extends AbstractXFrame {
 		this.sidebar = new Sidebar(this, "sidebar");
 
 		// Editors
+		this.pouleEditor = new PouleEditor(this, "pouleEditor");
 		this.ruleSetEditor = new RuleSetEditor(this, "ruleSetEditor");
 
 		// Background image
@@ -79,6 +82,14 @@ public class XFrame extends AbstractXFrame {
 
 		// Perform fine adjustments on locations and dimensions that require the frame to be visible
 		this.sidebar.performAdjustments();
+	}
+
+	public void openPouleEditor() {
+		if (this.frameState == FrameState.NORMAL) {
+			this.addToCenterPanel(this.pouleEditor);
+			this.openedEditor = this.pouleEditor;
+			this.frameState = FrameState.POULE_EDITOR_OPENED;
+		}
 	}
 
 	/**

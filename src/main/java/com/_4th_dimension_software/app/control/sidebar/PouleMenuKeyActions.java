@@ -46,10 +46,7 @@ public final class PouleMenuKeyActions {
 	private class EmptyPouleKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
-				return;
-
-			System.out.println("Empty Poule");
+			sidebar.getFrame().openPouleEditor();
 		}
 	}
 

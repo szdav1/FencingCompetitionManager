@@ -38,7 +38,7 @@ public final class SizeData {
     public static final int N_BUTTON_WIDTH = PROPORTIONALITY_FACTOR*60;
     public static final int BUTTON_WIDTH = PROPORTIONALITY_FACTOR*180;
     public static final int W_BUTTON_WIDTH = PROPORTIONALITY_FACTOR*220;
-    public static final int BUTTON_HEIGHT = PROPORTIONALITY_FACTOR*60;
+    public static final int BUTTON_HEIGHT = PROPORTIONALITY_FACTOR*55;
 
     // Narrow button dimension
     public static final Dimension N_BUTTON_DIMENSION = new Dimension(N_BUTTON_WIDTH, BUTTON_HEIGHT);
