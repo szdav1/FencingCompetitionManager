@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Font related tests" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-05-09T09:28:17" hostname="DESKTOP-PDMD8RI" time="0.244">
+<testsuite name="Font related tests" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-05-09T11:37:04" hostname="DESKTOP-PDMD8RI" time="0.148">
   <properties/>
-  <testcase name="The family (name) of the font should be the default font family: Arial" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$FontRelatedTests" time="0.216"/>
+  <testcase name="The family (name) of the font should be the default font family: Arial" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$FontRelatedTests" time="0.136"/>
   <testcase name="The family (name) of the font should be Arial" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$FontRelatedTests" time="0.002"/>
-  <testcase name="The family (name) of the font should be the specified custom font: Halimun" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$FontRelatedTests" time="0.022"/>
+  <testcase name="The family (name) of the font should be the specified custom font: Halimun" classname="com._4th_dimension_softwares.support.framework.AppearanceTest$FontRelatedTests" time="0.006"/>
   <system-out><![CDATA[
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

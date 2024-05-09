@@ -57,7 +57,7 @@ public final class SizeData {
     public static final int DROPDOWN_HEIGHT = BUTTON_HEIGHT*3;
     public static final Dimension DROPDOWN_DIMENSION = new Dimension(DROPDOWN_WIDTH, DROPDOWN_HEIGHT);
 
-    // Separator line size adn dimension
+    // Separator line size and dimension
     public static final int SEPARATOR_WIDTH = W_BUTTON_WIDTH;
     public static final Dimension SEPARATOR_DIMENSION = new Dimension(SEPARATOR_WIDTH, BORDER_SIZE);
 
@@ -67,6 +67,11 @@ public final class SizeData {
     // Shortcut key label size and dimension
     public static final int SHORTCUT_KEY_LABEL_WIDTH = PROPORTIONALITY_FACTOR*52;
     public static final Dimension SHORTCUT_KEY_LABEL_DIMENSION = new Dimension(SHORTCUT_KEY_LABEL_WIDTH, BUTTON_HEIGHT);
+
+    // Editor size and dimension
+    public static final int EDITOR_WIDTH = PROPORTIONALITY_FACTOR*700;
+    public static final int EDITOR_HEIGHT = PROPORTIONALITY_FACTOR*500;
+    public static final Dimension EDITOR_DIMENSION = new Dimension(EDITOR_WIDTH, EDITOR_HEIGHT);
 
     // Not instantiatable
     private SizeData() {

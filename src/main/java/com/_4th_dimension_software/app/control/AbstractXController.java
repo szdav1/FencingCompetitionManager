@@ -3,7 +3,7 @@ package com._4th_dimension_software.app.control;
 import java.awt.event.*;
 
 /**
- * The <code>Controller</code> class is a child class
+ * The <code>AbstractXController</code> class is a child class
  * of the <code>AbstractController</code> class that
  * implements the
  * <p><code>ActionListener</code></p>
@@ -23,7 +23,7 @@ import java.awt.event.*;
  *
  * @author szd
  */
-public class XController implements ActionListener, MouseListener, MouseMotionListener, KeyListener {
+public abstract class AbstractXController implements ActionListener, MouseListener, MouseMotionListener, KeyListener {
 	// ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e) {

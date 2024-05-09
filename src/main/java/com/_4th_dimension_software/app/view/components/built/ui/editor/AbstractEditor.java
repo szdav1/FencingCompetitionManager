@@ -9,12 +9,19 @@ import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.consts.PositionConstants;
 
 import javax.swing.JLabel;
-import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Insets;
 
+/**
+ * The <code>AbstractEditor</code> abstract class defines the abstract
+ * behaviour of editors inside the application. It holds an anonymous
+ * instance of the <code>AbstractEditorController</code> that takes
+ * care of closing the editors.
+ *
+ * @author szd
+ */
 public abstract class AbstractEditor extends XPanel {
     // Parts of the editor
     protected final XPanel headerPanel;
@@ -26,8 +33,16 @@ public abstract class AbstractEditor extends XPanel {
     protected final XButton closeButton;
     protected final XButton confirmButton;
 
+    /**
+     * Defines the base constructor of editors.
+     *
+     * @param frame          The main frame of the application
+     * @param appearanceName The name of the <code>Appearance</code> that's
+     *                       values should be implemented on this component
+     */
     protected AbstractEditor(XFrame frame, String appearanceName) {
-        super(SizeData.SCREEN_WIDTH/4-SizeData.W_BUTTON_WIDTH, SizeData.SCREEN_HEIGHT/4, SizeData.SCREEN_WIDTH/2, SizeData.SCREEN_HEIGHT/2, new BorderLayout(), frame, appearanceName);
+        super((SizeData.SCREEN_WIDTH/2)-(SizeData.EDITOR_WIDTH/2)-SizeData.SIDEBAR_WIDTH, (SizeData.SCREEN_HEIGHT/2)-(SizeData.EDITOR_HEIGHT/2),
+            SizeData.EDITOR_WIDTH, SizeData.EDITOR_HEIGHT, new BorderLayout(), frame, appearanceName);
 
         // Parts of the editor
         this.headerPanel = new XPanel(new Dimension(this.getWidth(), SizeData.BUTTON_HEIGHT), new FlowLayout(FlowLayout.RIGHT, 0, 0), frame, appearanceName+".header");
@@ -37,7 +52,7 @@ public abstract class AbstractEditor extends XPanel {
         // Title label
         this.titleLabel = new XLabel(new Dimension(this.headerPanel.getWidth()-SizeData.N_BUTTON_WIDTH, SizeData.BUTTON_HEIGHT), "", frame, appearanceName+".title");
         this.titleLabel.setHorizontalAlignment(JLabel.LEFT);
-        this.titleLabel.setBorder(new EmptyBorder(new Insets(0, SizeData.TEXT_MARGIN, 0, 0)));
+        this.titleLabel.setMargin(new Insets(0, SizeData.TEXT_MARGIN, 0, 0));
 
         // Close button
         this.closeButton = new XButton(SizeData.N_BUTTON_DIMENSION, "x", frame, appearanceName+".buttons.close");

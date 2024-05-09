@@ -22,7 +22,7 @@ import java.util.List;
  * @author szd
  */
 public class DropdownPanel extends XPanel {
-    private List<XButton> buttons;
+    private final List<XButton> buttons;
     private boolean displaying;
     private String recentAppearanceName;
 
