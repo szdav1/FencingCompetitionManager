@@ -69,8 +69,8 @@ public final class SizeData {
     public static final Dimension SHORTCUT_KEY_LABEL_DIMENSION = new Dimension(SHORTCUT_KEY_LABEL_WIDTH, BUTTON_HEIGHT);
 
     // Editor size and dimension
-    public static final int EDITOR_WIDTH = PROPORTIONALITY_FACTOR*700;
-    public static final int EDITOR_HEIGHT = PROPORTIONALITY_FACTOR*500;
+    public static final int EDITOR_WIDTH = PROPORTIONALITY_FACTOR*1000;
+    public static final int EDITOR_HEIGHT = PROPORTIONALITY_FACTOR*600;
     public static final Dimension EDITOR_DIMENSION = new Dimension(EDITOR_WIDTH, EDITOR_HEIGHT);
 
     // Not instantiatable

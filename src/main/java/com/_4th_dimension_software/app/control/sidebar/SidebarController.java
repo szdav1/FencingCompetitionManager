@@ -196,9 +196,9 @@ public final class SidebarController extends AbstractXController {
             return;
 
         switch (srcBtnInd) {
-            case 0 -> this.sidebar.getFrame().openPouleEditor();
-            case 1 -> System.out.println("poule from database");
-            case 2 -> System.out.println("view poule stats");
+            case 0 -> this.sidebar.getFrame().openEmptyPouleEditor();
+            case 1 -> this.sidebar.getFrame().openPouleFromDatabaseEditor();
+            case 2 -> this.sidebar.getFrame().openPouleStatsInspector();
             default -> {
             }
         }
@@ -221,9 +221,9 @@ public final class SidebarController extends AbstractXController {
             return;
 
         switch (srcBtnInd) {
-            case 0 -> this.sidebar.getFrame().openTableEditor();
-            case 1 -> System.out.println("table from database");
-            case 2 -> System.out.println("view table stats");
+            case 0 -> this.sidebar.getFrame().openEmptyTableEditor();
+            case 1 -> this.sidebar.getFrame().openTableFromDatabaseEditor();
+            case 2 -> this.sidebar.getFrame().openTableStatsInspector();
             default -> {
             }
         }
@@ -246,9 +246,9 @@ public final class SidebarController extends AbstractXController {
             return;
 
         switch (srcBtnInd) {
-            case 0 -> this.sidebar.getFrame().openCompetitionEditor();
-            case 1 -> System.out.println("competition from database");
-            case 2 -> System.out.println("view competition stats");
+            case 0 -> this.sidebar.getFrame().openEmptyCompetitionEditor();
+            case 1 -> this.sidebar.getFrame().openCompetitionFromDatabaseEditor();
+            case 2 -> this.sidebar.getFrame().openCompetitionStatsInspector();
             default -> {
             }
         }
@@ -275,7 +275,7 @@ public final class SidebarController extends AbstractXController {
 
         switch (srcBtnInd) {
             case 0 -> System.out.println("view rule set");
-            case 1 -> this.sidebar.getFrame().openRuleSetEditor();
+            case 1 -> this.sidebar.getFrame().openNewRuleSetEditor();
             case 2 -> System.out.println("delete rule set");
             case 3 -> System.out.println("modify rule set");
             default -> {

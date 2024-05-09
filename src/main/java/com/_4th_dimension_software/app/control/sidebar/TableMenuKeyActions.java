@@ -46,7 +46,7 @@ public final class TableMenuKeyActions {
 	private class EmptyTableKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			sidebar.getFrame().openTableEditor();
+			sidebar.getFrame().openEmptyTableEditor();
 		}
 	}
 
@@ -57,10 +57,7 @@ public final class TableMenuKeyActions {
 	private class TableFromDatabaseKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
-				return;
-
-			System.out.println("Table From Database");
+			sidebar.getFrame().openTableFromDatabaseEditor();
 		}
 	}
 
@@ -71,10 +68,7 @@ public final class TableMenuKeyActions {
 	private class TableStatsKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
-				return;
-
-			System.out.println("View Table Stats");
+			sidebar.getFrame().openTableStatsInspector();
 		}
 	}
 }

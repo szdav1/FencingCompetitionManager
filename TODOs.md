@@ -14,3 +14,8 @@
 >
 > UI:
 > - Create the rule set editor panels
+> - Create the remaining editors and inspectors
+
+> Documentation
+> - Code review: Review every class, fix docstrings, class names add "final" keyword to necessary places
+> - Add docstring classes that don't have one

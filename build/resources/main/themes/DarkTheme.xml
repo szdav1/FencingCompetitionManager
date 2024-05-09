@@ -4,6 +4,8 @@ Dark color theme for the application. Every component inside the
 application has an appearance attribute. The "applyTo" attribute
 of the tags specify the component inside the application that should
 implement the values specified in that "appearance" tag.
+Editor appearances are also applied to inspectors as they basically
+look the same.
 -->
 <DarkTheme>
     <!--  Window  -->

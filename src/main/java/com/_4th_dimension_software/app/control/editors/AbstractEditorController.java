@@ -1,7 +1,7 @@
-package com._4th_dimension_software.app.control.editor;
+package com._4th_dimension_software.app.control.editors;
 
 import com._4th_dimension_software.app.control.AbstractXController;
-import com._4th_dimension_software.app.view.components.built.ui.editor.AbstractEditor;
+import com._4th_dimension_software.app.view.components.built.ui.editors.AbstractEditor;
 
 import javax.swing.AbstractAction;
 import javax.swing.JComponent;
@@ -38,8 +38,8 @@ public final class AbstractEditorController extends AbstractXController {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(this.abstractEditor.getCloseButton()))
-            this.abstractEditor.getFrame().closeCurrentlyOpenedEditor();
+        if (this.abstractEditor.getCloseButton().equals(e.getSource()))
+            this.abstractEditor.getFrame().removeDisplayingPanel();
     }
 
     /**
@@ -47,12 +47,12 @@ public final class AbstractEditorController extends AbstractXController {
      * the currently opened editor by calling the main frame's
      * <code>closeCurrentlyOpenedEditor()</code>. This way it
      * is not a requirement to keep track of which editor is
-     * currently opened, it will close it anyways.
+     * currently opened, it will close it anyway.
      */
     private class CloseKeyAction extends AbstractAction {
         @Override
         public void actionPerformed(ActionEvent e) {
-            abstractEditor.getFrame().closeCurrentlyOpenedEditor();
+            abstractEditor.getFrame().removeDisplayingPanel();
         }
     }
 }

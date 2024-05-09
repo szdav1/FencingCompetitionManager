@@ -1,4 +1,4 @@
-package com._4th_dimension_software.app.view.components.built.ui.editor;
+package com._4th_dimension_software.app.view.components.built.ui.editors;
 
 import com._4th_dimension_software.app.view.frame.XFrame;
 
@@ -10,7 +10,7 @@ import com._4th_dimension_software.app.view.frame.XFrame;
  *
  * @author szd
  */
-public final class RuleSetEditor extends AbstractEditor {
+public final class NewRuleSetEditor extends AbstractEditor {
 	/**
 	 * Constructs a <code>RuleSetEditor</code> object.
 	 * This editor object is responsible for handling
@@ -20,8 +20,8 @@ public final class RuleSetEditor extends AbstractEditor {
 	 * @param appearanceName The name of the appearance that should
 	 *                       be implemented on this component
 	 */
-	public RuleSetEditor(XFrame frame, String appearanceName) {
+	public NewRuleSetEditor(XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
-		this.setTitle("Rule Set Creator");
+		this.setTitle("Rule Set Editor: New");
 	}
 }

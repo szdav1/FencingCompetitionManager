@@ -1,0 +1,26 @@
+package com._4th_dimension_software.app.view.components.built.ui.inspectors;
+
+import com._4th_dimension_software.app.view.frame.XFrame;
+
+/**
+ * The <code>CompetitionStatsInspector</code> class is a subclass
+ * of the <code>AbstractInspector</code>. It contains UI
+ * elements and handles actions related to competition statistics display.
+ *
+ * @author szd
+ */
+public final class CompetitionStatsInspector extends AbstractInspector {
+	/**
+	 * Constructs a <code>CompetitionStatsInspector</code> object.
+	 * This editor object is responsible for handling
+	 * competition statistics display.
+	 *
+	 * @param frame          The main frame of the application
+	 * @param appearanceName The name of the appearance that should
+	 *                       be implemented on this component
+	 */
+	public CompetitionStatsInspector(XFrame frame, String appearanceName) {
+		super(frame, appearanceName);
+		this.setTitle("Competition Statistics");
+	}
+}

@@ -9,7 +9,10 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 
 import com._4th_dimension_software.app.view.components.base.panel.XPanel;
-import com._4th_dimension_software.app.view.components.built.ui.editor.*;
+import com._4th_dimension_software.app.view.components.built.ui.editors.*;
+import com._4th_dimension_software.app.view.components.built.ui.inspectors.CompetitionStatsInspector;
+import com._4th_dimension_software.app.view.components.built.ui.inspectors.PouleStatsInspector;
+import com._4th_dimension_software.app.view.components.built.ui.inspectors.TableStatsInspector;
 import com._4th_dimension_software.app.view.components.built.ui.sidebar.Sidebar;
 import com._4th_dimension_software.support.consts.FrameState;
 import com._4th_dimension_software.support.consts.PositionConstants;
@@ -36,12 +39,22 @@ public class XFrame extends AbstractXFrame {
 	private final Sidebar sidebar;
 
 	// Currently opened editor
-	private AbstractEditor openedEditor;
+	private XPanel displayingPanel;
 	// Editors
-	private final PouleEditor pouleEditor;
-	private final TableEditor tableEditor;
-	private final CompetitionEditor competitionEditor;
-	private final RuleSetEditor ruleSetEditor;
+	// Poule
+	private final EmptyPouleEditor emptyPouleEditor;
+	private final PouleFromDatabaseEditor pouleFromDatabaseEditor;
+	private final PouleStatsInspector pouleStatsInspector;
+	// Table
+	private final EmptyTableEditor emptyTableEditor;
+	private final TableFromDatabaseEditor tableFromDatabaseEditor;
+	private final TableStatsInspector tableStatsInspector;
+	// Competition
+	private final EmptyCompetitionEditor emptyCompetitionEditor;
+	private final CompetitionFromDatabaseEditor competitionFromDatabaseEditor;
+	private final CompetitionStatsInspector competitionStatsInspector;
+	// Rule set
+	private final NewRuleSetEditor newRuleSetEditor;
 
 	/**
 	 * Constructs an <code>XFrame</code> object. This object is
@@ -66,10 +79,20 @@ public class XFrame extends AbstractXFrame {
 		this.sidebar = new Sidebar(this, "sidebar");
 
 		// Editors
-		this.pouleEditor = new PouleEditor(this, "pouleEditor");
-		this.tableEditor = new TableEditor(this, "tableEditor");
-		this.ruleSetEditor = new RuleSetEditor(this, "ruleSetEditor");
-		this.competitionEditor = new CompetitionEditor(this, "competitionEditor");
+		// Poule
+		this.emptyPouleEditor = new EmptyPouleEditor(this, "pouleEditor");
+		this.pouleFromDatabaseEditor = new PouleFromDatabaseEditor(this, "pouleEditor");
+		this.pouleStatsInspector = new PouleStatsInspector(this, "pouleEditor");
+		// Table
+		this.emptyTableEditor = new EmptyTableEditor(this, "tableEditor");
+		this.tableFromDatabaseEditor = new TableFromDatabaseEditor(this, "tableEditor");
+		this.tableStatsInspector = new TableStatsInspector(this, "tableEditor");
+		// Competition
+		this.emptyCompetitionEditor = new EmptyCompetitionEditor(this, "competitionEditor");
+		this.competitionFromDatabaseEditor = new CompetitionFromDatabaseEditor(this, "competitionEditor");
+		this.competitionStatsInspector = new CompetitionStatsInspector(this, "competitionEditor");
+		// Rule set
+		this.newRuleSetEditor = new NewRuleSetEditor(this, "ruleSetEditor");
 
 		// Background image
 		this.setBackgroundImage();
@@ -87,53 +110,131 @@ public class XFrame extends AbstractXFrame {
 	}
 
 	/**
-	 * Adds the poule editor to the main frame.
+	 * Adds the empty poule editor to the main frame.
 	 * This method only runs if the state of the frame
 	 * is <code>NORMAL</code>.
 	 */
-	public void openPouleEditor() {
+	public void openEmptyPouleEditor() {
 		if (this.frameState == FrameState.NORMAL) {
-			this.addToCenterPanel(this.pouleEditor);
-			this.openedEditor = this.pouleEditor;
+			this.addToCenterPanel(this.emptyPouleEditor);
+			this.displayingPanel = this.emptyPouleEditor;
 			this.frameState = FrameState.POULE_EDITOR_OPENED;
 		}
 	}
 
 	/**
-	 * Adds the table editor to the main frame.
+	 * Adds the poule from database editor to the main frame.
 	 * This method only runs if the state of the frame
 	 * is <code>NORMAL</code>.
 	 */
-	public void openTableEditor() {
+	public void openPouleFromDatabaseEditor() {
 		if (this.frameState == FrameState.NORMAL) {
-			this.addToCenterPanel(this.tableEditor);
-			this.openedEditor = this.tableEditor;
+			this.addToCenterPanel(this.pouleFromDatabaseEditor);
+			this.displayingPanel = this.pouleFromDatabaseEditor;
+			this.frameState = FrameState.POULE_EDITOR_OPENED;
+		}
+	}
+
+	/**
+	 * Adds the poule stats inspector to the main frame.
+	 * This method only runs if the state of the frame
+	 * is <code>NORMAL</code>.
+	 */
+	public void openPouleStatsInspector() {
+		if (this.frameState == FrameState.NORMAL) {
+			this.addToCenterPanel(this.pouleStatsInspector);
+			this.displayingPanel = this.pouleStatsInspector;
+			this.frameState = FrameState.POULE_STATS_INSPECTOR_OPENED;
+		}
+	}
+
+	/**
+	 * Adds the empty table editor to the main frame.
+	 * This method only runs if the state of the frame
+	 * is <code>NORMAL</code>.
+	 */
+	public void openEmptyTableEditor() {
+		if (this.frameState == FrameState.NORMAL) {
+			this.addToCenterPanel(this.emptyTableEditor);
+			this.displayingPanel = this.emptyTableEditor;
 			this.frameState = FrameState.TABLE_EDITOR_OPENED;
 		}
 	}
 
 	/**
-	 * Adds the rule set editor to the main frame.
+	 * Adds the table from database editor to the main frame.
 	 * This method only runs if the state of the frame
 	 * is <code>NORMAL</code>.
 	 */
-	public void openCompetitionEditor() {
+	public void openTableFromDatabaseEditor() {
 		if (this.frameState == FrameState.NORMAL) {
-			this.addToCenterPanel(this.competitionEditor);
-			this.openedEditor = this.competitionEditor;
+			this.addToCenterPanel(this.tableFromDatabaseEditor);
+			this.displayingPanel = this.tableFromDatabaseEditor;
+			this.frameState = FrameState.TABLE_EDITOR_OPENED;
+		}
+	}
+
+	/**
+	 * Adds the poule stats inspector to the main frame.
+	 * This method only runs if the state of the frame
+	 * is <code>NORMAL</code>.
+	 */
+	public void openTableStatsInspector() {
+		if (this.frameState == FrameState.NORMAL) {
+			this.addToCenterPanel(this.tableStatsInspector);
+			this.displayingPanel = this.tableStatsInspector;
+			this.frameState = FrameState.TABLE_STATS_INSPECTOR_OPENED;
+		}
+	}
+
+	/**
+	 * Adds the empty competition editor to the main frame.
+	 * This method only runs if the state of the frame
+	 * is <code>NORMAL</code>.
+	 */
+	public void openEmptyCompetitionEditor() {
+		if (this.frameState == FrameState.NORMAL) {
+			this.addToCenterPanel(this.emptyCompetitionEditor);
+			this.displayingPanel = this.emptyCompetitionEditor;
 			this.frameState = FrameState.COMPETITION_EDITOR_OPENED;
 		}
 	}
 
 	/**
-	 * Adds the rule set editor to the main frame.
+	 * Adds the empty competition editor to the main frame.
 	 * This method only runs if the state of the frame
 	 * is <code>NORMAL</code>.
 	 */
-	public void openRuleSetEditor() {
+	public void openCompetitionFromDatabaseEditor() {
 		if (this.frameState == FrameState.NORMAL) {
-			this.addToCenterPanel(this.ruleSetEditor);
-			this.openedEditor = this.ruleSetEditor;
+			this.addToCenterPanel(this.competitionFromDatabaseEditor);
+			this.displayingPanel = this.competitionFromDatabaseEditor;
+			this.frameState = FrameState.COMPETITION_EDITOR_OPENED;
+		}
+	}
+
+	/**
+	 * Adds the poule stats inspector to the main frame.
+	 * This method only runs if the state of the frame
+	 * is <code>NORMAL</code>.
+	 */
+	public void openCompetitionStatsInspector() {
+		if (this.frameState == FrameState.NORMAL) {
+			this.addToCenterPanel(this.competitionStatsInspector);
+			this.displayingPanel = this.competitionStatsInspector;
+			this.frameState = FrameState.COMPETITION_STATS_INSPECTOR_OPENED;
+		}
+	}
+
+	/**
+	 * Adds the new rule set editor to the main frame.
+	 * This method only runs if the state of the frame
+	 * is <code>NORMAL</code>.
+	 */
+	public void openNewRuleSetEditor() {
+		if (this.frameState == FrameState.NORMAL) {
+			this.addToCenterPanel(this.newRuleSetEditor);
+			this.displayingPanel = this.newRuleSetEditor;
 			this.frameState = FrameState.RULE_SET_EDITOR_OPENED;
 		}
 	}
@@ -143,9 +244,9 @@ public class XFrame extends AbstractXFrame {
 	 * This method only runs if the state of the frame is not
 	 * <code>NORMAL</code>.
 	 */
-	public void closeCurrentlyOpenedEditor() {
+	public void removeDisplayingPanel() {
 		if (this.frameState != FrameState.NORMAL) {
-			this.removeFromCenterPanel(this.openedEditor);
+			this.removeFromCenterPanel(this.displayingPanel);
 			this.frameState = FrameState.NORMAL;
 		}
 	}

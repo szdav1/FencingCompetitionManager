@@ -1,18 +1,18 @@
-package com._4th_dimension_software.app.view.components.built.ui.editor;
+package com._4th_dimension_software.app.view.components.built.ui.editors;
 
 import com._4th_dimension_software.app.view.frame.XFrame;
 
 /**
- * The <code>CompetitionEditor</code> class is a subclass
+ * The <code>TableEditor</code> class is a subclass
  * of the <code>AbstractEditor</code>. It contains UI
  * elements and handles actions related to rule set
  * creation.
  *
  * @author szd
  */
-public final class CompetitionEditor extends AbstractEditor {
+public final class EmptyTableEditor extends AbstractEditor {
     /**
-     * Constructs a <code>CompetitionEditor</code> object.
+     * Constructs a <code>TableEditor</code> object.
      * This editor object is responsible for handling
      * rule set creation.
      *
@@ -20,8 +20,8 @@ public final class CompetitionEditor extends AbstractEditor {
      * @param appearanceName The name of the appearance that should
      *                       be implemented on this component
      */
-    public CompetitionEditor(XFrame frame, String appearanceName) {
+    public EmptyTableEditor(XFrame frame, String appearanceName) {
         super(frame, appearanceName);
-        this.setTitle("Competition Editor");
+        this.setTitle("Table Editor: Empty");
     }
 }

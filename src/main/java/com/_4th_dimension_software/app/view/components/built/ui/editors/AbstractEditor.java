@@ -1,6 +1,6 @@
-package com._4th_dimension_software.app.view.components.built.ui.editor;
+package com._4th_dimension_software.app.view.components.built.ui.editors;
 
-import com._4th_dimension_software.app.control.editor.AbstractEditorController;
+import com._4th_dimension_software.app.control.editors.AbstractEditorController;
 import com._4th_dimension_software.app.view.components.base.button.XButton;
 import com._4th_dimension_software.app.view.components.base.label.XLabel;
 import com._4th_dimension_software.app.view.components.base.panel.XPanel;
@@ -40,7 +40,7 @@ public abstract class AbstractEditor extends XPanel {
      * @param appearanceName The name of the <code>Appearance</code> that's
      *                       values should be implemented on this component
      */
-    protected AbstractEditor(XFrame frame, String appearanceName) {
+    protected AbstractEditor(final XFrame frame, String appearanceName) {
         super((SizeData.SCREEN_WIDTH/2)-(SizeData.EDITOR_WIDTH/2)-SizeData.SIDEBAR_WIDTH, (SizeData.SCREEN_HEIGHT/2)-(SizeData.EDITOR_HEIGHT/2),
             SizeData.EDITOR_WIDTH, SizeData.EDITOR_HEIGHT, new BorderLayout(), frame, appearanceName);
 

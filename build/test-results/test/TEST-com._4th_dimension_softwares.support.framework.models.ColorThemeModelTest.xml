@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com._4th_dimension_softwares.support.framework.models.ColorThemeModelTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-05-09T11:37:04" hostname="DESKTOP-PDMD8RI" time="0.002">
+<testsuite name="com._4th_dimension_softwares.support.framework.models.ColorThemeModelTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-05-09T20:39:29" hostname="DESKTOP-FN3U10C" time="0.002">
   <properties/>
   <testcase name="Every model inside the ColorThemeModel should have default values because of no-argument constructor call" classname="com._4th_dimension_softwares.support.framework.models.ColorThemeModelTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>

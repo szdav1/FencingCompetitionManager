@@ -46,7 +46,7 @@ public final class PouleMenuKeyActions {
 	private class EmptyPouleKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			sidebar.getFrame().openPouleEditor();
+			sidebar.getFrame().openEmptyPouleEditor();
 		}
 	}
 
@@ -57,10 +57,7 @@ public final class PouleMenuKeyActions {
 	private class PouleFromDatabaseKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
-				return;
-
-			System.out.println("Poule From Database");
+			sidebar.getFrame().openPouleFromDatabaseEditor();
 		}
 	}
 
@@ -71,10 +68,7 @@ public final class PouleMenuKeyActions {
 	private class PouleStatsKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
-				return;
-
-			System.out.println("View Poule Stats");
+			sidebar.getFrame().openPouleStatsInspector();
 		}
 	}
 }

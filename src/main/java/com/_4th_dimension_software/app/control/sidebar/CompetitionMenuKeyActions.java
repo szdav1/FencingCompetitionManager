@@ -7,7 +7,6 @@ import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 
 import com._4th_dimension_software.app.view.components.built.ui.sidebar.Sidebar;
-import com._4th_dimension_software.support.consts.FrameState;
 
 /**
  * The <code>CompetitionMenuKeyActions</code> class contains
@@ -25,7 +24,7 @@ public final class CompetitionMenuKeyActions {
 	 *
 	 * @param sidebar The sidebar of the main frame of the application
 	 */
-	public CompetitionMenuKeyActions(Sidebar sidebar) {
+	public CompetitionMenuKeyActions(final Sidebar sidebar) {
 		this.sidebar = sidebar;
 
 		// Assign the actions with the shortcut keys
@@ -46,7 +45,7 @@ public final class CompetitionMenuKeyActions {
 	private class EmptyCompetitionKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			sidebar.getFrame().openCompetitionEditor();
+			sidebar.getFrame().openEmptyCompetitionEditor();
 		}
 	}
 
@@ -57,10 +56,7 @@ public final class CompetitionMenuKeyActions {
 	private class CompetitionFromDatabaseKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
-				return;
-
-			System.out.println("Competition From Database");
+			sidebar.getFrame().openCompetitionFromDatabaseEditor();
 		}
 	}
 
@@ -71,10 +67,7 @@ public final class CompetitionMenuKeyActions {
 	private class CompetitionStatsKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
-				return;
-
-			System.out.println("View Competition Stats");
+			sidebar.getFrame().openCompetitionStatsInspector();
 		}
 	}
 }
