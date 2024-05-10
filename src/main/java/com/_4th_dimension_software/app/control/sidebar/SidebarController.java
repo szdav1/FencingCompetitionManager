@@ -13,8 +13,8 @@ import java.util.Optional;
 
 /**
  * The <code>SidebarController</code> is the class that handles actions that happened inside the
- * sidebar using a <code>MouseListener</code>, <code>MouseMotionListener</code>. <code>ActionListener</code>
- * and <code>KeyListener</code> interfaces.
+ * sidebar using the <code>MouseListener</code>, the <code>MouseMotionListener</code>, the
+ * <code>ActionListener</code> and the <code>KeyListener</code> interfaces.
  * This controller class takes care of handling the menu buttons' dropdown panels,
  * actions happening inside the dropdown panels etc. Basically, every action
  * that happens inside the sidebar and must be handled will end up being processed
@@ -28,7 +28,7 @@ public final class SidebarController extends AbstractXController {
     private MenuButton prevEnteredButton;
 
     /**
-     * Constructs a <code>SidebarMouseListener</code>. It is
+     * Constructs a <code>SidebarController</code>. It is
      * important to note that the sidebar object that is passed
      * into the constructor must be the same object where the
      * actions happen.
@@ -38,7 +38,7 @@ public final class SidebarController extends AbstractXController {
     public SidebarController(final Sidebar sidebar) {
         this.sidebar = sidebar;
 
-        // Key actions
+        // Instantiate the key action classes
         new SidebarKeyActions(sidebar);
         new PouleMenuKeyActions(sidebar);
         new TableMenuKeyActions(sidebar);
@@ -179,17 +179,27 @@ public final class SidebarController extends AbstractXController {
             this.sidebar.getFrame().exit();
     }
 
+    /**
+     * Handles actions related to the buttons contained inside the
+     * poule menu button's dropdown panel. The actions of these buttons
+     * are defined another time for the key bindings.
+     *
+     * @param ae The <code>ActionEvent</code> that happened
+     */
     private void handlePouleButtons(final ActionEvent ae) {
         int srcBtnInd = -1;
+        int ind = 0;
 
         List<XButton> pouleMenuButtons = this.sidebar.getButtons()
             .get(0)
             .getDropdownPanel()
             .getButtons();
 
-        for (XButton pouleMenuButton : pouleMenuButtons) {
-            if (pouleMenuButton.equals(ae.getSource()))
-                srcBtnInd = pouleMenuButtons.indexOf(pouleMenuButton);
+        while (srcBtnInd == -1 && ind < pouleMenuButtons.size()) {
+            if (pouleMenuButtons.get(ind).equals(ae.getSource()))
+                srcBtnInd = ind;
+
+            ind++;
         }
 
         switch (srcBtnInd) {
@@ -201,17 +211,27 @@ public final class SidebarController extends AbstractXController {
         }
     }
 
+    /**
+     * Handles actions related to the buttons contained inside the
+     * table menu button's dropdown panel. The actions of these buttons
+     * are defined another time for the key bindings.
+     *
+     * @param ae The <code>ActionEvent</code> that happened
+     */
     private void handleTableButtons(final ActionEvent ae) {
         int srcBtnInd = -1;
+        int ind = 0;
 
         List<XButton> tableMenuButtons = this.sidebar.getButtons()
             .get(1)
             .getDropdownPanel()
             .getButtons();
 
-        for (XButton tableMenuButton : tableMenuButtons) {
-            if (tableMenuButton.equals(ae.getSource()))
-                srcBtnInd = tableMenuButtons.indexOf(tableMenuButton);
+        while (srcBtnInd == -1 && ind < tableMenuButtons.size()) {
+            if (tableMenuButtons.get(ind).equals(ae.getSource()))
+                srcBtnInd = ind;
+
+            ind++;
         }
 
         switch (srcBtnInd) {
@@ -223,17 +243,27 @@ public final class SidebarController extends AbstractXController {
         }
     }
 
+    /**
+     * Handles actions related to the buttons contained inside the
+     * competition menu button's dropdown panel. The actions of these buttons
+     * are defined another time for the key bindings.
+     *
+     * @param ae The <code>ActionEvent</code> that happened
+     */
     private void handleCompetitionButtons(final ActionEvent ae) {
         int srcBtnInd = -1;
+        int ind = 0;
 
         List<XButton> competitionMenuButtons = this.sidebar.getButtons()
             .get(2)
             .getDropdownPanel()
             .getButtons();
 
-        for (XButton competitionMenuButton : competitionMenuButtons) {
-            if (competitionMenuButton.equals(ae.getSource()))
-                srcBtnInd = competitionMenuButtons.indexOf(competitionMenuButton);
+        while (srcBtnInd == -1 && ind < competitionMenuButtons.size()) {
+            if (competitionMenuButtons.get(ind).equals(ae.getSource()))
+                srcBtnInd = ind;
+
+            ind++;
         }
 
         switch (srcBtnInd) {
@@ -246,22 +276,26 @@ public final class SidebarController extends AbstractXController {
     }
 
     /**
-     * Handles action that were caused by the rule set menu
-     * button's buttons.
+     * Handles actions related to the buttons contained inside the
+     * rule set menu button's dropdown panel. The actions of these buttons
+     * are defined another time for the key bindings.
      *
-     * @param ae The event that occurred
+     * @param ae The <code>ActionEvent</code> that happened
      */
     private void handleRuleSetButtons(final ActionEvent ae) {
         int srcBtnInd = -1;
+        int ind = 0;
 
         List<XButton> ruleSetMenuButtons = this.sidebar.getButtons()
             .get(3)
             .getDropdownPanel()
             .getButtons();
 
-        for (XButton ruleSetMenuButton : ruleSetMenuButtons) {
-            if (ruleSetMenuButton.equals(ae.getSource()))
-                srcBtnInd = ruleSetMenuButtons.indexOf(ruleSetMenuButton);
+        while (srcBtnInd == -1 && ind < ruleSetMenuButtons.size()) {
+            if (ruleSetMenuButtons.get(ind).equals(ae.getSource()))
+                srcBtnInd = ind;
+
+            ind++;
         }
 
         switch (srcBtnInd) {
@@ -274,17 +308,27 @@ public final class SidebarController extends AbstractXController {
         }
     }
 
+    /**
+     * Handles actions related to the buttons contained inside the
+     * settings menu button's dropdown panel. The actions of these buttons
+     * are defined another time for the key bindings.
+     *
+     * @param ae The <code>ActionEvent</code> that happened
+     */
     public void handleSettingsButtons(final ActionEvent ae) {
         int srcBtnInd = -1;
+        int ind = 0;
 
         List<XButton> settingsMenuButtons = this.sidebar.getButtons()
             .get(4)
             .getDropdownPanel()
             .getButtons();
 
-        for (XButton settingsRuleSetMenuButton : settingsMenuButtons) {
-            if (settingsRuleSetMenuButton.equals(ae.getSource()))
-                srcBtnInd = settingsMenuButtons.indexOf(settingsRuleSetMenuButton);
+        while (srcBtnInd == -1 && ind < settingsMenuButtons.size()) {
+            if (settingsMenuButtons.get(ind).equals(ae.getSource()))
+                srcBtnInd = ind;
+
+            ind++;
         }
 
         switch (srcBtnInd) {
@@ -295,17 +339,27 @@ public final class SidebarController extends AbstractXController {
         }
     }
 
+    /**
+     * Handles actions related to the buttons contained inside the
+     * database menu button's dropdown panel. The actions of these buttons
+     * are defined another time for the key bindings.
+     *
+     * @param ae The <code>ActionEvent</code> that happened
+     */
     public void handleDatabaseButtons(final ActionEvent ae) {
         int srcBtnInd = -1;
+        int ind = 0;
 
         List<XButton> settingsMenuButtons = this.sidebar.getButtons()
             .get(5)
             .getDropdownPanel()
             .getButtons();
 
-        for (XButton settingsRuleSetMenuButton : settingsMenuButtons) {
-            if (settingsRuleSetMenuButton.equals(ae.getSource()))
-                srcBtnInd = settingsMenuButtons.indexOf(settingsRuleSetMenuButton);
+        while (srcBtnInd == -1 && ind < settingsMenuButtons.size()) {
+            if (settingsMenuButtons.get(ind).equals(ae.getSource()))
+                srcBtnInd = ind;
+
+            ind++;
         }
 
         switch (srcBtnInd) {
@@ -333,6 +387,7 @@ public final class SidebarController extends AbstractXController {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        // Make the calls for the action handling methods
         this.handleExit(e);
         this.handlePouleButtons(e);
         this.handleTableButtons(e);

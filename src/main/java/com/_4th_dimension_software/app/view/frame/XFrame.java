@@ -365,8 +365,10 @@ public class XFrame extends AbstractXFrame {
      * the application.
      */
     public void exit() {
-        this.dispose();
-        System.exit(0);
+        if (this.frameState == FrameState.NORMAL) {
+            this.dispose();
+            System.exit(0);
+        }
     }
 
     /**

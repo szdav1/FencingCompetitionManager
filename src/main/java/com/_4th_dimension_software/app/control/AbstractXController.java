@@ -3,9 +3,8 @@ package com._4th_dimension_software.app.control;
 import java.awt.event.*;
 
 /**
- * The <code>AbstractXController</code> class is a child class
- * of the <code>AbstractController</code> class that
- * implements the
+ * The <code>AbstractXController</code> class is an abstract class
+ * that implements the
  * <p><code>ActionListener</code></p>
  * <p><code>KeyListener</code></p>
  * <p><code>MouseListener</code></p>
