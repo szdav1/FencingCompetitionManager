@@ -18,4 +18,7 @@
 
 > Documentation
 > - Code review: Review every class, fix docstrings, class names add "final" keyword to necessary places
-> - Add docstring classes that don't have one
+> - Add docstring classes that don't have 
+
+> Optimization
+> - Optimize search for the source of actions happened in the sidebar

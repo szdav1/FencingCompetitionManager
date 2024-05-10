@@ -43,10 +43,7 @@ public final class DatabaseMenuKeyActions {
 	private class ConnectKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
-				return;
-
-			System.out.println("Connect To Database");
+			sidebar.getFrame().openDatabaseConnectionEditor();
 		}
 	}
 
@@ -57,10 +54,7 @@ public final class DatabaseMenuKeyActions {
 	private class ArrangeKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
-				return;
-
-			System.out.println("Arrange Database");
+			sidebar.getFrame().openDatabaseArrangementEditor();
 		}
 	}
 }

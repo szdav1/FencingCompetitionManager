@@ -29,13 +29,13 @@ public final class RuleSetMenuKeyActions {
 		this.sidebar = sidebar;
 
 		// Assign the actions with the shortcut keys
-		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F10"), "ViewRuleSetsKeyAction");
+		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("V"), "ViewRuleSetsKeyAction");
 		this.sidebar.getActionMap().put("ViewRuleSetsKeyAction", new ViewRuleSetsKeyAction());
 
-		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F11"), "NewRuleSetKeyAction");
+		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("N"), "NewRuleSetKeyAction");
 		this.sidebar.getActionMap().put("NewRuleSetKeyAction", new NewRuleSetKeyAction());
 
-		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F12"), "DeleteRuleSetKeyAction");
+		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("D"), "DeleteRuleSetKeyAction");
 		this.sidebar.getActionMap().put("DeleteRuleSetKeyAction", new DeleteRuleSetKeyAction());
 
 		this.sidebar.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("M"), "ModifyRuleSetKeyAction");
@@ -49,10 +49,7 @@ public final class RuleSetMenuKeyActions {
 	private class ViewRuleSetsKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
-				return;
-
-			System.out.println("View Rule Sets");
+			sidebar.getFrame().openRuleSetInspector();
 		}
 	}
 
@@ -63,7 +60,7 @@ public final class RuleSetMenuKeyActions {
 	private class NewRuleSetKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			sidebar.getFrame().openNewRuleSetEditor();
+			sidebar.getFrame().openRuleSetCreator();
 		}
 	}
 
@@ -74,10 +71,7 @@ public final class RuleSetMenuKeyActions {
 	private class DeleteRuleSetKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
-				return;
-
-			System.out.println("Delete Rule Set");
+			sidebar.getFrame().openRuleSetDeleter();
 		}
 	}
 
@@ -88,10 +82,7 @@ public final class RuleSetMenuKeyActions {
 	private class ModifyRuleSetKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
-				return;
-
-			System.out.println("Modify Rule Set");
+			sidebar.getFrame().openRuleSetModifier();
 		}
 	}
 }

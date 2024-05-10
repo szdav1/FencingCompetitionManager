@@ -192,9 +192,6 @@ public final class SidebarController extends AbstractXController {
                 srcBtnInd = pouleMenuButtons.indexOf(pouleMenuButton);
         }
 
-        if (srcBtnInd < 0)
-            return;
-
         switch (srcBtnInd) {
             case 0 -> this.sidebar.getFrame().openEmptyPouleEditor();
             case 1 -> this.sidebar.getFrame().openPouleFromDatabaseEditor();
@@ -217,9 +214,6 @@ public final class SidebarController extends AbstractXController {
                 srcBtnInd = tableMenuButtons.indexOf(tableMenuButton);
         }
 
-        if (srcBtnInd < 0)
-            return;
-
         switch (srcBtnInd) {
             case 0 -> this.sidebar.getFrame().openEmptyTableEditor();
             case 1 -> this.sidebar.getFrame().openTableFromDatabaseEditor();
@@ -241,9 +235,6 @@ public final class SidebarController extends AbstractXController {
             if (competitionMenuButton.equals(ae.getSource()))
                 srcBtnInd = competitionMenuButtons.indexOf(competitionMenuButton);
         }
-
-        if (srcBtnInd < 0)
-            return;
 
         switch (srcBtnInd) {
             case 0 -> this.sidebar.getFrame().openEmptyCompetitionEditor();
@@ -274,10 +265,52 @@ public final class SidebarController extends AbstractXController {
         }
 
         switch (srcBtnInd) {
-            case 0 -> System.out.println("view rule set");
-            case 1 -> this.sidebar.getFrame().openNewRuleSetEditor();
-            case 2 -> System.out.println("delete rule set");
-            case 3 -> System.out.println("modify rule set");
+            case 0 -> this.sidebar.getFrame().openRuleSetInspector();
+            case 1 -> this.sidebar.getFrame().openRuleSetCreator();
+            case 2 -> this.sidebar.getFrame().openRuleSetDeleter();
+            case 3 -> this.sidebar.getFrame().openRuleSetModifier();
+            default -> {
+            }
+        }
+    }
+
+    public void handleSettingsButtons(final ActionEvent ae) {
+        int srcBtnInd = -1;
+
+        List<XButton> settingsMenuButtons = this.sidebar.getButtons()
+            .get(4)
+            .getDropdownPanel()
+            .getButtons();
+
+        for (XButton settingsRuleSetMenuButton : settingsMenuButtons) {
+            if (settingsRuleSetMenuButton.equals(ae.getSource()))
+                srcBtnInd = settingsMenuButtons.indexOf(settingsRuleSetMenuButton);
+        }
+
+        switch (srcBtnInd) {
+            case 0 -> this.sidebar.getFrame().openInterfaceEditor();
+            case 1 -> this.sidebar.getFrame().openLanguageEditor();
+            default -> {
+            }
+        }
+    }
+
+    public void handleDatabaseButtons(final ActionEvent ae) {
+        int srcBtnInd = -1;
+
+        List<XButton> settingsMenuButtons = this.sidebar.getButtons()
+            .get(5)
+            .getDropdownPanel()
+            .getButtons();
+
+        for (XButton settingsRuleSetMenuButton : settingsMenuButtons) {
+            if (settingsRuleSetMenuButton.equals(ae.getSource()))
+                srcBtnInd = settingsMenuButtons.indexOf(settingsRuleSetMenuButton);
+        }
+
+        switch (srcBtnInd) {
+            case 0 -> this.sidebar.getFrame().openDatabaseConnectionEditor();
+            case 1 -> this.sidebar.getFrame().openDatabaseArrangementEditor();
             default -> {
             }
         }
@@ -305,5 +338,7 @@ public final class SidebarController extends AbstractXController {
         this.handleTableButtons(e);
         this.handleCompetitionButtons(e);
         this.handleRuleSetButtons(e);
+        this.handleSettingsButtons(e);
+        this.handleDatabaseButtons(e);
     }
 }

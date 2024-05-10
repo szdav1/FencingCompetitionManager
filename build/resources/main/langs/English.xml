@@ -45,4 +45,40 @@
         <connect>Connect</connect>
         <arrange>Arrange</arrange>
     </words>
+
+    <!--  Editor titles  -->
+    <words for="pouleEditor">
+        <emptyPouleEditorTitle>Empty Poule</emptyPouleEditorTitle>
+        <pouleFromDatabaseEditorTitle>Poule From Database</pouleFromDatabaseEditorTitle>
+        <pouleStatsTitle>Poule Statistics</pouleStatsTitle>
+    </words>
+
+    <words for="tableEditor">
+        <emptyTableEditorTitle>Empty Table</emptyTableEditorTitle>
+        <tableFromDatabaseEditorTitle>Table From Database</tableFromDatabaseEditorTitle>
+        <tableStatsTitle>Table Statistics</tableStatsTitle>
+    </words>
+
+    <words for="competitionEditor">
+        <emptyCompetitionEditorTitle>Empty Competition</emptyCompetitionEditorTitle>
+        <competitionFromDatabaseEditorTitle>Competition From Database</competitionFromDatabaseEditorTitle>
+        <competitionStatsTitle>Competition Statistics</competitionStatsTitle>
+    </words>
+
+    <words for="ruleSetEditor">
+        <viewRuleSetsInspectorTitle>View Rule Sets</viewRuleSetsInspectorTitle>
+        <newRuleSetEditorTitle>New Rule Set</newRuleSetEditorTitle>
+        <deleteRuleSetEditorTitle>Delete Rule Set(s)</deleteRuleSetEditorTitle>
+        <modifyRuleSetEditorTitle>Modify Rule Set</modifyRuleSetEditorTitle>
+    </words>
+
+    <words for="settingsEditor">
+        <interfaceEditorTitle>Interface Settings</interfaceEditorTitle>
+        <languageEditorTitle>Language Settings</languageEditorTitle>
+    </words>
+
+    <words for="databaseEditor">
+        <connectionEditorTitle>Database Connection</connectionEditorTitle>
+        <arrangementEditorTitle>Database Arrangement</arrangementEditorTitle>
+    </words>
 </English>

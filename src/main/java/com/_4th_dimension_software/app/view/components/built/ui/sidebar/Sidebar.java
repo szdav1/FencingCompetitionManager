@@ -88,9 +88,9 @@ public final class Sidebar extends XPanel {
 		this.competitionButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEFT);
 
 		this.ruleSetsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.ruleSet"), frame, appearanceName+".buttons.ruleSet");
-		this.ruleSetsButton.addButtonToDropdown(LanguagePack.get("sidebar.ruleSet.view"), "[F10]", appearanceName+".buttons.ruleSet.dropdown.view");
-		this.ruleSetsButton.addButtonToDropdown(LanguagePack.get("sidebar.ruleSet.new"), "[F11]", appearanceName+".buttons.ruleSet.dropdown.add");
-		this.ruleSetsButton.addButtonToDropdown(LanguagePack.get("sidebar.ruleSet.delete"), "[F12]", appearanceName+".buttons.ruleSet.dropdown.delete");
+		this.ruleSetsButton.addButtonToDropdown(LanguagePack.get("sidebar.ruleSet.view"), "[V]", appearanceName+".buttons.ruleSet.dropdown.view");
+		this.ruleSetsButton.addButtonToDropdown(LanguagePack.get("sidebar.ruleSet.new"), "[N]", appearanceName+".buttons.ruleSet.dropdown.add");
+		this.ruleSetsButton.addButtonToDropdown(LanguagePack.get("sidebar.ruleSet.delete"), "[D]", appearanceName+".buttons.ruleSet.dropdown.delete");
 		this.ruleSetsButton.addButtonToDropdown(LanguagePack.get("sidebar.ruleSet.modify"), "[M]", appearanceName+".buttons.ruleSet.dropdown.modify");
 		this.ruleSetsButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEFT);
 

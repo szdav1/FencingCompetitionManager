@@ -1,6 +1,7 @@
 package com._4th_dimension_software.app.view.components.built.ui.editors;
 
 import com._4th_dimension_software.app.view.frame.XFrame;
+import com._4th_dimension_software.support.lang.LanguagePack;
 
 /**
  * The <code>CompetitionFromDatabaseEditor</code> class is a subclass
@@ -22,6 +23,6 @@ public final class CompetitionFromDatabaseEditor extends AbstractEditor {
 	 */
 	public CompetitionFromDatabaseEditor(XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
-		this.setTitle("Competition Editor: From Database");
+		this.setTitle(LanguagePack.get("competitionEditor.competitionFromDatabaseEditorTitle"));
 	}
 }

@@ -43,10 +43,7 @@ public final class SettingsMenuKeyActions {
 	private class InterfaceKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
-				return;
-
-			System.out.println("Interface Settings");
+			sidebar.getFrame().openInterfaceEditor();
 		}
 	}
 
@@ -57,10 +54,7 @@ public final class SettingsMenuKeyActions {
 	private class LanguageKeyAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (sidebar.getFrame().getFrameState() != FrameState.NORMAL)
-				return;
-
-			System.out.println("Language Settings");
+			sidebar.getFrame().openLanguageEditor();
 		}
 	}
 }
