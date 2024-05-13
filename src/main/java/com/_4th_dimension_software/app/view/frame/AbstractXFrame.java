@@ -25,7 +25,7 @@ public abstract class AbstractXFrame extends JFrame implements XContainer {
      * frame appear and work properly.
      *
      * @param title          The title of the frame
-     * @param appearanceName The name of the <code>Appearance</code> that's
+     * @param appearanceName The name of the Appearance that's
      *                       values should be implemented on the frame
      */
     protected AbstractXFrame(String title, String appearanceName) {

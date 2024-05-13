@@ -15,6 +15,10 @@ import com._4th_dimension_software.support.theme.models.ColorThemeModel;
 import com._4th_dimension_software.support.theme.models.FontModel;
 import com._4th_dimension_software.support.util.ResourceHandler;
 
+/**
+ * The <code>AbstractAppearance</code> abstract class defines the
+ * abstract behaviour of <code>Appearance</code>s inside the application.
+ */
 public abstract class AbstractAppearance {
 	protected boolean linearPaint;
 	protected HashMap<String, Boolean> borderPaintRules;
@@ -25,6 +29,10 @@ public abstract class AbstractAppearance {
 	protected ImageIcon icon1;
 	protected ImageIcon icon2;
 
+	/**
+	 * Defines the base constructor of <code>Appearance</code>s
+	 * that initializes every field to a default value.
+	 */
 	protected AbstractAppearance() {
 		this.linearPaint = true;
 		this.backgrounds = new ArrayList<>(List.of(Color.black));
@@ -37,6 +45,14 @@ public abstract class AbstractAppearance {
 		this.initBorderPaintRules();
 	}
 
+	/**
+	 * Defines the base constructor of <code>Appearance</code>s that
+	 * initializes every field with the corresponding field of the
+	 * specified <code>ColorThemeModel</code>.
+	 *
+	 * @param colorThemeModel The <code>ColorThemeModel</code> that's values should be
+	 *                        passed into and processed by the Appearance.
+	 */
 	public AbstractAppearance(final ColorThemeModel colorThemeModel) {
 		this.linearPaint = colorThemeModel.isLinearPaint();
 		this.borderPaintRules = colorThemeModel.getBorderPaintRules();

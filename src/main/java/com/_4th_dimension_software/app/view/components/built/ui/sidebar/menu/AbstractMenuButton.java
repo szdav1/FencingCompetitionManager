@@ -17,16 +17,16 @@ import java.awt.event.ActionListener;
  */
 public abstract class AbstractMenuButton extends XButton implements ActionListener {
     protected boolean active;
-    protected DropdownPanel dropdownPanel;
+    protected final DropdownPanel dropdownPanel;
 
     /**
      * Defines the constructor of menu buttons that
      * initializes every field of the class.
      *
-     * @param dimension      The dimension of the menu button
+     * @param dimension      The Dimension of the menu button
      * @param text           The text of the menu button
      * @param frame          The main frame of the application
-     * @param appearanceName The name of the <code>Appearance</code> that's
+     * @param appearanceName The name of the Appearance that's
      *                       values should be implemented on this component
      */
     protected AbstractMenuButton(Dimension dimension, String text, final XFrame frame, String appearanceName) {
@@ -45,9 +45,9 @@ public abstract class AbstractMenuButton extends XButton implements ActionListen
      * initializes every field of the class except for the
      * text.
      *
-     * @param dimension      The dimension of the menu button
+     * @param dimension      The Dimension of the menu button
      * @param frame          The main frame of the application
-     * @param appearanceName The name of the <code>Appearance</code> that's
+     * @param appearanceName The name of the Appearance that's
      *                       values should be implemented on this component
      */
     protected AbstractMenuButton(Dimension dimension, final XFrame frame, String appearanceName) {
@@ -64,7 +64,7 @@ public abstract class AbstractMenuButton extends XButton implements ActionListen
      * @param height         The height of the panel
      * @param text           The text of the menu button
      * @param frame          The main frame of the application
-     * @param appearanceName The name of the <code>Appearance</code> that's
+     * @param appearanceName The name of the Appearance that's
      *                       values should be implemented on this component
      */
     protected AbstractMenuButton(int x, int y, int width, int height, String text, final XFrame frame, String appearanceName) {
@@ -88,7 +88,7 @@ public abstract class AbstractMenuButton extends XButton implements ActionListen
      * @param width          The width of the panel
      * @param height         The height of the panel
      * @param frame          The main frame of the application
-     * @param appearanceName The name of the <code>Appearance</code> that's
+     * @param appearanceName The name of the Appearance that's
      *                       values should be implemented on this component
      */
     protected AbstractMenuButton(int x, int y, int width, int height, final XFrame frame, String appearanceName) {

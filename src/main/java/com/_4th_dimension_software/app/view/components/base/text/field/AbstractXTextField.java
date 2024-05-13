@@ -15,13 +15,13 @@ import java.awt.*;
  * The <code>AbstractXTextField</code> abstract class defines the abstract
  * behaviour of text fields inside the application. It is a subclass of
  * swing's default <code>JTextField</code> class. It implements the basic
- * and necessary interfaces that are required in order for a label to work
+ * and necessary interfaces that are required in order for a text fields to work
  * properly.
  *
  * @author szd
  */
 public abstract class AbstractXTextField extends JTextField implements XComponent, CustomGraphicsUser {
-    protected Appearance appearance;
+    protected final Appearance appearance;
     protected final XFrame frame;
 
     /**
@@ -32,7 +32,7 @@ public abstract class AbstractXTextField extends JTextField implements XComponen
      * @param dimension      The Dimension of the text field
      * @param text           The default text of the text field
      * @param frame          The main frame of the application
-     * @param appearanceName The name of the <code>Appearance</code> that's values
+     * @param appearanceName The name of the Appearance that's values
      *                       should be implemented on this text field
      */
     protected AbstractXTextField(Dimension dimension, String text, final XFrame frame, String appearanceName) {
@@ -56,10 +56,10 @@ public abstract class AbstractXTextField extends JTextField implements XComponen
      *
      * @param dimension      The Dimension of the text field
      * @param frame          The main frame of the application
-     * @param appearanceName The name of the <code>Appearance</code> that's values
+     * @param appearanceName The name of the Appearance that's values
      *                       should be implemented on this text field
      */
-    protected AbstractXTextField(Dimension dimension, XFrame frame, String appearanceName) {
+    protected AbstractXTextField(Dimension dimension, final XFrame frame, String appearanceName) {
         this(dimension, "", frame, appearanceName);
     }
 
@@ -74,7 +74,7 @@ public abstract class AbstractXTextField extends JTextField implements XComponen
      * @param height         The height of the text field
      * @param text           The default text of the text field
      * @param frame          The main frame of the application
-     * @param appearanceName The name of the <code>Appearance</code> that's values
+     * @param appearanceName The name of the Appearance that's values
      *                       should be implemented on this text field
      */
     protected AbstractXTextField(int x, int y, int width, int height, String text, final XFrame frame, String appearanceName) {
@@ -101,7 +101,7 @@ public abstract class AbstractXTextField extends JTextField implements XComponen
      * @param width          The width of the text field
      * @param height         The height of the text field
      * @param frame          The main frame of the application
-     * @param appearanceName The name of the <code>Appearance</code> that's values
+     * @param appearanceName The name of the Appearance that's values
      *                       should be implemented on this text field
      */
     protected AbstractXTextField(int x, int y, int width, int height, final XFrame frame, String appearanceName) {

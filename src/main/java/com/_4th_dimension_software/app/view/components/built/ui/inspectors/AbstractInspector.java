@@ -33,10 +33,13 @@ public abstract class AbstractInspector extends XPanel {
 	protected final XButton closeButton;
 
 	/**
-	 * Defines the base constructor of inspectors.
+	 * Defines the base constructor of inspectors. The base
+	 * constructor initializes all UI elements of an inspector,
+	 * and creates an anonymous instance of the <code>AbstractInspectorController</code>
+	 * controller class. This controller handles the closing of inspectors.
 	 *
 	 * @param frame          The main frame of the application
-	 * @param appearanceName The name of the <code>Appearance</code> that's
+	 * @param appearanceName The name of the Appearance that's
 	 *                       values should be implemented on this component
 	 */
 	protected AbstractInspector(final XFrame frame, String appearanceName) {

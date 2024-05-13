@@ -52,7 +52,6 @@ public final class DatabaseMenuKeyActions {
     private final class ArrangeKeyAction extends AbstractAction {
         @Override
         public void actionPerformed(ActionEvent e) {
-            sidebar.getFrame().openDatabaseArrangementEditor();
         }
     }
 }

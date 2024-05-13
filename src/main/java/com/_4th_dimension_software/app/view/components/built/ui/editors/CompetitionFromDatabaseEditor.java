@@ -18,10 +18,10 @@ public final class CompetitionFromDatabaseEditor extends AbstractEditor {
 	 * competition creation from database.
 	 *
 	 * @param frame          The main frame of the application
-	 * @param appearanceName The name of the appearance that should
+	 * @param appearanceName The name of the Appearance that should
 	 *                       be implemented on this component
 	 */
-	public CompetitionFromDatabaseEditor(XFrame frame, String appearanceName) {
+	public CompetitionFromDatabaseEditor(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
 		this.setTitle(LanguagePack.get("competitionEditor.competitionFromDatabaseEditorTitle"));
 	}

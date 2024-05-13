@@ -12,11 +12,11 @@ import com._4th_dimension_software.app.view.frame.XFrame;
 public final class PouleStatsInspector extends AbstractInspector {
 	/**
 	 * Constructs a <code>PouleStatsInspector</code> object.
-	 * This editor object is responsible for handling
+	 * This inspector object is responsible for handling
 	 * poule statistics display.
 	 *
 	 * @param frame          The main frame of the application
-	 * @param appearanceName The name of the appearance that should
+	 * @param appearanceName The name of the Appearance that should
 	 *                       be implemented on this component
 	 */
 	public PouleStatsInspector(final XFrame frame, String appearanceName) {

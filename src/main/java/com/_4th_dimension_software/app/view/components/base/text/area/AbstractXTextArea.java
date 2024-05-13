@@ -15,13 +15,13 @@ import java.awt.*;
  * The <code>AbstractXTextArea</code> abstract class defines the abstract
  * behaviour of text ares inside the application. It is a subclass of
  * swing's default <code>JTextArea</code> class. It implements the basic
- * and necessary interfaces that are required in order for a label to work
+ * and necessary interfaces that are required in order for a text area to work
  * properly.
  *
  * @author szd
  */
 public abstract class AbstractXTextArea extends JTextArea implements XComponent, CustomGraphicsUser {
-    protected Appearance appearance;
+    protected final Appearance appearance;
     protected final XFrame frame;
 
     /**

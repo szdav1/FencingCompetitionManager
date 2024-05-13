@@ -12,11 +12,11 @@ import com._4th_dimension_software.app.view.frame.XFrame;
 public final class TableStatsInspector extends AbstractInspector {
 	/**
 	 * Constructs a <code>TableStatsInspector</code> object.
-	 * This editor object is responsible for handling
+	 * This inspector object is responsible for handling
 	 * table statistics display.
 	 *
 	 * @param frame          The main frame of the application
-	 * @param appearanceName The name of the appearance that should
+	 * @param appearanceName The name of the Appearance that should
 	 *                       be implemented on this component
 	 */
 	public TableStatsInspector(final XFrame frame, String appearanceName) {

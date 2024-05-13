@@ -18,7 +18,7 @@ public final class PouleFromDatabaseEditor extends AbstractEditor {
 	 * poule creation from database.
 	 *
 	 * @param frame          The main frame of the application
-	 * @param appearanceName The name of the appearance that should
+	 * @param appearanceName The name of the Appearance that should
 	 *                       be implemented on this component
 	 */
 	public PouleFromDatabaseEditor(final XFrame frame, String appearanceName) {

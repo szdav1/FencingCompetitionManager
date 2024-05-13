@@ -12,14 +12,14 @@ import com._4th_dimension_software.app.view.frame.XFrame;
 public final class CompetitionStatsInspector extends AbstractInspector {
 	/**
 	 * Constructs a <code>CompetitionStatsInspector</code> object.
-	 * This editor object is responsible for handling
+	 * This inspector object is responsible for handling
 	 * competition statistics display.
 	 *
 	 * @param frame          The main frame of the application
-	 * @param appearanceName The name of the appearance that should
+	 * @param appearanceName The name of the Appearance that should
 	 *                       be implemented on this component
 	 */
-	public CompetitionStatsInspector(XFrame frame, String appearanceName) {
+	public CompetitionStatsInspector(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
 		this.setTitle("Competition Statistics");
 	}

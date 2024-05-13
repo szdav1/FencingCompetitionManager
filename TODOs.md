@@ -19,7 +19,7 @@
 > Documentation
 > - Code review: Review every class, fix docstrings, class names add "final" keyword to necessary places
 > - Add docstring classes that don't have 
-> - Stopped at the abstratc controller!!44!!
+> - Stopped at the XButton class!!44!!
 
 > Optimization
 > - Optimize search for the source of actions happened in the sidebar

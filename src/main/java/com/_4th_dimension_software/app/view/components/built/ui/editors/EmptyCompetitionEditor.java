@@ -4,7 +4,7 @@ import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.lang.LanguagePack;
 
 /**
- * The <code>CompetitionEditor</code> class is a subclass
+ * The <code>EmptyCompetitionEditor</code> class is a subclass
  * of the <code>AbstractEditor</code>. It contains UI
  * elements and handles actions related to competition
  * creation with empty resources.
@@ -13,12 +13,12 @@ import com._4th_dimension_software.support.lang.LanguagePack;
  */
 public final class EmptyCompetitionEditor extends AbstractEditor {
 	/**
-	 * Constructs a <code>CompetitionEditor</code> object.
+	 * Constructs an <code>EmptyCompetitionEditor</code> object.
 	 * This editor object is responsible for handling
 	 * competition creation with empty resources.
 	 *
 	 * @param frame          The main frame of the application
-	 * @param appearanceName The name of the appearance that should
+	 * @param appearanceName The name of the Appearance that should
 	 *                       be implemented on this component
 	 */
 	public EmptyCompetitionEditor(final XFrame frame, String appearanceName) {

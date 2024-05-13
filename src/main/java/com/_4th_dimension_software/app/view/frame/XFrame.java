@@ -63,14 +63,13 @@ public class XFrame extends AbstractXFrame {
     private final LanguageEditor languageEditor;
     // Database
     private final DatabaseConnectionEditor databaseConnectionEditor;
-    private final DatabaseArrangementEditor databaseArrangementEditor;
 
     /**
      * Constructs an <code>XFrame</code> object. This object is
      * the conductor of the actions in the application.
      *
      * @param title          The title of the application window
-     * @param appearanceName The name of the <code>Appearance</code> that is going to
+     * @param appearanceName The name of the Appearance that is going to
      *                       be used to stylize the window
      */
     public XFrame(String title, String appearanceName) {
@@ -110,7 +109,6 @@ public class XFrame extends AbstractXFrame {
         this.languageEditor = new LanguageEditor(this, "settingsEditor");
         // Database
         this.databaseConnectionEditor = new DatabaseConnectionEditor(this, "databaseEditor");
-        this.databaseArrangementEditor = new DatabaseArrangementEditor(this, "databaseEditor");
 
         // Background image
         this.setBackgroundImage();
@@ -331,19 +329,6 @@ public class XFrame extends AbstractXFrame {
         if (this.frameState == FrameState.NORMAL) {
             this.addToCenterPanel(this.databaseConnectionEditor);
             this.displayingPanel = this.databaseConnectionEditor;
-            this.frameState = FrameState.DATABASE_EDITOR_OPENED;
-        }
-    }
-
-    /**
-     * Adds the database arrangement editor to the main frame.
-     * This method only runs if the state of the frame
-     * is <code>NORMAL</code>.
-     */
-    public void openDatabaseArrangementEditor() {
-        if (this.frameState == FrameState.NORMAL) {
-            this.addToCenterPanel(this.databaseArrangementEditor);
-            this.displayingPanel = this.databaseArrangementEditor;
             this.frameState = FrameState.DATABASE_EDITOR_OPENED;
         }
     }

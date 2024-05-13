@@ -16,13 +16,13 @@ import java.awt.*;
  * The <code>AbstractXPanel</code> abstract class defines the abstract
  * behaviour of panels inside the application. It is a subclass of
  * swing's default <code>JPanel</code> class. It implements the basic
- * and necessary interfaces that are required in order for a label to work
+ * and necessary interfaces that are required in order for a panel to work
  * properly.
  *
  * @author szd
  */
 public abstract class AbstractXPanel extends JLayeredPane implements XComponent, XContainer, CustomGraphicsUser {
-    protected Appearance appearance;
+    protected final Appearance appearance;
     protected final XFrame frame;
 
     /**
@@ -33,7 +33,7 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
      * @param dimension      The Dimension of the panel
      * @param layoutManager  The LayoutManager of the panel
      * @param frame          The main frame of the Application
-     * @param appearanceName The name of the <code>Appearance</code> that's values
+     * @param appearanceName The name of the Appearance that's values
      *                       should be implemented on this panel
      */
     protected AbstractXPanel(Dimension dimension, LayoutManager layoutManager, final XFrame frame, String appearanceName) {
@@ -52,7 +52,7 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
      *
      * @param dimension      The Dimension of the panel
      * @param frame          The main frame of the Application
-     * @param appearanceName The name of the <code>Appearance</code> that's values
+     * @param appearanceName The name of the Appearance that's values
      *                       should be implemented on this panel
      */
     protected AbstractXPanel(Dimension dimension, final XFrame frame, String appearanceName) {
@@ -71,7 +71,7 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
      * @param height         The height of the panel
      * @param layoutManager  The LayoutManager of the panel
      * @param frame          The main frame of the Application
-     * @param appearanceName The name of the <code>Appearance</code> that's values
+     * @param appearanceName The name of the Appearance that's values
      *                       should be implemented on this panel
      */
     protected AbstractXPanel(int x, int y, int width, int height, LayoutManager layoutManager, final XFrame frame, String appearanceName) {
@@ -93,7 +93,7 @@ public abstract class AbstractXPanel extends JLayeredPane implements XComponent,
      * @param width          The width of the panel
      * @param height         The height of the panel
      * @param frame          The main frame of the Application
-     * @param appearanceName The name of the <code>Appearance</code> that's values
+     * @param appearanceName The name of the Appearance that's values
      *                       should be implemented on this panel
      */
     protected AbstractXPanel(int x, int y, int width, int height, final XFrame frame, String appearanceName) {

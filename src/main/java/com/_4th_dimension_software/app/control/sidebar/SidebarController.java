@@ -364,7 +364,7 @@ public final class SidebarController extends AbstractXController {
 
         switch (srcBtnInd) {
             case 0 -> this.sidebar.getFrame().openDatabaseConnectionEditor();
-            case 1 -> this.sidebar.getFrame().openDatabaseArrangementEditor();
+            case 1 -> {}
             default -> {
             }
         }
