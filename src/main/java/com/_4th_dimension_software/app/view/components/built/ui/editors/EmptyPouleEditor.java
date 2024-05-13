@@ -23,6 +23,6 @@ public final class EmptyPouleEditor extends AbstractEditor {
 	 */
 	public EmptyPouleEditor(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
-		this.setTitle(LanguagePack.get("pouleEditor.emptyPouleEditorTitle"));
+		this.setTitle(LanguagePack.get("emptyPouleEditor.title"));
 	}
 }

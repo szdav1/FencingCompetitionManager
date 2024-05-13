@@ -46,39 +46,74 @@
         <arrange>Arrange</arrange>
     </words>
 
-    <!--  Editor titles  -->
-    <words for="pouleEditor">
-        <emptyPouleEditorTitle>Empty Poule</emptyPouleEditorTitle>
-        <pouleFromDatabaseEditorTitle>Poule From Database</pouleFromDatabaseEditorTitle>
-        <pouleStatsTitle>Poule Statistics</pouleStatsTitle>
+    <!--  Editors & Inspectors -->
+    <!--  Poule  -->
+    <words for="emptyPouleEditor">
+        <title>Empty Poule</title>
     </words>
 
-    <words for="tableEditor">
-        <emptyTableEditorTitle>Empty Table</emptyTableEditorTitle>
-        <tableFromDatabaseEditorTitle>Table From Database</tableFromDatabaseEditorTitle>
-        <tableStatsTitle>Table Statistics</tableStatsTitle>
+    <words for="pouleFromDatabaseEditor">
+        <title>Poule From Database</title>
     </words>
 
-    <words for="competitionEditor">
-        <emptyCompetitionEditorTitle>Empty Competition</emptyCompetitionEditorTitle>
-        <competitionFromDatabaseEditorTitle>Competition From Database</competitionFromDatabaseEditorTitle>
-        <competitionStatsTitle>Competition Statistics</competitionStatsTitle>
+    <words for="pouleStatsInspector">
+        <title>Poule Statistics</title>
     </words>
 
-    <words for="ruleSetEditor">
-        <viewRuleSetsInspectorTitle>View Rule Sets</viewRuleSetsInspectorTitle>
-        <newRuleSetEditorTitle>New Rule Set</newRuleSetEditorTitle>
-        <deleteRuleSetEditorTitle>Delete Rule Set(s)</deleteRuleSetEditorTitle>
-        <modifyRuleSetEditorTitle>Modify Rule Set</modifyRuleSetEditorTitle>
+    <!--  Table  -->
+    <words for="emptyTableEditor">
+        <title>Empty Table</title>
     </words>
 
-    <words for="settingsEditor">
-        <interfaceEditorTitle>Interface Settings</interfaceEditorTitle>
-        <languageEditorTitle>Language Settings</languageEditorTitle>
+    <words for="tableFromDatabaseEditor">
+        <title>Table From Database</title>
     </words>
 
-    <words for="databaseEditor">
-        <connectionEditorTitle>Database Connection</connectionEditorTitle>
-        <arrangementEditorTitle>Database Arrangement</arrangementEditorTitle>
+    <words for="tableStatsInspector">
+        <title>Table Statistics</title>
+    </words>
+
+    <!--  Competition  -->
+    <words for="emptyCompetitionEditor">
+        <title>Empty Competition</title>
+    </words>
+
+    <words for="competitionFromDatabaseEditor">
+        <title>Competition From Database</title>
+    </words>
+
+    <words for="competitionStatsInspector">
+        <title>Competition Statistics</title>
+    </words>
+
+    <!--  Rule sets  -->
+    <words for="ruleSetInspector">
+        <title>View Rule Sets</title>
+    </words>
+
+    <words for="newRuleSetEditor">
+        <title>New Rule Set</title>
+    </words>
+
+    <words for="ruleSetModifier">
+        <title>Modify Rule Set</title>
+    </words>
+
+    <words for="ruleSetDeleter">
+        <title>Delete Rule Set(s)</title>
+    </words>
+
+    <!--  Settings  -->
+    <words for="interfaceEditor">
+        <title>Interface/Appearance</title>
+    </words>
+
+    <words for="languageEditor">
+        <title>Language</title>
+    </words>
+
+    <!--  Database  -->
+    <words for="databaseConnectionEditor">
+        <title>Database Connection</title>
     </words>
 </English>

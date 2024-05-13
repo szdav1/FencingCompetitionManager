@@ -22,6 +22,6 @@ public final class RuleSetModifier extends AbstractEditor {
 	 */
 	public RuleSetModifier(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
-		this.setTitle(LanguagePack.get("ruleSetEditor.modifyRuleSetEditorTitle"));
+		this.setTitle(LanguagePack.get("ruleSetModifier.title"));
 	}
 }

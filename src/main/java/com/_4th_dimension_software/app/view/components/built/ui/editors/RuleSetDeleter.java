@@ -22,6 +22,6 @@ public final class RuleSetDeleter extends AbstractEditor {
 	 */
 	public RuleSetDeleter(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
-		this.setTitle(LanguagePack.get("ruleSetEditor.deleteRuleSetEditorTitle"));
+		this.setTitle(LanguagePack.get("ruleSetDeleter.title"));
 	}
 }

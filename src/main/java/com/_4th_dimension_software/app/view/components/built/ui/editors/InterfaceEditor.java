@@ -22,6 +22,6 @@ public final class InterfaceEditor extends AbstractEditor {
 	 */
 	public InterfaceEditor(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
-		this.setTitle(LanguagePack.get("settingsEditor.interfaceEditorTitle"));
+		this.setTitle(LanguagePack.get("interfaceEditor.title"));
 	}
 }

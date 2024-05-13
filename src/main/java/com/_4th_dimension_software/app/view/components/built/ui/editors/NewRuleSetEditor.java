@@ -23,6 +23,6 @@ public final class NewRuleSetEditor extends AbstractEditor {
 	 */
 	public NewRuleSetEditor(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
-		this.setTitle(LanguagePack.get("ruleSetEditor.newRuleSetEditorTitle"));
+		this.setTitle(LanguagePack.get("newRuleSetEditor.title"));
 	}
 }

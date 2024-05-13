@@ -23,6 +23,6 @@ public final class CompetitionFromDatabaseEditor extends AbstractEditor {
 	 */
 	public CompetitionFromDatabaseEditor(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
-		this.setTitle(LanguagePack.get("competitionEditor.competitionFromDatabaseEditorTitle"));
+		this.setTitle(LanguagePack.get("competitionFromDatabaseEditor.title"));
 	}
 }

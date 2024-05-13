@@ -1,5 +1,11 @@
 package com._4th_dimension_software.app.view.components.built.ui.sidebar;
 
+import java.awt.Insets;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.SwingConstants;
+
 import com._4th_dimension_software.app.control.sidebar.SidebarController;
 import com._4th_dimension_software.app.view.components.base.button.XButton;
 import com._4th_dimension_software.app.view.components.base.label.XLabel;
@@ -10,11 +16,6 @@ import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.consts.RelativePositions;
 import com._4th_dimension_software.support.lang.LanguagePack;
-
-import javax.swing.SwingConstants;
-import java.awt.Insets;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * The <code>Sidebar</code> class contains the declaration of
@@ -91,7 +92,6 @@ public final class Sidebar extends XPanel {
 
 		MenuButton databaseButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.database"), frame, appearanceName+".buttons.database");
 		databaseButton.addButtonToDropdown(LanguagePack.get("sidebar.database.connect"), "[C]", appearanceName+".buttons.database.dropdown.connect");
-		databaseButton.addButtonToDropdown(LanguagePack.get("sidebar.database.arrange"), "[A]", appearanceName+".buttons.database.dropdown.manage");
 		databaseButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEFT);
 
 		// Exit button

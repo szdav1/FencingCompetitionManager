@@ -17,11 +17,11 @@ public final class SizeData {
     public static final int SCREEN_HEIGHT = SCREEN_SIZE.height;
 
     // Proportional factor
-    public static final int PROPORTIONALITY_FACTOR = SCREEN_WIDTH/SCREEN_HEIGHT;
+    public static final int PROPORTIONALITY_FACTOR = Math.round((float) SCREEN_WIDTH/SCREEN_HEIGHT);
 
     // Font size
-    public static final int FONT_SIZE = PROPORTIONALITY_FACTOR*14;
-    public static final int BORDER_SIZE = 2;
+    public static final int FONT_SIZE = PROPORTIONALITY_FACTOR*7;
+    public static final int BORDER_SIZE = PROPORTIONALITY_FACTOR;
 
     // Scroll bar size and Dimension
     // Vertical
@@ -35,10 +35,10 @@ public final class SizeData {
     public static final Dimension H_SCROLL_BAR_DIMENSION = new Dimension(H_SCROLL_BAR_WIDTH, H_SCROLL_BAR_HEIGHT);
 
     // Button size and dimension
-    public static final int N_BUTTON_WIDTH = PROPORTIONALITY_FACTOR*60;
-    public static final int BUTTON_WIDTH = PROPORTIONALITY_FACTOR*180;
-    public static final int W_BUTTON_WIDTH = PROPORTIONALITY_FACTOR*220;
-    public static final int BUTTON_HEIGHT = PROPORTIONALITY_FACTOR*55;
+    public static final int N_BUTTON_WIDTH = SCREEN_WIDTH*3/100;
+    public static final int BUTTON_WIDTH = SCREEN_WIDTH*7/100;
+    public static final int W_BUTTON_WIDTH = SCREEN_WIDTH*10/100;
+    public static final int BUTTON_HEIGHT = SCREEN_HEIGHT*5/100;
 
     // Narrow button dimension
     public static final Dimension N_BUTTON_DIMENSION = new Dimension(N_BUTTON_WIDTH, BUTTON_HEIGHT);
@@ -62,10 +62,10 @@ public final class SizeData {
     public static final Dimension SEPARATOR_DIMENSION = new Dimension(SEPARATOR_WIDTH, BORDER_SIZE);
 
     // Text margin in buttons
-    public static final int TEXT_MARGIN = PROPORTIONALITY_FACTOR*10;
+    public static final int TEXT_MARGIN = PROPORTIONALITY_FACTOR*5;
 
     // Shortcut key label size and dimension
-    public static final int SHORTCUT_KEY_LABEL_WIDTH = PROPORTIONALITY_FACTOR*52;
+    public static final int SHORTCUT_KEY_LABEL_WIDTH = SCREEN_WIDTH*3/100;
     public static final Dimension SHORTCUT_KEY_LABEL_DIMENSION = new Dimension(SHORTCUT_KEY_LABEL_WIDTH, BUTTON_HEIGHT);
 
     // Editor size and dimension

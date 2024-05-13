@@ -1,6 +1,7 @@
 package com._4th_dimension_software.app.view.components.built.ui.inspectors;
 
 import com._4th_dimension_software.app.view.frame.XFrame;
+import com._4th_dimension_software.support.lang.LanguagePack;
 
 /**
  * The <code>CompetitionStatsInspector</code> class is a subclass
@@ -21,6 +22,6 @@ public final class CompetitionStatsInspector extends AbstractInspector {
 	 */
 	public CompetitionStatsInspector(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
-		this.setTitle("Competition Statistics");
+		this.setTitle(LanguagePack.get("competitionStatsInspector.title"));
 	}
 }

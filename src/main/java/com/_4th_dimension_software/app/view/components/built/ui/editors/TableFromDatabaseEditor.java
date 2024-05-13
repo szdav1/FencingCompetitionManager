@@ -23,6 +23,6 @@ public final class TableFromDatabaseEditor extends AbstractEditor {
 	 */
 	public TableFromDatabaseEditor(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
-		this.setTitle(LanguagePack.get("tableEditor.tableFromDatabaseEditorTitle"));
+		this.setTitle(LanguagePack.get("tableFromDatabaseEditor.title"));
 	}
 }

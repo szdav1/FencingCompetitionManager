@@ -23,6 +23,6 @@ public final class EmptyCompetitionEditor extends AbstractEditor {
 	 */
 	public EmptyCompetitionEditor(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
-		this.setTitle(LanguagePack.get("competitionEditor.emptyCompetitionEditorTitle"));
+		this.setTitle(LanguagePack.get("emptyCompetitionEditor.title"));
 	}
 }

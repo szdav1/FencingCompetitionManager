@@ -22,6 +22,6 @@ public final class DatabaseConnectionEditor extends AbstractEditor {
 	 */
 	public DatabaseConnectionEditor(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
-		this.setTitle(LanguagePack.get("databaseEditor.connectionEditorTitle"));
+		this.setTitle(LanguagePack.get("databaseConnectionEditor.title"));
 	}
 }

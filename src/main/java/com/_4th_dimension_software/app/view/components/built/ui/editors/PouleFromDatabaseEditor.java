@@ -23,6 +23,6 @@ public final class PouleFromDatabaseEditor extends AbstractEditor {
 	 */
 	public PouleFromDatabaseEditor(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
-		this.setTitle(LanguagePack.get("pouleEditor.pouleFromDatabaseEditorTitle"));
+		this.setTitle(LanguagePack.get("pouleFromDatabaseEditor.title"));
 	}
 }

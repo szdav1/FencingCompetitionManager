@@ -23,6 +23,6 @@ public final class EmptyTableEditor extends AbstractEditor {
 	 */
 	public EmptyTableEditor(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
-		this.setTitle(LanguagePack.get("tableEditor.emptyTableEditorTitle"));
+		this.setTitle(LanguagePack.get("emptyTableEditor.title"));
 	}
 }

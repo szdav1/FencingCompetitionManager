@@ -22,6 +22,6 @@ public final class RuleSetsInspector extends AbstractInspector {
      */
     public RuleSetsInspector(final XFrame frame, String appearanceName) {
         super(frame, appearanceName);
-        this.setTitle(LanguagePack.get("ruleSetEditor.viewRuleSetsInspectorTitle"));
+        this.setTitle(LanguagePack.get("ruleSetInspector.title"));
     }
 }
