@@ -35,10 +35,10 @@ public final class SizeData {
     public static final Dimension H_SCROLL_BAR_DIMENSION = new Dimension(H_SCROLL_BAR_WIDTH, H_SCROLL_BAR_HEIGHT);
 
     // Button size and dimension
-    public static final int N_BUTTON_WIDTH = SCREEN_WIDTH*3/100;
-    public static final int BUTTON_WIDTH = SCREEN_WIDTH*7/100;
-    public static final int W_BUTTON_WIDTH = SCREEN_WIDTH*10/100;
-    public static final int BUTTON_HEIGHT = SCREEN_HEIGHT*5/100;
+    public static final int N_BUTTON_WIDTH = PROPORTIONALITY_FACTOR*30;
+    public static final int BUTTON_WIDTH = PROPORTIONALITY_FACTOR*70;
+    public static final int W_BUTTON_WIDTH = PROPORTIONALITY_FACTOR*110;
+    public static final int BUTTON_HEIGHT = PROPORTIONALITY_FACTOR*30;
 
     // Narrow button dimension
     public static final Dimension N_BUTTON_DIMENSION = new Dimension(N_BUTTON_WIDTH, BUTTON_HEIGHT);

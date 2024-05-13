@@ -1,9 +1,6 @@
 package com._4th_dimension_software.app.view.components.built.ui.inspectors;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Insets;
+import java.awt.*;
 
 import javax.swing.JLabel;
 
@@ -57,6 +54,7 @@ public abstract class AbstractInspector extends XPanel {
 
 		// Close button
 		this.closeButton = new XButton(SizeData.N_BUTTON_DIMENSION, "x", frame, appearanceName+".buttons.close");
+		this.closeButton.setFont(new Font(this.closeButton.getFont().getFontName(), this.closeButton.getFont().getStyle(), SizeData.PROPORTIONALITY_FACTOR*10));
 
 		// Instantiate an anonymous controller for the inspectors
 		new AbstractInspectorController(this);
