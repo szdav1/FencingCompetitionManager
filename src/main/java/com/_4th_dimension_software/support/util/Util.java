@@ -317,4 +317,44 @@ public final class Util {
 
 		return icon;
 	}
+
+	/**
+	 * Surrounds the specified string with the specified string.
+	 * Surrounding means that the string specified to be surrounded
+	 * will start and end with the specified surrounding string.
+	 *
+	 * @param str            The string that should be surrounded
+	 * @param surroundingStr The string that should be the surrounder
+	 * @return The surrounded string
+	 */
+	public static String surroundString(String str, String surroundingStr) {
+		if (str.isBlank())
+			return str;
+
+		return new StringBuilder(surroundingStr)
+			.append(str)
+			.append(surroundingStr)
+			.toString();
+	}
+
+	/**
+	 * Surrounds the specified string with the specified string.
+	 * Surrounding means that the string specified to be surrounded
+	 * will start with the specified start string, and end with the specified
+	 * end string.
+	 *
+	 * @param str      The string that should be surrounded
+	 * @param startStr The string that should be the first part of the whole string
+	 * @param endStr   The string that should be the last part of the whole string
+	 * @return The surrounded string
+	 */
+	public static String surroundString(String str, String startStr, String endStr) {
+		if (str.isBlank())
+			return str;
+
+		return new StringBuilder(startStr)
+			.append(str)
+			.append(endStr)
+			.toString();
+	}
 }

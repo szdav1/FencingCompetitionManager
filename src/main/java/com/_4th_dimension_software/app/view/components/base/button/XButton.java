@@ -5,6 +5,7 @@ import java.awt.event.MouseEvent;
 
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.theme.Appearance;
+import com._4th_dimension_software.support.util.Util;
 
 /**
  * The <code>XButton</code> class is an extended representation
@@ -81,6 +82,26 @@ public class XButton extends AbstractXButton {
 	 */
 	public XButton(int x, int y, int width, int height, String text, final XFrame frame, String appearanceName) {
 		super(x, y, width, height, text, frame, appearanceName);
+	}
+
+	/**
+	 * Sets the text of the shortcut key label
+	 * of this button to the specified text.
+	 * This text does not equal to the actual shortcut key
+	 * assigned to this button.
+	 *
+	 * @param shortcutKeyText The text representation of the shortcut key text
+	 */
+	public void setShortcutKeyText(String shortcutKeyText) {
+		this.shortcutKeyLabel.setText(Util.surroundString(shortcutKeyText, "[", "]"));
+	}
+
+	/**
+	 * Resets all states of the button.
+	 */
+	public void reset() {
+		this.entered = false;
+		this.pressed = false;
 	}
 
 	/**

@@ -55,7 +55,7 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 		this.appearance = Appearances.get(appearanceName);
 		this.frame = frame;
 		this.shortcutKeyLabel = new XLabel(dimension.width-SizeData.SHORTCUT_KEY_LABEL_WIDTH, 0, SizeData.SHORTCUT_KEY_LABEL_WIDTH,
-			dimension.height, shortcutKeyText, frame, "shortcutKeyLabel");
+			dimension.height, Util.surroundString(shortcutKeyText, "[", "]"), frame, "shortcutKeyLabel");
 		this.shortcutKeyLabel.setHorizontalAlignment(JLabel.CENTER);
 		this.shortcutKeyLabel.setVerticalAlignment(JLabel.CENTER);
 
@@ -112,7 +112,7 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 		this.appearance = Appearances.get(appearanceName);
 		this.frame = frame;
 		this.shortcutKeyLabel = new XLabel(width-SizeData.SHORTCUT_KEY_LABEL_WIDTH, 0, SizeData.SHORTCUT_KEY_LABEL_WIDTH,
-			height, shortcutKeyText, frame, "shortcutKeyLabel");
+			height, Util.surroundString(shortcutKeyText, "[", "]"), frame, "shortcutKeyLabel");
 		this.shortcutKeyLabel.setHorizontalAlignment(JLabel.CENTER);
 		this.shortcutKeyLabel.setVerticalAlignment(JLabel.CENTER);
 
@@ -148,26 +148,6 @@ public abstract class AbstractXButton extends JButton implements MouseListener, 
 	 */
 	protected AbstractXButton(int x, int y, int width, int height, String text, final XFrame frame, String appearanceName) {
 		this(x, y, width, height, text, "", frame, appearanceName);
-	}
-
-	/**
-	 * Sets the text of the shortcut key label
-	 * of this button to the specified text.
-	 * This text does not equal to the actual shortcut key
-	 * assigned to this button.
-	 *
-	 * @param shortcutKeyText The text representation of the shortcut key text
-	 */
-	public void setShortcutKeyText(String shortcutKeyText) {
-		this.shortcutKeyLabel.setText(shortcutKeyText);
-	}
-
-	/**
-	 * Resets all states of the button.
-	 */
-	public void reset() {
-		this.entered = false;
-		this.pressed = false;
 	}
 
 	/**
