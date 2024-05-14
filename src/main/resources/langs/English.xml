@@ -93,9 +93,10 @@
 
     <words for="newRuleSetEditor">
         <title>New Rule Set</title>
-        <applicationTitle>Rule Set Application</applicationTitle>
+        <attributesTitle>Rule Set Attributes</attributesTitle>
         <pouleRulesTitle>Poule Rules</pouleRulesTitle>
         <tableRulesTitle>Table Rules</tableRulesTitle>
+        <competitionRulesTitle>Competition Rules</competitionRulesTitle>
     </words>
 
     <words for="ruleSetModifier">

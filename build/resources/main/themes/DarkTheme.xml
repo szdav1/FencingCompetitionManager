@@ -23,6 +23,10 @@ look the same.
     <!--  Sidebar  -->
     <appearance applyTo="sidebar">
         <background colors="[27,27,27,255]"/>
+        <border colors="[72,58,255,255][178,0,255,255]" thickness="@proportional"/>
+        <modifiers>
+            <border right="true"/>
+        </modifiers>
     </appearance>
 
     <!--  Header of the sidebar  -->
@@ -388,7 +392,7 @@ look the same.
     </appearance>
 
     <appearance applyTo="ruleSetEditor.innerPanel">
-        <background colors="[17,17,17,255]"/>
+        <background colors="[12,14,14,255]"/>
     </appearance>
 
     <!--  Settings editors  -->
