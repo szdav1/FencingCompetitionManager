@@ -130,23 +130,7 @@ public class XScrollPanel extends AbstractXScrollPanel {
 
 	@Override
 	public void addComponent(final JComponent component) {
-		if (this.viewPanel.getLayout() instanceof BorderLayout)
-			this.viewPanel.addComponent(component, PositionConstants.CENTER_POSITION);
-
-		else {
-			// Calculate overhangs
-			int xOverhang = this.viewPanel.getPreferredSize().width-(component.getX()+component.getWidth());
-			int yOverhang = this.viewPanel.getPreferredSize().width-(component.getY()+component.getHeight());
-
-			// Resize the view
-			this.viewPanel.setPreferredSize(new Dimension(this.viewPanel.getPreferredSize().width+xOverhang,
-				this.viewPanel.getPreferredSize().height+yOverhang)
-			);
-
-			// Add the component and refresh the viewport
-			this.viewPanel.addComponent(component, PositionConstants.MID_POSITION);
-			this.setViewportView(this.viewPanel);
-		}
+		this.addComponent(component, PositionConstants.MID_POSITION);
 	}
 
 	@Override

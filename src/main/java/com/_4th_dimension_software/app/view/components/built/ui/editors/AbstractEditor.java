@@ -48,7 +48,7 @@ public abstract class AbstractEditor extends XPanel {
 
 		// Parts of the editor
 		this.headerPanel = new XPanel(new Dimension(this.getWidth(), SizeData.BUTTON_HEIGHT), new FlowLayout(FlowLayout.RIGHT, 0, 0), frame, appearanceName+".header");
-		this.centerPanel = new XPanel(new Dimension(this.getWidth(), this.getHeight()-SizeData.BUTTON_HEIGHT), frame, appearanceName+".center");
+		this.centerPanel = new XPanel(new Dimension(this.getWidth(), this.getHeight()-SizeData.BUTTON_HEIGHT), null, frame, appearanceName+".center");
 		this.footerPanel = new XPanel(this.headerPanel.getPreferredSize(), new FlowLayout(FlowLayout.CENTER, 0, 0), frame, appearanceName+".footer");
 
 		// Title label

@@ -25,13 +25,13 @@ public final class SizeData {
 
     // Scroll bar size and Dimension
     // Vertical
-    public static final int V_SCROLL_BAR_WIDTH = (int) (SCREEN_WIDTH*1.5f/100);
-    public static final int V_SCROLL_BAR_HEIGHT = (int) (SCREEN_WIDTH*1.5f/100);
+    public static final int V_SCROLL_BAR_WIDTH = PROPORTIONALITY_FACTOR*8;
+    public static final int V_SCROLL_BAR_HEIGHT = PROPORTIONALITY_FACTOR*5;
     public static final Dimension V_SCROLL_BAR_DIMENSION = new Dimension(V_SCROLL_BAR_WIDTH, V_SCROLL_BAR_HEIGHT);
 
     // Horizontal
-    public static final int H_SCROLL_BAR_WIDTH = (int) (SCREEN_WIDTH*1.5f/100);
-    public static final int H_SCROLL_BAR_HEIGHT = (int) (SCREEN_WIDTH*1.5f/100);
+    public static final int H_SCROLL_BAR_WIDTH = V_SCROLL_BAR_HEIGHT;
+    public static final int H_SCROLL_BAR_HEIGHT = V_SCROLL_BAR_WIDTH;
     public static final Dimension H_SCROLL_BAR_DIMENSION = new Dimension(H_SCROLL_BAR_WIDTH, H_SCROLL_BAR_HEIGHT);
 
     // Button size and dimension
@@ -72,6 +72,11 @@ public final class SizeData {
     public static final int EDITOR_WIDTH = (SizeData.SCREEN_WIDTH-SizeData.SIDEBAR_WIDTH)*65/100;
     public static final int EDITOR_HEIGHT = SizeData.SCREEN_HEIGHT*65/100;
     public static final Dimension EDITOR_DIMENSION = new Dimension(EDITOR_WIDTH, EDITOR_HEIGHT);
+
+    // Editor inner panel size and dimension
+    public static final int EDITOR_INNER_PANEL_WIDTH = EDITOR_WIDTH*90/100;
+    public static final int EDITOR_INNER_PANEL_HEIGHT = EDITOR_HEIGHT*75/100;
+    public static final Dimension EDITOR_INNER_PANEL_DIMENSION = new Dimension(EDITOR_INNER_PANEL_WIDTH, EDITOR_INNER_PANEL_HEIGHT);
 
     // Not instantiatable
     private SizeData() {

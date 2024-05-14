@@ -14,6 +14,7 @@ import com._4th_dimension_software.app.view.components.base.scrollpanel.scrollba
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.app.view.interfaces.XComponent;
 import com._4th_dimension_software.app.view.interfaces.XContainer;
+import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.theme.Appearance;
 import com._4th_dimension_software.support.theme.Appearances;
 
@@ -55,6 +56,9 @@ public abstract class AbstractXScrollPanel extends JScrollPane implements XCompo
 		this.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		this.setViewportView(this.viewPanel);
 		this.setBorder(null);
+		this.setFocusable(false);
+		this.getVerticalScrollBar().setUnitIncrement(SizeData.FONT_SIZE*5);
+		this.getHorizontalScrollBar().setUnitIncrement(SizeData.FONT_SIZE*5);
 		this.setBackground(this.appearance.getBackgrounds().get(this.appearance.getBackgrounds().size()-1));
 		this.setBounds(new Rectangle(0, 0, dimension.width, dimension.height));
 		this.setPreferredSize(dimension);
@@ -103,6 +107,7 @@ public abstract class AbstractXScrollPanel extends JScrollPane implements XCompo
 		this.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		this.setViewportView(this.viewPanel);
 		this.setBorder(null);
+		this.setFocusable(false);
 		this.setBackground(this.appearance.getBackgrounds().get(this.appearance.getBackgrounds().size()-1));
 		this.setPreferredSize(new Dimension(width, height));
 		this.setBounds(new Rectangle(x, y, width, height));
