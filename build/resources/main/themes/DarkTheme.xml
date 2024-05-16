@@ -20,10 +20,10 @@ look the same.
     <appearance applyTo="expandablePanel.button">
         <background colors="[0,0,0,0]"/>
         <foreground colors="[255,255,255,255][255,0,0,255]"/>
-        <icon1 source="/icons/ArrowUp.png" width="3" height="3"/>
-        <icon2 source="/icons/ArrowUp.png" width="3" height="3" color="[128,128,128,255]"/>
-        <icon3 source="/icons/ArrowDown.png" width="3" height="3"/>
-        <icon4 source="/icons/ArrowDown.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon1 source="/icons/ArrowUp.png" width="2" height="2"/>
+        <icon2 source="/icons/ArrowUp.png" width="2" height="2" color="[128,128,128,255]"/>
+        <icon3 source="/icons/ArrowDown.png" width="2" height="2"/>
+        <icon4 source="/icons/ArrowDown.png" width="2" height="2" color="[128,128,128,255]"/>
     </appearance>
 
     <!--  Window  -->

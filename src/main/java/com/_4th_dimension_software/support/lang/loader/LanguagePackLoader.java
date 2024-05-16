@@ -17,7 +17,8 @@ public final class LanguagePackLoader {
 
 	/**
 	 * Initializes the <code>LanguagePack</code> class
-	 * for the runtime of the application.
+	 * for the runtime of the application and loads data
+	 * from the specified language file.
 	 *
 	 * @param filePath The path of the language pack XML file
 	 */

@@ -32,7 +32,6 @@ public enum PositionConstants {
 	 * this enum can provide. (0)
 	 */
 	BACKGROUND_POSITION(0),
-
 	/**
 	 * Redefines the <code>NORTH</code> value of the
 	 * BorderLayout layout manager.

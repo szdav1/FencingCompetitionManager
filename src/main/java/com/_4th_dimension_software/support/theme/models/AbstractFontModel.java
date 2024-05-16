@@ -5,12 +5,22 @@ import java.awt.Font;
 import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.util.Util;
 
+/**
+ * The <code>AbstractFontModel</code> stores and validates
+ * font related data. It defines the abstract
+ * behaviour of font models inside the application.
+ * These data are fed into this class's constructor by the <code>ColorThemeReader</code>.
+ */
 public abstract class AbstractFontModel {
 	protected String source;
 	protected String family;
 	protected int ligature;
 	protected int size;
 
+	/**
+	 * Defines the base constructor of font models
+	 * that initializes every field to a default value.
+	 */
 	protected AbstractFontModel() {
 		this.source = "";
 		this.family = "Arial";
@@ -18,6 +28,15 @@ public abstract class AbstractFontModel {
 		this.size = SizeData.FONT_SIZE;
 	}
 
+	/**
+	 * Defines the base constructor of font models
+	 * that initializes every field with the specified parameter.
+	 *
+	 * @param source   The source of the custom font
+	 * @param type     The string representation of the type of the font
+	 * @param ligature The string representation of the ligature of the font
+	 * @param size     The string representation of the size of the font
+	 */
 	protected AbstractFontModel(final String source, String type, String ligature, String size) {
 		this.source = source;
 		this.family = type;

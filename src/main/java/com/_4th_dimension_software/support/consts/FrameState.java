@@ -64,7 +64,6 @@ public enum FrameState {
      * when the database editor is opened.
      */
     DATABASE_EDITOR_OPENED("database editor opened"),
-
     /**
      * Defines the state when a panel is
      * opened inside the frame.
