@@ -102,6 +102,26 @@ public final class ColorThemeReader {
 				);
 				ctm.setIconModel2(im);
 			}
+			// Icon3
+			case "icon3" -> {
+				IconModel im = new IconModel(
+					element.getAttribute("source"),
+					element.getAttribute("width"),
+					element.getAttribute("height"),
+					element.getAttribute("color")
+				);
+				ctm.setIconModel3(im);
+			}
+			// Icon4
+			case "icon4" -> {
+				IconModel im = new IconModel(
+					element.getAttribute("source"),
+					element.getAttribute("width"),
+					element.getAttribute("height"),
+					element.getAttribute("color")
+				);
+				ctm.setIconModel4(im);
+			}
 			// Background
 			case "background" -> {
 				ColorModel cm = new ColorModel(element.getAttribute("colors"));

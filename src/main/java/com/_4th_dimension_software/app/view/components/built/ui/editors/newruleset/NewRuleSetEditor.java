@@ -1,4 +1,4 @@
-package com._4th_dimension_software.app.view.components.built.ui.editors;
+package com._4th_dimension_software.app.view.components.built.ui.editors.newruleset;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import com._4th_dimension_software.app.view.components.base.label.XLabel;
 import com._4th_dimension_software.app.view.components.base.panel.XPanel;
 import com._4th_dimension_software.app.view.components.base.scrollpanel.XScrollPanel;
+import com._4th_dimension_software.app.view.components.built.ui.editors.AbstractEditor;
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.lang.LanguagePack;
@@ -45,7 +46,7 @@ public final class NewRuleSetEditor extends AbstractEditor {
 			appearanceName+".scrollPanel", appearanceName+".scrollPanel.scrollBar");
 
 		// Editor parts
-		// Rule set application
+		// Rule set attributes
 		XLabel ruleSetAttributesLabel = new XLabel(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("newRuleSetEditor.attributesTitle"), frame, appearanceName+".titleLabels");
 		ruleSetAttributesLabel.setMargin(new Insets(0, SizeData.TEXT_MARGIN, 0, 0));
 		ruleSetAttributesLabel.setHorizontalAlignment(JLabel.LEFT);

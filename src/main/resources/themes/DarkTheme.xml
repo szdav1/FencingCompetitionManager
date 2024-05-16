@@ -8,6 +8,24 @@ Editor appearances are also applied to inspectors as they basically
 look the same.
 -->
 <DarkTheme>
+    <appearance applyTo="expandablePanel">
+        <background colors="[10,10,10,255]"/>
+        <border colors="[255,0,0,255][0,0,255,255]" thickness="@proportional"/>
+    </appearance>
+
+    <appearance applyTo="expandablePanel.panel">
+        <background colors="[10,10,10,255]"/>
+    </appearance>
+
+    <appearance applyTo="expandablePanel.button">
+        <background colors="[0,0,0,0]"/>
+        <foreground colors="[255,255,255,255][255,0,0,255]"/>
+        <icon1 source="/icons/ArrowUp.png" width="3" height="3"/>
+        <icon2 source="/icons/ArrowUp.png" width="3" height="3" color="[128,128,128,255]"/>
+        <icon3 source="/icons/ArrowDown.png" width="3" height="3"/>
+        <icon4 source="/icons/ArrowDown.png" width="3" height="3" color="[128,128,128,255]"/>
+    </appearance>
+
     <!--  Window  -->
     <appearance applyTo="window">
         <background colors="[12,14,14,255]"/>

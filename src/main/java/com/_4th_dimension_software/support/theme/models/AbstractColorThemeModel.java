@@ -11,6 +11,8 @@ public abstract class AbstractColorThemeModel {
 	protected FontModel fontModel;
 	protected IconModel iconModel1;
 	protected IconModel iconModel2;
+	protected IconModel iconModel3;
+	protected IconModel iconModel4;
 
 	protected AbstractColorThemeModel() {
 		this.linearPaint = true;
@@ -20,13 +22,15 @@ public abstract class AbstractColorThemeModel {
 		this.fontModel = new FontModel();
 		this.iconModel1 = new IconModel();
 		this.iconModel2 = new IconModel();
+		this.iconModel3 = new IconModel();
+		this.iconModel4 = new IconModel();
 
 		this.initBorderPaintRules();
 	}
 
 	public AbstractColorThemeModel(final boolean linearPaint, final boolean paintTopBorder, final boolean paintRightBorder, final boolean paintBottomBorder,
 		final boolean paintLeftBorder, final ColorModel backgroundModel, final ColorModel foregroundModel, final BorderModel borderModel, final FontModel fontModel,
-		final IconModel iconModel1, final IconModel iconModel2) {
+		final IconModel iconModel1, final IconModel iconModel2, final IconModel iconModel3, final IconModel iconModel4) {
 
 		this.linearPaint = linearPaint;
 		this.backgroundModel = backgroundModel;
@@ -35,12 +39,22 @@ public abstract class AbstractColorThemeModel {
 		this.fontModel = fontModel;
 		this.iconModel1 = iconModel1;
 		this.iconModel2 = iconModel2;
+		this.iconModel3 = iconModel3;
+		this.iconModel4 = iconModel4;
 
 		this.initBorderPaintRules();
 		this.setBorderPaintRule("top", paintTopBorder);
 		this.setBorderPaintRule("right", paintRightBorder);
 		this.setBorderPaintRule("bottom", paintBottomBorder);
 		this.setBorderPaintRule("left", paintLeftBorder);
+	}
+
+	public AbstractColorThemeModel(final boolean linearPaint, final boolean paintTopBorder, final boolean paintRightBorder, final boolean paintBottomBorder,
+		final boolean paintLeftBorder, final ColorModel backgroundModel, final ColorModel foregroundModel, final BorderModel borderModel, final FontModel fontModel,
+		final IconModel iconModel1, final IconModel iconModel2) {
+
+		this(linearPaint, paintTopBorder, paintRightBorder, paintBottomBorder, paintLeftBorder, backgroundModel, foregroundModel, borderModel, fontModel, iconModel1, iconModel2,
+			new IconModel(), new IconModel());
 	}
 
 	/**
@@ -157,5 +171,21 @@ public abstract class AbstractColorThemeModel {
 
 	public void setIconModel2(IconModel iconModel2) {
 		this.iconModel2 = iconModel2;
+	}
+
+	public IconModel getIconModel3() {
+		return this.iconModel3;
+	}
+
+	public void setIconModel3(IconModel iconModel3) {
+		this.iconModel3 = iconModel3;
+	}
+
+	public IconModel getIconModel4() {
+		return this.iconModel4;
+	}
+
+	public void setIconModel4(IconModel iconModel4) {
+		this.iconModel4 = iconModel4;
 	}
 }

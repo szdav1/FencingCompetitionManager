@@ -28,6 +28,8 @@ public abstract class AbstractAppearance {
 	protected Font font;
 	protected ImageIcon icon1;
 	protected ImageIcon icon2;
+	protected ImageIcon icon3;
+	protected ImageIcon icon4;
 
 	/**
 	 * Defines the base constructor of <code>Appearance</code>s
@@ -41,6 +43,8 @@ public abstract class AbstractAppearance {
 		this.font = new Font(Font.MONOSPACED, Font.PLAIN, SizeData.FONT_SIZE);
 		this.icon1 = null;
 		this.icon2 = null;
+		this.icon3 = null;
+		this.icon4 = null;
 
 		this.initBorderPaintRules();
 	}
@@ -61,6 +65,8 @@ public abstract class AbstractAppearance {
 		this.borderModel = colorThemeModel.getBorderModel();
 		this.icon1 = colorThemeModel.getIconModel1().getIcon();
 		this.icon2 = colorThemeModel.getIconModel2().getIcon();
+		this.icon3 = colorThemeModel.getIconModel3().getIcon();
+		this.icon4 = colorThemeModel.getIconModel4().getIcon();
 
 		this.createFont(colorThemeModel.getFontModel());
 	}
@@ -135,5 +141,13 @@ public abstract class AbstractAppearance {
 
 	public ImageIcon getIcon2() {
 		return this.icon2;
+	}
+
+	public ImageIcon getIcon3() {
+		return this.icon3;
+	}
+
+	public ImageIcon getIcon4() {
+		return this.icon4;
 	}
 }

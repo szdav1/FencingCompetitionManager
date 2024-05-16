@@ -1,7 +1,9 @@
 package com._4th_dimension_software.app.view.frame;
 
 import com._4th_dimension_software.app.view.components.base.panel.XPanel;
+import com._4th_dimension_software.app.view.components.built.panels.expandable.ExpandablePanel;
 import com._4th_dimension_software.app.view.components.built.ui.editors.*;
+import com._4th_dimension_software.app.view.components.built.ui.editors.newruleset.NewRuleSetEditor;
 import com._4th_dimension_software.app.view.components.built.ui.inspectors.CompetitionStatsInspector;
 import com._4th_dimension_software.app.view.components.built.ui.inspectors.PouleStatsInspector;
 import com._4th_dimension_software.app.view.components.built.ui.inspectors.TableStatsInspector;
@@ -109,6 +111,10 @@ public class XFrame extends AbstractXFrame {
         this.languageEditor = new LanguageEditor(this, "settingsEditor");
         // Database
         this.databaseConnectionEditor = new DatabaseConnectionEditor(this, "databaseEditor");
+
+        ExpandablePanel ep = new ExpandablePanel(100, 100, 500, 500, this, "expandablePanel");
+
+        this.addToCenterPanel(ep);
 
         // Background image
         this.setBackgroundImage();
