@@ -300,7 +300,7 @@ public final class SidebarController extends AbstractXController {
 
         switch (srcBtnInd) {
             case 0 -> this.sidebar.getFrame().openRuleSetInspector();
-            case 1 -> this.sidebar.getFrame().openRuleSetCreator();
+            case 1 -> this.sidebar.getFrame().openNewRuleSetEditor();
             case 2 -> this.sidebar.getFrame().openRuleSetDeleter();
             case 3 -> this.sidebar.getFrame().openRuleSetModifier();
             default -> {

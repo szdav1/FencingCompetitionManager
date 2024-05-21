@@ -58,7 +58,7 @@ public final class RuleSetMenuKeyActions {
     private class NewRuleSetKeyAction extends AbstractAction {
         @Override
         public void actionPerformed(ActionEvent e) {
-            sidebar.getFrame().openRuleSetCreator();
+            sidebar.getFrame().openNewRuleSetEditor();
         }
     }
 

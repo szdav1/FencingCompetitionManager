@@ -2,6 +2,7 @@ package com._4th_dimension_software.app.view.components.base.scrollpanel;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.LayoutManager;
 
 import javax.swing.JComponent;
@@ -24,16 +25,14 @@ public class XScrollPanel extends AbstractXScrollPanel {
 	 * similar to a <code>JScrollPane</code> object, only this is much
 	 * easier to customize using an <code>Appearance</code> object.
 	 *
-	 * @param dimension               The Dimension of the scroll panel
-	 * @param layoutManager           The LayoutManager used inside the scroll panel
-	 * @param frame                   The main frame of the application
-	 * @param panelAppearanceName     The Appearance object that's values should be implemented
-	 *                                on the view of the scroll panel
-	 * @param scrollBarAppearanceName The name of the Appearance that's values should be
-	 *                                implemented on this scrollbar UI
+	 * @param dimension           The Dimension of the scroll panel
+	 * @param layoutManager       The LayoutManager used inside the scroll panel
+	 * @param frame               The main frame of the application
+	 * @param panelAppearanceName The Appearance object that's values should be implemented
+	 *                            on the view of the scroll panel
 	 */
-	public XScrollPanel(Dimension dimension, LayoutManager layoutManager, final XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
-		super(dimension, layoutManager, frame, panelAppearanceName, scrollBarAppearanceName);
+	public XScrollPanel(Dimension dimension, LayoutManager layoutManager, final XFrame frame, String panelAppearanceName) {
+		super(dimension, layoutManager, frame, panelAppearanceName);
 	}
 
 	/**
@@ -41,15 +40,13 @@ public class XScrollPanel extends AbstractXScrollPanel {
 	 * similar to a <code>JScrollPane</code> object, only this is much
 	 * easier to customize using an <code>Appearance</code> object.
 	 *
-	 * @param dimension               The Dimension of the scroll panel
-	 * @param frame                   The main frame of the application
-	 * @param panelAppearanceName     The name of the Appearance object that's values should be implemented
-	 *                                on the view of the scroll panel
-	 * @param scrollBarAppearanceName The name of the Appearance that's values should be
-	 *                                implemented on the scrollbar
+	 * @param dimension           The Dimension of the scroll panel
+	 * @param frame               The main frame of the application
+	 * @param panelAppearanceName The name of the Appearance object that's values should be implemented
+	 *                            on the view of the scroll panel
 	 */
-	public XScrollPanel(Dimension dimension, final XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
-		super(dimension, frame, panelAppearanceName, scrollBarAppearanceName);
+	public XScrollPanel(Dimension dimension, final XFrame frame, String panelAppearanceName) {
+		super(dimension, frame, panelAppearanceName);
 	}
 
 	/**
@@ -57,19 +54,17 @@ public class XScrollPanel extends AbstractXScrollPanel {
 	 * similar to a <code>JScrollPane</code> object, only this is much
 	 * easier to customize using an <code>Appearance</code> object.
 	 *
-	 * @param x                       The X coordinate of the scroll panel in no-layout manager space
-	 * @param y                       The Y coordinate of the scroll panel in no-layout manager space
-	 * @param width                   The width of the scroll panel
-	 * @param height                  The height of the scroll panel
-	 * @param layoutManager           The LayoutManager used inside the scroll panel
-	 * @param frame                   The main frame of the application
-	 * @param panelAppearanceName     The name of the Appearance object that's values should be implemented
-	 *                                on the view of the scroll panel
-	 * @param scrollBarAppearanceName The name of the Appearance that's values should be
-	 *                                implemented on the scrollbar
+	 * @param x                   The X coordinate of the scroll panel in no-layout manager space
+	 * @param y                   The Y coordinate of the scroll panel in no-layout manager space
+	 * @param width               The width of the scroll panel
+	 * @param height              The height of the scroll panel
+	 * @param layoutManager       The LayoutManager used inside the scroll panel
+	 * @param frame               The main frame of the application
+	 * @param panelAppearanceName The name of the Appearance object that's values should be implemented
+	 *                            on the view of the scroll panel
 	 */
-	public XScrollPanel(int x, int y, int width, int height, LayoutManager layoutManager, final XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
-		super(x, y, width, height, layoutManager, frame, panelAppearanceName, scrollBarAppearanceName);
+	public XScrollPanel(int x, int y, int width, int height, LayoutManager layoutManager, final XFrame frame, String panelAppearanceName) {
+		super(x, y, width, height, layoutManager, frame, panelAppearanceName);
 	}
 
 	/**
@@ -77,18 +72,16 @@ public class XScrollPanel extends AbstractXScrollPanel {
 	 * similar to a <code>JScrollPane</code> object, only this is much
 	 * easier to customize using an <code>Appearance</code> object.
 	 *
-	 * @param x                       The X coordinate of the scroll panel in no-layout manager space
-	 * @param y                       The Y coordinate of the scroll panel in no-layout manager space
-	 * @param width                   The width of the scroll panel
-	 * @param height                  The height of the scroll panel
-	 * @param frame                   The main frame of the application
-	 * @param panelAppearanceName     The name of the Appearance object that's values should be implemented
-	 *                                on the view of the scroll panel
-	 * @param scrollBarAppearanceName The name of the Appearance that's values should be
-	 *                                implemented on the scrollbar
+	 * @param x                   The X coordinate of the scroll panel in no-layout manager space
+	 * @param y                   The Y coordinate of the scroll panel in no-layout manager space
+	 * @param width               The width of the scroll panel
+	 * @param height              The height of the scroll panel
+	 * @param frame               The main frame of the application
+	 * @param panelAppearanceName The name of the Appearance object that's values should be implemented
+	 *                            on the view of the scroll panel
 	 */
-	public XScrollPanel(int x, int y, int width, int height, final XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
-		super(x, y, width, height, frame, panelAppearanceName, scrollBarAppearanceName);
+	public XScrollPanel(int x, int y, int width, int height, final XFrame frame, String panelAppearanceName) {
+		super(x, y, width, height, frame, panelAppearanceName);
 	}
 
 	@Override
@@ -109,7 +102,15 @@ public class XScrollPanel extends AbstractXScrollPanel {
 
 	@Override
 	public void addComponent(final JComponent component, PositionConstants positionConstants) {
-		if (this.viewPanel.getLayout() instanceof BorderLayout)
+		if (this.autoResize && !(this.viewPanel.getLayout() instanceof BorderLayout)) {
+			this.viewPanel.addComponent(component, positionConstants);
+			this.viewPanel.setPreferredSize(new Dimension(this.viewPanel.getWidth(),
+				this.viewPanel.getPreferredSize().height+component.getHeight()+((FlowLayout) this.viewPanel.getLayout()).getVgap())
+			);
+			this.setViewportView(this.viewPanel);
+		}
+
+		else if (this.viewPanel.getLayout() instanceof BorderLayout)
 			this.viewPanel.addComponent(component, positionConstants);
 
 		else {

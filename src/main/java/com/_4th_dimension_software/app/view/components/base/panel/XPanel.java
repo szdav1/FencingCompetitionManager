@@ -125,7 +125,7 @@ public class XPanel extends AbstractXPanel {
 			positionConstants.layoutLevel()
 		);
 		this.repaintFrame();
-		this.validate();
+		this.revalidate();
 	}
 
 	@Override
@@ -135,14 +135,14 @@ public class XPanel extends AbstractXPanel {
 			PositionConstants.MID_POSITION
 		);
 		this.repaintFrame();
-		this.validate();
+		this.revalidate();
 	}
 
 	@Override
 	public JComponent removeComponent(final JComponent component) {
 		this.remove(component);
 		this.repaintFrame();
-		this.validate();
+		this.revalidate();
 
 		return component;
 	}

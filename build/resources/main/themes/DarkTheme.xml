@@ -8,36 +8,18 @@ Editor appearances are also applied to inspectors as they basically
 look the same.
 -->
 <DarkTheme>
-    <appearance applyTo="expandablePanel">
-        <background colors="[10,10,10,255]"/>
-        <border colors="[255,0,0,255][0,0,255,255]" thickness="@proportional"/>
-    </appearance>
-
-    <appearance applyTo="expandablePanel.panel">
-        <background colors="[10,10,10,255]"/>
-    </appearance>
-
-    <appearance applyTo="expandablePanel.button">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[255,255,255,255][255,0,0,255]"/>
-        <icon1 source="/icons/ArrowUp.png" width="2" height="2"/>
-        <icon2 source="/icons/ArrowUp.png" width="2" height="2" color="[128,128,128,255]"/>
-        <icon3 source="/icons/ArrowDown.png" width="2" height="2"/>
-        <icon4 source="/icons/ArrowDown.png" width="2" height="2" color="[128,128,128,255]"/>
-    </appearance>
-
     <!--  Window  -->
     <appearance applyTo="window">
         <background colors="[12,14,14,255]"/>
     </appearance>
-
+    <!-- ================================================================================================== -->
     <!--  Shortcut key label  -->
     <appearance applyTo="shortcutKeyLabel">
         <background colors="[0,0,0,0]"/>
         <foreground colors="[128,128,128,255][255,255,255,255]"/>
         <font size="6"/>
     </appearance>
-
+    <!-- ================================================================================================== -->
     <!--  Sidebar  -->
     <appearance applyTo="sidebar">
         <background colors="[27,27,27,255]"/>
@@ -46,18 +28,18 @@ look the same.
             <border right="true"/>
         </modifiers>
     </appearance>
-
+    <!-- ================================================================================================== -->
     <!--  Header of the sidebar  -->
     <appearance applyTo="sidebar.header">
         <background colors="[0,0,0,0]"/>
         <icon1 source="/icons/dashboard.png" width="3" height="3"/>
     </appearance>
-
+    <!-- ================================================================================================== -->
     <!--  Separators of the sidebar  -->
     <appearance applyTo="sidebar.separator">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255][0,0,0,0][0,0,0,0]"/>
     </appearance>
-
+    <!-- ================================================================================================== -->
     <!--  Exit button of the sidebar  -->
     <appearance applyTo="sidebar.buttons.exit">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
@@ -65,7 +47,7 @@ look the same.
         <icon1 source="/icons/Exit.png" width="3" height="4" color="[128,128,128,255]"/>
         <icon2 source="/icons/Exit.png" width="3" height="4"/>
     </appearance>
-
+    <!-- ================================================================================================== -->
     <!--  Poule button of the sidebar  -->
     <appearance applyTo="sidebar.buttons.poule">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
@@ -99,7 +81,7 @@ look the same.
         <icon1 source="/icons/Stats.png" width="3" height="3" color="[128,128,128,255]"/>
         <icon2 source="/icons/Stats.png" width="3" height="3"/>
     </appearance>
-
+    <!-- ================================================================================================== -->
     <!--  Table button of the sidebar  -->
     <appearance applyTo="sidebar.buttons.table">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
@@ -133,7 +115,7 @@ look the same.
         <icon1 source="/icons/Stats.png" width="3" height="3" color="[128,128,128,255]"/>
         <icon2 source="/icons/Stats.png" width="3" height="3"/>
     </appearance>
-
+    <!-- ================================================================================================== -->
     <!--  Competition button of the sidebar  -->
     <appearance applyTo="sidebar.buttons.competition">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
@@ -167,7 +149,7 @@ look the same.
         <icon1 source="/icons/Stats.png" width="3" height="3" color="[128,128,128,255]"/>
         <icon2 source="/icons/Stats.png" width="3" height="3"/>
     </appearance>
-
+    <!-- ================================================================================================== -->
     <!--  Settings button of the sidebar  -->
     <appearance applyTo="sidebar.buttons.settings">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
@@ -194,7 +176,7 @@ look the same.
         <icon1 source="/icons/Language.png" width="3" height="3" color="[128,128,128,255]"/>
         <icon2 source="/icons/Language.png" width="3" height="3"/>
     </appearance>
-
+    <!-- ================================================================================================== -->
     <!--  Database button of the sidebar  -->
     <appearance applyTo="sidebar.buttons.database">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
@@ -221,7 +203,7 @@ look the same.
         <icon1 source="/icons/Manage.png" width="3" height="3" color="[128,128,128,255]"/>
         <icon2 source="/icons/Manage.png" width="3" height="3"/>
     </appearance>
-
+    <!-- ================================================================================================== -->
     <!--  Rule set button of the sidebar  -->
     <appearance applyTo="sidebar.buttons.ruleSet">
         <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
@@ -262,7 +244,7 @@ look the same.
         <icon1 source="/icons/Modify.png" width="3" height="3" color="[128,128,128,255]"/>
         <icon2 source="/icons/Modify.png" width="3" height="3"/>
     </appearance>
-
+    <!-- ================================================================================================== -->
     <!--  Poule editor  -->
     <appearance applyTo="pouleEditor">
         <background colors="[27,27,27,255]"/>
@@ -294,7 +276,7 @@ look the same.
     <appearance applyTo="pouleEditor.footer">
         <background colors="[27,27,27,255]"/>
     </appearance>
-
+    <!-- ================================================================================================== -->
     <!--  Table editor  -->
     <appearance applyTo="tableEditor">
         <background colors="[27,27,27,255]"/>
@@ -326,7 +308,7 @@ look the same.
     <appearance applyTo="tableEditor.footer">
         <background colors="[27,27,27,255]"/>
     </appearance>
-
+    <!-- ================================================================================================== -->
     <!--  Competition editor  -->
     <appearance applyTo="competitionEditor">
         <background colors="[27,27,27,255]"/>
@@ -358,7 +340,7 @@ look the same.
     <appearance applyTo="competitionEditor.footer">
         <background colors="[27,27,27,255]"/>
     </appearance>
-
+    <!-- ================================================================================================== -->
     <!--  Rule Set editor  -->
     <appearance applyTo="ruleSetEditor">
         <background colors="[27,27,27,255]"/>
@@ -413,6 +395,24 @@ look the same.
         <background colors="[12,14,14,255]"/>
     </appearance>
 
+    <appearance applyTo="ruleSetEditor.innerPanel.panel">
+        <background colors="[10,10,10,255]"/>
+    </appearance>
+
+    <appearance applyTo="ruleSetEditor.innerPanel.button">
+        <background colors="[0,0,0,0]"/>
+        <foreground colors="[255,255,255,255][255,0,0,255]"/>
+        <icon1 source="/icons/ArrowDown.png" width="2" height="2"/>
+        <icon2 source="/icons/ArrowDown.png" width="2" height="2" color="[128,128,128,255]"/>
+        <icon3 source="/icons/ArrowUp.png" width="2" height="2"/>
+        <icon4 source="/icons/ArrowUp.png" width="2" height="2" color="[128,128,128,255]"/>
+    </appearance>
+
+    <appearance applyTo="ruleSetEditor.innerPanel.title">
+        <background colors="[0,0,0,0]"/>
+        <foreground colors="255,255,255,255"/>
+    </appearance>
+    <!-- ================================================================================================== -->
     <!--  Settings editors  -->
     <appearance applyTo="settingsEditor">
         <background colors="[27,27,27,255]"/>
@@ -444,7 +444,7 @@ look the same.
     <appearance applyTo="settingsEditor.footer">
         <background colors="[27,27,27,255]"/>
     </appearance>
-
+    <!-- ================================================================================================== -->
     <!--  Database editors  -->
     <appearance applyTo="databaseEditor">
         <background colors="[27,27,27,255]"/>

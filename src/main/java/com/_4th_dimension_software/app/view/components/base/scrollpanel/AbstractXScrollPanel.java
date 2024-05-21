@@ -28,6 +28,7 @@ import com._4th_dimension_software.support.theme.Appearances;
  * @author szd
  */
 public abstract class AbstractXScrollPanel extends JScrollPane implements XComponent, XContainer {
+	protected boolean autoResize;
 	protected final Appearance appearance;
 	protected final XFrame frame;
 	protected XPanel viewPanel;
@@ -37,21 +38,20 @@ public abstract class AbstractXScrollPanel extends JScrollPane implements XCompo
 	 * initializes every field of the class with the
 	 * given parameters.
 	 *
-	 * @param dimension               The Dimension of the scroll panel
-	 * @param layoutManager           The LayoutManager used inside the scroll panel
-	 * @param frame                   The main frame of the application
-	 * @param panelAppearanceName     The Appearance object that's values should be implemented
-	 *                                on the view of the scroll panel
-	 * @param scrollBarAppearanceName The name of the Appearance that's values should be
-	 *                                implemented on this scrollbar UI
+	 * @param dimension           The Dimension of the scroll panel
+	 * @param layoutManager       The LayoutManager used inside the scroll panel
+	 * @param frame               The main frame of the application
+	 * @param panelAppearanceName The Appearance object that's values should be implemented
+	 *                            on the view of the scroll panel
 	 */
-	protected AbstractXScrollPanel(Dimension dimension, LayoutManager layoutManager, final XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
+	protected AbstractXScrollPanel(Dimension dimension, LayoutManager layoutManager, final XFrame frame, String panelAppearanceName) {
+		this.autoResize = false;
 		this.appearance = Appearances.get(panelAppearanceName);
 		this.frame = frame;
 		this.viewPanel = new XPanel(new Dimension(0, 0), layoutManager, frame, panelAppearanceName);
 
-		this.setVerticalScrollBar(new XScrollBar(JScrollBar.VERTICAL, scrollBarAppearanceName));
-		this.setHorizontalScrollBar(new XScrollBar(JScrollBar.HORIZONTAL, scrollBarAppearanceName));
+		this.setVerticalScrollBar(new XScrollBar(JScrollBar.VERTICAL, panelAppearanceName+".scrollBar"));
+		this.setHorizontalScrollBar(new XScrollBar(JScrollBar.HORIZONTAL, panelAppearanceName+".scrollBar"));
 		this.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		this.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		this.setViewportView(this.viewPanel);
@@ -69,15 +69,13 @@ public abstract class AbstractXScrollPanel extends JScrollPane implements XCompo
 	 * initializes every field of the class with the
 	 * given parameters except for the layout manager.
 	 *
-	 * @param dimension               The Dimension of the scroll panel
-	 * @param frame                   The main frame of the application
-	 * @param panelAppearanceName     The Appearance object that's values should be implemented
-	 *                                on the view of the scroll panel
-	 * @param scrollBarAppearanceName The name of the Appearance that's values should be
-	 *                                implemented on this scrollbar UI
+	 * @param dimension           The Dimension of the scroll panel
+	 * @param frame               The main frame of the application
+	 * @param panelAppearanceName The Appearance object that's values should be implemented
+	 *                            on the view of the scroll panel
 	 */
-	protected AbstractXScrollPanel(Dimension dimension, final XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
-		this(dimension, new FlowLayout(FlowLayout.CENTER, 0, 0), frame, panelAppearanceName, scrollBarAppearanceName);
+	protected AbstractXScrollPanel(Dimension dimension, final XFrame frame, String panelAppearanceName) {
+		this(dimension, new FlowLayout(FlowLayout.CENTER, 0, 0), frame, panelAppearanceName);
 	}
 
 	/**
@@ -85,24 +83,23 @@ public abstract class AbstractXScrollPanel extends JScrollPane implements XCompo
 	 * initializes every field of the class with the
 	 * given parameters.
 	 *
-	 * @param x                       The X coordinate of the scroll panel in no-layout manager space
-	 * @param y                       The Y coordinate of the scroll panel in no-layout manager space
-	 * @param width                   The width of the scroll panel
-	 * @param height                  The height of the scroll panel
-	 * @param layoutManager           The LayoutManager used inside the scroll panel
-	 * @param frame                   The main frame of the application
-	 * @param panelAppearanceName     The name of the Appearance object that's values should be implemented
-	 *                                on the view of the scroll panel
-	 * @param scrollBarAppearanceName The name of the Appearance that's values should be
-	 *                                implemented on the scrollbar
+	 * @param x                   The X coordinate of the scroll panel in no-layout manager space
+	 * @param y                   The Y coordinate of the scroll panel in no-layout manager space
+	 * @param width               The width of the scroll panel
+	 * @param height              The height of the scroll panel
+	 * @param layoutManager       The LayoutManager used inside the scroll panel
+	 * @param frame               The main frame of the application
+	 * @param panelAppearanceName The name of the Appearance object that's values should be implemented
+	 *                            on the view of the scroll panel
 	 */
-	protected AbstractXScrollPanel(int x, int y, int width, int height, LayoutManager layoutManager, final XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
+	protected AbstractXScrollPanel(int x, int y, int width, int height, LayoutManager layoutManager, final XFrame frame, String panelAppearanceName) {
+		this.autoResize = false;
 		this.appearance = Appearances.get(panelAppearanceName);
 		this.frame = frame;
 		this.viewPanel = new XPanel(new Dimension(0, 0), layoutManager, frame, panelAppearanceName);
 
-		this.setVerticalScrollBar(new XScrollBar(JScrollBar.VERTICAL, scrollBarAppearanceName));
-		this.setHorizontalScrollBar(new XScrollBar(JScrollBar.HORIZONTAL, scrollBarAppearanceName));
+		this.setVerticalScrollBar(new XScrollBar(JScrollBar.VERTICAL, panelAppearanceName+".scrollBar"));
+		this.setHorizontalScrollBar(new XScrollBar(JScrollBar.HORIZONTAL, panelAppearanceName+".scrollBar"));
 		this.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		this.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		this.setViewportView(this.viewPanel);
@@ -118,18 +115,24 @@ public abstract class AbstractXScrollPanel extends JScrollPane implements XCompo
 	 * initializes every field of the class with the
 	 * given parameters except for the layout manager.
 	 *
-	 * @param x                       The X coordinate of the scroll panel in no-layout manager space
-	 * @param y                       The Y coordinate of the scroll panel in no-layout manager space
-	 * @param width                   The width of the scroll panel
-	 * @param height                  The height of the scroll panel
-	 * @param frame                   The main frame of the application
-	 * @param panelAppearanceName     The name of the Appearance object that's values should be implemented
-	 *                                on the view of the scroll panel
-	 * @param scrollBarAppearanceName The name of the Appearance that's values should be
-	 *                                implemented on the scrollbar
+	 * @param x                   The X coordinate of the scroll panel in no-layout manager space
+	 * @param y                   The Y coordinate of the scroll panel in no-layout manager space
+	 * @param width               The width of the scroll panel
+	 * @param height              The height of the scroll panel
+	 * @param frame               The main frame of the application
+	 * @param panelAppearanceName The name of the Appearance object that's values should be implemented
+	 *                            on the view of the scroll panel
 	 */
-	protected AbstractXScrollPanel(int x, int y, int width, int height, final XFrame frame, String panelAppearanceName, String scrollBarAppearanceName) {
-		this(x, y, width, height, new FlowLayout(FlowLayout.CENTER, 0, 0), frame, panelAppearanceName, scrollBarAppearanceName);
+	protected AbstractXScrollPanel(int x, int y, int width, int height, final XFrame frame, String panelAppearanceName) {
+		this(x, y, width, height, new FlowLayout(FlowLayout.CENTER, 0, 0), frame, panelAppearanceName);
+	}
+
+	public boolean isAutoResize() {
+		return this.autoResize;
+	}
+
+	public void setAutoResize(boolean autoResize) {
+		this.autoResize = autoResize;
 	}
 
 	public XPanel getViewPanel() {

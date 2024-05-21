@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import com._4th_dimension_software.app.view.components.base.button.XButton;
 import com._4th_dimension_software.app.view.frame.XFrame;
 
-public final class ExpandButton extends XButton implements ActionListener {
+final class ExpandButton extends XButton implements ActionListener {
 	private boolean expanded;
 
 	public ExpandButton(Dimension dimension, String text, String shortcutKeyText, final XFrame frame, String appearanceName) {
@@ -38,9 +38,14 @@ public final class ExpandButton extends XButton implements ActionListener {
 		this.expanded = false;
 	}
 
+	public void setExpanded(boolean expanded) {
+		this.expanded = expanded;
+		this.repaint();
+	}
+
 	@Override
 	public void paintIcon() {
-		if (this.appearance.getIcon1() != null && this.appearance.getIcon2() != null) {
+		if (this.appearance.getIcon1() != null && this.appearance.getIcon2() != null && this.appearance.getIcon3() != null && this.appearance.getIcon4() != null) {
 			if (!this.expanded) {
 				this.setIcon(this.entered ? this.appearance.getIcon4() : this.appearance.getIcon3());
 				this.setIcon(this.pressed ? this.appearance.getIcon3() : this.appearance.getIcon4());

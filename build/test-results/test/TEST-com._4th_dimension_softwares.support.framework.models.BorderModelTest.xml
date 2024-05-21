@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com._4th_dimension_softwares.support.framework.models.BorderModelTest" tests="27" skipped="0" failures="0" errors="0" timestamp="2024-05-16T09:46:43" hostname="DESKTOP-PDMD8RI" time="0.119">
+<testsuite name="com._4th_dimension_softwares.support.framework.models.BorderModelTest" tests="27" skipped="0" failures="0" errors="0" timestamp="2024-05-21T21:06:37" hostname="DESKTOP-FN3U10C" time="0.109">
   <properties/>
-  <testcase name="[1] 12" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.041"/>
+  <testcase name="[1] 12" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.023"/>
   <testcase name="[2] 4" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
-  <testcase name="[3] 499" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
+  <testcase name="[3] 499" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.0"/>
   <testcase name="[4] 124" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
   <testcase name="[5] 3" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
-  <testcase name="[6] 2" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
+  <testcase name="[6] 2" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.0"/>
   <testcase name="[7] 1" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
-  <testcase name="The ColorModel of the model should be red, green and blue" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.002"/>
-  <testcase name="[1] -12" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.002"/>
+  <testcase name="The ColorModel of the model should be red, green and blue" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.003"/>
+  <testcase name="[1] -12" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
   <testcase name="[2] sd4" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
   <testcase name="[3] Invalid" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
-  <testcase name="[4] Values" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
+  <testcase name="[4] Values" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.004"/>
   <testcase name="[5] -4573" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
   <testcase name="[6] -2-*S" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
-  <testcase name="[7] '!%/=(=lkjfdg" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
-  <testcase name="[1] Hello" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
+  <testcase name="[7] '!%/=(=lkjfdg" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.0"/>
+  <testcase name="[1] Hello" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.002"/>
   <testcase name="[2] World" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
   <testcase name="[3] !" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
   <testcase name="[4] -623" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
   <testcase name="[5] &#10;" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
-  <testcase name="[1] [255, 0, 0, 255][0, 0, 255, 255];2;3" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.009"/>
+  <testcase name="[1] [255, 0, 0, 255][0, 0, 255, 255];2;3" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.002"/>
   <testcase name="[2] [0, 23, 234, 255] [126, 0, 66, 122];10;73" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
   <testcase name="[1] 1" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>
   <testcase name="[2] 54" classname="com._4th_dimension_softwares.support.framework.models.BorderModelTest" time="0.001"/>

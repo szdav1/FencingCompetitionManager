@@ -56,7 +56,7 @@ public class XFrame extends AbstractXFrame {
 	private final CompetitionFromDatabaseEditor competitionFromDatabaseEditor;
 	private final CompetitionStatsInspector competitionStatsInspector;
 	// Rule set
-	private final NewRuleSetEditor ruleSetCreator;
+	private final NewRuleSetEditor newRuleSetEditor;
 	private final RuleSetsInspector ruleSetsInspector;
 	private final RuleSetDeleter ruleSetDeleter;
 	private final RuleSetModifier ruleSetModifier;
@@ -102,7 +102,7 @@ public class XFrame extends AbstractXFrame {
 		this.competitionFromDatabaseEditor = new CompetitionFromDatabaseEditor(this, "competitionEditor");
 		this.competitionStatsInspector = new CompetitionStatsInspector(this, "competitionEditor");
 		// Rule set
-		this.ruleSetCreator = new NewRuleSetEditor(this, "ruleSetEditor");
+		this.newRuleSetEditor = new NewRuleSetEditor(this, "ruleSetEditor");
 		this.ruleSetsInspector = new RuleSetsInspector(this, "ruleSetEditor");
 		this.ruleSetDeleter = new RuleSetDeleter(this, "ruleSetEditor");
 		this.ruleSetModifier = new RuleSetModifier(this, "ruleSetEditor");
@@ -262,10 +262,10 @@ public class XFrame extends AbstractXFrame {
 	 * This method only runs if the state of the frame
 	 * is <code>NORMAL</code>.
 	 */
-	public void openRuleSetCreator() {
+	public void openNewRuleSetEditor() {
 		if (this.frameState == FrameState.NORMAL) {
-			this.addToCenterPanel(this.ruleSetCreator);
-			this.displayingPanel = this.ruleSetCreator;
+			this.addToCenterPanel(this.newRuleSetEditor);
+			this.displayingPanel = this.newRuleSetEditor;
 			this.frameState = FrameState.RULE_SET_EDITOR_OPENED;
 		}
 	}
