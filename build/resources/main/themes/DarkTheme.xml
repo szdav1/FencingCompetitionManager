@@ -373,15 +373,6 @@ look the same.
         <background colors="[27,27,27,255]"/>
     </appearance>
 
-    <appearance applyTo="ruleSetEditor.titleLabels">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[255,255,255,255]"/>
-        <border colors="[72,58,255,255][178,0,255,255][0,0,0,0]" thickness="@proportional"/>
-        <modifiers>
-            <border bottom="true"/>
-        </modifiers>
-    </appearance>
-
     <appearance applyTo="ruleSetEditor.scrollPanel">
         <background colors="[27,27,27,255]"/>
     </appearance>
@@ -399,6 +390,16 @@ look the same.
         <background colors="[10,10,10,255]"/>
     </appearance>
 
+    <appearance applyTo="ruleSetEditor.innerPanel.title">
+        <background colors="[0,0,0,0]"/>
+        <foreground colors="255,255,255,255"/>
+        <foreground colors="[255,255,255,255]"/>
+        <border colors="[72,58,255,255][178,0,255,255][0,0,0,0]" thickness="@proportional"/>
+        <modifiers>
+            <border bottom="true"/>
+        </modifiers>
+    </appearance>
+
     <appearance applyTo="ruleSetEditor.innerPanel.button">
         <background colors="[0,0,0,0]"/>
         <foreground colors="[255,255,255,255][255,0,0,255]"/>
@@ -408,10 +409,6 @@ look the same.
         <icon4 source="/icons/ArrowUp.png" width="2" height="2" color="[128,128,128,255]"/>
     </appearance>
 
-    <appearance applyTo="ruleSetEditor.innerPanel.title">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="255,255,255,255"/>
-    </appearance>
     <!-- ================================================================================================== -->
     <!--  Settings editors  -->
     <appearance applyTo="settingsEditor">
