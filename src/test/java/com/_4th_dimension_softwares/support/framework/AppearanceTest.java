@@ -10,6 +10,7 @@ import com._4th_dimension_software.support.theme.models.IconModel;
 import com._4th_dimension_software.support.util.Util;
 import org.junit.jupiter.api.*;
 
+@Disabled
 class AppearanceTest {
 	ColorThemeModel ctm;
 

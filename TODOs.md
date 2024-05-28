@@ -23,3 +23,6 @@
 > - Add docstrings to the newly created classes and methods
 > - Add and check docstrings and comments in rule set editor classes
 > - Check the docstrings in the whole project
+
+> JAR
+> - Fix problem with JAR file not being able to load the resources

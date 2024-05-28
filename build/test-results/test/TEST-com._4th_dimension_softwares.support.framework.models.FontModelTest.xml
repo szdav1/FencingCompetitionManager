@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com._4th_dimension_softwares.support.framework.models.FontModelTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2024-05-22T20:06:53" hostname="DESKTOP-FN3U10C" time="0.03">
+<testsuite name="com._4th_dimension_softwares.support.framework.models.FontModelTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2024-05-28T12:02:24" hostname="DESKTOP-FN3U10C" time="0.029">
   <properties/>
   <testcase name="[1] 23" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.001"/>
-  <testcase name="[2] 89" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.001"/>
-  <testcase name="[3] 10" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.001"/>
+  <testcase name="[2] 89" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.0"/>
+  <testcase name="[3] 10" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.0"/>
   <testcase name="[4] 1" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.0"/>
   <testcase name="[5] 9909" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.0"/>
   <testcase name="The ligature should be italic" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.001"/>
   <testcase name="Should have default fields created by the empty constructor" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.002"/>
   <testcase name="The ligature should be bold" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.0"/>
-  <testcase name="[1] pLaIn" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.002"/>
+  <testcase name="[1] pLaIn" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.001"/>
   <testcase name="[2] PLAIN" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.001"/>
   <testcase name="[3] 74897459" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.001"/>
-  <testcase name="[4] jhgfdkj" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.001"/>
-  <testcase name="[5] \//[][{}:*,?" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.001"/>
+  <testcase name="[4] jhgfdkj" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.0"/>
+  <testcase name="[5] \//[][{}:*,?" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.0"/>
   <testcase name="[1] -20" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.001"/>
-  <testcase name="[2] Hello" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.0"/>
-  <testcase name="[3] -gjklfg" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.0"/>
+  <testcase name="[2] Hello" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.001"/>
+  <testcase name="[3] -gjklfg" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.001"/>
   <testcase name="[4] [][[/\*" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.0"/>
-  <testcase name="[5] -99" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.0"/>
+  <testcase name="[5] -99" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.001"/>
   <testcase name="[6] 0" classname="com._4th_dimension_softwares.support.framework.models.FontModelTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
