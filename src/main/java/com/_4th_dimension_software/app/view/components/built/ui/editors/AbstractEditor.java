@@ -43,7 +43,7 @@ public abstract class AbstractEditor extends XPanel {
 	 *                       values should be implemented on this component
 	 */
 	protected AbstractEditor(final XFrame frame, String appearanceName) {
-		super((SizeData.SCREEN_WIDTH/2)-(SizeData.EDITOR_WIDTH/2)-SizeData.SIDEBAR_WIDTH, (SizeData.SCREEN_HEIGHT/2)-(SizeData.EDITOR_HEIGHT/2),
+		super(((SizeData.SCREEN_WIDTH-SizeData.SIDEBAR_WIDTH)/2)-(SizeData.EDITOR_WIDTH/2), (SizeData.SCREEN_HEIGHT/2)-(SizeData.EDITOR_HEIGHT/2),
 			SizeData.EDITOR_WIDTH, SizeData.EDITOR_HEIGHT, new BorderLayout(), frame, appearanceName);
 
 		// Parts of the editor
