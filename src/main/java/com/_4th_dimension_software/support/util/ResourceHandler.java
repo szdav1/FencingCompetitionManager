@@ -1,7 +1,7 @@
 package com._4th_dimension_software.support.util;
 
+import java.io.FileReader;
 import java.net.URL;
-import java.util.Objects;
 
 /**
  * The <code>Resources</code> class holds a method
@@ -33,14 +33,14 @@ public final class ResourceHandler {
 	public static String get(final String filePath) {
 		URL fileURL = ResourceHandler.class.getResource(filePath);
 
-		if (fileURL != null)
-			return fileURL.getFile();
+		if (fileURL == null)
+			return "";
 
-		try {
-			return Objects.requireNonNull(ResourceHandler.class.getResource("/"+filePath)).getFile();
+		try (FileReader fr = new FileReader(fileURL.getFile())) {
+			return fileURL.getFile();
 		}
 		catch (Exception exc) {
-			return "";
+			return "resources"+filePath;
 		}
 	}
 }
