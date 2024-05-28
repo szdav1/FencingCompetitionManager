@@ -1,9 +1,5 @@
 plugins {
-    id 'application'
-}
-
-application {
-    mainClassName = 'com._4th_dimension_software.app.run.Main'
+    id 'java'
 }
 
 group 'com._4th_dimension_software'
@@ -24,21 +20,8 @@ test {
 
 jar {
     manifest {
-        attributes 'Main-Class': 'com._4th_dimension_software.app.run.Main'
-    }
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-}
-
-sourceSets {
-    main {
-        java {
-            srcDirs = ['src/main/java']
-        }
-        resources {
-            srcDirs = ['src/main/resources']
-        }
+        attributes (
+                'Main-Class': 'com._4th_dimension_software.app.run.Main'
+        )
     }
 }
-
