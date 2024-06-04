@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DarkRedTheme>
+    <appearance applyto="sidebar">
+        <background colors="[27,27,27,255]"/>
+        <border colors="[72,58,255,255][178,0,255,255]" thickness="@proportional"/>
+        <modifiers>
+            <border right="true"/>
+        </modifiers>
+
+        <appearance applyto="header">
+            <background colors="[0,0,0,0]"/>
+            <icon1 source="/icons/dashboard.png" width="3" height="3"/>
+        </appearance>
+
+        <appearance applyto="separator">
+            <background colors="[0,0,0,0][72,58,255,255][178,0,255,255][0,0,0,0][0,0,0,0]"/>
+        </appearance>
+
+        <appearance applyto="exit-button">
+            <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+            <foreground colors="[128,128,128,255][255,255,255,255]"/>
+            <icon1 source="/icons/Exit.png" width="3" height="4" color="[128,128,128,255]"/>
+            <icon2 source="/icons/Exit.png" width="3" height="4"/>
+        </appearance>
+
+        <appearance applyto="poule-button">
+            <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+            <foreground colors="[128,128,128,255][255,255,255,255]"/>
+            <icon1 source="/icons/Poule.png" width="3" height="3" color="[128,128,128,255]"/>
+            <icon2 source="/icons/Poule.png" width="3" height="3"/>
+
+            <appearance applyto="dropdown">
+                <background colors="[27,27,27,255]"/>
+                <border colors="[72,58,255,255][178,0,255,255]" thickness="@proportional"/>
+
+                <appearance applyto="empty-button">
+                    <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+                    <foreground colors="[128,128,128,255][255,255,255,255]"/>
+                    <icon1 source="/icons/Empty.png" width="3" height="3" color="[128,128,128,255]"/>
+                    <icon2 source="/icons/Empty.png" width="3" height="3"/>
+                </appearance>
+
+                <appearance applyto="from-database-button">
+                    <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+                    <foreground colors="[128,128,128,255][255,255,255,255]"/>
+                    <icon1 source="/icons/FromDatabase.png" width="3" height="3" color="[128,128,128,255]"/>
+                    <icon2 source="/icons/FromDatabase.png" width="3" height="3"/>
+                </appearance>
+
+                <appearance applyto="stats-button">
+                    <background colors="[0,0,0,0][72,58,255,255][178,0,255,255]"/>
+                    <foreground colors="[128,128,128,255][255,255,255,255]"/>
+                    <icon1 source="/icons/Stats.png" width="3" height="3" color="[128,128,128,255]"/>
+                    <icon2 source="/icons/Stats.png" width="3" height="3"/>
+                </appearance>
+            </appearance>
+        </appearance>
+
+    </appearance>
+</DarkRedTheme>
