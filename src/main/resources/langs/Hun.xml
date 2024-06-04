@@ -45,4 +45,79 @@
         <connect>Csatlakozás</connect>
         <arrange>Menedzsment</arrange>
     </words>
+
+    <!--  Editors & Inspectors -->
+    <!--  Poule  -->
+    <words for="emptyPouleEditor">
+        <title>Üres Kör</title>
+    </words>
+
+    <words for="pouleFromDatabaseEditor">
+        <title>Kör Adatbázisból</title>
+    </words>
+
+    <words for="pouleStatsInspector">
+        <title>Kör Statisztikák</title>
+    </words>
+
+    <!--  Table  -->
+    <words for="emptyTableEditor">
+        <title>Üres Tábla</title>
+    </words>
+
+    <words for="tableFromDatabaseEditor">
+        <title>Tábla Adatbázisból</title>
+    </words>
+
+    <words for="tableStatsInspector">
+        <title>Tábla Statisztikák</title>
+    </words>
+
+    <!--  Competition  -->
+    <words for="emptyCompetitionEditor">
+        <title>Üres Verseny</title>
+    </words>
+
+    <words for="competitionFromDatabaseEditor">
+        <title>Verseny Adatbázisból</title>
+    </words>
+
+    <words for="competitionStatsInspector">
+        <title>Verseny Statisztikák</title>
+    </words>
+
+    <!--  Rule sets  -->
+    <words for="ruleSetInspector">
+        <title>Szabálykészletek</title>
+    </words>
+
+    <words for="newRuleSetEditor">
+        <title>Új Szabálykészlet</title>
+        <attributesTitle>Szabálykészlet Attribútumok</attributesTitle>
+        <pouleRulesTitle>Kör Szabályok</pouleRulesTitle>
+        <tableRulesTitle>Tábla Szabályok</tableRulesTitle>
+        <competitionRulesTitle>Verseny Szabályok</competitionRulesTitle>
+    </words>
+
+    <words for="ruleSetModifier">
+        <title>Szabálykészletek Módosítása</title>
+    </words>
+
+    <words for="ruleSetDeleter">
+        <title>Szabálykészletek Törlése</title>
+    </words>
+
+    <!--  Settings  -->
+    <words for="interfaceEditor">
+        <title>Interfész/Kinézet</title>
+    </words>
+
+    <words for="languageEditor">
+        <title>Nyelv</title>
+    </words>
+
+    <!--  Database  -->
+    <words for="databaseConnectionEditor">
+        <title>Adatbázis Kapcsolat</title>
+    </words>
 </English>

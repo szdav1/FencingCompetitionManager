@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Settings>
-    <colorTheme>/themes/DarkTheme.xml</colorTheme>
-    <language>/langs/English.xml</language>
+    <colorTheme>/themes/DarkRedTheme.xml</colorTheme>
+    <language>/langs/Hun.xml</language>
 </Settings>

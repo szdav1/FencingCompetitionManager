@@ -32,8 +32,8 @@
     <words for="sidebar.ruleSet">
         <view>View Rule Sets</view>
         <new>New Rule Set</new>
-        <delete>Delete Rule Set(s)</delete>
-        <modify>Modify Rule Set</modify>
+        <delete>Delete Rule Sets</delete>
+        <modify>Modify Rule Sets</modify>
     </words>
 
     <words for="sidebar.settings">
@@ -100,11 +100,11 @@
     </words>
 
     <words for="ruleSetModifier">
-        <title>Modify Rule Set</title>
+        <title>Modify Rule Sets</title>
     </words>
 
     <words for="ruleSetDeleter">
-        <title>Delete Rule Set(s)</title>
+        <title>Delete Rule Sets</title>
     </words>
 
     <!--  Settings  -->
