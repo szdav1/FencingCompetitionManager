@@ -1,9 +1,9 @@
 package com._4th_dimension_software.support.theme;
 
-import com._4th_dimension_software.support.theme.models.ColorThemeModel;
-
 import java.awt.Color;
 import java.util.Collections;
+
+import com._4th_dimension_software.support.theme.models.ColorThemeModel;
 
 /**
  * The <code>Appearance</code> class is a class that stores
@@ -213,35 +213,5 @@ public final class Appearance extends AbstractAppearance {
         }
 
         return colors;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof Appearance a) {
-            return this.borderPaintRules.equals(a.getBorderPaintRules()) &&
-                this.linearPaint == a.isLinearPaint() &&
-                this.backgrounds.equals(a.getBackgrounds()) &&
-                this.foregrounds.equals(a.getForegrounds()) &&
-                this.borderModel.equals(a.getBorderModel()) &&
-                this.font.equals(a.getFont()) &&
-                this.icon1.equals(a.getIcon1()) &&
-                this.icon2.equals(a.getIcon2());
-        }
-
-        return false;
-    }
-
-    @Override
-    public String toString() {
-        return "Appearance{"+
-            "linearPaint="+linearPaint+
-            ", borderPaintRules="+borderPaintRules+
-            ", backgrounds="+backgrounds+
-            ", foregrounds="+foregrounds+
-            ", borderModel="+borderModel+
-            ", font="+font+
-            ", icon1="+icon1+
-            ", icon2="+icon2+
-            '}';
     }
 }

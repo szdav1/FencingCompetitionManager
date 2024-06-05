@@ -66,23 +66,4 @@ public final class IconModel extends AbstractIconModel {
 	public IconModel(String source) {
 		super(source);
 	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (obj instanceof IconModel im) {
-			if (this.icon == null && im.getIcon() == null)
-				return true;
-
-			return this.icon.equals(im.getIcon());
-		}
-
-		return false;
-	}
-
-	@Override
-	public String toString() {
-		return "IconModel{"+
-			"icon="+icon+
-			'}';
-	}
 }

@@ -27,7 +27,7 @@ public final class Settings {
      */
     public static void init(HashMap<String, String> settings) {
         if (initialized)
-            throw new RuntimeException("Settings has been already initialized");
+            throw new RuntimeException("Settings have been already initialized.");
 
         Settings.settings = settings;
         initialized = true;
@@ -42,6 +42,9 @@ public final class Settings {
      * @return The path of the desired settings file
      */
     public static String get(String settingsKey) {
+        if (!initialized)
+            throw new RuntimeException("Settings haven't been initialized.");
+
         return settings.get(settingsKey);
     }
 }

@@ -30,5 +30,6 @@ public final class App {
 
 		// Open application window
 		this.frame = new XFrame("CompetitionManager 0.5-WORK-IN-PROGRESS", "window");
+		this.frame.display();
 	}
 }

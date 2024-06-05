@@ -14,11 +14,17 @@ import com._4th_dimension_software.support.theme.models.BorderModel;
 import com._4th_dimension_software.support.theme.models.ColorThemeModel;
 import com._4th_dimension_software.support.theme.models.FontModel;
 import com._4th_dimension_software.support.util.ResourceHandler;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
 
 /**
  * The <code>AbstractAppearance</code> abstract class defines the
  * abstract behaviour of <code>Appearance</code>s inside the application.
  */
+@Getter
+@ToString
+@EqualsAndHashCode()
 public abstract class AbstractAppearance {
 	protected boolean linearPaint;
 	protected HashMap<String, Boolean> borderPaintRules;
@@ -109,45 +115,5 @@ public abstract class AbstractAppearance {
 		catch (Exception exc) {
 			this.font = new Font("Arial", Font.PLAIN, SizeData.FONT_SIZE);
 		}
-	}
-
-	public boolean isLinearPaint() {
-		return this.linearPaint;
-	}
-
-	public HashMap<String, Boolean> getBorderPaintRules() {
-		return this.borderPaintRules;
-	}
-
-	public List<Color> getBackgrounds() {
-		return this.backgrounds;
-	}
-
-	public List<Color> getForegrounds() {
-		return this.foregrounds;
-	}
-
-	public BorderModel getBorderModel() {
-		return this.borderModel;
-	}
-
-	public Font getFont() {
-		return this.font;
-	}
-
-	public ImageIcon getIcon1() {
-		return this.icon1;
-	}
-
-	public ImageIcon getIcon2() {
-		return this.icon2;
-	}
-
-	public ImageIcon getIcon3() {
-		return this.icon3;
-	}
-
-	public ImageIcon getIcon4() {
-		return this.icon4;
 	}
 }

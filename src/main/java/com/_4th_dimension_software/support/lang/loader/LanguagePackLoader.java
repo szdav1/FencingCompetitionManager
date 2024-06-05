@@ -1,6 +1,6 @@
 package com._4th_dimension_software.support.lang.loader;
 
-import com._4th_dimension_software.support.lang.LanguagePack;
+import com._4th_dimension_software.support.lang.Language;
 import com._4th_dimension_software.support.lang.reader.LanguagePackReader;
 
 /**
@@ -23,6 +23,6 @@ public final class LanguagePackLoader {
 	 * @param filePath The path of the language pack XML file
 	 */
 	public static void loadFromXML(final String filePath) {
-		LanguagePack.init(LanguagePackReader.readFromXML(filePath));
+		Language.init(LanguagePackReader.readFromXML(filePath));
 	}
 }

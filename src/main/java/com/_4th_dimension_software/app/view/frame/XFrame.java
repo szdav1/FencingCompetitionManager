@@ -119,7 +119,9 @@ public class XFrame extends AbstractXFrame {
 		this.addComponent(this.sidebar, PositionConstants.LEFT_POSITION);
 		// Center panel
 		this.addComponent(this.centerPanel, PositionConstants.CENTER_POSITION);
+	}
 
+	public void display() {
 		// Set visibility
 		this.setVisible(true);
 

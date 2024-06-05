@@ -2,6 +2,8 @@ package com._4th_dimension_software.support.theme.models;
 
 import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.util.Util;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 /**
  * The <code>AbstractBorderModel</code> stores and validates
@@ -9,6 +11,8 @@ import com._4th_dimension_software.support.util.Util;
  * defines the abstract behaviour of border models inside the application.
  * These data are fed into this class's constructor by the <code>ColorThemeReader</code>.
  */
+@ToString
+@EqualsAndHashCode
 public abstract class AbstractBorderModel {
 	protected ColorModel colorModel;
 	protected int thickness;

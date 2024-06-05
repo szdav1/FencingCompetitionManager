@@ -4,7 +4,10 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
+import com._4th_dimension_software.support.theme.definitions.ColorDefinitions;
 import com._4th_dimension_software.support.util.Util;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 /**
  * The <code>AbstractColorModel</code> stores and validates
@@ -13,6 +16,8 @@ import com._4th_dimension_software.support.util.Util;
  * behaviour of color models inside the application.
  * These data are fed into this class's constructor by the <code>ColorThemeReader</code>.
  */
+@ToString
+@EqualsAndHashCode
 public abstract class AbstractColorModel {
 	protected List<Color> colors;
 
@@ -32,8 +37,7 @@ public abstract class AbstractColorModel {
 	 * @param line The line in the color theme document that has the color array
 	 */
 	protected AbstractColorModel(String line) {
-		this.colors = new ArrayList<>();
-		this.turnStringToColorList(line);
+		this.colors = turnStringToColorList(line);
 	}
 
 	/**
@@ -42,13 +46,17 @@ public abstract class AbstractColorModel {
 	 *
 	 * @param str The string that should be turned into a color array
 	 */
-	private void turnStringToColorList(final String str) {
-		this.colors.clear();
+	public static List<Color> turnStringToColorList(final String str) {
+		int c = 1;
+		boolean isDefinition = false;
+		List<Integer> tempList = new ArrayList<>();
+		List<Color> colors = new ArrayList<>();
 
 		// If the value given is blank, a black color is used
 		if (str.isBlank())
-			this.colors.add(Color.black);
-			// Interpretation
+			colors.add(Color.black);
+
+		// Interpretation
 		else {
 			String[] values = str
 				.replaceAll(" ", "")
@@ -57,23 +65,31 @@ public abstract class AbstractColorModel {
 				.split("]\\[");
 
 			for (String value : values) {
+				tempList.clear();
 				// Remove unnecessary characters and split to get the color values
-				String[] splitValues = value.replaceAll("\\[", "")
+				String[] nums = value.replaceAll("\\[", "")
 					.replaceAll("]", "")
 					.split(",");
 
-				List<Integer> tempList = new ArrayList<>();
+				for (String num : nums) {
+					if (num.startsWith("@")) {
+						colors.addAll(ColorDefinitions.get(num));
+						isDefinition = true;
+					}
 
-				if (splitValues.length == 4) {
-					tempList.add(Util.toInt(splitValues[0], 0, (i) -> i >= 0));
-					tempList.add(Util.toInt(splitValues[1], 0, (i) -> i >= 0));
-					tempList.add(Util.toInt(splitValues[2], 0, (i) -> i >= 0));
-					tempList.add(Util.toInt(splitValues[3], 255, (i) -> i >= 0));
+					else {
+						tempList.add(Util.toInt(num, c%4 == 0 ? 255 : 0, i -> i >= 0));
+						isDefinition = false;
+						c++;
+					}
 				}
 
-				this.colors.add(Util.listToColor(tempList));
+				if (!isDefinition)
+					colors.add(Util.listToColor(tempList));
 			}
 		}
+
+		return colors;
 	}
 
 	public List<Color> getColors() {
@@ -81,6 +97,6 @@ public abstract class AbstractColorModel {
 	}
 
 	public void setColors(String str) {
-		this.turnStringToColorList(str);
+		this.colors = turnStringToColorList(str);
 	}
 }

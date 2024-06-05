@@ -7,7 +7,7 @@ import com._4th_dimension_software.app.view.components.base.scrollpanel.XScrollP
 import com._4th_dimension_software.app.view.components.built.ui.editors.AbstractEditor;
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.appdata.SizeData;
-import com._4th_dimension_software.support.lang.LanguagePack;
+import com._4th_dimension_software.support.lang.Language;
 
 /**
  * The <code>NewRuleSetEditor</code> class is a subclass
@@ -34,7 +34,7 @@ public final class NewRuleSetEditor extends AbstractEditor {
 	 */
 	public NewRuleSetEditor(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
-		this.setTitle(LanguagePack.get("newRuleSetEditor.title"));
+		this.setTitle(Language.get("newRuleSetEditor.title"));
 		this.centerPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 
 		final int IPX = (this.getWidth()/2)-(SizeData.EDITOR_INNER_PANEL_WIDTH/2);
@@ -48,19 +48,19 @@ public final class NewRuleSetEditor extends AbstractEditor {
 
 		// Editor parts
 		// Rule set attributes
-		this.ruleSetAttributesInputPanel = new RuleSetAttributesInputPanel(LanguagePack.get("newRuleSetEditor.attributesTitle"), frame, appearanceName+".innerPanel");
+		this.ruleSetAttributesInputPanel = new RuleSetAttributesInputPanel(Language.get("newRuleSetEditor.attributesTitle"), frame, appearanceName+".innerPanel");
 		this.ruleSetAttributesInputPanel.setScrollPanel(sp);
 
 		// Poule rule set
-		this.pouleRuleSetInputPanel = new PouleRuleSetInputPanel(LanguagePack.get("newRuleSetEditor.pouleRulesTitle"), frame, appearanceName+".innerPanel");
+		this.pouleRuleSetInputPanel = new PouleRuleSetInputPanel(Language.get("newRuleSetEditor.pouleRulesTitle"), frame, appearanceName+".innerPanel");
 		this.pouleRuleSetInputPanel.setScrollPanel(sp);
 
 		// Table rule set
-		this.tableRuleSetInputPanel = new TableRuleSetInputPanel(LanguagePack.get("newRuleSetEditor.tableRulesTitle"), frame, appearanceName+".innerPanel");
+		this.tableRuleSetInputPanel = new TableRuleSetInputPanel(Language.get("newRuleSetEditor.tableRulesTitle"), frame, appearanceName+".innerPanel");
 		this.tableRuleSetInputPanel.setScrollPanel(sp);
 
 		// Competition rule set
-		this.competitionRuleSetInputPanel = new CompetitionRuleSetInputPanel(LanguagePack.get("newRuleSetEditor.competitionRulesTitle"), frame, appearanceName+".innerPanel");
+		this.competitionRuleSetInputPanel = new CompetitionRuleSetInputPanel(Language.get("newRuleSetEditor.competitionRulesTitle"), frame, appearanceName+".innerPanel");
 		this.competitionRuleSetInputPanel.setScrollPanel(sp);
 
 		sp.addComponent(this.ruleSetAttributesInputPanel);

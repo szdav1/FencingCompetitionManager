@@ -80,34 +80,4 @@ public final class ColorThemeModel extends AbstractColorThemeModel {
 
 		super(linearPaint, paintTopBorder, paintRightBorder, paintBottomBorder, paintLeftBorder, backgroundModel, foregroundModel, borderModel, fontModel, iconModel1, iconModel2);
 	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (obj instanceof ColorThemeModel ctm) {
-			return this.borderPaintRules.equals(ctm.getBorderPaintRules()) &&
-				this.linearPaint == ctm.isLinearPaint() &&
-				this.backgroundModel.equals(ctm.getBackgroundModel()) &&
-				this.foregroundModel.equals(ctm.getForegroundModel()) &&
-				this.borderModel.equals(ctm.getBorderModel()) &&
-				this.fontModel.equals(ctm.getFontModel()) &&
-				this.iconModel1.equals(ctm.getIconModel1()) &&
-				this.iconModel2.equals(ctm.getIconModel2());
-		}
-
-		return false;
-	}
-
-	@Override
-	public String toString() {
-		return "ColorThemeModel{"+
-			"linearPaint="+linearPaint+
-			", borderPaintRules="+borderPaintRules+
-			", backgroundModel="+backgroundModel+
-			", foregroundModel="+foregroundModel+
-			", borderModel="+borderModel+
-			", fontModel="+fontModel+
-			", iconModel1="+iconModel1+
-			", iconModel2="+iconModel2+
-			'}';
-	}
 }

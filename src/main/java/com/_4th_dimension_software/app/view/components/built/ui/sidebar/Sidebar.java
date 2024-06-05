@@ -15,7 +15,7 @@ import com._4th_dimension_software.app.view.components.built.ui.sidebar.menu.Men
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.consts.RelativePositions;
-import com._4th_dimension_software.support.lang.LanguagePack;
+import com._4th_dimension_software.support.lang.Language;
 
 /**
  * The <code>Sidebar</code> class contains the declaration of
@@ -49,7 +49,7 @@ public final class Sidebar extends XPanel {
 
 		// Header
 		// Header
-		XLabel header = new XLabel(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.header"), frame, appearanceName+".header");
+		XLabel header = new XLabel(SizeData.W_BUTTON_DIMENSION, Language.get("sidebar.header"), frame, appearanceName+".header");
 		header.centerContent();
 
 		// Separators
@@ -60,42 +60,42 @@ public final class Sidebar extends XPanel {
 
 		// Menu buttons
 		// Menu buttons
-		MenuButton pouleButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.poule"), frame, appearanceName+".buttons.poule");
-		pouleButton.addButtonToDropdown(LanguagePack.get("sidebar.poule.empty"), "F1", appearanceName+".buttons.poule.dropdown.empty");
-		pouleButton.addButtonToDropdown(LanguagePack.get("sidebar.poule.database"), "F2", appearanceName+".buttons.poule.dropdown.database");
-		pouleButton.addButtonToDropdown(LanguagePack.get("sidebar.poule.stats"), "F3", appearanceName+".buttons.poule.dropdown.stats");
+		MenuButton pouleButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, Language.get("sidebar.poule"), frame, appearanceName+".buttons.poule");
+		pouleButton.addButtonToDropdown(Language.get("sidebar.poule.empty"), "F1", appearanceName+".buttons.poule.dropdown.empty");
+		pouleButton.addButtonToDropdown(Language.get("sidebar.poule.database"), "F2", appearanceName+".buttons.poule.dropdown.database");
+		pouleButton.addButtonToDropdown(Language.get("sidebar.poule.stats"), "F3", appearanceName+".buttons.poule.dropdown.stats");
 		pouleButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEFT);
 
-		MenuButton tableButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.table"), frame, appearanceName+".buttons.table");
-		tableButton.addButtonToDropdown(LanguagePack.get("sidebar.table.empty"), "F4", appearanceName+".buttons.table.dropdown.empty");
-		tableButton.addButtonToDropdown(LanguagePack.get("sidebar.table.database"), "F5", appearanceName+".buttons.table.dropdown.database");
-		tableButton.addButtonToDropdown(LanguagePack.get("sidebar.table.stats"), "F6", appearanceName+".buttons.table.dropdown.stats");
+		MenuButton tableButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, Language.get("sidebar.table"), frame, appearanceName+".buttons.table");
+		tableButton.addButtonToDropdown(Language.get("sidebar.table.empty"), "F4", appearanceName+".buttons.table.dropdown.empty");
+		tableButton.addButtonToDropdown(Language.get("sidebar.table.database"), "F5", appearanceName+".buttons.table.dropdown.database");
+		tableButton.addButtonToDropdown(Language.get("sidebar.table.stats"), "F6", appearanceName+".buttons.table.dropdown.stats");
 		tableButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEFT);
 
-		MenuButton competitionButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.competition"), frame, appearanceName+".buttons.competition");
-		competitionButton.addButtonToDropdown(LanguagePack.get("sidebar.competition.empty"), "F7", appearanceName+".buttons.competition.dropdown.empty");
-		competitionButton.addButtonToDropdown(LanguagePack.get("sidebar.competition.database"), "F8", appearanceName+".buttons.competition.dropdown.database");
-		competitionButton.addButtonToDropdown(LanguagePack.get("sidebar.competition.stats"), "F9", appearanceName+".buttons.competition.dropdown.stats");
+		MenuButton competitionButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, Language.get("sidebar.competition"), frame, appearanceName+".buttons.competition");
+		competitionButton.addButtonToDropdown(Language.get("sidebar.competition.empty"), "F7", appearanceName+".buttons.competition.dropdown.empty");
+		competitionButton.addButtonToDropdown(Language.get("sidebar.competition.database"), "F8", appearanceName+".buttons.competition.dropdown.database");
+		competitionButton.addButtonToDropdown(Language.get("sidebar.competition.stats"), "F9", appearanceName+".buttons.competition.dropdown.stats");
 		competitionButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEFT);
 
-		MenuButton ruleSetsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.ruleSet"), frame, appearanceName+".buttons.ruleSet");
-		ruleSetsButton.addButtonToDropdown(LanguagePack.get("sidebar.ruleSet.view"), "V", appearanceName+".buttons.ruleSet.dropdown.view");
-		ruleSetsButton.addButtonToDropdown(LanguagePack.get("sidebar.ruleSet.new"), "N", appearanceName+".buttons.ruleSet.dropdown.add");
-		ruleSetsButton.addButtonToDropdown(LanguagePack.get("sidebar.ruleSet.delete"), "D", appearanceName+".buttons.ruleSet.dropdown.delete");
-		ruleSetsButton.addButtonToDropdown(LanguagePack.get("sidebar.ruleSet.modify"), "M", appearanceName+".buttons.ruleSet.dropdown.modify");
+		MenuButton ruleSetsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, Language.get("sidebar.ruleSet"), frame, appearanceName+".buttons.ruleSet");
+		ruleSetsButton.addButtonToDropdown(Language.get("sidebar.ruleSet.view"), "V", appearanceName+".buttons.ruleSet.dropdown.view");
+		ruleSetsButton.addButtonToDropdown(Language.get("sidebar.ruleSet.new"), "N", appearanceName+".buttons.ruleSet.dropdown.add");
+		ruleSetsButton.addButtonToDropdown(Language.get("sidebar.ruleSet.delete"), "D", appearanceName+".buttons.ruleSet.dropdown.delete");
+		ruleSetsButton.addButtonToDropdown(Language.get("sidebar.ruleSet.modify"), "M", appearanceName+".buttons.ruleSet.dropdown.modify");
 		ruleSetsButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEFT);
 
-		MenuButton settingsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.settings"), frame, appearanceName+".buttons.settings");
-		settingsButton.addButtonToDropdown(LanguagePack.get("sidebar.settings.interface"), "I", appearanceName+".buttons.settings.dropdown.appearance");
-		settingsButton.addButtonToDropdown(LanguagePack.get("sidebar.settings.language"), "L", appearanceName+".buttons.settings.dropdown.language");
+		MenuButton settingsButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, Language.get("sidebar.settings"), frame, appearanceName+".buttons.settings");
+		settingsButton.addButtonToDropdown(Language.get("sidebar.settings.interface"), "I", appearanceName+".buttons.settings.dropdown.appearance");
+		settingsButton.addButtonToDropdown(Language.get("sidebar.settings.language"), "L", appearanceName+".buttons.settings.dropdown.language");
 		settingsButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEFT);
 
-		MenuButton databaseButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.database"), frame, appearanceName+".buttons.database");
-		databaseButton.addButtonToDropdown(LanguagePack.get("sidebar.database.connect"), "C", appearanceName+".buttons.database.dropdown.connect");
+		MenuButton databaseButton = new MenuButton(SizeData.W_BUTTON_DIMENSION, Language.get("sidebar.database"), frame, appearanceName+".buttons.database");
+		databaseButton.addButtonToDropdown(Language.get("sidebar.database.connect"), "C", appearanceName+".buttons.database.dropdown.connect");
 		databaseButton.adjustContentOfButtonsInDropdownPanel(SwingConstants.LEFT);
 
 		// Exit button
-		this.exitButton = new XButton(SizeData.W_BUTTON_DIMENSION, LanguagePack.get("sidebar.exit"), "Esc", frame, appearanceName+".buttons.exit");
+		this.exitButton = new XButton(SizeData.W_BUTTON_DIMENSION, Language.get("sidebar.exit"), "Esc", frame, appearanceName+".buttons.exit");
 		this.exitButton.setMargin(new Insets(0, SizeData.TEXT_MARGIN, 0, 0));
 		this.exitButton.adjustContent(SwingConstants.LEFT);
 

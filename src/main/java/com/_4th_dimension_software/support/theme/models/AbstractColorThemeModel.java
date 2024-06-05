@@ -2,10 +2,15 @@ package com._4th_dimension_software.support.theme.models;
 
 import java.util.HashMap;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 /**
  * The <code>AbstractColorThemeModel</code> abstract class defines the abstract
  * behaviour of color theme models inside the application.
  */
+@ToString
+@EqualsAndHashCode
 public abstract class AbstractColorThemeModel {
 	protected boolean linearPaint;
 	protected HashMap<String, Boolean> borderPaintRules;

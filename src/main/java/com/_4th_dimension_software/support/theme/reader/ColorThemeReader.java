@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import com._4th_dimension_software.support.theme.definitions.ColorDefinitions;
 import com._4th_dimension_software.support.theme.models.*;
 import com._4th_dimension_software.support.util.ResourceHandler;
 import org.w3c.dom.Document;
@@ -23,116 +24,28 @@ public final class ColorThemeReader {
 	private ColorThemeReader() {
 	}
 
-	/**
-	 * Handles the <code>modifiers</code> tag in the color theme
-	 * document. This method takes care of validating and processing
-	 * every child element of the <code>specified element</code> and
-	 * put the corresponding values into the specified <code>color theme model</code>.
-	 *
-	 * @param element The <code>Element</code> of the current iteration
-	 * @param ctm     The <code>ColorThemeModel</code> of the current iteration
-	 */
-	private static void handleModifiers(final Element element, final ColorThemeModel ctm) {
-		NodeList elementChildren = element.getChildNodes();
+	private static void handleDefinitions(final Document ctd) {
+		NodeList defNodes = ctd.getElementsByTagName("ColorDefinitions");
 
-		for (int i = 0; i < elementChildren.getLength(); i++) {
-			if (elementChildren.item(i).getNodeType() != Node.ELEMENT_NODE)
+		for (int i = 0; i < defNodes.getLength(); i++) {
+			Node rootNode = defNodes.item(i);
+
+			if (rootNode.getNodeType() != Node.ELEMENT_NODE)
 				continue;
 
-			Element childElement = (Element) elementChildren.item(i);
+			Element rootElement = (Element) rootNode;
+			NodeList childNodes = rootElement.getChildNodes();
 
-			if (childElement.getTagName().equalsIgnoreCase("paint"))
-				ctm.setLinearPaint(childElement.getAttribute("linear"));
+			for (int j = 0; j < childNodes.getLength(); j++) {
+				Node childNode = childNodes.item(j);
 
-			else if (childElement.getTagName().equalsIgnoreCase("border")) {
-				ctm.setBorderPaintRule("top", childElement.getAttribute("top"));
-				ctm.setBorderPaintRule("right", childElement.getAttribute("right"));
-				ctm.setBorderPaintRule("bottom", childElement.getAttribute("bottom"));
-				ctm.setBorderPaintRule("left", childElement.getAttribute("left"));
-			}
-		}
-	}
+				if (childNode.getNodeType() != Node.ELEMENT_NODE)
+					continue;
 
-	/**
-	 * Initializes the values of the specified <code>ColorThemeModel</code>
-	 * based on the given tag name and the current element of the iteration.
-	 *
-	 * @param tagName The name of the current tag
-	 * @param element The current child <code>Element</code>
-	 * @param ctm     The <code>ColorThemeModel</code> object that's currently being constructed
-	 */
-	private static void constructColorThemeModel(final String tagName, final Element element, final ColorThemeModel ctm) {
-		switch (tagName.toLowerCase()) {
-			// Border
-			case "border" -> {
-				BorderModel bm = new BorderModel(
-					element.getAttribute("colors"),
-					element.getAttribute("thickness"),
-					element.getAttribute("roundness")
-				);
-				ctm.setBorderModel(bm);
+				Element childElement = (Element) childNode;
+//				System.out.println(childElement.getTagName() + " => " + childElement.getAttribute("colors"));
+				ColorDefinitions.addDefinition(childElement.getTagName(), childElement.getAttribute("colors"));
 			}
-			// Font
-			case "font" -> {
-				FontModel fm = new FontModel(
-					element.getAttribute("source"),
-					element.getAttribute("family"),
-					element.getAttribute("ligature"),
-					element.getAttribute("size")
-				);
-				ctm.setFontModel(fm);
-			}
-			// Icon1
-			case "icon1" -> {
-				IconModel im = new IconModel(
-					element.getAttribute("source"),
-					element.getAttribute("width"),
-					element.getAttribute("height"),
-					element.getAttribute("color")
-				);
-				ctm.setIconModel1(im);
-			}
-			// Icon2
-			case "icon2" -> {
-				IconModel im = new IconModel(
-					element.getAttribute("source"),
-					element.getAttribute("width"),
-					element.getAttribute("height"),
-					element.getAttribute("color")
-				);
-				ctm.setIconModel2(im);
-			}
-			// Icon3
-			case "icon3" -> {
-				IconModel im = new IconModel(
-					element.getAttribute("source"),
-					element.getAttribute("width"),
-					element.getAttribute("height"),
-					element.getAttribute("color")
-				);
-				ctm.setIconModel3(im);
-			}
-			// Icon4
-			case "icon4" -> {
-				IconModel im = new IconModel(
-					element.getAttribute("source"),
-					element.getAttribute("width"),
-					element.getAttribute("height"),
-					element.getAttribute("color")
-				);
-				ctm.setIconModel4(im);
-			}
-			// Background
-			case "background" -> {
-				ColorModel cm = new ColorModel(element.getAttribute("colors"));
-				ctm.setBackgroundModel(cm);
-			}
-			// Foreground
-			case "foreground" -> {
-				ColorModel cm = new ColorModel(element.getAttribute("colors"));
-				ctm.setForegroundModel(cm);
-			}
-			case "modifiers" -> handleModifiers(element, ctm);
 		}
 	}
 
@@ -152,15 +65,20 @@ public final class ColorThemeReader {
 	 */
 	public static HashMap<String, ColorThemeModel> readFromXML(final String filePath) {
 		HashMap<String, ColorThemeModel> colorThemeModels = new HashMap<>();
+		ColorDefinitions.init();
 
 		try {
-			Document colorThemeDocument = DocumentBuilderFactory.newInstance()
+			Document ctd = DocumentBuilderFactory.newInstance()
 				.newDocumentBuilder()
 				.parse(new File(ResourceHandler.get(filePath)));
 
-			colorThemeDocument.normalize();
+			ctd.normalize();
 
-			NodeList rootNodes = colorThemeDocument.getElementsByTagName("appearance");
+			// Parse the definitions
+			handleDefinitions(ctd);
+
+			// Get the appearances
+			NodeList rootNodes = ctd.getElementsByTagName("Appearance");
 
 			for (int i = 0; i < rootNodes.getLength(); i++) {
 				Node rootNode = rootNodes.item(i);
@@ -181,7 +99,7 @@ public final class ColorThemeReader {
 
 					Element childElement = (Element) childNode;
 					String tagName = childElement.getTagName().toLowerCase();
-					constructColorThemeModel(tagName, childElement, ctm);
+					ColorThemeModelConstructor.constructColorThemeModel(tagName, childElement, ctm);
 				}
 				// Place the currently generated ColorThemeModel into the HashMap
 				colorThemeModels.put(rootElement.getAttribute("applyTo"), ctm);

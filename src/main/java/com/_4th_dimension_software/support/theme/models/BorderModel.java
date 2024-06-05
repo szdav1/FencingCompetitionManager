@@ -33,24 +33,4 @@ public final class BorderModel extends AbstractBorderModel {
 	public BorderModel(String colorModelString, String thickness, String roundness) {
 		super(colorModelString, thickness, roundness);
 	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (obj instanceof BorderModel bm) {
-			return this.colorModel.equals(bm.getColorModel()) &&
-				this.thickness == bm.getThickness() &&
-				this.roundness == bm.getRoundness();
-		}
-
-		return false;
-	}
-
-	@Override
-	public String toString() {
-		return "BorderModel{"+
-			"colorModel="+colorModel+
-			", thickness="+thickness+
-			", roundness="+roundness+
-			'}';
-	}
 }

@@ -1,7 +1,7 @@
 package com._4th_dimension_software.app.view.components.built.ui.editors;
 
 import com._4th_dimension_software.app.view.frame.XFrame;
-import com._4th_dimension_software.support.lang.LanguagePack;
+import com._4th_dimension_software.support.lang.Language;
 
 /**
  * The <code>RuleSetModifier</code> class is a subclass
@@ -22,6 +22,6 @@ public final class RuleSetModifier extends AbstractEditor {
 	 */
 	public RuleSetModifier(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
-		this.setTitle(LanguagePack.get("ruleSetModifier.title"));
+		this.setTitle(Language.get("ruleSetModifier.title"));
 	}
 }

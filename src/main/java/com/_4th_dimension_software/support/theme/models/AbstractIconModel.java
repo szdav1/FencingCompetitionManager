@@ -5,6 +5,8 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 
 import com._4th_dimension_software.support.util.Util;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 /**
  * The <code>AbstractIconModel</code> stores and validates
@@ -13,6 +15,8 @@ import com._4th_dimension_software.support.util.Util;
  * behaviour of icon models inside the application.
  * These data are fed into this class's constructor by the <code>ColorThemeReader</code>.
  */
+@ToString
+@EqualsAndHashCode
 public abstract class AbstractIconModel {
 	protected ImageIcon icon;
 

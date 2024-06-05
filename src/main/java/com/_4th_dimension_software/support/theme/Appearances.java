@@ -17,12 +17,16 @@ public final class Appearances {
 	/**
 	 * Initializes the <code>Appearances</code> <code>HashMap</code>.
 	 * This process can be done only once during the lifetime
-	 * of the application.
+	 * of the application. If the passed in <code>HashMap</code>
+	 * is empty, the method won't run.
 	 *
 	 * @param appearances The <code>HashMap</code> provided by the <code>ColorThemeProcessor</code>
 	 */
 	public static void init(final HashMap<String, Appearance> appearances) {
-		if (!initialized && !appearances.isEmpty()) {
+		if (initialized)
+			throw new RuntimeException("Appearances have been already initialized.");
+
+		if (!appearances.isEmpty()) {
 			values = appearances;
 			initialized = true;
 		}
@@ -39,7 +43,7 @@ public final class Appearances {
 	 */
 	public static Appearance get(final String componentName) {
 		if (!initialized)
-			throw new RuntimeException("Appearances haven't been initialized");
+			throw new RuntimeException("Appearances haven't been initialized.");
 
 		Appearance a = values.get(componentName);
 

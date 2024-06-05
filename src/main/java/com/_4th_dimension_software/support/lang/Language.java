@@ -10,12 +10,12 @@ import java.util.HashMap;
  *
  * @author szd
  */
-public final class LanguagePack {
+public final class Language {
 	private static boolean initialized = false;
 	private static HashMap<String, String> words;
 
 	// Not instantiatable
-	private LanguagePack() {
+	private Language() {
 	}
 
 	/**
@@ -29,7 +29,7 @@ public final class LanguagePack {
 		if (initialized)
 			throw new RuntimeException("Language pack has benn already initialized.");
 
-		LanguagePack.words = words;
+		Language.words = words;
 		initialized = true;
 	}
 
@@ -41,6 +41,9 @@ public final class LanguagePack {
 	 * @return The desired word
 	 */
 	public static String get(String key) {
+		if (!initialized)
+			throw new RuntimeException("Language pack hasn't benn initialized.");
+
 		return words.get(key);
 	}
 }

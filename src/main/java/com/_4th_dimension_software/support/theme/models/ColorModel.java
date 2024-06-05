@@ -31,20 +31,4 @@ public final class ColorModel extends AbstractColorModel {
 	public ColorModel(String line) {
 		super(line);
 	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (obj instanceof ColorModel cm) {
-			return this.colors.equals(cm.getColors());
-		}
-
-		return false;
-	}
-
-	@Override
-	public String toString() {
-		return "ColorModel{"+
-			"colors="+colors+
-			'}';
-	}
 }

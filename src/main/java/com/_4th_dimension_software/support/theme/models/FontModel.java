@@ -31,26 +31,4 @@ public final class FontModel extends AbstractFontModel {
 	public FontModel(final String source, String family, String ligature, String size) {
 		super(source, family, ligature, size);
 	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (obj instanceof FontModel fm) {
-			return this.source.equals(fm.getSource()) &&
-				this.family.equals(fm.getFamily()) &&
-				this.ligature == fm.getLigature() &&
-				this.size == fm.getSize();
-		}
-
-		return false;
-	}
-
-	@Override
-	public String toString() {
-		return "FontModel{"+
-			"source='"+source+'\''+
-			", type='"+family+'\''+
-			", ligature="+ligature+
-			", size="+size+
-			'}';
-	}
 }
