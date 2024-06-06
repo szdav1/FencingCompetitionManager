@@ -14,8 +14,8 @@
 
 > Finish the expandable panel and related components (docstrings too)
 
-> Color Theme
-> - Make a better color them file format and the necessary reader class for it
+> Editors
+> - Move every editor to its own respected package and simplify editor polymorphism
 
 > Docstrings
 > - Add docstrings to abstract classes in the framework package
