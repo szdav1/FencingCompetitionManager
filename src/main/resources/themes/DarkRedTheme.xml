@@ -5,9 +5,11 @@
     <ColorDefinitions>
         <red colors="[255,82,82,255]"/>
         <black colors="[0,0,0,255]"/>
+        <white colors="[255,255,255,255]"/>
+        <lightGray colors="[128,128,128,255]"/>
+        <darkGray colors="[10,10,10,255]"/>
         <opaque colors="[0,0,0,0]"/>
     </ColorDefinitions>
-
     <!--  Window  -->
     <Appearance applyTo="window">
         <background colors="[@black]"/>
@@ -15,15 +17,15 @@
     <!-- ================================================================================================== -->
     <!--  Shortcut key label  -->
     <Appearance applyTo="shortcutKeyLabel">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
+        <background colors="[@opaque]"/>
+        <foreground colors="[@lightGray][@white]"/>
         <font size="6"/>
     </Appearance>
     <!-- ================================================================================================== -->
     <!--  Sidebar  -->
     <Appearance applyTo="sidebar">
-        <background colors="[0,0,0,255]"/>
-        <border colors="[255,82,82,255]" thickness="@proportional"/>
+        <background colors="[@black]"/>
+        <border colors="[@red]" thickness="@proportional"/>
         <modifiers>
             <border right="true"/>
         </modifiers>
@@ -31,445 +33,445 @@
     <!-- ================================================================================================== -->
     <!--  Header of the sidebar  -->
     <Appearance applyTo="sidebar.header">
-        <background colors="[0,0,0,0]"/>
-        <icon1 source="/icons/dashboard.png" width="3" height="3" color="[255,82,82,255]"/>
+        <background colors="[@opaque]"/>
+        <icon1 source="/icons/dashboard.png" width="3" height="3" color="[@red]"/>
     </Appearance>
     <!-- ================================================================================================== -->
     <!--  Separators of the sidebar  -->
     <Appearance applyTo="sidebar.separator">
-        <background colors="[0,0,0,0][255,82,82,255][255,82,82,255][0,0,0,0][0,0,0,0]"/>
+        <background colors="[@opaque][@red][@red][@opaque][@opaque]"/>
     </Appearance>
     <!-- ================================================================================================== -->
     <!--  Exit button of the sidebar  -->
     <Appearance applyTo="sidebar.buttons.exit">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/Exit.png" width="3" height="4" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/Exit.png" width="3" height="4" color="[@lightGray]"/>
         <icon2 source="/icons/Exit.png" width="3" height="4"/>
     </Appearance>
     <!-- ================================================================================================== -->
     <!--  Poule button of the sidebar  -->
     <Appearance applyTo="sidebar.buttons.poule">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/Poule.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/Poule.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/Poule.png" width="3" height="3"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.poule.dropdown">
-        <background colors="[0,0,0,255]"/>
-        <border colors="[255,82,82,255]" thickness="@proportional"/>
+        <background colors="[@black]"/>
+        <border colors="[@red]" thickness="@proportional"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.poule.dropdown.empty">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/Empty.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/Empty.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/Empty.png" width="3" height="3"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.poule.dropdown.database">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/FromDatabase.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/FromDatabase.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/FromDatabase.png" width="3" height="3"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.poule.dropdown.stats">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/Stats.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/Stats.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/Stats.png" width="3" height="3"/>
     </Appearance>
     <!-- ================================================================================================== -->
     <!--  Table button of the sidebar  -->
     <Appearance applyTo="sidebar.buttons.table">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/Table.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/Table.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/Table.png" width="3" height="3"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.table.dropdown">
-        <background colors="[0,0,0,255]"/>
-        <border colors="[255,82,82,255]" thickness="@proportional"/>
+        <background colors="[@black]"/>
+        <border colors="[@red]" thickness="@proportional"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.table.dropdown.empty">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/Empty.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/Empty.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/Empty.png" width="3" height="3"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.table.dropdown.database">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/FromDatabase.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/FromDatabase.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/FromDatabase.png" width="3" height="3"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.table.dropdown.stats">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/Stats.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/Stats.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/Stats.png" width="3" height="3"/>
     </Appearance>
     <!-- ================================================================================================== -->
     <!--  Competition button of the sidebar  -->
     <Appearance applyTo="sidebar.buttons.competition">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/Competition.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/Competition.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/Competition.png" width="3" height="3"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.competition.dropdown">
-        <background colors="[0,0,0,255]"/>
-        <border colors="[255,82,82,255]" thickness="@proportional"/>
+        <background colors="[@black]"/>
+        <border colors="[@red]" thickness="@proportional"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.competition.dropdown.empty">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/Empty.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/Empty.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/Empty.png" width="3" height="3"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.competition.dropdown.database">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/FromDatabase.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/FromDatabase.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/FromDatabase.png" width="3" height="3"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.competition.dropdown.stats">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/Stats.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/Stats.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/Stats.png" width="3" height="3"/>
     </Appearance>
     <!-- ================================================================================================== -->
     <!--  Settings button of the sidebar  -->
     <Appearance applyTo="sidebar.buttons.settings">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/Settings.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/Settings.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/Settings.png" width="3" height="3"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.settings.dropdown">
-        <background colors="[0,0,0,255]"/>
-        <border colors="[255,82,82,255]" thickness="@proportional"/>
+        <background colors="[@black]"/>
+        <border colors="[@red]" thickness="@proportional"/>
     </Appearance>
 
-    <Appearance applyTo="sidebar.buttons.settings.dropdown.Appearance">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/Appearance.png" width="3" height="3" color="[128,128,128,255]"/>
+    <Appearance applyTo="sidebar.buttons.settings.dropdown.appearance">
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/Appearance.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/Appearance.png" width="3" height="3"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.settings.dropdown.language">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/Language.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/Language.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/Language.png" width="3" height="3"/>
     </Appearance>
     <!-- ================================================================================================== -->
     <!--  Database button of the sidebar  -->
     <Appearance applyTo="sidebar.buttons.database">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/Database.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/Database.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/Database.png" width="3" height="3"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.database.dropdown">
-        <background colors="[0,0,0,255]"/>
-        <border colors="[255,82,82,255]" thickness="@proportional"/>
+        <background colors="[@black]"/>
+        <border colors="[@red]" thickness="@proportional"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.database.dropdown.connect">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/Connect.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/Connect.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/Connect.png" width="3" height="3"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.database.dropdown.manage">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/Manage.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/Manage.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/Manage.png" width="3" height="3"/>
     </Appearance>
     <!-- ================================================================================================== -->
     <!--  Rule set button of the sidebar  -->
     <Appearance applyTo="sidebar.buttons.ruleSet">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/RuleSet.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/RuleSet.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/RuleSet.png" width="3" height="3"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.ruleSet.dropdown">
-        <background colors="[0,0,0,255]"/>
-        <border colors="[255,82,82,255]" thickness="@proportional"/>
+        <background colors="[@black]"/>
+        <border colors="[@red]" thickness="@proportional"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.ruleSet.dropdown.view">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/View.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/View.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/View.png" width="3" height="3"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.ruleSet.dropdown.add">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/New.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/New.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/New.png" width="3" height="3"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.ruleSet.dropdown.delete">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/Delete.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/Delete.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/Delete.png" width="3" height="3"/>
     </Appearance>
 
     <Appearance applyTo="sidebar.buttons.ruleSet.dropdown.modify">
-        <background colors="[0,0,0,0][255,82,82,255]"/>
-        <foreground colors="[128,128,128,255][255,255,255,255]"/>
-        <icon1 source="/icons/Modify.png" width="3" height="3" color="[128,128,128,255]"/>
+        <background colors="[@opaque][@red]"/>
+        <foreground colors="[@lightGray][@white]"/>
+        <icon1 source="/icons/Modify.png" width="3" height="3" color="[@lightGray]"/>
         <icon2 source="/icons/Modify.png" width="3" height="3"/>
     </Appearance>
     <!-- ================================================================================================== -->
     <!--  Poule editor  -->
     <Appearance applyTo="pouleEditor">
-        <background colors="[0,0,0,255]"/>
-        <border colors="[255,82,82,255]" thickness="@proportional"/>
+        <background colors="[@black]"/>
+        <border colors="[@red]" thickness="@proportional"/>
     </Appearance>
 
     <Appearance applyTo="pouleEditor.buttons.close">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[128,128,128,255][255,82,82,255]"/>
+        <background colors="[@opaque]"/>
+        <foreground colors="[@lightGray][@red]"/>
     </Appearance>
 
     <Appearance applyTo="pouleEditor.buttons.confirm">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[128,128,128,255][255,82,82,255]"/>
+        <background colors="[@opaque]"/>
+        <foreground colors="[@lightGray][@red]"/>
     </Appearance>
 
     <Appearance applyTo="pouleEditor.header">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="pouleEditor.title">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="pouleEditor.center">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="pouleEditor.footer">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
     <!-- ================================================================================================== -->
     <!--  Table editor  -->
     <Appearance applyTo="tableEditor">
-        <background colors="[0,0,0,255]"/>
-        <border colors="[255,82,82,255]" thickness="@proportional"/>
+        <background colors="[@black]"/>
+        <border colors="[@red]" thickness="@proportional"/>
     </Appearance>
 
     <Appearance applyTo="tableEditor.buttons.close">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[128,128,128,255][255,82,82,255]"/>
+        <background colors="[@opaque]"/>
+        <foreground colors="[@lightGray][@red]"/>
     </Appearance>
 
     <Appearance applyTo="tableEditor.buttons.confirm">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[128,128,128,255][255,82,82,255]"/>
+        <background colors="[@opaque]"/>
+        <foreground colors="[@lightGray][@red]"/>
     </Appearance>
 
     <Appearance applyTo="tableEditor.header">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="tableEditor.title">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="tableEditor.center">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="tableEditor.footer">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
     <!-- ================================================================================================== -->
     <!--  Competition editor  -->
     <Appearance applyTo="competitionEditor">
-        <background colors="[0,0,0,255]"/>
-        <border colors="[255,82,82,255]" thickness="@proportional"/>
+        <background colors="[@black]"/>
+        <border colors="[@red]" thickness="@proportional"/>
     </Appearance>
 
     <Appearance applyTo="competitionEditor.buttons.close">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[128,128,128,255][255,82,82,255]"/>
+        <background colors="[@opaque]"/>
+        <foreground colors="[@lightGray][@red]"/>
     </Appearance>
 
     <Appearance applyTo="competitionEditor.buttons.confirm">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[128,128,128,255][255,82,82,255]"/>
+        <background colors="[@opaque]"/>
+        <foreground colors="[@lightGray][@red]"/>
     </Appearance>
 
     <Appearance applyTo="competitionEditor.header">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="competitionEditor.title">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="competitionEditor.center">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="competitionEditor.footer">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
     <!-- ================================================================================================== -->
     <!--  Rule Set editor  -->
     <Appearance applyTo="ruleSetEditor">
-        <background colors="[0,0,0,255]"/>
-        <border colors="[255,82,82,255]" thickness="@proportional"/>
+        <background colors="[@black]"/>
+        <border colors="[@red]" thickness="@proportional"/>
     </Appearance>
 
     <Appearance applyTo="ruleSetEditor.buttons.close">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[128,128,128,255][255,82,82,255]"/>
+        <background colors="[@opaque]"/>
+        <foreground colors="[@lightGray][@red]"/>
     </Appearance>
 
     <Appearance applyTo="ruleSetEditor.buttons.confirm">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[128,128,128,255][255,82,82,255]"/>
+        <background colors="[@opaque]"/>
+        <foreground colors="[@lightGray][@red]"/>
     </Appearance>
 
     <Appearance applyTo="ruleSetEditor.header">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="ruleSetEditor.title">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="ruleSetEditor.center">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="ruleSetEditor.footer">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="ruleSetEditor.scrollPanel">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="ruleSetEditor.scrollPanel.scrollBar">
-        <background colors="[0,0,0,255]"/>
-        <foreground colors="[10,10,10,255]"/>
+        <background colors="[@black]"/>
+        <foreground colors="[@darkGray]"/>
     </Appearance>
 
     <Appearance applyTo="ruleSetEditor.innerPanel">
-        <background colors="[10,10,10,255]"/>
+        <background colors="[@darkGray]"/>
     </Appearance>
 
     <Appearance applyTo="ruleSetEditor.innerPanel.panel">
-        <background colors="[10,10,10,255]"/>
+        <background colors="[@darkGray]"/>
     </Appearance>
 
     <Appearance applyTo="ruleSetEditor.innerPanel.title">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[255,255,255,255]"/>
-        <border colors="[255,82,82,255][0,0,0,0][0,0,0,0]" thickness="@proportional"/>
+        <background colors="[@opaque]"/>
+        <foreground colors="[@white]"/>
+        <border colors="[@red][@opaque][@opaque]" thickness="@proportional"/>
         <modifiers>
             <border bottom="true"/>
         </modifiers>
     </Appearance>
 
     <Appearance applyTo="ruleSetEditor.innerPanel.button">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[255,255,255,255][255,0,0,255]"/>
+        <background colors="[@opaque]"/>
+        <foreground colors="[@white][255,0,0,255]"/>
         <icon1 source="/icons/ArrowDown.png" width="2" height="2"/>
-        <icon2 source="/icons/ArrowDown.png" width="2" height="2" color="[255,82,82,255]"/>
+        <icon2 source="/icons/ArrowDown.png" width="2" height="2" color="[@red]"/>
         <icon3 source="/icons/ArrowUp.png" width="2" height="2"/>
-        <icon4 source="/icons/ArrowUp.png" width="2" height="2" color="[255,82,82,255]"/>
+        <icon4 source="/icons/ArrowUp.png" width="2" height="2" color="[@red]"/>
     </Appearance>
 
     <!-- ================================================================================================== -->
     <!--  Settings editors  -->
     <Appearance applyTo="settingsEditor">
-        <background colors="[0,0,0,255]"/>
-        <border colors="[255,82,82,255]" thickness="@proportional"/>
+        <background colors="[@black]"/>
+        <border colors="[@red]" thickness="@proportional"/>
     </Appearance>
 
     <Appearance applyTo="settingsEditor.buttons.close">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[128,128,128,255][255,82,82,255]"/>
+        <background colors="[@opaque]"/>
+        <foreground colors="[@lightGray][@red]"/>
     </Appearance>
 
     <Appearance applyTo="settingsEditor.buttons.confirm">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[128,128,128,255][255,82,82,255]"/>
+        <background colors="[@opaque]"/>
+        <foreground colors="[@lightGray][@red]"/>
     </Appearance>
 
     <Appearance applyTo="settingsEditor.header">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="settingsEditor.title">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="settingsEditor.center">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="settingsEditor.footer">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
     <!-- ================================================================================================== -->
     <!--  Database editors  -->
     <Appearance applyTo="databaseEditor">
-        <background colors="[0,0,0,255]"/>
-        <border colors="[255,82,82,255]" thickness="@proportional"/>
+        <background colors="[@black]"/>
+        <border colors="[@red]" thickness="@proportional"/>
     </Appearance>
 
     <Appearance applyTo="databaseEditor.buttons.close">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[128,128,128,255][255,82,82,255]"/>
+        <background colors="[@opaque]"/>
+        <foreground colors="[@lightGray][@red]"/>
     </Appearance>
 
     <Appearance applyTo="databaseEditor.buttons.confirm">
-        <background colors="[0,0,0,0]"/>
-        <foreground colors="[128,128,128,255][255,82,82,255]"/>
+        <background colors="[@opaque]"/>
+        <foreground colors="[@lightGray][@red]"/>
     </Appearance>
 
     <Appearance applyTo="databaseEditor.header">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="databaseEditor.title">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="databaseEditor.center">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 
     <Appearance applyTo="databaseEditor.footer">
-        <background colors="[0,0,0,255]"/>
+        <background colors="[@black]"/>
     </Appearance>
 </DarkRedTheme>

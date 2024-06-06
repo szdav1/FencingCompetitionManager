@@ -43,7 +43,6 @@ public final class ColorThemeReader {
 					continue;
 
 				Element childElement = (Element) childNode;
-//				System.out.println(childElement.getTagName() + " => " + childElement.getAttribute("colors"));
 				ColorDefinitions.addDefinition(childElement.getTagName(), childElement.getAttribute("colors"));
 			}
 		}

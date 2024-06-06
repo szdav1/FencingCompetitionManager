@@ -28,8 +28,8 @@ public final class Appearances {
 
 		if (!appearances.isEmpty()) {
 			values = appearances;
-			initialized = true;
 		}
+		initialized = true;
 	}
 
 	/**
