@@ -7,6 +7,7 @@ import java.util.List;
 import com._4th_dimension_software.support.theme.definitions.ColorDefinitions;
 import com._4th_dimension_software.support.util.Util;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.ToString;
 
 /**
@@ -16,6 +17,7 @@ import lombok.ToString;
  * behaviour of color models inside the application.
  * These data are fed into this class's constructor by the <code>ColorThemeReader</code>.
  */
+@Getter
 @ToString
 @EqualsAndHashCode
 public abstract class AbstractColorModel {
@@ -90,10 +92,6 @@ public abstract class AbstractColorModel {
 		}
 
 		return colors;
-	}
-
-	public List<Color> getColors() {
-		return this.colors;
 	}
 
 	public void setColors(String str) {

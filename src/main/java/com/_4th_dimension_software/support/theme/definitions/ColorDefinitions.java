@@ -30,7 +30,7 @@ public final class ColorDefinitions {
 		String key = definition.replace("@", "");
 
 		if (!definitions.containsKey(key))
-			new ArrayList<>();
+			return List.of(Color.black);
 
 		return definitions.get(key);
 	}

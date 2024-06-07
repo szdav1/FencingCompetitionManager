@@ -13,6 +13,7 @@
 > - Think about shortcut keys
 
 > Finish the expandable panel and related components (docstrings too)
+> DOCSTRINGS
 
 > Editors
 > - Move every editor to its own respected package and simplify editor polymorphism
