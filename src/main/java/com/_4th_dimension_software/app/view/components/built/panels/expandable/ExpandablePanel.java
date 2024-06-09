@@ -9,6 +9,11 @@ import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.consts.PositionConstants;
 
+/**
+ * The <code>ExpandablePanel</code> class is a subclass
+ * of the <code>XPanel</code> custom panel class. As the
+ * name implies, it provides a folding functionality.
+ */
 public class ExpandablePanel extends XPanel {
 	private boolean expanded;
 	private final Dimension dimension;
@@ -17,6 +22,16 @@ public class ExpandablePanel extends XPanel {
 	private final ExpandButton expandButton;
 	private XScrollPanel scrollPanel;
 
+	/**
+	 * Constructs an <code>ExpandablePanel</code> object using
+	 * the specified dimension and the appearance that's name
+	 * was given.
+	 *
+	 * @param dimension      The Dimension of the panel
+	 * @param frame          The main frame of the application
+	 * @param appearanceName The name of the Appearance that's values
+	 *                       should be implemented on this component
+	 */
 	public ExpandablePanel(Dimension dimension, final XFrame frame, String appearanceName) {
 		super(dimension, new BorderLayout(), frame, appearanceName);
 
@@ -48,6 +63,19 @@ public class ExpandablePanel extends XPanel {
 		this.addComponent(this.centerPanel, PositionConstants.CENTER_POSITION);
 	}
 
+	/**
+	 * Constructs an <code>ExpandablePanel</code> object using
+	 * the specified x, y, width and height values and the
+	 * appearance that's name was given.
+	 *
+	 * @param x              The X coordinate of the panel in no-layout manager space
+	 * @param y              The Y coordinate of the panel in no-layout manager space
+	 * @param width          The width of the panel in no-layout manager space
+	 * @param height         The height of the panel in no-layout manager space
+	 * @param frame          The main frame of the application
+	 * @param appearanceName The name of the Appearance that's values
+	 *                       should be implemented on this component
+	 */
 	public ExpandablePanel(int x, int y, int width, int height, final XFrame frame, String appearanceName) {
 		super(x, y, width, height, new BorderLayout(), frame, appearanceName);
 
@@ -79,18 +107,27 @@ public class ExpandablePanel extends XPanel {
 		this.addComponent(this.centerPanel, PositionConstants.CENTER_POSITION);
 	}
 
+	/**
+	 * Makes the panel folded by default.
+	 */
 	public void setFoldedByDefault() {
 		this.expanded = false;
 		this.expandButton.setExpanded(true);
 		this.fold();
 	}
 
+	/**
+	 * Expands the panel.
+	 */
 	private void expand() {
 		this.setSize(this.dimension.width, this.dimension.height);
 		this.setPreferredSize(this.dimension);
 		this.repaintFrame();
 	}
 
+	/**
+	 * Folds the panel.
+	 */
 	private void fold() {
 		this.setSize(this.dimension.width, SizeData.BUTTON_HEIGHT);
 		this.setPreferredSize(new Dimension(this.getWidth(), this.getHeight()));

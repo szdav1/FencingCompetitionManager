@@ -17,6 +17,7 @@
 
 > Editors
 > - Move every editor to its own respected package and simplify editor polymorphism
+> - Create appropriate return type for input panels' getData() method
 
 > Docstrings
 > - Add docstrings to abstract classes in the framework package
@@ -24,6 +25,3 @@
 > - Add docstrings to the newly created classes and methods
 > - Add and check docstrings and comments in rule set editor classes
 > - Check the docstrings in the whole project
-
-> JAR
-> - Fix problem with JAR file not being able to load the resources

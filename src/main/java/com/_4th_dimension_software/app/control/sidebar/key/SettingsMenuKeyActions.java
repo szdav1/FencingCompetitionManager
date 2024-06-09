@@ -1,4 +1,4 @@
-package com._4th_dimension_software.app.control.sidebar;
+package com._4th_dimension_software.app.control.sidebar.key;
 
 import com._4th_dimension_software.app.view.components.built.ui.sidebar.Sidebar;
 

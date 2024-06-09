@@ -1,4 +1,4 @@
-package com._4th_dimension_software.app.control.sidebar;
+package com._4th_dimension_software.app.control.sidebar.key;
 
 import java.awt.event.ActionEvent;
 

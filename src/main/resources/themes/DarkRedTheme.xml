@@ -3,7 +3,7 @@
 <DarkRedTheme>
     <!--  Color Definitions  -->
     <ColorDefinitions>
-        <red colors="[255,82,82,255]"/>
+        <red colors="[255,41,41,255]"/>
         <black colors="[0,0,0,255]"/>
         <white colors="[255,255,255,255]"/>
         <lightGray colors="[128,128,128,255]"/>

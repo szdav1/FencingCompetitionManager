@@ -1,6 +1,7 @@
 package com._4th_dimension_software.app.control.sidebar;
 
 import com._4th_dimension_software.app.control.AbstractXController;
+import com._4th_dimension_software.app.control.sidebar.key.*;
 import com._4th_dimension_software.app.view.components.base.button.XButton;
 import com._4th_dimension_software.app.view.components.built.ui.sidebar.Sidebar;
 import com._4th_dimension_software.app.view.components.built.ui.sidebar.menu.MenuButton;

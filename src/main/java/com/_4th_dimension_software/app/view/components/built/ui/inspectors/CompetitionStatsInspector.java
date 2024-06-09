@@ -1,5 +1,6 @@
 package com._4th_dimension_software.app.view.components.built.ui.inspectors;
 
+import com._4th_dimension_software.app.view.components.built.ui.editors.AbstractEditor;
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.lang.Language;
 
@@ -10,7 +11,7 @@ import com._4th_dimension_software.support.lang.Language;
  *
  * @author szd
  */
-public final class CompetitionStatsInspector extends AbstractInspector {
+public final class CompetitionStatsInspector extends AbstractEditor {
 	/**
 	 * Constructs a <code>CompetitionStatsInspector</code> object.
 	 * This inspector object is responsible for handling
@@ -22,6 +23,7 @@ public final class CompetitionStatsInspector extends AbstractInspector {
 	 */
 	public CompetitionStatsInspector(final XFrame frame, String appearanceName) {
 		super(frame, appearanceName);
+		this.removeComponent(this.footerPanel);
 		this.setTitle(Language.get("competitionStatsInspector.title"));
 	}
 }

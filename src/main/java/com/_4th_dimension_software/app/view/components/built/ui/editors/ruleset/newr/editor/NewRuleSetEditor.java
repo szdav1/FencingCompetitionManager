@@ -1,10 +1,14 @@
-package com._4th_dimension_software.app.view.components.built.ui.editors.newruleset;
+package com._4th_dimension_software.app.view.components.built.ui.editors.ruleset.newr.editor;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 
 import com._4th_dimension_software.app.view.components.base.scrollpanel.XScrollPanel;
 import com._4th_dimension_software.app.view.components.built.ui.editors.AbstractEditor;
+import com._4th_dimension_software.app.view.components.built.ui.editors.ruleset.newr.CompetitionRuleSetInputPanel;
+import com._4th_dimension_software.app.view.components.built.ui.editors.ruleset.newr.PouleRuleSetInputPanel;
+import com._4th_dimension_software.app.view.components.built.ui.editors.ruleset.newr.RuleSetAttributesInputPanel;
+import com._4th_dimension_software.app.view.components.built.ui.editors.ruleset.newr.TableRuleSetInputPanel;
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.appdata.SizeData;
 import com._4th_dimension_software.support.lang.Language;

@@ -1,5 +1,6 @@
-package com._4th_dimension_software.app.view.components.built.ui.editors;
+package com._4th_dimension_software.app.view.components.built.ui.editors.ruleset.modifyr;
 
+import com._4th_dimension_software.app.view.components.built.ui.editors.AbstractEditor;
 import com._4th_dimension_software.app.view.frame.XFrame;
 import com._4th_dimension_software.support.lang.Language;
 
