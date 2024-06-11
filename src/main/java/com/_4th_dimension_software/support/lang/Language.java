@@ -44,6 +44,9 @@ public final class Language {
 		if (!initialized)
 			throw new RuntimeException("Language pack hasn't benn initialized.");
 
+		if (!words.containsKey(key))
+			return "!Missing Word!";
+
 		return words.get(key);
 	}
 }
